@@ -31,4 +31,3 @@ export default function DecodedResistorValue(colorNameList: ColorTypes[]) {
   // 5. Teraohms 1000000000000
   
 }
-
