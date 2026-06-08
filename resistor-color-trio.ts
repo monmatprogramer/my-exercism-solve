@@ -1,7 +1,7 @@
 
 import type {ColorTypes} from "./types";
 const COLORS:string[] = ["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"];
-export default function DecodedResistorValue(colorNameList: ColorTypes[]) {
+function DecodedResistorValue(colorNameList: ColorTypes[]) {
     let tempListNumber: number[] = [];
     let lastNumber:number=0;
     // 1. ohms 100
@@ -31,4 +31,4 @@ export default function DecodedResistorValue(colorNameList: ColorTypes[]) {
   // 5. Teraohms 1000000000000
   
 }
-
+export DecodedResistorValue;
