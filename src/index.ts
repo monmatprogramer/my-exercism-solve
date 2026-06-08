@@ -1,6 +1,6 @@
 import DecodedResistorValue from "./resistor-color-trio";
 
-DecodedResistorValue(["white", "white", "orange"]);
+DecodedResistorValue(["white", "white", "white"]);
 //decodedResistorValue(["brown","black"]);
 //DecodedResistorValue(['brown','red','black']);
 

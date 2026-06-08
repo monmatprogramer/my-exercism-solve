@@ -59,7 +59,12 @@ export default function DecodedResistorValue(colorNameList: ColorTypes[]) {
     }else if(lastNumber > 3 && lastNumber <= 6){
        console.log(`${numbericColor} megahoms`);
     }else if(lastNumber > 6 && lastNumber <= 9){
-      
+       console.log(`${numbericColor} gigahoms`);
+    }else if(lastNumber >9 && lastNumber < 13){
+       console.log(`${numbericColor} terahoms`);
+
+    }else{
+      console.log("not found");
     }
     console.log(appendString);
     console.log("---end---");
