@@ -33,3 +33,4 @@ export default function DecodedResistorValue(colorNameList: ColorTypes[]) {
   
 }
 
+//Create function to return temp list number: Ex:[1,0,3]
