@@ -1,4 +1,3 @@
-import {decodedResistorValue} from "./resistor-color-trio";
-
-console.log(decodedResistorValue(["blue", "green", "orange","yellow"]));//331
-//console.log(decodedResistorValue(["white", "whitei", "white"]));
+import {isLeap,test} from "./leap";
+console.log(isLeap(2000));
+console.log(test(2000));

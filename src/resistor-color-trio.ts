@@ -12,7 +12,7 @@ export function decodedResistorValue(colorNameList: ColorTypes[]): string {
       //let num = colorNameList.map((colorTitle,index)=> index < 2 && COLORS.indexOf(colorTitle));
     numbericColor = tempListNumber.length > 2 ? findTwoDigit([tempListNumber[0], tempListNumber[1]]) : "";
     
-   lastNumber = findLastNumber(tempListNumber);//0
+   lastNumber = findLastNumber(tempListNumber);//43
     console.log('lastNumber'+ lastNumber);
    appendString = findAppendingStr(lastNumber);//0
     console.log("apendString: "+ appendString);
@@ -23,23 +23,28 @@ export function decodedResistorValue(colorNameList: ColorTypes[]): string {
     console.log("appendString: "+appendString);//470000
     if( lastNumber === 3 || 
        ( (Number(appendString) > 1000) && Number(appendString) < 10000 ) || 
-         ((Number(appendString) / 1000) < 1000) && (Number(appendString) / 1000> 0)){
+         ((Number(appendString) / 1000) < 1000) && (Number(appendString) / 1000> 0) && 
+           (Number(appendString) % 1000 !== Number(appendString))){
       return `${Number(appendString)/1000} kiloohms`;
-    }else if(lastNumber > 3 || (Number(appendString) > 1000 && Number(appendString) < 10000000)){
+    }else if(lastNumber > 3 && lastNumber <= 6 || (Number(appendString) > 1000 && Number(appendString) < 10000000)){
       return `${numbericColor} megaohms`; 
     }else if(lastNumber > 6){
       return `${numbericColor} gigaohms`; 
     }else if(lastNumber >9 && lastNumber < 13){
       return `${numbericColor} teraohms`; 
     }else{
+      console.log("-> "+ appendString);
       if (Number(appendString) === 0) {
         return  `${lastNumber} ohms`;
-      }else if(Number(appendString) / 1000 < 1000){
-        return `${( (Number(appendString)/ 1000 * 100) ) < 10 
-          ?  (Number(appendString)/ 1000 * 100) : 
-            (Number(appendString)/ 1000 * 100) * 10 } ohms`;
+      }else if((Number(appendString) / 1000) < 1000){
+        console.log(lastNumber);
+        return `${( 
+                   (((Number(appendString)/ 1000) * 100) < 10) || 
+                     (( (Number(appendString) % 1000) === Number(appendString)) && (lastNumber === 0)) ) 
+          ?  ((Number(appendString)/ 1000) * 100) : 
+            ((Number(appendString)/ 1000) * 100) * 10 } ohms`;
       } 
-      return '';
+      return 'not found';
     }
 }
 
@@ -64,17 +69,14 @@ function findLastNumber(colorNumberic: number[]) : number {
     colorNumberic.shift();
   }
   //[4,3]
-  if(colorNumberic.length > 1){
-    for(let i:number = 0; i < colorNumberic.length; i++ ){
-      
-    }
-  }
+  colorNumberic[0] = Number(colorNumberic.join(""));
   return colorNumberic[0];
 }
 
 //Find appending string. Ex:[4] -> 19 => 190000
 export function findAppendingStr(numeric: number): string {
-  switch(numeric){
+  if(numeric <= 9){ 
+    switch(numeric){
     case 2:
       return countZero(2);
       break;
@@ -101,7 +103,20 @@ export function findAppendingStr(numeric: number): string {
       break;
     default:
       return "0";
+    }
   }
+    //49
+    let arrTemp:number[] = [];
+    let firstNum: number = numeric / 10;
+    let secondNum: number = numeric % 10;
+    //transform it to zero
+    firstNum = firstNum - firstNum;
+    for(let i:number = 1; i <= secondNum; i++){
+      arrTemp.push(0);
+    }
+    arrTemp.push(firstNum);
+    return arrTemp.join("");//'000'
+  
 }
 
 function countZero(userCase: number): string{
