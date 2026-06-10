@@ -1,3 +1,4 @@
-import {isLeap,test} from "./leap";
-console.log(isLeap(2000));
-console.log(test(2000));
+import {format} from './line-up';
+
+
+console.log(format("",4));
