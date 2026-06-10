@@ -12,16 +12,18 @@ export function decodedResistorValue(colorNameList: ColorTypes[]): string {
       //let num = colorNameList.map((colorTitle,index)=> index < 2 && COLORS.indexOf(colorTitle));
     numbericColor = tempListNumber.length > 2 ? findTwoDigit([tempListNumber[0], tempListNumber[1]]) : "";
     
-   lastNumber = findLastNumber(tempListNumber);//4
+   lastNumber = findLastNumber(tempListNumber);//0
     console.log('lastNumber'+ lastNumber);
-   appendString = findAppendingStr(lastNumber);//00 00
+   appendString = findAppendingStr(lastNumber);//0
     console.log("apendString: "+ appendString);
     console.log("numbericColor: "+ numbericColor);
-    appendString = numbericColor + appendString;//47 
+    appendString = numbericColor + appendString;//00 
 
    
     console.log("appendString: "+appendString);//470000
-    if( lastNumber === 3 || ( (Number(appendString) > 1000) && Number(appendString) < 10000 ) || ((Number(appendString) / 1000) < 1000)){
+    if( lastNumber === 3 || 
+       ( (Number(appendString) > 1000) && Number(appendString) < 10000 ) || 
+         ((Number(appendString) / 1000) < 1000) && (Number(appendString) / 1000> 0)){
       return `${Number(appendString)/1000} kiloohms`;
     }else if(lastNumber > 3 || (Number(appendString) > 1000 && Number(appendString) < 10000000)){
       return `${numbericColor} megaohms`; 
@@ -57,9 +59,15 @@ function findTwoDigit(listNumeric: number[]):string {
 
 //Find last number ex: [7,3,6] => [6]
 function findLastNumber(colorNumberic: number[]) : number {
-  //[1,2,3]
+  //[6,5,4,3]
   for(let i:number = 0; i < 2; i++){
     colorNumberic.shift();
+  }
+  //[4,3]
+  if(colorNumberic.length > 1){
+    for(let i:number = 0; i < colorNumberic.length; i++ ){
+      
+    }
   }
   return colorNumberic[0];
 }
