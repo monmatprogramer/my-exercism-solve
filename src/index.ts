@@ -1,4 +1,2 @@
-import {format} from './line-up';
+import {toRna} from './rna-transcription';
 
-
-console.log(format("",4));
