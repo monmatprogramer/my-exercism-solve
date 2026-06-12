@@ -1,2 +1,3 @@
-import {toRna} from './rna-transcription';
-console.log(toRna('T'));
+import {age} from './space-age';
+
+console.log(age('earth',1000000000));
