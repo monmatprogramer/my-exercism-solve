@@ -1,3 +1,4 @@
-import {age} from './space-age';
+import {Square} from "./square-static-learn";
+import {DnDCharacter} from "./dnd-character";
 
-console.log(age('earth',1000000000));
+console.log(DnDCharacter.getModifierFor(3));
