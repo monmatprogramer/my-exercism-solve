@@ -1,4 +1,4 @@
-import {format} from './line-up';
+import {Square} from "./square-static-learn";
+import {DnDCharacter} from "./dnd-character";
 
-
-console.log(format("",4));
+console.log(DnDCharacter.getModifierFor(3));
