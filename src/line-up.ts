@@ -17,7 +17,7 @@ export function format(firstName: CustomerName, orderNum: number): string {
 }
 // Check valid and transform name
 
-function validFirstName(firstName: CustomerName): string | boolean {
+functio validFirstName(firstName: CustomerName): string | boolean {
   //Ex: mat -> Mat
   let errMsg:string = '';
   //check empty name;
