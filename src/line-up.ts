@@ -40,7 +40,7 @@ function ordinalNumber(orderNum: number):string{
       if(orderNum > 10000){
         throw new Error("Not allow input number");
       }
-      return `${orderNum}th`;
+      return `${orderNum}th`
     default:
       throw new Error("invalid number");
   }
