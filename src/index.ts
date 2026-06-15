@@ -1,4 +1,5 @@
-import {Square} from "./square-static-learn";
-import {DnDCharacter} from "./dnd-character";
+import {isPangram} from "./pangram";
 
-console.log(DnDCharacter.getModifierFor(3));
+const temp: boolean = isPangram("S");
+
+console.log(temp);
