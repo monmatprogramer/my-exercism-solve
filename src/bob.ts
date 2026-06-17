@@ -1,20 +1,21 @@
 
 export function hey(message: string): string {
   message = cleanText(message);
-  console.log(`👉 Your message is ${message}`);
-  if((message.length === 0 || isTap(message) || isSpecialChar(message))){
+  if((message.length === 0 || isTap(message))){
     return "Fine. Be that way!";
   }
   // Is Question mark
     // if it has no questio mark
    if( !isQuestion(message)){
-      // it is capitial letter
-     if(isYelling(message)){
-      return "Whoa, chill out!";
+     if(message.startsWith("Let")){return "Whatever."}
+     // it is capitial letter
+     if(isYelling(message) || isMark(message)){
+      return "Whoa, chill out!" ;
      }
      //it is number
       if(isTabAtEnd(message)){
         return "Whatever.";
+      
       }
    }else if(isQuestion(message) && isYelling(message)){
       //ALL CAP and ?
@@ -22,7 +23,7 @@ export function hey(message: string): string {
    }else if(isYelling(message)){
      return "Whoa, chill out!"; 
    }
-return isQuestion(message) ? "sure" : "Whatever";
+return isQuestion(message) ? "Sure." : "Whatever.";
 
 }
 
@@ -35,11 +36,24 @@ function isQuestion(message: string): boolean {
   return message.endsWith("?");
 }
 
+//check ! mark
+function isMark(message: string):boolean{
+ // found => true
+  // not found => false
+  return message.endsWith("!");
+}
+function isSpecCh(message:string):boolean{
+  //true = has 
+  //false = not has
+  //1 create a patter to check special character
+  const spe: RegExp = /[%^\*@#\$\(]/;
+  //check and return 
+  return spe.test(message);
+}
 function isYelling(message: string):boolean{
   // check letter
   // check all caps
   // return true = it is all caps
-  // TODO: Fix this
   if(isNumber(message)){return false;} 
   return /^[^a-z]+$/.test(message);
   
