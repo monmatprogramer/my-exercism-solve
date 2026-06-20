@@ -57,21 +57,40 @@ const initialMap =  (wordArr: string[]): Map<string,number> => {
   console.log(`👉 word array: ${wordArr}`);
   console.log(`🔢 total legnth : ${wordArr.length - 1}`);
   // find match word
-  let tempArr: string[] = [];
+  let tempArr: string[] = wordArr;
   let found: string;
   const wordMap = new Map<string,number>();
 
   let count:number = 0;
-  
-  for(let i: number = 0; i < wordArr.length; i++){
-   console.log(wordArr[i]); 
-    for(let j:number = i+1; j < wordArr.length; j++){
-      if(wordArr[i] === wordArr[j]){
-        wordMap.set(wordArr[i], count++)
-      }
-    }
-  }
+    
+  for(let i:number = 0; i < wordArr.length; i++){
+    let value1: string = wordArr[i];
+    for(let j:number = i+1; j < tempArr.length; j++){
+      let value2: string = tempArr[j];
+      console.log(wordArr[i]);
+      console.log(wordArr[j]);
+      console.log("\n");
 
+      if(value1 === value2){
+          console.log("😊 ", value1 === value2);
+          let foundWord: string [] = wordArr.filter((v) => v === value1 );
+          console.log(foundWord);
+          let notFoundWord: string [] = wordArr.filter((v) => v !== value1 );
+          console.log("\n");
+          console.log(notFoundWord);
+          tempArr = notFoundWord;
+          wordArr = tempArr;
+          wordMap.set(wordArr[i], foundWord.length);
+          console.log(wordMap.get(wordArr[i])); 
+      }else{
+          count = 0;
+          wordMap.set(value2, count+1);
+       }
+    }
+
+  }
+  console.log(wordArr);
+  console.log(wordMap); 
   return wordMap;
 };
 
