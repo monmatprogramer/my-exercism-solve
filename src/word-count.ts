@@ -1,25 +1,32 @@
 // store word count here
 let totalWord: number = 0;
 
-export function count(words:string):number{
-  console.log(`👤 user input: ${words}`);
+export function count(words:string):Map<string,number>{
   //convert to lowercase
  const lc:string = convertToLowercase(words);
   // get array list  ['word', 'smart']
  const wordArr: string[] = toArray(lc);
   const wordMap = initialMap(wordArr);
  console.log("----End----");
-  return totalWord;
+  return wordMap;
 }
 
 function convertToLowercase(words:string):string{
-  const lc: string = words.toLocaleLowerCase();
-  const arr:string[] = words.split(" ");
-  
-  //for(const [index, value] of arr.entries()){
-    //findApostrophes(words);
-  //}
- // findApostrophes(words);
+  //findSeqApostrophes(words);
+  findApostrophes(words);
+  words = words.replace(/[^a-zA-Z0-9\s']/g, " ").replace(/^'|'$/g,"");
+  //remove double space
+  if(words.includes("  ")){
+    words = words.replaceAll("  "," ");
+  }
+  if(words.includes(",")){
+    words = words.replaceAll(',', ' ');
+  }
+  if(words.includes("\n")){
+    words = words.replace(/\n/g, "");
+  }
+  console.log(words);
+  const lc: string = words.trim().toLocaleLowerCase();
   return lc;
 }
 
@@ -54,43 +61,12 @@ const findSeqApostrophes = (text:string) => {
 }
  // create a function to initialize a new map
 const initialMap =  (wordArr: string[]): Map<string,number> => {
-  console.log(`👉 word array: ${wordArr}`);
-  console.log(`🔢 total legnth : ${wordArr.length - 1}`);
-  // find match word
-  let tempArr: string[] = wordArr;
-  let found: string;
-  const wordMap = new Map<string,number>();
-
-  let count:number = 0;
-    
-  for(let i:number = 0; i < wordArr.length; i++){
-    let value1: string = wordArr[i];
-    for(let j:number = i+1; j < tempArr.length; j++){
-      let value2: string = tempArr[j];
-      console.log(wordArr[i]);
-      console.log(wordArr[j]);
-      console.log("\n");
-
-      if(value1 === value2){
-          console.log("😊 ", value1 === value2);
-          let foundWord: string [] = wordArr.filter((v) => v === value1 );
-          console.log(foundWord);
-          let notFoundWord: string [] = wordArr.filter((v) => v !== value1 );
-          console.log("\n");
-          console.log(notFoundWord);
-          tempArr = notFoundWord;
-          wordArr = tempArr;
-          wordMap.set(wordArr[i], foundWord.length);
-          console.log(wordMap.get(wordArr[i])); 
-      }else{
-          count = 0;
-          wordMap.set(value2, count+1);
-       }
-    }
-
+  let result: string[] = [];
+  const myMap = new Map<string, number> ();
+  for(const [index, value] of wordArr.entries()){
+    result = wordArr.filter((element) => element === value );
+    myMap.set(value, result.length);
   }
-  console.log(wordArr);
-  console.log(wordMap); 
-  return wordMap;
+  return myMap;
 };
 
