@@ -14,13 +14,15 @@ export function count(words:string):Map<string,number>{
 function convertToLowercase(words:string):string{
   //findSeqApostrophes(words);
   findApostrophes(words);
-  words = words.replace(/[^a-zA-Z0-9\s']/g, " ").replace(/^'|'$/g,"");
+  words = cleanMessyData(words);
+  //multiple spaces
+  words = words.replace(/\s+/g, " ");
   //remove double space
-  if(words.includes("  ")){
-    words = words.replaceAll("  "," ");
-  }
+  //if(words.includes("  ")){
+  //  words = words.replace(/  /g," ");
+  //}
   if(words.includes(",")){
-    words = words.replaceAll(',', ' ');
+    words = words.replace(/,/g, ' ');
   }
   if(words.includes("\n")){
     words = words.replace(/\n/g, "");
@@ -29,7 +31,10 @@ function convertToLowercase(words:string):string{
   const lc: string = words.trim().toLocaleLowerCase();
   return lc;
 }
-
+//Check messy data
+function cleanMessyData(input:string):string{
+    return input.replace(/\s+/g,' ').replace(/[^a-zA-Z0-9\s']/g,' ').replace(/(^|[^a-zA-Z])'|'([^a-zA-Z]|$)/g, "$1$2").replace(/ +/g,' ').trim();
+}
 // Create a function to conver to array
 const toArray = (words: string):string[] => {
   const wordArr: string[] = words.split(" ");
