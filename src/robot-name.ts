@@ -6,36 +6,43 @@ export class Robot {
   _name: string;
 
 
-  constructor() {}
-
-  // helpers
-  private generateName(){
-  //regex 2uppercase 3digit
-  const regex = /^[A-Z]{2}\d{3}$/;
-
+  constructor() {
+    // take the last item out
+    this._name = Robot.nameDeck.pop()!;
   }
-  //public get name(): string {
-  //}
+
+
+  public get name(): string {
+    return this._name;
+  }
 
   public resetName(): void {
+    this._name = Robot.nameDeck.pop()!;
   }
 
   public static releaseNames(): void {
+    Robot.nameDeck = buildNames();
   }
 }
 
+function buildNames():string[] {
+  let combineNames: string[] = [];
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  for(let l1 = 0; l1 < 26; l1++){
+    for(let l2 = 0; l2 < 26; l2++){
+      for (let n = 0; n < 1000; n++){
+        let letter1 = alphabet[l1];
+        let letter2 = alphabet[l2];
 
-function buildNames(): string[] {
-  let combineNames:string[] = [];
-  let names: string = "";
-  for(let i: number = 1; i <= 2; i++){
-    let tempName:string = names;
-    names = tempName + getRandomLetter();
-  } 
-  names = names + getRandomNumber();
-  combineNames.push(names);
+        let numberString = n.toString().padStart(3, '0');
+        combineNames.push(letter1 + letter2 + `${numberString}`);
+      }
+    }
+  }
+  shuffleArray(combineNames);
   return combineNames;
-};
+}
+
 
 function shuffleArray(inputs: string[]){
   for(let i = inputs.length -1; i > 0; i--){
@@ -45,20 +52,4 @@ function shuffleArray(inputs: string[]){
 }
 
 
-function getRandomLetter():string{
-    const alphabt: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const randomDecimal: number = Math.random();
-    const randomIndex: number = Math.floor(randomDecimal * alphabt.length);
-    return alphabt[randomIndex];
-}
-
-function getRandomNumber(): string{
-    const rn1: number = Math.floor(Math.random() * 10);
-    const rn2: number = Math.floor(Math.random() * 10);
-    const rn3: number = Math.floor(Math.random() * 10);
-    //combine 
-    const result = `${rn1}${rn2}${rn3}`;
-
-    return result;
-};
 
