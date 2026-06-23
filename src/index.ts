@@ -2,4 +2,4 @@ import {Robot} from "./robot-name";
 
 const robot1 = new Robot();
 
-
+console.log(Robot.nameDeck);
