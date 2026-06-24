@@ -1,14 +1,20 @@
-export class Robot{
-  #name:string;
-  test:string
-  constructor(){
-    this.#name = "RX832";
-    this.test = "test";
+class User{
+  constructor(private _firstName:string, private _lastName:string){
+    this.greeting();
+  }
+  
+  get firstName(){
+    return this._firstName;
   }
 
-  public getName(): string{
-    return this.#name;
+  get lastName(){
+    return this._lastName;
   }
 
+  greeting(){
+    console.log(`Nice to see you, ${this.firstName} ${this.lastName}`);
+  }
 }
+
+const user = new User("Mat", "Mon");
 
