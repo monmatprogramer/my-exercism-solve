@@ -1,5 +1,7 @@
 import {Clock} from "./clock";
 
-const t = new Clock(8);
-console.log(t.toString());
+const cl1 = new Clock(0,0);
+const cl2 = new Clock(3,0);
 
+cl1.equals(cl2);
+console.log(cl1.toString());
