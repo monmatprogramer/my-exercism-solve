@@ -1,7 +1,5 @@
-import {Clock} from "./clock";
+import {Clock} from "./clock-enhance";
 
-const cl1 = new Clock(0,0);
-const cl2 = new Clock(3,0);
+const c = new Clock(3,45);
+console.log(c.toString());
 
-cl1.equals(cl2);
-console.log(cl1.toString());

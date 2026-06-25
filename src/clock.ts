@@ -1,7 +1,7 @@
 export class Clock {
-
+  
   private totalMinutes: number;
-
+  
   constructor(private hour: number, private minute: number = 0) {
     this.totalMinutes = (this.hour * 60) + this.minute;
     this.totalMinutes = ((this.totalMinutes % 1440) + 1440) % 1440;
