@@ -19,8 +19,15 @@ export class Matrix {
 
  
   get columns(): number[][]{
-    for(let row:number = 0;){
+    const onlyCol: number[][] = [[]];
+    let tempCol: number[] = [];
+    for(let i:number = 0; i < this._myMatrix[0].length; i ++ ){
+      for(let j:number = 0; j < this._myMatrix.length; j++){
+        tempCol.push(this._myMatrix[j][i]); 
+      }
+      onlyCol[i] = tempCol;
+      tempCol = [];
     }
-    return [[]];  
+    return onlyCol;  
   }
 }
