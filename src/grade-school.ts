@@ -7,7 +7,7 @@ export class GradeSchool {
   // value: name
 
   //Private a list of the student
-  private static STUDEN_LIST: Map<number, string[]>; 
+  private static STUDENT_LIST: Map<number, string[]>; 
   
   roster() {
      
@@ -17,6 +17,10 @@ export class GradeSchool {
   }
 
   // return the list of students for one specific grade
-  grade() {
+  grade(score: number): string[] {
+    
+
+    // Return copy array
+    return [...GradeSchool.STUDENT_LIST.get(3)];
   }
 }
