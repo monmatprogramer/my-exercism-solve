@@ -1,5 +1,3 @@
-import {Clock} from "./clock-enhance";
+import {GradeSchool} from "./grade-school";
 
-const c = new Clock(3,45);
-console.log(c.toString());
-
+const g = new GradeSchool();
