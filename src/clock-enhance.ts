@@ -31,4 +31,6 @@ export class Clock{
   public minus(minutesToMinus: number): Clock{
     return new Clock(0, this.totalMinutes - minutesToMinus);
   }
+
+  //TODO: add equals function here
 }
