@@ -1,4 +1,9 @@
 import {GradeSchool} from "./grade-school";
 
-const g = new GradeSchool();
-g.add("Mat", 100);
+const school = new GradeSchool();
+
+school.add('Blair', 2)
+school.add('James', 2)
+school.add('Paul', 2)
+
+console.log(school.roster());
