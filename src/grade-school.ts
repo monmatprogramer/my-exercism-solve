@@ -18,20 +18,7 @@ export class GradeSchool {
   }
 
   add(stdName: string, score: number) {
-    //Check the score exist or not
-    if(!GradeSchool.STUDENT_LIST.has(score)){ // if score does not exist
-      //Add score
-      GradeSchool.STUDENT_LIST.set(score, [stdName]);
-      GradeSchool.STUDENT_LIST.get(score)!.sort();
-    }else{
-      let stdNameArray:string[] = GradeSchool.STUDENT_LIST.get(score)!;
-      //check student name exist in the score or not
-      stdNameArray.indexOf(stdName) !== -1 ?
-        console.log('This student is already.') :
-        GradeSchool.STUDENT_LIST.get(score)!.push(stdName);
-
-      GradeSchool.STUDENT_LIST.get(score)!.sort();
-    }
+    addStudent(stdName, score, GradeSchool.STUDENT_LIST); 
 
   }
 
@@ -40,4 +27,21 @@ export class GradeSchool {
     // Return copy array
     return [...GradeSchool.STUDENT_LIST.get(score)!];
   }
+}
+
+function addStudent(stdName: string, score: number, tm: Map<number, string[]> ){
+   //Check the score exist or not
+    if(!tm.has(score)){ // if score does not exist
+      //Add score
+      tm.set(score, [stdName]);
+      tm.get(score)!.sort();
+    }else{
+      let stdNameArray:string[] = tm.get(score)!;
+      //check student name exist in the score or not
+      stdNameArray.indexOf(stdName) !== -1 ?
+        console.log('This student is already.') :
+        tm.get(score)!.push(stdName);
+
+      tm.get(score)!.sort();
+    }
 }
