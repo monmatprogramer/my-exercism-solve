@@ -24,8 +24,9 @@ export class GradeSchool {
   // return the list of students for one specific grade
   grade(score: number): string[] {
     // Return copy array
-    return [...this.STUDENT_LIST.get(score)!];
-  }
+    let tempArray: string[] = this.STUDENT_LIST.get(score)!;
+    return tempArray ? [...tempArray]:[];
+   }
 }
 function addStd(stdName: string, score: number, tm: Map<number, string[]>){
   console.log(`AddStd`);
