@@ -14,6 +14,7 @@ export class GradeSchool {
     for(const [key, value] of this.STUDENT_LIST){
       result[key] = [...value];
     }
+    console.log(result);
     return result;
   }
 
