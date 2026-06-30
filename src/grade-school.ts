@@ -10,9 +10,9 @@ export class GradeSchool {
   private STUDENT_LIST = new Map<number, string[]>(); 
     
   roster(): Record<number, string[]>{
-    const result: Record<number, string[]> = {};
+    const result:Record<number, string[]> = {};
     for(const [key, value] of this.STUDENT_LIST){
-      result[key] = value;
+      result[key] = [...value];
     }
     return result;
   }
@@ -28,27 +28,18 @@ export class GradeSchool {
     return tempArray ? [...tempArray]:[];
    }
 }
-function addStd(stdName: string, score: number, tm: Map<number, string[]>){
-  console.log(`AddStd`);
-  for(const [key, value] of tm){
-    console.log(key);
-  }
-  console.log(`---- END ----`);
-}
+
 
 function addStudent(stdName: string, score: number, tm: Map<number, string[]> ){
-   //Check the score exist or not
-    if(!tm.has(score)){ // if score does not exist
-      //Add score
-      tm.set(score, [stdName]);
-      tm.get(score)!.sort();
-    }else{
-      let stdNameArray:string[] = tm.get(score)!;
-      //check student name exist in the score or not
-      stdNameArray.indexOf(stdName) !== -1 ?
-        console.log('This student is already.') :
-        tm.get(score)!.push(stdName);
-
-      tm.get(score)!.sort();
-    }
+  for(const [key, value] of tm){
+    const filteredStudents = value.filter(name => name !== stdName);
+    tm.set(key, filteredStudents);
+  }  
+  if(!tm.has(score)){
+    tm.set(score, [stdName]);
+    tm.get(score)!.sort();
+  }else{
+    tm.get(score)!.push(stdName);
+    tm.get(score)!.sort();
+  }
 }

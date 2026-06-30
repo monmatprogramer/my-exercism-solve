@@ -1,5 +1,5 @@
 import {GradeSchool} from "./grade-school";
 
 const school = new GradeSchool();
-
-console.log(school.grade(1));
+console.log(school.roster());
+school.add('Mat', 1);
