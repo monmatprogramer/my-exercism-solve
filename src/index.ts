@@ -1,7 +1,2 @@
-import {GradeSchool} from "./grade-school";
+import {commands} from "./secret-handshake";
 
-const school = new GradeSchool();
-console.log(school.roster());
-school.add('Mat', 1);
-
-school.roster();
