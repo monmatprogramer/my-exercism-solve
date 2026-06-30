@@ -7,26 +7,32 @@ export class GradeSchool {
   // value: name
 
   //Private a list of the student
-  private static STUDENT_LIST = new Map<number, string[]>(); 
+  private STUDENT_LIST = new Map<number, string[]>(); 
     
   roster(): Record<number, string[]>{
     const result: Record<number, string[]> = {};
-    for(const [key, value] of GradeSchool.STUDENT_LIST){
+    for(const [key, value] of this.STUDENT_LIST){
       result[key] = value;
     }
     return result;
   }
 
   add(stdName: string, score: number) {
-    addStudent(stdName, score, GradeSchool.STUDENT_LIST); 
-
+    addStudent(stdName, score, this.STUDENT_LIST);
   }
 
   // return the list of students for one specific grade
   grade(score: number): string[] {
     // Return copy array
-    return [...GradeSchool.STUDENT_LIST.get(score)!];
+    return [...this.STUDENT_LIST.get(score)!];
   }
+}
+function addStd(stdName: string, score: number, tm: Map<number, string[]>){
+  console.log(`AddStd`);
+  for(const [key, value] of tm){
+    console.log(key);
+  }
+  console.log(`---- END ----`);
 }
 
 function addStudent(stdName: string, score: number, tm: Map<number, string[]> ){
