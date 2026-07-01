@@ -16,7 +16,6 @@ function isReverse(lb: number[]): boolean{
   //first digit
   const fd: number = lb[0];
   const result: boolean = (len === 5) && (fd === 1) ? true : false;
-  console.log(result);
   return result;
 }
 
