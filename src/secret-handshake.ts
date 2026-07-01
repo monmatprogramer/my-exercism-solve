@@ -10,7 +10,8 @@ export function commands(input:number): string[] {
   return createSecretReverse(listBinary);
  }else{
   //for not reverse
-  return [];
+  return createSecretNotReverse(listBinary);
+  //return [];
  }
 }
 
@@ -34,7 +35,19 @@ function createSecretReverse(lb:number[]): string[] {
   
   return sm.length > 0 ? sm.reverse() : sm;
 }
-
+function createSecretNotReverse(lb: number[]): string[]{
+  const isAllTrue:boolean = isTrueFourDigit(lb);
+  if(isAllTrue){
+    return shm;
+  }else{
+    return [''];
+  }
+}
+// This function to check four digit only 
+function isTrueFourDigit(lb: number[] ): boolean{
+  const checkFalse = lb.map((v) => v === 1).includes(false);
+  return (lb.length === 4) && (checkFalse === false) ? true: false;
+}
 
 function isReverse(lb: number[]): boolean{
   //ture : reverse 
