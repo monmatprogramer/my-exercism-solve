@@ -4,8 +4,29 @@ const shm:string[] = ['wink', 'double blink', 'close your eyes','jump'];
 
 export function commands(input:number){
  const listBinary: number[] = convertToBinary(input); 
- isReverse(listBinary);
+ const ir: boolean = isReverse(listBinary);
+ if(ir){
+ //for reverse
+  createSecret(listBinary);
+ }else{
+  //for not reverse
+ }
 }
+
+//Reverse function
+function createSecret(lb:number[]): string[] {
+  //length
+  const len: number = lb.length
+
+  //Skip first digit because it show only reverse, not value
+  for(let i: number = len - 1; i > 0 ;i--){
+    console.log(lb[i]);
+  }
+
+  return [''];
+}
+
+
 function isReverse(lb: number[]): boolean{
   //ture : reverse 
   //false: not reverse
