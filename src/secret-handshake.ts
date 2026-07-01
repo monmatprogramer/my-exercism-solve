@@ -7,23 +7,34 @@ export function commands(input:number){
  const ir: boolean = isReverse(listBinary);
  if(ir){
  //for reverse
-  createSecret(listBinary);
+  createSecretReverse(listBinary);
  }else{
   //for not reverse
  }
 }
 
 //Reverse function
-function createSecret(lb:number[]): string[] {
+function createSecretReverse(lb:number[]): string[] {
+  //Remove the first digit
+  lb.shift();
   //length
   const len: number = lb.length
+  //list of secret message
+  const sm:string[] = [];
+  //Reverse shm for matching with sm array
+  const rsmh: string[] = shm.reverse();
 
-  //Skip first digit because it show only reverse, not value
-  for(let i: number = len - 1; i > 0 ;i--){
+  //generate secret
+  for(let i: number = len - 1; i >= 0 ;i--){
     console.log(lb[i]);
+    if(lb[i] === 1){
+      sm.push(rsmh[i]);
+    }
   }
-
-  return [''];
+  if(sm.length > 0){
+    sm.reverse();
+  }
+  return sm;
 }
 
 
