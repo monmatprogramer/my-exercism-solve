@@ -1,5 +1,5 @@
 import {commands} from "./secret-handshake";
 
 
-commands(26);
+console.log(commands(15));
 

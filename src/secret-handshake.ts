@@ -2,14 +2,15 @@
 //secret handshake message
 const shm:string[] = ['wink', 'double blink', 'close your eyes','jump'];
 
-export function commands(input:number){
+export function commands(input:number): string[] {
  const listBinary: number[] = convertToBinary(input); 
  const ir: boolean = isReverse(listBinary);
  if(ir){
  //for reverse
-  createSecretReverse(listBinary);
+  return createSecretReverse(listBinary);
  }else{
   //for not reverse
+  return [];
  }
 }
 
@@ -26,15 +27,12 @@ function createSecretReverse(lb:number[]): string[] {
 
   //generate secret
   for(let i: number = len - 1; i >= 0 ;i--){
-    console.log(lb[i]);
     if(lb[i] === 1){
       sm.push(rsmh[i]);
     }
   }
-  if(sm.length > 0){
-    sm.reverse();
-  }
-  return sm;
+  
+  return sm.length > 0 ? sm.reverse() : sm;
 }
 
 
