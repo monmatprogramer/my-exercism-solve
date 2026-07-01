@@ -24,7 +24,7 @@ function createSecretReverse(lb:number[]): string[] {
   //list of secret message
   const sm:string[] = [];
   //Reverse shm for matching with sm array
-  const rsmh: string[] = shm.reverse();
+  const rsmh: string[] = [...shm].reverse();
 
   //generate secret
   for(let i: number = len - 1; i >= 0 ;i--){
