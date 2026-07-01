@@ -37,10 +37,18 @@ function createSecretReverse(lb:number[]): string[] {
 }
 function createSecretNotReverse(lb: number[]): string[]{
   const isAllTrue:boolean = isTrueFourDigit(lb);
+  const finalResult: string[] = [];
   if(isAllTrue){
     return shm;
   }else{
-    return [''];
+    let t = lb;
+    t.reverse();
+    for(let i:number = 0; i < t.length; i++){
+      if(t[i] === 1){
+        finalResult.push(shm[i]);
+      }
+    } 
+    return finalResult;
   }
 }
 // This function to check four digit only 
