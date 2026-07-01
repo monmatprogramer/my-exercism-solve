@@ -1,5 +1,5 @@
 import {commands} from "./secret-handshake";
 
 
-commands(31);
+commands(16);
 
