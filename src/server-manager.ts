@@ -6,5 +6,14 @@ export class ServerManager{
     return "Server is running smoothly!";
  }
 
- const myManager = new ServerManager();
+}
+
+const myManager = new ServerManager();
+
+try{
+  console.log("Attempting to start the server with 2GB...");
+  const status = myManager.startServer(2);
+  console.log(status);
+}catch(error: any){
+  console.log("Caught an error: ", error.message);
 }
