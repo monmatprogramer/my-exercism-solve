@@ -14,7 +14,3 @@ class User{
   }
 }
 
-const user = new User('monmat');
-
-user.login();
-console.log(user.isLogin);
