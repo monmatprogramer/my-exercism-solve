@@ -66,17 +66,38 @@ export class SplitSecondStopwatch {
     if(this._state !== 'running'){
       throw new Error('cannot lap a stopwatch that is not running');
     }
-    calcTime(duration);
+    console.log('---calcTime---');
+    const totalSecond: number = calcTime(duration);
+    convertToHour(totalSecond);
+    convertToMinute(totalSecond);
+    convertToSecond(totalSecond);
     //calculate duration
     this._total = duration;
   }
 }
 
 // Helper function to calculate stopwatch
-function calcTime(duration: string):string{
+function calcTime(duration: string): number {
  const durationParts: string[] = duration.split(':');
- console.log(durationParts.map(Number));
  const [hour, minute, second] = durationParts.map(Number);
- 
- return '00:00:00';
+  // seconds
+ const result: number =  hour * 3600 + minute * 60 + second;
+ console.log(result);
+ return result;
+}
+
+function convertToHour(totalSeconds: number): number{
+  const hour = Math.floor(totalSeconds / 3600);
+  console.log(hour);
+  return hour;
+}
+function convertToMinute(totalSeconds: number): number{
+  const minute = Math.floor((totalSeconds % 3600) / 60);
+  console.log(minute);
+  return minute; 
+}
+function convertToSecond(totalSeconds: number): number{
+  const second: number = totalSeconds % 60;
+  console.log(second);
+  return second;
 }
