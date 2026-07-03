@@ -5,7 +5,7 @@ export class SplitSecondStopwatch {
   private _previousLaps: string[];
   
   constructor() {
-   this._state = 'ready';
+   this._state = 'running'; //ready
    this._currentLap = '00:00:00';
    this._total = '00:00:00';
    this._previousLaps = [];
@@ -66,7 +66,17 @@ export class SplitSecondStopwatch {
     if(this._state !== 'running'){
       throw new Error('cannot lap a stopwatch that is not running');
     }
+    calcTime(duration);
     //calculate duration
     this._total = duration;
   }
+}
+
+// Helper function to calculate stopwatch
+function calcTime(duration: string):string{
+ const durationParts: string[] = duration.split(':');
+ console.log(durationParts.map(Number));
+ const [hour, minute, second] = durationParts.map(Number);
+ 
+ return '00:00:00';
 }
