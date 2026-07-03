@@ -1,31 +1,30 @@
 export class SplitSecondStopwatch {
-  state: string;
-  currentLap: string;
-  total: string;
-  previousLaps: string[];
+  private state: string;
+  private currentLap: string;
+  private total: string;
+  private previousLaps: string[];
   
   constructor() {
    this.state = 'ready';
    this.currentLap = '00:00:00';
    this.total = '00:00:00';
-   previousLaps = [];
+   this.previousLaps = [];
   }
   // state stopwatch
   public get state(): string {
-   
-    return 'ready';
+    return this.state;
   }
 
   public get currentLap(): string {
-    return '00:00:00';
+    return this.currentLap;
   }
 
   public get total(): string {
-    return '00:00:00';
+    return total;
   }
 
   public get previousLaps(): string[] {
-    return [];
+    return this.previousLaps;
   }
 
   // start stopwatch
