@@ -5,7 +5,10 @@ export class SplitSecondStopwatch {
   previousLaps: string[];
   
   constructor() {
-    
+   this.state = 'ready';
+   this.currentLap = '00:00:00';
+   this.total = '00:00:00';
+   previousLaps = [];
   }
 
   public get state(): string {
