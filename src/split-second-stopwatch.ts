@@ -37,8 +37,12 @@ export class SplitSecondStopwatch {
     return this.state;
   }
 
-  public stop(): unknown {
-    throw new Error('Remove this line and implement the function')
+  public stop(): string {
+    if(this.state === 'stopped'){
+      throw new Error('cannot stop a stopwatch that is not running');
+    }
+    this.state = 'stopped';
+    return this.state;
   }
 
   public lap(): unknown {
