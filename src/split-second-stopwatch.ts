@@ -1,6 +1,11 @@
 export class SplitSecondStopwatch {
+  state: string;
+  currentLap: string;
+  total: string;
+  previousLaps: string[];
+  
   constructor() {
-    throw new Error('Remove this line and implement the function')
+    
   }
 
   public get state(): string {
