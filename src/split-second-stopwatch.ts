@@ -50,6 +50,7 @@ export class SplitSecondStopwatch {
     }
     this.previousLaps.push(this.currentLap);
     this.currentLap = '00:00:00';
+    return this.previousLaps;
   }
 
   public reset(): unknown {
