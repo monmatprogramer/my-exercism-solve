@@ -10,11 +10,9 @@ export class SplitSecondStopwatch {
    this.total = '00:00:00';
    previousLaps = [];
   }
-
+  // state stopwatch
   public get state(): string {
-    if(this.state === 'running'){
-      throw new Error('cannot start an already running stopwatch');
-    }
+   
     return 'ready';
   }
 
@@ -30,8 +28,13 @@ export class SplitSecondStopwatch {
     return [];
   }
 
+  // start stopwatch
   public start(): string {
-    return '';
+    if(this.state === 'running'){
+      throw new Error('cannot start an already running stopwatch');
+    }
+    this.state = 'running';
+    return this.state;
   }
 
   public stop(): unknown {
