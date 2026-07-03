@@ -12,6 +12,9 @@ export class SplitSecondStopwatch {
   }
 
   public get state(): string {
+    if(this.state === 'running'){
+      throw new Error('cannot start an already running stopwatch');
+    }
     return 'ready';
   }
 
