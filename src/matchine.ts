@@ -3,7 +3,7 @@ class Machine{
   power: boolean;
 
   constructor(){
-    this.power = false;
+    this.power = true;
   }
   
   turnOn(){
@@ -16,4 +16,9 @@ class Machine{
 
 const m = new Machine();
 
-console.log(m.power);
+try{
+  m.turnOn();
+  console.log(m.power);
+}catch(error: any){
+  console.log(`The error is ${error.message}`);
+}
