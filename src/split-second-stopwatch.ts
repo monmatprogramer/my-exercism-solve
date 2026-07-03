@@ -85,19 +85,20 @@ function calcTime(duration: string): number {
  console.log(result);
  return result;
 }
-
+// Convert to hour
 function convertToHour(totalSeconds: number): number{
   const hour = Math.floor(totalSeconds / 3600);
-  console.log(hour);
   return hour;
 }
+
+// Convert to minute
 function convertToMinute(totalSeconds: number): number{
   const minute = Math.floor((totalSeconds % 3600) / 60);
-  console.log(minute);
   return minute; 
 }
+
+// Convert to second
 function convertToSecond(totalSeconds: number): number{
   const second: number = totalSeconds % 60;
-  console.log(second);
   return second;
 }
