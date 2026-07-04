@@ -66,6 +66,9 @@ export class SplitSecondStopwatch {
     //add advance time to be current lap and total
     if(this._state === 'stopped'){
       this._currentLap = this._currentLap;
+      // add current to _previousLaps
+      this._previousLaps.push();
+      totalPreviousLaps(this._previousLaps);
       this._total = this._total;
     }else{
       this._currentLap = duration;
@@ -88,9 +91,11 @@ function calcTime(duration: string): number {
  const [hour, minute, second] = durationParts.map(Number);
   // seconds
  const result: number =  hour * 3600 + minute * 60 + second;
- console.log(result);
+//it return total second for futur use
  return result;
 }
+
+
 // Convert to hour
 function convertToHour(totalSeconds: number): number{
   const hour = Math.floor(totalSeconds / 3600);
@@ -107,4 +112,16 @@ function convertToMinute(totalSeconds: number): number{
 function convertToSecond(totalSeconds: number): number{
   const second: number = totalSeconds % 60;
   return second;
+}
+
+
+// Sum previousLaps 
+function totalPreviousLaps(previousLap: string[]){
+  let sumDuration: number = 0; 
+  let totalSecond: number = 0;
+
+  for(const [index, value] of previousLaps.entries() ){
+    totalSecond = totalSecond + calcTime(value);  
+  }
+  console.log(`👉 ${totalSecond}`);
 }
