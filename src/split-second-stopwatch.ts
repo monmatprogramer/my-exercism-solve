@@ -63,19 +63,21 @@ export class SplitSecondStopwatch {
   }
 
   public advanceTime(duration: string){
-    if(this._state !== 'running'){
-      throw new Error('cannot lap a stopwatch that is not running');
-    }
     //add advance time to be current lap and total
-    this._currentLap = duration;
-    this._total = this._currentLap;
+    if(this._state === 'stopped'){
+      this._currentLap = this._currentLap;
+      this._total = this._total;
+    }else{
+      this._currentLap = duration;
+      this._total = this._currentLap;
+    }
     // After it is added the curret lap, the state is "running"
     console.log('---calcTime---');
     const totalSecond: number = calcTime(duration);
     convertToHour(totalSecond);
     convertToMinute(totalSecond);
     convertToSecond(totalSecond);
-    //calculate duration
+    //calculate duration:
     this._total = duration;
   }
 }
