@@ -5,7 +5,7 @@ export class SplitSecondStopwatch {
   private _previousLaps: string[];
   
   constructor() {
-   this._state = 'running'; //ready
+   this._state = 'ready'; //ready
    this._currentLap = '00:00:00';
    this._total = '00:00:00';
    this._previousLaps = [];
@@ -66,6 +66,9 @@ export class SplitSecondStopwatch {
     if(this._state !== 'running'){
       throw new Error('cannot lap a stopwatch that is not running');
     }
+    //add advance time to be current lap
+    this._currentLap = duration;
+
     console.log('---calcTime---');
     const totalSecond: number = calcTime(duration);
     convertToHour(totalSecond);
