@@ -74,15 +74,15 @@ export class SplitSecondStopwatch {
       this._total = this._currentLap;
     }
     // it will got result as total second like 13
-    this._currentLap = totalPreviousLaps(this._previousLaps);
+    const totalSecond= totalPreviousLaps(this._previousLaps);
     // After that we convert total second to hr, mm, second.
-    const hr: number = convertToHour(this._currentLap);
-    const mm: number = convertToMinute(this._currentLap);
-    const ss: number = convertToSecond(this_currentLap);
+    const hr: number = convertToHour(totalSecond);
+    const mm: number = convertToMinute(totalSecond);
+    const ss: number = convertToSecond(totalSecond);
     //conver them to string
-    const [shr,smm, sss]: string[] = [hr, mm, ss].map(String);
-    
-    this._total = duration;
+    const [shr,smm, sss]: string[] = [hr, mm, ss].map(String); 
+    this._total = `${shr.padStart(2,'0')}:${smm.padStart(2,'0')}:${sss.padStart(2,'0')}`;
+    this._currentLap = this._total;
   }
 }
 
