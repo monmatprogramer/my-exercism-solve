@@ -66,9 +66,10 @@ export class SplitSecondStopwatch {
     if(this._state !== 'running'){
       throw new Error('cannot lap a stopwatch that is not running');
     }
-    //add advance time to be current lap
+    //add advance time to be current lap and total
     this._currentLap = duration;
-
+    this._total = this._currentLap;
+    // After it is added the curret lap, the state is "running"
     console.log('---calcTime---');
     const totalSecond: number = calcTime(duration);
     convertToHour(totalSecond);
