@@ -63,24 +63,18 @@ export class SplitSecondStopwatch {
   }
 
   public advanceTime(duration: string){
+    console.log(this._state);
     //add advance time to be current lap and total
     if(this._state === 'stopped'){
-      this._currentLap = this._currentLap;
-      // add current to _previousLaps
-      this._previousLaps.push();
-      totalPreviousLaps(this._previousLaps);
+      this._currentLap = duration;
       this._total = this._total;
     }else{
       this._currentLap = duration;
+      // add current to _previousLaps
+      this._previousLaps.push(this._currentLap);
       this._total = this._currentLap;
     }
-    // After it is added the curret lap, the state is "running"
-    console.log('---calcTime---');
-    const totalSecond: number = calcTime(duration);
-    convertToHour(totalSecond);
-    convertToMinute(totalSecond);
-    convertToSecond(totalSecond);
-    //calculate duration:
+    console.log(this._previousLaps);
     this._total = duration;
   }
 }
@@ -120,7 +114,7 @@ function totalPreviousLaps(previousLap: string[]){
   let sumDuration: number = 0; 
   let totalSecond: number = 0;
 
-  for(const [index, value] of previousLaps.entries() ){
+  for(const [index, value] of previousLap.entries() ){
     totalSecond = totalSecond + calcTime(value);  
   }
   console.log(`👉 ${totalSecond}`);
