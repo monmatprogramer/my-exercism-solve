@@ -68,6 +68,7 @@ export class SplitSecondStopwatch {
       this._total = this._total;
     }else if(this._state === 'lapped'){
       this._previousLaps.push(duration);
+      this._total = totalAdvanceTime(this._previousLaps); 
       this._currentLap = duration;
       this._state = 'running';
       return this._previousLaps;
@@ -129,4 +130,17 @@ function totalPreviousLaps(previousLap: string[]){
   }
   //it return back total second like 13 
   return totalSecond;
+}
+
+
+// totalAdvanceTime
+function totalAdvanceTime(previousLap: string[]): string{
+  const totalSecond = totalPreviousLaps(previousLap);
+  const hr: number = convertToHour(totalSecond);
+  const mm: number = convertToMinute(totalSecond);
+  const ss: number = convertToSecond(totalSecond);
+  //conver them to string
+  const [shr,smm, sss]: string[] = [hr, mm, ss].map(String); 
+  const total = `${shr.padStart(2,'0')}:${smm.padStart(2,'0')}:${sss.padStart(2,'0')}`;
+  return total; 
 }
