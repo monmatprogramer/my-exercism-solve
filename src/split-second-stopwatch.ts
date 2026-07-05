@@ -44,13 +44,12 @@ export class SplitSecondStopwatch {
     return this._state;
   }
 
-  public lap(): string[] {
+  public lap() {
     if(this._state !== 'running'){
       throw new Error('cannot lap a stopwatch that is not running');
     }
-    this._previousLaps.push(this.currentLap);
-    this._currentLap = '00:00:00';
-    return this._previousLaps;
+    this._state = 'lapped';
+    this._currentLap = '';
   }
 
   public reset() {
@@ -67,6 +66,11 @@ export class SplitSecondStopwatch {
     if(this._state === 'stopped'){
       this._currentLap = duration;
       this._total = this._total;
+    }else if(this._state === 'lapped'){
+      this._previousLaps.push(duration);
+      this._currentLap = duration;
+      this._state = 'running';
+      return this._previousLaps;
     }else{
       this._currentLap = duration;
       // add current to _previousLaps
