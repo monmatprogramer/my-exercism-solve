@@ -37,7 +37,7 @@ export class SplitSecondStopwatch {
   }
 
   public stop(): string {
-    if (this._state !== "running") {
+    if (this._state !== "running" && this._state !== "lapped") {
       throw new Error("cannot stop a stopwatch that is not running");
     }
     this._state = "stopped";
