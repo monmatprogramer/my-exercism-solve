@@ -1,3 +1,7 @@
-import { find } from "./binary-search";
-const haystack: number[] = [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377];
-console.log(find(haystack, 21));
+import { LinkedList } from "./linked-list";
+
+const list = new LinkedList<number>();
+
+list.push(10);
+
+list.push(20);
