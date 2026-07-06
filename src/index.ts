@@ -1,7 +1,7 @@
-import { LinkedList } from "./linked-list";
+//import { LinkedList } from "./linked-list";
 
-const list = new LinkedList<number>();
+//const list = new LinkedList<number>();
 
-list.push(10);
+//list.push(10);
 
-list.push(20);
+//list.push(20);
