@@ -2,7 +2,7 @@
 
 export class LinkedList<T> {
   private data: T[] = [];
-
+  private head: T | null = null;
   public push(element: T): void {
     this.data.push(element);
   }
