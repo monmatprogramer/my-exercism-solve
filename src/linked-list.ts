@@ -1,5 +1,5 @@
 // solving linked list problem
-
+import { Node } from "./train-node";
 export class LinkedList<T> {
   private data: T[] = [];
   private head: T | null = null;
@@ -18,6 +18,9 @@ export class LinkedList<T> {
   }
 
   public unshift(element: T): void {
+    //3. create a new Node using the element
+    const node = new Node<T>(element);
+    console.log(node);
     this.data.unshift(element);
   }
 
