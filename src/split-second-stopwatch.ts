@@ -49,7 +49,7 @@ export class SplitSecondStopwatch {
       throw new Error("cannot lap a stopwatch that is not running");
     }
     this._state = "lapped";
-    this._currentLap = "";
+    this._currentLap = "00:00:00";
   }
 
   public reset() {
