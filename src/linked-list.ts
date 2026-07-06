@@ -22,8 +22,9 @@ export class LinkedList<T> {
     const node = new Node<T>(element);
     //4 Make the new Node's next point to the current 'head'
     this.head = node;
-    console.log(node);
     this.data.unshift(element);
+    node.next = this.data[0];
+    console.log(`✍️${node.next}`);
   }
 
   public delete(element: T): void {
