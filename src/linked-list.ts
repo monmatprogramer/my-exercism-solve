@@ -2,7 +2,7 @@
 import { Node } from "./train-node";
 export class LinkedList<T> {
   private data: T[] = [];
-  private head: T | null = null;
+  private head: Node<T> | null = null;
   public push(element: T): void {
     this.data.push(element);
   }
@@ -20,6 +20,8 @@ export class LinkedList<T> {
   public unshift(element: T): void {
     //3. create a new Node using the element
     const node = new Node<T>(element);
+    //4 Make the new Node's next point to the current 'head'
+    this.head = node;
     console.log(node);
     this.data.unshift(element);
   }
