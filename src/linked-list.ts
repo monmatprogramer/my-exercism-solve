@@ -1,21 +1,34 @@
 // solving linked list problem
 
 export class LinkedList<T> {
-  public push(element: number) {}
+  private data: T[] = [];
 
-  public pop(): T {
-    return 0;
+  public push(element: T): void {
+    this.data.push(element);
   }
 
-  public shift(): T {
-    return 0;
+  //If the data is empty => undefined
+  //If the data is not empty => data
+  public pop(): T | undefined {
+    return this.data.pop();
   }
 
-  public unshift(element: number) {}
+  public shift(): T | undefined {
+    return this.data.shift();
+  }
 
-  public delete(element: number) {}
+  public unshift(element: T): void {
+    this.data.unshift(element);
+  }
 
-  public count(): T {
-    return 0;
+  public delete(element: T): void {
+    const index = this.data.indexOf(element);
+    if (index > -1) {
+      this.data.splice(index, 1);
+    }
+  }
+
+  public count(): number {
+    return this.data.length;
   }
 }
