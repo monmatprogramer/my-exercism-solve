@@ -3,8 +3,8 @@
 export function find(haystack: number[], needle: number): number {
   //Sort list
   haystack = toSortedlist(haystack);
-  const check: number = haystack.indexOf(6);
-  if (check === 0) {
+  const check: number = haystack.indexOf(needle);
+  if (check === -1) {
     throw new Error("Value not in array");
   }
   return check;

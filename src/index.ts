@@ -1,3 +1,3 @@
 import { find } from "./binary-search";
-const haystack: number[] = [1, 3, 4, 6, 8, 9, 11];
-console.log(find(haystack, 6));
+const haystack: number[] = [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377];
+console.log(find(haystack, 21));
