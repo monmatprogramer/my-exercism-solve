@@ -1,8 +1,11 @@
 //Prism exercise
 //Create type aliase for 'start'
-type StartType ={
-  x:number;
+type StartType = {
+  x: number;
   y: number;
   angle: number;
 };
-export function findSequence(start: , prisms: unknown): unknown {}
+//Create type aliase for 'prisms'
+type PrismsType = StartType[];
+
+export function findSequence(start: StartType, prisms: unknown): unknown {}
