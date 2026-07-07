@@ -16,17 +16,23 @@ type PrismsType = Position & {
 export function findSequence(start: StartType, prisms: PrismsType[]): number[] {
   // list of result of poiting
   const result: number[] = [];
-  //Check the light of sight
-  for (const [index, value] of prisms.entries()) {
-    calcuAnagle(start.x, value.x, start.y, value.y);
-    // find point match
-    const d: number = calcuDistance(start.x, value.x, start.y, value.y);
-    // valid hit
-    if (d > 0) {
-      result.push(value.id);
+  let c: number = 0;
+  while (c < prisms.length) {
+    //Check the light of sight
+    for (const [index, value] of prisms.entries()) {
+      const primAngle: number = calcuAnagle(start.x, value.x, start.y, value.y);
+      // find point match
+      const d: number = calcuDistance(start.x, value.x, start.y, value.y);
+      // valid hit
+      if (primAngle === start.angle) {
+        result.push(value.id);
+      }
+      // laser moves
+      //start = updateLaser(start, value.x, value.y, value.angle);
     }
-    // laser moves
-    start = updateLaser(start, value.x, value.y, value.angle);
+    // should move here
+    start = updateLaser(start, prisms[c].x, prisms[c].y, prisms[c].angle);
+    c++;
   }
   return result;
 }
@@ -42,7 +48,6 @@ function updateLaser(
   laser.x = px;
   laser.y = pv;
   laser.angle = laser.angle + pa;
-  console.log("updateLaser: ", laser);
   return laser;
 }
 // To Fine distance
@@ -50,11 +55,11 @@ function calcuDistance(x1: number, x2: number, y1: number, y2: number): number {
   const disResult: number = Math.sqrt(
     Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2),
   );
-  console.log("calcuDistance: ", disResult);
   return disResult;
 }
 // Calcuate Angle
 function calcuAnagle(x1: number, x2: number, y1: number, y2: number): number {
+  console.log(`start: ${x1},${y1}`);
   //PI value
   const pi: number = Math.PI;
   let angleResult: number = 0;
