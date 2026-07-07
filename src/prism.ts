@@ -8,4 +8,6 @@ type StartType = {
 //Create type aliase for 'prisms'
 type PrismsType = StartType[];
 
-export function findSequence(start: StartType, prisms: unknown): unknown {}
+export function findSequence(start: StartType, prisms: PrismsType): number[] {
+  return [0, 0];
+}

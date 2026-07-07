@@ -1,6 +1,4 @@
-import { Node } from "./train-node";
-import { LinkedList } from "./linked-list";
-
-const linkList = new LinkedList<number>();
-linkList.unshift(10);
-linkList.unshift(20);
+import { findSequence } from "./prism";
+const start = { x: 0, y: 0, angle: 0 };
+const prisms: { id: number; x: number; y: number; angle: number }[] = [];
+console.log(findSequence(start, prisms));
