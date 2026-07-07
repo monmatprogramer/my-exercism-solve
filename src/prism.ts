@@ -21,14 +21,30 @@ export function findSequence(start: StartType, prisms: PrismsType[]): number[] {
     calcuAnagle(start.x, value.x, start.y, value.y);
     // find point match
     const d: number = calcuDistance(start.x, value.x, start.y, value.y);
+    // valid hit
     if (d > 0) {
       result.push(value.id);
     }
+    // laser moves
+    updateLaser(start, value.x, value.y, value.angle);
   }
   return result;
 }
 
 //Helper function
+// Update laser
+function updateLaser(
+  laser: StartType,
+  px: number,
+  pv: number,
+  pa: number,
+): StartType {
+  laser.x = px;
+  laser.y = pv;
+  laser.angle = laser.angle + pa;
+  console.log("updateLaser: ", laser);
+  return laser;
+}
 // To Fine distance
 function calcuDistance(x1: number, x2: number, y1: number, y2: number): number {
   const disResult: number = Math.sqrt(
