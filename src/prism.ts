@@ -26,7 +26,7 @@ export function findSequence(start: StartType, prisms: PrismsType[]): number[] {
       result.push(value.id);
     }
     // laser moves
-    updateLaser(start, value.x, value.y, value.angle);
+    start = updateLaser(start, value.x, value.y, value.angle);
   }
   return result;
 }
