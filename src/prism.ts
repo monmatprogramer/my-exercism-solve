@@ -20,25 +20,32 @@ export function findSequence(start: StartType, prisms: PrismsType[]): number[] {
   for (const [index, value] of prisms.entries()) {
     calcuAnagle(start.x, value.x, start.y, value.y);
     // find point match
-    if (calcuPointing(start.angle, value.angle)) {
+    const d: number = calcuDistance(start.x, value.x, start.y, value.y);
+    if (d > 0) {
       result.push(value.id);
-      return result;
     }
   }
-  return [0, 0];
+  return result;
 }
 
 //Helper function
 // To Fine distance
-
+function calcuDistance(x1: number, x2: number, y1: number, y2: number): number {
+  const disResult: number = Math.sqrt(
+    Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2),
+  );
+  console.log("calcuDistance: ", disResult);
+  return disResult;
+}
 // Calcuate Angle
-function calcuAnagle(x1: number, x2: number, y1: number, y2: number) {
+function calcuAnagle(x1: number, x2: number, y1: number, y2: number): number {
   //PI value
   const pi: number = Math.PI;
   let angleResult: number = 0;
   //Calculate
   angleResult = Math.atan2(y2 - y1, x2 - x1) * (180 / pi);
   console.log("calcuAnagle: ", angleResult);
+  return angleResult;
 }
 
 // calculate pointing
