@@ -11,6 +11,7 @@ type PrismsType = StartType[];
 export function findSequence(start: StartType, prisms: PrismsType): number[] {
   //Check the light of sight
   for (const [index, value] of prisms.entries()) {
+    calcuAnagle(start.x, value.x, start.y, value.y);
   }
   return [0, 0];
 }
