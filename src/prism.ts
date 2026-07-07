@@ -13,7 +13,7 @@ type StartType = Position;
 type PrismsType = Position & {
   id: number;
 };
-export function findSequence(start: StartType, prisms: PrismsType): number[] {
+export function findSequence(start: StartType, prisms: PrismsType[]): number[] {
   // list of result of poiting
   const result: number[] = [];
   //Check the light of sight
@@ -21,7 +21,8 @@ export function findSequence(start: StartType, prisms: PrismsType): number[] {
     calcuAnagle(start.x, value.x, start.y, value.y);
     // find point match
     if (calcuPointing(start.angle, value.angle)) {
-      return result.push(value.id);
+      result.push(value.id);
+      return result;
     }
   }
   return [0, 0];
