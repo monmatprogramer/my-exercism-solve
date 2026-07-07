@@ -1,7 +1,7 @@
 // solving linked list problem
 import { Node } from "./train-node";
 export class LinkedList<T> {
-  private data: T[] = [];
+  private data: Node<T>[] = [];
   private head: Node<T> | null = null;
   public push(element: T): void {
     this.data.push(element);
@@ -26,6 +26,8 @@ export class LinkedList<T> {
     //4 Make the new Node's next point to the current 'head'
     this.head = node;
     this.data.unshift(this.head.value);
+    //[10]
+    //[20,10]
     if (this.data.lenght > 1) {
       //head.value = 20
     }
