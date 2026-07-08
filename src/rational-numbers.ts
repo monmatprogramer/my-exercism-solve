@@ -17,6 +17,7 @@ export class Rational {
     const demominator: number = b * d;
     const result: number = numberator / demominator;
     console.log(result);
+    gcd(numberator, demominator);
   }
 
   sub() {}
@@ -35,5 +36,23 @@ export class Rational {
 }
 
 function gcd(numberator: number, demominator: number): number {
-  return 0;
+  //make absolute
+  let a: number = Math.abs(numberator);
+  let b: number = Math.abs(demominator);
+  let gcdResult: number = 0;
+  while (true) {
+    if (b === 0) {
+      gcdResult = a;
+    } else {
+      let remainder: number = 0;
+      remainder = a % b;
+      a = b;
+      b = remainder;
+      if (b === 0) {
+        gcdResult = a;
+        break;
+      }
+    }
+  }
+  return gcdResult;
 }
