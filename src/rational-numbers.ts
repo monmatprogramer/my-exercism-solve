@@ -16,8 +16,10 @@ export class Rational {
     const numberator: number = a * d + c * b;
     const demominator: number = b * d;
     const result: number = numberator / demominator;
-    console.log(result);
-    gcd(numberator, demominator);
+    const gcdResult: number = gcd(numberator, demominator);
+    console.log(numberator);
+    console.log(demominator);
+    reduce(numberator, demominator, gcdResult);
   }
 
   sub() {}
@@ -55,4 +57,14 @@ function gcd(numberator: number, demominator: number): number {
     }
   }
   return gcdResult;
+}
+
+function reduce(numberator: number, demominator: number, gcdResult: number) {
+  const a: number = numberator / gcdResult;
+  const b: number = demominator / gcdResult;
+  console.log(a);
+  console.log(b);
+  const result: number = a / b;
+  console.log(result);
+  return result;
 }
