@@ -1,20 +1,20 @@
 //rantonal number
 export class Rational {
   numerator: number;
-  demominator: number;
+  denominator: number;
   gcdResult: number;
   constructor(num: number, de: number) {
     this.numerator = num;
-    this.demominator = de;
+    this.denominator = de;
     this.gcdResult = 0;
   }
 
   add(n2: Rational) {
     // Represent
     const a: number = this.numerator;
-    const b: number = this.demominator;
+    const b: number = this.denominator;
     const c: number = n2.numerator;
-    const d: number = n2.demominator;
+    const d: number = n2.denominator;
     const num: number = a * d + c * b;
     const demom: number = b * d;
     const result: number = num / demom;
@@ -35,10 +35,10 @@ export class Rational {
 
   reduce(): Rational {
     // find gcdResult first
-    this.gcdResult = gcd(this.numerator, this.demominator);
+    this.gcdResult = gcd(this.numerator, this.denominator);
     this.numerator = this.numerator / this.gcdResult;
-    this.demominator = this.demominator / this.gcdResult;
-    return new Rational(this.numerator, this.demominator);
+    this.denominator = this.denominator / this.gcdResult;
+    return new Rational(this.numerator, this.denominator);
   }
 }
 
