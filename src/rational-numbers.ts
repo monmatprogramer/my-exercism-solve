@@ -8,7 +8,12 @@ export class Rational {
   }
 
   add(n2: Rational) {
-    calUreduceFraction(this.n, this.d, n2.n, n2.d);
+    // Represent
+    const a: number = this.n;
+    const b: number = this.d;
+    const c: number = n2.n;
+    const d: number = n2.d;
+    const result: number = ((this.n * n2.d + n2.n * this.d) / this.d) * n2.d;
   }
 
   sub() {}
@@ -25,7 +30,3 @@ export class Rational {
 
   reduce() {}
 }
-
-// Helper function
-// Calculate unreduced fraction
-function calUreduceFraction(n1: number, d1: number, n2: number, d2: number) {}
