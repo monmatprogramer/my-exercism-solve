@@ -30,7 +30,7 @@ export function findSequence(start: StartType, prisms: PrismsType[]): number[] {
       // laser moves
       //start = updateLaser(start, value.x, value.y, value.angle);
     }
-    prisms.shift();
+    //prisms.length > 1 && prisms.shift();
     start = updateLaser(start, prisms[c].x, prisms[c].y, prisms[c].angle);
     console.log("👉 start: ", start);
     c++;
