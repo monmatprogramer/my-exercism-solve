@@ -21,8 +21,6 @@ export function findSequence(start: StartType, prisms: PrismsType[]): number[] {
     //Check the light of sight
     for (const [index, value] of prisms.entries()) {
       const primAngle: number = calcuAnagle(start.x, value.x, start.y, value.y);
-      // find point match
-      //const d: number = calcuDistance(start.x, value.x, start.y, value.y);
       // valid hit
       if (primAngle === start.angle) {
         result.push(value.id);
