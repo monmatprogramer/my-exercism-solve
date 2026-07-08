@@ -33,11 +33,12 @@ export class Rational {
 
   expreal() {}
 
-  reduce() {
+  reduce(): Rational {
     // find gcdResult first
     this.gcdResult = gcd(this.numerator, this.demominator);
     this.numerator = this.numerator / this.gcdResult;
     this.demominator = this.demominator / this.gcdResult;
+    return new Rational(this.numerator, this.demominator);
   }
 }
 
