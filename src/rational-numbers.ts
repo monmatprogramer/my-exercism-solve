@@ -13,7 +13,10 @@ export class Rational {
     const b: number = this.d;
     const c: number = n2.n;
     const d: number = n2.d;
-    const result: number = ((this.n * n2.d + n2.n * this.d) / this.d) * n2.d;
+    const numberator: number = a * d + c * b;
+    const demominator: number = b * d;
+    const result: number = numberator / demominator;
+    console.log(result);
   }
 
   sub() {}
@@ -29,4 +32,8 @@ export class Rational {
   expreal() {}
 
   reduce() {}
+}
+
+function gcd(numberator: number, demominator: number): number {
+  return 0;
 }
