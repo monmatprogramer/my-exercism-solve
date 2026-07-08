@@ -1,79 +1,59 @@
-//Prism exercises
-//Create type aliase for 'start'
-//Create position
-// Base type
-type Position = {
+type Point = {
   x: number;
   y: number;
   angle: number;
 };
-type StartType = Position;
-
-//Create type aliase for 'prisms'
-type PrismsType = Position & {
+type Prism = {
   id: number;
+  x: number;
+  y: number;
+  angle: number;
 };
-export function findSequence(start: StartType, prisms: PrismsType[]): number[] {
-  // list of result of poiting
-  const result: number[] = [];
-  // For move laser
-  const moveLaser: PrismsType[] = [];
-  let c: number = 0;
-  while (c < prisms.length) {
-    //Check the light of sight
-    for (const [index, value] of prisms.entries()) {
-      const primAngle: number = calcuAnagle(start.x, value.x, start.y, value.y);
-      // valid hit
-      if (primAngle === start.angle) {
-        result.push(value.id);
+
+export function findSequence(start: Point, prisms: Prism[]): number[] {
+  const sequence: number[] = [];
+
+  let laserX = start.x;
+  let laserY = start.y;
+  let laserAngle = start.angle;
+
+  while (true) {
+    let closestPrism: Prism | null = null;
+    let shortestDistance = Infinity;
+
+    for (const prism of prisms) {
+      const dx = prism.x - laserX;
+      const dy = prism.y - laserY;
+
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < 0.0001) {
+        continue;
       }
-      // laser moves
-      //start = updateLaser(start, value.x, value.y, value.angle);
+
+      const angleToPrim = Math.atan2(dy, dx) * (180 / Math.PI);
+
+      let diff = (angleToPrim - laserAngle) % 360;
+
+      if (diff < -180) diff += 360;
+      if (diff > 180) diff -= 360;
+
+      const isPointingAtPrism = Math.abs(diff) < 0.0001;
+
+      if (isPointingAtPrism && distance < shortestDistance) {
+        shortestDistance = distance;
+        closestPrism = prism;
+      }
     }
-    //prisms.length > 1 && prisms.shift();
-    start = updateLaser(start, prisms[c].x, prisms[c].y, prisms[c].angle);
-    console.log("👉 start: ", start);
-    c++;
-  }
-  return result;
-}
+    if (closestPrism !== null) {
+      sequence.push(closestPrism.id);
+      laserX = closestPrism.x;
+      laserY = closestPrism.y;
 
-//Helper function
-// Update laser
-function updateLaser(
-  laser: StartType,
-  px: number,
-  pv: number,
-  pa: number,
-): StartType {
-  laser.x = px;
-  laser.y = pv;
-  laser.angle = laser.angle + pa;
-  return laser;
-}
-// To Fine distance
-function calcuDistance(x1: number, x2: number, y1: number, y2: number): number {
-  const disResult: number = Math.sqrt(
-    Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2),
-  );
-  return disResult;
-}
-// Calcuate Angle
-function calcuAnagle(x1: number, x2: number, y1: number, y2: number): number {
-  console.log(`start: ${x1},${y1}`);
-  //PI value
-  const pi: number = Math.PI;
-  let angleResult: number = 0;
-  //Calculate
-  angleResult = Math.atan2(y2 - y1, x2 - x1) * (180 / pi);
-  console.log("calcuAnagle: ", angleResult);
-  return angleResult;
-}
-
-// calculate pointing
-function calcuPointing(an1: number, an2: number): boolean {
-  if (an1 === an2) {
-    return true;
+      laserAngle = laserAngle + closestPrism.angle;
+    } else {
+      break;
+    }
   }
-  return false;
+  return sequence;
 }
