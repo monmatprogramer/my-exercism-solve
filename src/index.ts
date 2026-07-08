@@ -1,3 +1,5 @@
 import { Rational } from "./rational-numbers";
-
-const actual = new Rational(1, 2).add(new Rational(2, 3));
+const actual = new Rational(13, 13);
+actual.reduce();
+console.log(actual.numerator);
+console.log(actual.demominator);

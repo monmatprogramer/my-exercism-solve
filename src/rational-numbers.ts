@@ -2,9 +2,11 @@
 export class Rational {
   numerator: number;
   demominator: number;
+  gcdResult: number;
   constructor(num: number, de: number) {
     this.numerator = num;
     this.demominator = de;
+    this.gcdResult = 0;
   }
 
   add(n2: Rational) {
@@ -13,11 +15,10 @@ export class Rational {
     const b: number = this.demominator;
     const c: number = n2.numerator;
     const d: number = n2.demominator;
-    const numberator: number = a * d + c * b;
-    const demominator: number = b * d;
-    const result: number = numberator / demominator;
-    const gcdResult: number = gcd(numberator, demominator);
-    reduce(numberator, demominator, gcdResult);
+    const num: number = a * d + c * b;
+    const demom: number = b * d;
+    const result: number = num / demom;
+    this.gcdResult = gcd(num, demom);
   }
 
   sub() {}
@@ -32,7 +33,12 @@ export class Rational {
 
   expreal() {}
 
-  reduce() {}
+  reduce() {
+    // find gcdResult first
+    this.gcdResult = gcd(this.numerator, this.demominator);
+    this.numerator = this.numerator / this.gcdResult;
+    this.demominator = this.demominator / this.gcdResult;
+  }
 }
 
 function gcd(numberator: number, demominator: number): number {
@@ -57,9 +63,12 @@ function gcd(numberator: number, demominator: number): number {
   return gcdResult;
 }
 
-function reduce(numberator: number, demominator: number, gcdResult: number) {
+function reduce(
+  numberator: number,
+  demominator: number,
+  gcdResult: number,
+): number[] {
   const a: number = numberator / gcdResult;
   const b: number = demominator / gcdResult;
-  const result: number = a / b;
-  return result;
+  return [a, b];
 }
