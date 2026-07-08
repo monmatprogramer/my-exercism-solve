@@ -27,7 +27,7 @@ export function findSequence(start: Point, prisms: Prism[]): number[] {
 
       const distance = Math.sqrt(dx * dx + dy * dy);
 
-      if (distance < 0.0001) {
+      if (distance < 0.1) {
         continue;
       }
 
@@ -38,7 +38,7 @@ export function findSequence(start: Point, prisms: Prism[]): number[] {
       if (diff < -180) diff += 360;
       if (diff > 180) diff -= 360;
 
-      const isPointingAtPrism = Math.abs(diff) < 0.0001;
+      const isPointingAtPrism = Math.abs(diff) < 0.1;
 
       if (isPointingAtPrism && distance < shortestDistance) {
         shortestDistance = distance;
