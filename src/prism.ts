@@ -1,4 +1,4 @@
-//Prism exercise
+//Prism exercises
 //Create type aliase for 'start'
 //Create position
 // Base type
@@ -16,6 +16,8 @@ type PrismsType = Position & {
 export function findSequence(start: StartType, prisms: PrismsType[]): number[] {
   // list of result of poiting
   const result: number[] = [];
+  // For move laser
+  const moveLaser: PrismsType[] = [];
   let c: number = 0;
   while (c < prisms.length) {
     //Check the light of sight
@@ -28,8 +30,9 @@ export function findSequence(start: StartType, prisms: PrismsType[]): number[] {
       // laser moves
       //start = updateLaser(start, value.x, value.y, value.angle);
     }
-    // should move here
+    prisms.shift();
     start = updateLaser(start, prisms[c].x, prisms[c].y, prisms[c].angle);
+    console.log("👉 start: ", start);
     c++;
   }
   return result;
