@@ -1,11 +1,11 @@
 //this is file that is optimized by AI
 export class Rational {
-  numerator: number;
-  denominator: number;
-  gcdResult: number;
-  constructor(num: number, de: number) {
-    this.numerator = num;
-    this.denominator = de;
+  public readonly numerator: number;
+  public readonly denominator: number;
+
+  constructor(numerator: number, denominator: number) {
+    this.numerator = numerator;
+    this.denominator = denominator;
     this.gcdResult = 0;
   }
 
