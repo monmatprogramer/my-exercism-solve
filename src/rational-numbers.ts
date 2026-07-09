@@ -129,13 +129,3 @@ function gcd(numberator: number, demominator: number): number {
   }
   return gcdResult;
 }
-
-function reduce(
-  numberator: number,
-  demominator: number,
-  gcdResult: number,
-): number[] {
-  const a: number = numberator / gcdResult;
-  const b: number = demominator / gcdResult;
-  return [a, b];
-}
