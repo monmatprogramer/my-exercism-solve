@@ -23,7 +23,18 @@ export class Rational {
     return this.reduce();
   }
 
-  sub() {}
+  sub(n2: Rational) {
+    const a: number = this.numerator;
+    const b: number = this.denominator;
+    const c: number = n2.numerator;
+    const d: number = n2.denominator;
+    const num: number = a * d - c * b;
+    const demom: number = b * d;
+    //Represent
+    this.numerator = num;
+    this.denominator = demom;
+    return this.reduce();
+  }
 
   mul() {}
 
@@ -40,6 +51,12 @@ export class Rational {
     this.gcdResult = gcd(this.numerator, this.denominator);
     this.numerator = this.numerator / this.gcdResult;
     this.denominator = this.denominator / this.gcdResult;
+    //Denominator == negative
+    if (this.denominator < 0) {
+      console.log("true");
+      this.numerator = this.numerator * -1;
+      this.denominator = this.denominator * -1;
+    }
     return new Rational(this.numerator, this.denominator);
   }
 }
