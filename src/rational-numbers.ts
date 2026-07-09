@@ -75,3 +75,18 @@ function reduce(
   const b: number = demominator / gcdResult;
   return [a, b];
 }
+
+//represent
+function represent(
+  numerator1: number,
+  denominator1: number,
+  numerator2: number,
+  denominator2: number,
+): Map<string, number> {
+  const repre = new Map<string, number>();
+  repre.set("a", numerator1);
+  repre.set("b", denominator1);
+  repre.set("c", numerator2);
+  repre.set("d", denominator2);
+  return repre;
+}
