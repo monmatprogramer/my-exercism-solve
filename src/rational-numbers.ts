@@ -17,12 +17,10 @@ export class Rational {
     const d: number = n2.denominator;
     const num: number = a * d + c * b;
     const demom: number = b * d;
-    console.log("num: ", num);
-    console.log("demom: ", demom);
-    // Fiding the greatest common divider
-    this.gcdResult = gcd(num, demom);
-    console.log("gcdResult: ", this.gcdResult);
-    return new Rational(num, demom);
+    //Represent
+    this.numerator = num;
+    this.denominator = demom;
+    return this.reduce();
   }
 
   sub() {}
@@ -40,6 +38,7 @@ export class Rational {
   reduce(): Rational {
     // find gcdResult first
     this.gcdResult = gcd(this.numerator, this.denominator);
+    console.log("reduce() - gcdResult: ", this.gcdResult);
     this.numerator = this.numerator / this.gcdResult;
     this.denominator = this.denominator / this.gcdResult;
     return new Rational(this.numerator, this.denominator);
