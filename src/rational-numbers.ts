@@ -87,7 +87,12 @@ export class Rational {
     return new Rational(this.numerator, this.denominator);
   }
 
-  expreal() {}
+  expreal(exponent: number) {
+    const a: number = this.numerator;
+    const b: number = this.denominator;
+    const re = Math.pow(exponent, a / b);
+    return Math.round(re);
+  }
 
   reduce(): Rational {
     // find gcdResult first
