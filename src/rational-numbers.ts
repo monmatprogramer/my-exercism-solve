@@ -79,6 +79,10 @@ export class Rational {
     } else {
       this.numerator = Math.pow(b, Math.abs(exponent));
       this.denominator = Math.pow(a, Math.abs(exponent));
+      if (this.denominator < 0) {
+        this.numerator = this.numerator * -1;
+        this.denominator = this.denominator * -1;
+      }
     }
     return new Rational(this.numerator, this.denominator);
   }
