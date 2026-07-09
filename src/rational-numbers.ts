@@ -50,7 +50,19 @@ export class Rational {
     return this.reduce();
   }
 
-  div() {}
+  div(n2: Rational) {
+    const a: number = this.numerator;
+    const b: number = this.denominator;
+    const c: number = n2.numerator;
+    const d: number = n2.denominator;
+    //Change the formula
+    const num: number = a * c;
+    const demon: number = b * d;
+    //Represent
+    this.numerator = num;
+    this.denominator = demon;
+    return this.reduce();
+  }
 
   abs() {}
 
