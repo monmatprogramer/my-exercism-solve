@@ -57,27 +57,22 @@ export class Rational {
   }
 
   exprational(exponent: number): Rational {
-    const a: number = this.numerator;
-    const b: number = this.denominator;
     if (exponent >= 0) {
-      this.numerator = Math.pow(a, exponent);
-      this.denominator = Math.pow(b, exponent);
+      return new Rational(
+        Math.pow(this.numerator, exponent),
+        Math.pow(this.denominator, exponent),
+      );
     } else {
-      this.numerator = Math.pow(b, Math.abs(exponent));
-      this.denominator = Math.pow(a, Math.abs(exponent));
-      if (this.denominator < 0) {
-        this.numerator = this.numerator * -1;
-        this.denominator = this.denominator * -1;
-      }
+      const posExponent = Math.abs(exponent);
+      return new Rational(
+        Math.pow(this.denominator, posExponent),
+        Math.pow(this.numerator, posExponent),
+      );
     }
-    return new Rational(this.numerator, this.denominator);
   }
 
   expreal(exponent: number): number {
-    const a: number = this.numerator;
-    const b: number = this.denominator;
-    const re = Math.pow(exponent, a / b);
-    return re;
+    return Math.pow(exponent, this.numerator / this.denominator);
   }
 
   reduce(): Rational {
