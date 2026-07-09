@@ -9,6 +9,18 @@ export class Rational {
     if (denominator === 0) {
       throw new Error("Denominator cannot be zero.");
     }
+
+    const gcdVlaue = gcd(numerator, denominator);
+    const reducedNum = numerator / gcdValue;
+    const reducedDen = denominator / gcdValue;
+
+    if (reducedDen < 0) {
+      this.numerator = -reducedNum;
+      this.denominator = -reducedDen;
+    } else {
+      this.numerator = reducedNum;
+      this.denominator = reducedDen;
+    }
   }
 
   add(n2: Rational): Rational {
