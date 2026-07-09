@@ -6,7 +6,9 @@ export class Rational {
   constructor(numerator: number, denominator: number) {
     this.numerator = numerator;
     this.denominator = denominator;
-    this.gcdResult = 0;
+    if (denominator === 0) {
+      throw new Error("Denominator cannot be zero.");
+    }
   }
 
   add(n2: Rational): Rational {
