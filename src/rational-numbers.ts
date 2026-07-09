@@ -71,7 +71,15 @@ export class Rational {
   }
 
   exprational(exponent: number) {
-    return this.reduce();
+    const a: number = this.numerator;
+    const b: number = this.denominator;
+    if (exponent >= 0) {
+      this.numerator = Math.pow(a, exponent);
+      this.denominator = Math.pow(b, exponent);
+    } else {
+      this.numerator = Math.pow(b, exponent);
+      this.denominator = Math.pow(a, exponent);
+    }
   }
 
   expreal() {}
