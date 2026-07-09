@@ -36,7 +36,19 @@ export class Rational {
     return this.reduce();
   }
 
-  mul() {}
+  mul(n2: Rational) {
+    const a: number = this.numerator;
+    const b: number = this.denominator;
+    const c: number = n2.numerator;
+    const d: number = n2.denominator;
+    //Change the formula
+    const num: number = a * d * (c * b);
+    const demom: number = b * d;
+    //Represent
+    this.numerator = num;
+    this.denominator = demom;
+    return this.reduce();
+  }
 
   div() {}
 
