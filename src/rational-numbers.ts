@@ -38,7 +38,6 @@ export class Rational {
   reduce(): Rational {
     // find gcdResult first
     this.gcdResult = gcd(this.numerator, this.denominator);
-    console.log("reduce() - gcdResult: ", this.gcdResult);
     this.numerator = this.numerator / this.gcdResult;
     this.denominator = this.denominator / this.gcdResult;
     return new Rational(this.numerator, this.denominator);
