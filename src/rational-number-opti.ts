@@ -23,18 +23,12 @@ export class Rational {
     }
   }
 
-  add(n2: Rational): Rational {
+  add(other: Rational): Rational {
     // Represent
-    const a: number = this.numerator;
-    const b: number = this.denominator;
-    const c: number = n2.numerator;
-    const d: number = n2.denominator;
-    const num: number = a * d + c * b;
-    const demom: number = b * d;
-    //Represent
-    this.numerator = num;
-    this.denominator = demom;
-    return this.reduce();
+    const num =
+      this.numerator * other.denominator + other.numerator * this.denominator;
+    const den = this.denominator * other.denominator;
+    return new Rational(num, den);
   }
 
   sub(n2: Rational): Rational {
