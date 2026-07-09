@@ -56,8 +56,8 @@ export class Rational {
     const c: number = n2.numerator;
     const d: number = n2.denominator;
     //Change the formula
-    const num: number = a * c;
-    const demon: number = b * d;
+    const num: number = a * d;
+    const demon: number = b * c;
     //Represent
     this.numerator = num;
     this.denominator = demon;
@@ -77,7 +77,6 @@ export class Rational {
     this.denominator = this.denominator / this.gcdResult;
     //Denominator == negative
     if (this.denominator < 0) {
-      console.log("true");
       this.numerator = this.numerator * -1;
       this.denominator = this.denominator * -1;
     }
