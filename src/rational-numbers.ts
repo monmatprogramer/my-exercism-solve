@@ -42,7 +42,7 @@ export class Rational {
     const c: number = n2.numerator;
     const d: number = n2.denominator;
     //Change the formula
-    const num: number = a * d * (c * b);
+    const num: number = a * c;
     const demon: number = b * d;
     //Represent
     this.numerator = num;
