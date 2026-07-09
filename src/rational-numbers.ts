@@ -64,7 +64,11 @@ export class Rational {
     return this.reduce();
   }
 
-  abs() {}
+  abs(): Rational {
+    this.numerator = Math.abs(this.numerator);
+    this.denominator = Math.abs(this.denominator);
+    return new Rational(this.numerator, this.denominator);
+  }
 
   exprational() {}
 
