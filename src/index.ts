@@ -1,5 +1,5 @@
 import { Rational } from "./rational-numbers";
-const actual = new Rational(1, 2);
-actual.exprational(3);
+const actual = new Rational(3, 5);
+actual.exprational(-2);
 console.log(actual.numerator);
 console.log(actual.denominator);
