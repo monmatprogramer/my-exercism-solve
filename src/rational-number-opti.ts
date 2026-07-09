@@ -45,24 +45,15 @@ export class Rational {
     );
   }
 
-  div(n2: Rational): Rational {
-    const a: number = this.numerator;
-    const b: number = this.denominator;
-    const c: number = n2.numerator;
-    const d: number = n2.denominator;
-    //Change the formula
-    const num: number = a * d;
-    const demon: number = b * c;
-    //Represent
-    this.numerator = num;
-    this.denominator = demon;
-    return this.reduce();
+  div(other: Rational): Rational {
+    return new Rational(
+      this.numerator * other.denominator,
+      this.denominator * other.numerator,
+    );
   }
 
   abs(): Rational {
-    this.numerator = Math.abs(this.numerator);
-    this.denominator = Math.abs(this.denominator);
-    return this.reduce();
+    return new Rational(Math.abs(this.numerator), Math.abs(this.denominator));
   }
 
   exprational(exponent: number): Rational {
