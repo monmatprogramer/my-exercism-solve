@@ -17,7 +17,6 @@ export class Rational {
     const d: number = n2.denominator;
     const num: number = a * d + c * b;
     const demom: number = b * d;
-    const result: number = num / demom;
     this.gcdResult = gcd(num, demom);
   }
 
