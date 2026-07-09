@@ -74,39 +74,16 @@ export class Rational {
   expreal(exponent: number): number {
     return Math.pow(exponent, this.numerator / this.denominator);
   }
-
-  reduce(): Rational {
-    // find gcdResult first
-    this.gcdResult = gcd(this.numerator, this.denominator);
-    this.numerator = this.numerator / this.gcdResult;
-    this.denominator = this.denominator / this.gcdResult;
-    //Denominator == negative
-    if (this.denominator < 0) {
-      this.numerator = this.numerator * -1;
-      this.denominator = this.denominator * -1;
-    }
-    return new Rational(this.numerator, this.denominator);
-  }
 }
 
-function gcd(numberator: number, demominator: number): number {
-  //make absolute
-  let a: number = Math.abs(numberator);
-  let b: number = Math.abs(demominator);
-  let gcdResult: number = 0;
-  while (true) {
-    if (b === 0) {
-      gcdResult = a;
-    } else {
-      let remainder: number = 0;
-      remainder = a % b;
-      a = b;
-      b = remainder;
-      if (b === 0) {
-        gcdResult = a;
-        break;
-      }
-    }
+function gcd(a: number, b: number): number {
+  let num1 = Math.abs(a);
+  let num2 = Math.abs(b);
+
+  while (num2 !== 0) {
+    const temp = num2;
+    num2 = num1 % num2;
+    num1 = temp;
   }
-  return gcdResult;
+  return num1;
 }
