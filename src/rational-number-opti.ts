@@ -10,7 +10,7 @@ export class Rational {
       throw new Error("Denominator cannot be zero.");
     }
 
-    const gcdVlaue = gcd(numerator, denominator);
+    const gcdValue = gcd(numerator, denominator);
     const reducedNum = numerator / gcdValue;
     const reducedDen = denominator / gcdValue;
 
@@ -38,18 +38,11 @@ export class Rational {
     return new Rational(num, den);
   }
 
-  mul(n2: Rational): Rational {
-    const a: number = this.numerator;
-    const b: number = this.denominator;
-    const c: number = n2.numerator;
-    const d: number = n2.denominator;
-    //Change the formula
-    const num: number = a * c;
-    const demon: number = b * d;
-    //Represent
-    this.numerator = num;
-    this.denominator = demon;
-    return this.reduce();
+  mul(other: Rational): Rational {
+    return new Rational(
+      this.numerator * other.denominator,
+      this.denominator * other.denominator,
+    );
   }
 
   div(n2: Rational): Rational {
