@@ -70,7 +70,9 @@ export class Rational {
     return this.reduce();
   }
 
-  exprational() {}
+  exprational(exponent: number) {
+    return this.reduce();
+  }
 
   expreal() {}
 
