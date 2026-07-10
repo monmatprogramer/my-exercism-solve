@@ -16,7 +16,7 @@ export function encode(plainText: string): string {
       count = 1;
     }
   }
-  return secretMessage.join("");
+  return secretMessage.join("").trim();
 }
 
 export function decode(cipherText: string): string {
@@ -32,7 +32,7 @@ export function decode(cipherText: string): string {
       solidMessage.push(char);
     }
   }
-  return solidMessage.join("").trim();
+  return solidMessage.join("");
 }
 
 // Helper function
