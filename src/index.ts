@@ -1,4 +1,4 @@
 import { encode, decode } from "./atbash-cipher";
 
-encode("plaintext");
+encode("Hello 2025 years");
 decode("plaintext");

@@ -1,6 +1,14 @@
 export function encode(plainText: string): string {
   const cleanedText: string = cleanText(plainText);
   const secretMessage: string[] = [];
+  let count: number = 0;
+  for (const char of cleanedText) {
+    if (!!isNaN(Number(char))) {
+      // it is a string
+    } else {
+      // is is number;
+    }
+  }
   return cleanedText;
 }
 
