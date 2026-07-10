@@ -11,6 +11,8 @@
 //----------interface-------
 /*
  * it descripts shape of object
+ * to extend other interfaces using 'extends'
+ * It does not use with Unions
  * */
 interface User {
   id: number;
@@ -23,5 +25,12 @@ const myUser: User = {
   name: "John Doe",
   isActive: true,
 };
-
-console.log(myUser.name);
+//-----------Type------
+/*
+ * Type do everything but interface for objects
+ * It creates Unions (|) -> this or that
+ * */
+type Product = {
+  id: number;
+  price: number;
+};
