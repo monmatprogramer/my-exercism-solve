@@ -1,4 +1,8 @@
 export class SimpleCipher {
-  encode() {}
-  decode() {}
+  encode() {
+    console.log("encode");
+  }
+  decode() {
+    console.log("decode");
+  }
 }
