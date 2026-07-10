@@ -15,13 +15,14 @@ export function encode(plainText: string): string {
       secretMessage.push(" ");
       count = 1;
     }
-    console.log("👉 ", secretMessage);
   }
   return secretMessage.join("");
 }
 
 export function decode(cipherText: string): string {
-  return "decode fun";
+  //remove space from ciphyer text and clean text
+  cipherText = cleanText(cipherText);
+  return cipherText;
 }
 
 // Helper function
