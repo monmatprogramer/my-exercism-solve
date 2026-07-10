@@ -17,3 +17,11 @@ interface User {
   name: string;
   isActive: boolean;
 }
+
+const myUser: User = {
+  id: 1,
+  name: "John Doe",
+  isActive: true,
+};
+
+console.log(myUser.name);
