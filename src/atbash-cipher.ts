@@ -20,8 +20,11 @@ export function encode(plainText: string): string {
 }
 
 export function decode(cipherText: string): string {
+  const solidMessage: string[] = [];
   //remove space from ciphyer text and clean text
   cipherText = cleanText(cipherText);
+  for (const char of cipherText) {
+  }
   return cipherText;
 }
 
