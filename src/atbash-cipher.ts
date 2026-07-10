@@ -1,3 +1,3 @@
-export function encode(plainText: unknown): unknown {}
+export function encode(plainText: string): string {}
 
-export function decode(cipherText: unknown): unknown {}
+export function decode(cipherText: string): string {}
