@@ -5,6 +5,7 @@ export function encode(plainText: string): string {
   for (const char of cleanedText) {
     if (!!isNaN(Number(char))) {
       // it is a string
+      flip(char);
     } else {
       // is is number;
     }
@@ -25,4 +26,14 @@ function cleanText(input: string): string {
   //Cover to into lowercase
   const lowCase: string = input.toLocaleLowerCase().replace(ex, "");
   return lowCase;
+}
+
+function flip(character: string): string {
+  let newAscii: number = 0;
+  let asciiCodeToText: string = "";
+  let currentAsciiCode = character.charCodeAt(0);
+  newAscii = 122 - (currentAsciiCode - 97);
+  asciiCodeToText = String.fromCharCode(newAscii);
+  console.log(asciiCodeToText);
+  return asciiCodeToText;
 }
