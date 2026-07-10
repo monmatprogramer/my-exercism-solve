@@ -1,16 +1,23 @@
 export function encode(plainText: string): string {
   const cleanedText: string = cleanText(plainText);
   const secretMessage: string[] = [];
-  let count: number = 0;
+  let count: number = 1;
   for (const char of cleanedText) {
     if (!!isNaN(Number(char))) {
       // it is a string
-      flip(char);
+      secretMessage.push(flip(char));
     } else {
       // is is number;
+      secretMessage.push(char);
     }
+    count++;
+    if (count > 5) {
+      secretMessage.push(" ");
+      count = 1;
+    }
+    console.log("👉 ", secretMessage);
   }
-  return cleanedText;
+  return secretMessage.join("");
 }
 
 export function decode(cipherText: string): string {
