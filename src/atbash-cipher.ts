@@ -24,8 +24,15 @@ export function decode(cipherText: string): string {
   //remove space from ciphyer text and clean text
   cipherText = cleanText(cipherText);
   for (const char of cipherText) {
+    if (!!isNaN(Number(char))) {
+      // if it is string
+      solidMessage.push(flip(char));
+    } else {
+      // if it is not string
+      solidMessage.push(char);
+    }
   }
-  return cipherText;
+  return solidMessage.join("").trim();
 }
 
 // Helper function
@@ -45,6 +52,5 @@ function flip(character: string): string {
   let currentAsciiCode = character.charCodeAt(0);
   newAscii = 122 - (currentAsciiCode - 97);
   asciiCodeToText = String.fromCharCode(newAscii);
-  console.log(asciiCodeToText);
   return asciiCodeToText;
 }
