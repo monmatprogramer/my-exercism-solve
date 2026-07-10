@@ -40,3 +40,4 @@ type SatusCode = 200 | 404 | 500;
 function Button({ size }: { size: ButtonSize }) {
   return "<button className ={`btn-${size}`}> Click Me</button>";
 }
+console.log(Button({ size: "small" }));
