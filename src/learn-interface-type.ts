@@ -34,3 +34,9 @@ type Product = {
   id: number;
   price: number;
 };
+
+type ButtonSize = "small" | "medium" | "large";
+type SatusCode = 200 | 404 | 500;
+function Button({ size }: { size: ButtonSize }) {
+  return "<button className ={`btn-${size}`}> Click Me</button>";
+}
