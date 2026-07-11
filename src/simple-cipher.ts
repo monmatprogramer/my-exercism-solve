@@ -41,9 +41,8 @@ export class SimpleCipher {
         // Add the pickuped letter TO keyCipher
         tempRandomKey.push(randomLetterArray[indexedGenerated]);
       }
-      console.log("👉: ", tempRandomKey.length);
 
-      this.keyCipher = "random";
+      this.keyCipher = tempRandomKey.join("");
     } else {
       // Save the key
       this.keyCipher = "not random";
