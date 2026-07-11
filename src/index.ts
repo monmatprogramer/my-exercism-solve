@@ -1,6 +1,5 @@
 import { SimpleCipher } from "./simple-cipher";
 
-const simpleCipher = new SimpleCipher();
+const simpleCipher = new SimpleCipher("Cipher");
 
-simpleCipher.decode();
 console.log(simpleCipher.keyCipher);
