@@ -4,6 +4,8 @@ export class SimpleCipher {
     if (key === "" || key === undefined || key === null) {
       this.keyCipher = toTakeGeneratedKey();
     } else {
+      // Clean text first preventing any error
+      key = cleanKey(key);
       // Save the key
       this.keyCipher = key;
     }
@@ -65,4 +67,5 @@ function cleanKey(key: string): string {
     throw new Error("Sorry! the key is accepted only alphabetic letters");
   }
   key = key.toLocaleLowerCase();
+  return key;
 }
