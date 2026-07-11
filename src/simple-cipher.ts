@@ -11,6 +11,18 @@ export class SimpleCipher {
     }
   }
   encode(plainText: string): string {
+    let secretMsg: string;
+    const arrKeyCipher: string[] = this.keyCipher.split("");
+    // convert ascii code into array
+    //console.log("a".charCodeAt(0));
+    //
+    let i: number = 0;
+    for (const char of plainText) {
+      //console.log(i % this.keyCipher.length);
+      let keyCipherAssiiCode = arrKeyCipher[i].charCodeAt(0) - 97;
+      console.log(keyCipherAssiiCode);
+      i++;
+    }
     console.log("encode");
     return plainText;
   }

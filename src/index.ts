@@ -1,8 +1,8 @@
 import { SimpleCipher } from "./simple-cipher";
 
 try {
-  const simpleCipher = new SimpleCipher("abc!12");
-  console.log(simpleCipher.keyCipher);
+  const simpleCipher = new SimpleCipher("abc");
+  console.log(simpleCipher.encode("plaintText"));
 } catch (e: any) {
   console.log(e.message);
 }
