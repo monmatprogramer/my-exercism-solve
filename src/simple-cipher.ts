@@ -13,17 +13,16 @@ export class SimpleCipher {
   encode(plainText: string): string {
     let secretMsg: string;
     const arrKeyCipher: string[] = this.keyCipher.split("");
-    // convert ascii code into array
-    //console.log("a".charCodeAt(0));
-    //
     let i: number = 0;
     for (const char of plainText) {
-      //console.log(i % this.keyCipher.length);
+      //find each index of user input like p =15
+      let plainTextIndex: number = char.charCodeAt(0) - 97;
+      // loop for shor key input like key=abc
+      i = i % this.keyCipher.length;
+      // convert ascii code into array a = [0]
       let keyCipherAssiiCode = arrKeyCipher[i].charCodeAt(0) - 97;
-      console.log(keyCipherAssiiCode);
       i++;
     }
-    console.log("encode");
     return plainText;
   }
   decode(plainText: string): string {
