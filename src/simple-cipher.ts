@@ -10,11 +10,13 @@ export class SimpleCipher {
       this.keyCipher = key;
     }
   }
-  encode() {
+  encode(plainText: string): string {
     console.log("encode");
+    return plainText;
   }
-  decode() {
+  decode(plainText: string): string {
     console.log("decode");
+    return plainText;
   }
 }
 // Helper function to generate random key when the key is empty
