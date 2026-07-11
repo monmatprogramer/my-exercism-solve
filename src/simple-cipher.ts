@@ -1,11 +1,11 @@
 export class SimpleCipher {
   keyCipher: string;
   constructor(key?: string | undefined | null) {
-    if (key === "" || key === undefined) {
+    if (key === "" || key === undefined || key === null) {
       this.keyCipher = toTakeGeneratedKey();
     } else {
       // Save the key
-      this.keyCipher = "not random";
+      this.keyCipher = key;
     }
   }
   encode() {
@@ -56,4 +56,13 @@ function toTakeGeneratedKey(): string {
     tempRandomKey.push(randomLetterArray[indexedGenerated]);
   }
   return tempRandomKey.join("");
+}
+// clearn key input befor generating
+function cleanKey(key: string): string {
+  const regex = /^[A-za-z]+$/;
+  key = key.trim();
+  if (!regex.test(key)) {
+    throw new Error("Sorry! the key is accepted only alphabetic letters");
+  }
+  key = key.toLocaleLowerCase();
 }
