@@ -53,10 +53,10 @@ export class SimpleCipher {
       // convert ascii code into array a = [0]
       let keyCipherIndex = arrKeyCipher[i].charCodeAt(0) - 97;
       let n = (plainTextIndex + keyCipherIndex) % 26;
-      console.log(String.fromCharCode(65));
+      secretMsg.push(randomLetterArray[n]);
       i++;
     }
-    return plainText;
+    return secretMsg.join("");
   }
   decode(plainText: string): string {
     console.log("decode");
