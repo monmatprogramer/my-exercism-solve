@@ -11,7 +11,7 @@ export class SimpleCipher {
     }
   }
   encode(plainText: string): string {
-    let secretMsg: string;
+    let secretMsg: string[] = [];
     const arrKeyCipher: string[] = this.keyCipher.split("");
     let i: number = 0;
     for (const char of plainText) {
@@ -20,7 +20,8 @@ export class SimpleCipher {
       // loop for shor key input like key=abc
       i = i % this.keyCipher.length;
       // convert ascii code into array a = [0]
-      let keyCipherAssiiCode = arrKeyCipher[i].charCodeAt(0) - 97;
+      let keyCipherIndex = arrKeyCipher[i].charCodeAt(0) - 97;
+      secretMsg.push(plainTextIndex + keyCipherIndex);
       i++;
     }
     return plainText;
