@@ -1,3 +1,32 @@
+const randomLetterArray: string[] = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+
 export class SimpleCipher {
   keyCipher: string;
   constructor(key?: string | undefined | null) {
@@ -14,18 +43,17 @@ export class SimpleCipher {
     let secretMsg: string[] = [];
     const arrKeyCipher: string[] = this.keyCipher.split("");
     let i: number = 0;
+    // clean text
     plainText = cleanKey(plainText);
     for (const char of plainText) {
-      let t: string[] = [];
-      t.push(char);
       //find each index of user input like p =15
       let plainTextIndex: number = char.charCodeAt(0) - 97;
-      console.log(plainTextIndex);
       // loop for shor key input like key=abc
       i = i % this.keyCipher.length;
       // convert ascii code into array a = [0]
       let keyCipherIndex = arrKeyCipher[i].charCodeAt(0) - 97;
       let n = (plainTextIndex + keyCipherIndex) % 26;
+      console.log(String.fromCharCode(65));
       i++;
     }
     return plainText;
