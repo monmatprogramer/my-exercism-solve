@@ -66,34 +66,6 @@ export class SimpleCipher {
 // Helper function to generate random key when the key is empty
 function toTakeGeneratedKey(): string {
   // letter array here for do generating random key
-  const randomLetterArray: string[] = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ];
   let tempRandomKey: string[] = [];
   //generate a random key
   for (let i: number = 0; i < 100; i++) {
