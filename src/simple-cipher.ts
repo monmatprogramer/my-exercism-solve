@@ -15,13 +15,16 @@ export class SimpleCipher {
     const arrKeyCipher: string[] = this.keyCipher.split("");
     let i: number = 0;
     for (const char of plainText) {
+      let t: string[] = [];
+      t.push(char);
       //find each index of user input like p =15
       let plainTextIndex: number = char.charCodeAt(0) - 97;
       // loop for shor key input like key=abc
       i = i % this.keyCipher.length;
       // convert ascii code into array a = [0]
       let keyCipherIndex = arrKeyCipher[i].charCodeAt(0) - 97;
-      secretMsg.push(plainTextIndex + keyCipherIndex);
+      console.log(keyCipherIndex);
+      let n = (plainTextIndex + keyCipherIndex) % 26;
       i++;
     }
     return plainText;
