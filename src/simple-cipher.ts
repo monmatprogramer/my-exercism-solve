@@ -28,20 +28,20 @@ const randomLetterArray: string[] = [
 ];
 
 export class SimpleCipher {
-  keyCipher: string;
+  key: string;
   constructor(key?: string | undefined | null) {
     if (key === "" || key === undefined || key === null) {
-      this.keyCipher = toTakeGeneratedKey();
+      this.key = toTakeGeneratedKey();
     } else {
       // Clean text first preventing any error
       key = cleanKey(key);
       // Save the key
-      this.keyCipher = key;
+      this.key = key;
     }
   }
   encode(plainText: string): string {
     let secretMsg: string[] = [];
-    const arrKeyCipher: string[] = seperateKeyToArr(this.keyCipher);
+    const arrKeyCipher: string[] = seperateKeyToArr(this.key);
     let i: number = 0;
     // clean text
     plainText = cleanKey(plainText);
@@ -49,7 +49,7 @@ export class SimpleCipher {
       //find each index of user input like p =15
       let plainTextIndex: number = char.charCodeAt(0) - 97;
       // loop for shor key input like key=abc
-      i = i % this.keyCipher.length;
+      i = i % this.key.length;
       // convert ascii code into array a = [0]
       let keyCipherIndex = arrKeyCipher[i].charCodeAt(0) - 97;
       let n = (plainTextIndex + keyCipherIndex) % 26;
@@ -62,11 +62,11 @@ export class SimpleCipher {
     const solidMessage: string[] = [];
     //clean text
     secretText = cleanKey(secretText);
-    const arrKeyCipher: string[] = seperateKeyToArr(this.keyCipher);
+    const arrKeyCipher: string[] = seperateKeyToArr(this.key);
     let i: number = 0;
     for (const char of secretText) {
       let secretTextIndex: number = char.charCodeAt(0) - 97;
-      i = i % this.keyCipher.length;
+      i = i % this.key.length;
       let keyCipherIndex = arrKeyCipher[i].charCodeAt(0) - 97;
       let n = (secretTextIndex - keyCipherIndex + 26) % 26;
       solidMessage.push(randomLetterArray[n]);
