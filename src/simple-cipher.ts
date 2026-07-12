@@ -41,7 +41,7 @@ export class SimpleCipher {
   }
   encode(plainText: string): string {
     let secretMsg: string[] = [];
-    const arrKeyCipher: string[] = this.keyCipher.split("");
+    const arrKeyCipher: string[] = seperateKeyToArr(this.keyCipher);
     let i: number = 0;
     // clean text
     plainText = cleanKey(plainText);
@@ -58,12 +58,19 @@ export class SimpleCipher {
     }
     return secretMsg.join("");
   }
-  decode(plainText: string): string {
-    console.log("decode");
-    return plainText;
+  decode(secretText: string): string {
+    //clean text
+    secretText = cleanKey(secretText);
+    const arrKeyCipher: string[] = seperateKeyToArr(this.keyCipher);
+    console.log(arrKeyCipher);
+    return secretText;
   }
 }
 // Helper function to generate random key when the key is empty
+// seperate normal text of ket into array of key like abc = [a,b,c]
+function seperateKeyToArr(key: string): string[] {
+  return key.split("");
+}
 function toTakeGeneratedKey(): string {
   // letter array here for do generating random key
   let tempRandomKey: string[] = [];
