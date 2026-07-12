@@ -59,11 +59,20 @@ export class SimpleCipher {
     return secretMsg.join("");
   }
   decode(secretText: string): string {
+    const solidMessage: string[] = [];
     //clean text
     secretText = cleanKey(secretText);
     const arrKeyCipher: string[] = seperateKeyToArr(this.keyCipher);
-    console.log(arrKeyCipher);
-    return secretText;
+    let i: number = 0;
+    for (const char of secretText) {
+      let secretTextIndex: number = char.charCodeAt(0) - 97;
+      i = i % this.keyCipher.length;
+      let keyCipherIndex = arrKeyCipher[i].charCodeAt(0) - 97;
+      let n = (secretTextIndex - keyCipherIndex + 26) % 26;
+      solidMessage.push(randomLetterArray[n]);
+      i++;
+    }
+    return solidMessage.join("");
   }
 }
 // Helper function to generate random key when the key is empty
