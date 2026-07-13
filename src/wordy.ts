@@ -30,6 +30,7 @@ const simplify = (validQuesion: string[]): string[] => {
   if (validQuesion.length === 1) {
     const ex = /\?/;
     let temp = validQuesion[0].replace(ex, "");
+    validQuesion.pop();
     validQuesion.push(temp);
   } else {
     const ex = /\?/;
