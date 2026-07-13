@@ -44,7 +44,7 @@ const simplify = (validQuesion: string[]): string[] => {
   return validQuesion;
 };
 //Check it has operations  or not
-const hasOperationsOrNot = (question: string[]): boolean => {
+const hasSingleNumber = (question: string[]): boolean => {
   if (!isNaN(Number(question[0]))) {
     //it is sinlge number
     return true;
@@ -64,7 +64,7 @@ const simplifyOperation = (validQuestion: string[]): string[] => {
   return validQuestion;
 };
 const calculate = (validQuestion: string[]): number => {
-  const singleNum: boolean = hasOperationsOrNot(validQuestion);
+  const singleNum: boolean = hasSingleNumber(validQuestion);
   if (singleNum) {
     return Number(validQuestion[0]);
   }
