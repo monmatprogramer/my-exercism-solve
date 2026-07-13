@@ -8,6 +8,9 @@ const cleanString = (question: string): string => {
   //conver to lowercase
   question = question.toLowerCase();
   const toArray: string[] = question.split(" ");
+  if (toArray.length < 0) {
+    throw new Error("Syntax error");
+  }
   if (
     !(toArray[0] === "what") ||
     !(toArray[1] === "is") ||
