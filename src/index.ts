@@ -1,8 +1,7 @@
-import { SimpleCipher } from "./simple-cipher";
+import { answer } from "./wordy";
 
 try {
-  const simpleCipher = new SimpleCipher("abc");
-  console.log(simpleCipher.decode("iboaqcnecbfcr"));
+  console.log(answer("What is 5?"));
 } catch (e: any) {
   console.log(e.message);
 }

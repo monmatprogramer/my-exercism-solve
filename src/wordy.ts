@@ -1,3 +1,4 @@
-export const answer = () => {
-  throw new Error("Remove this line and implement the function");
+export const answer = (question: string): number => {
+  console.log("question", question);
+  return 0;
 };
