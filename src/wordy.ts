@@ -36,6 +36,7 @@ const simplify = (validQuesion: string[]): string[] => {
     validQuesion.pop();
     validQuesion.push(temp);
   } else {
+    //Remove the last of array
     let temp: string = validQuesion.pop()!;
     temp = temp.replace(ex, "");
     validQuesion.push(temp);
