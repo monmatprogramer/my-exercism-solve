@@ -52,3 +52,11 @@ const simplifyOperation = (validQuestion: string[]): string[] => {
   }
   return validQuestion;
 };
+const calculate = (validQuestion: string[]): number => {
+  let oprations: number = validQuestion.filter((value) =>
+    isNaN(Number(value)),
+  ).length;
+  let n: number = Number(validQuestion[0]);
+  let i: number = 0;
+  return 0;
+};
