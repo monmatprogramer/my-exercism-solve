@@ -45,7 +45,11 @@ const simplify = (validQuesion: string[]): string[] => {
   return validQuesion;
 };
 //Check it has operations  or not
-const hasOperationsOrNot = (question: string[]) => {};
+const hasOperationsOrNot = (question: string[]) => {
+  const operResut: string[] = question.filter((value) => isNaN(Number(value)));
+  console.log(operResut);
+};
+
 const simplifyOperation = (validQuestion: string[]): string[] => {
   for (let i: number = 0; i < validQuestion.length; i++) {
     if (validQuestion[i] === "divided") {
