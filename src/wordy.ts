@@ -53,7 +53,10 @@ const hasSingleNumber = (question: string[]): boolean => {
 };
 //Check for single operations
 const hasSingleOperation = (question: string[]): boolean => {
-  console.log("single operation");
+  //Ex [ '1', 'plus', '1' ]
+  if (question.length === 3) {
+    return true;
+  }
   return false;
 };
 
@@ -73,7 +76,8 @@ const calculate = (validQuestion: string[]): number => {
   if (singleNum) {
     return Number(validQuestion[0]);
   }
-  hasSingleOperation(validQuestion);
+  if (hasSingleOperation(validQuestion)) {
+  }
   let operations: number = validQuestion.filter((value) =>
     isNaN(Number(value)),
   ).length;
