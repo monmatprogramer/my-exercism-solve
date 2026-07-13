@@ -20,9 +20,12 @@ const cleanString = (question: string): string => {
   ) {
     throw new Error("Unknown operation");
   }
-  simplify(toArray);
+  const simplifyArr: string[] = simplify(toArray);
+  const simplifyOper: string[] = simplifyOperation(simplifyArr);
+  console.log(simplifyOper);
   return question;
 };
+
 const simplify = (validQuesion: string[]): string[] => {
   const ex = /\?/;
   //remove first element and second element
@@ -39,4 +42,15 @@ const simplify = (validQuesion: string[]): string[] => {
   }
   console.log("validQuesion: ", validQuesion);
   return validQuesion;
+};
+const simplifyOperation = (validQuestion: string[]): string[] => {
+  for (let i: number = 0; i < validQuestion.length; i++) {
+    if (validQuestion[i] === "divided") {
+      validQuestion.splice(i + 1, 1);
+    } else if (validQuestion[i] === "multiplied") {
+      validQuestion.splice(i + 1, 1);
+    }
+  }
+  console.log(validQuestion);
+  return validQuestion;
 };
