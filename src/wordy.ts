@@ -22,7 +22,9 @@ const cleanString = (question: string): string[] => {
     throw new Error("Unknown operation");
   }
   const simplifyArr: string[] = simplify(toArray);
+  hasOperationsOrNot(simplifyArr);
   const simplifyOper: string[] = simplifyOperation(simplifyArr);
+  console.log(simplifyOper);
   return simplifyOper;
 };
 
@@ -36,13 +38,14 @@ const simplify = (validQuesion: string[]): string[] => {
     validQuesion.pop();
     validQuesion.push(temp);
   } else {
-    //Remove the last of array
     let temp: string = validQuesion.pop()!;
     temp = temp.replace(ex, "");
     validQuesion.push(temp);
   }
   return validQuesion;
 };
+//Check it has operations  or not
+const hasOperationsOrNot = (question: string[]) => {};
 const simplifyOperation = (validQuestion: string[]): string[] => {
   for (let i: number = 0; i < validQuestion.length; i++) {
     if (validQuestion[i] === "divided") {
