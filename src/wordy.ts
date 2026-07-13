@@ -77,6 +77,16 @@ const calculate = (validQuestion: string[]): number => {
     return Number(validQuestion[0]);
   }
   if (hasSingleOperation(validQuestion)) {
+    let n: number = Number(validQuestion[0]);
+    if (validQuestion[1] === "plus") {
+      return (n = n + Number(validQuestion[2]));
+    } else if (validQuestion[1] === "minus") {
+      return (n = n - Number(validQuestion[2]));
+    } else if (validQuestion[1] === "divided") {
+      return (n = n / Number(validQuestion[2]));
+    } else {
+      return (n = n * Number(validQuestion[2]));
+    }
   }
   let operations: number = validQuestion.filter((value) =>
     isNaN(Number(value)),
