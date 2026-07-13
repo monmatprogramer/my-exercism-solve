@@ -19,7 +19,7 @@ const cleanString = (question: string): string[] => {
     !(toArray[1] === "is") ||
     !toArray[toArray.length - 1].endsWith("?")
   ) {
-    throw new Error("Syntax error");
+    throw new Error("Unknow operation");
   }
   const simplifyArr: string[] = simplify(toArray);
   const simplifyOper: string[] = simplifyOperation(simplifyArr);
@@ -71,6 +71,14 @@ const simplifyOperation = (validQuestion: string[]): string[] => {
   console.log("simplifyOperation : ", validQuestion);
   return validQuestion;
 };
+// Check unknow operation
+const checkUnknowOp = (validQuestion: string[]) => {
+  if (validQuestion.length === 2) {
+    if (validQuestion[1] !== "plus") {
+      console.log("Not equal plus");
+    }
+  }
+};
 const calculate = (validQuestion: string[]): number => {
   const singleNum: boolean = hasSingleNumber(validQuestion);
   if (singleNum) {
@@ -88,6 +96,7 @@ const calculate = (validQuestion: string[]): number => {
       return (n = n * Number(validQuestion[2]));
     }
   }
+  checkUnknowOp(validQuestion);
   let operations: number = validQuestion.filter((value) =>
     isNaN(Number(value)),
   ).length;
