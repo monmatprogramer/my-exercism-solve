@@ -40,7 +40,6 @@ const simplify = (validQuesion: string[]): string[] => {
     temp = temp.replace(ex, "");
     validQuesion.push(temp);
   }
-  console.log("validQuesion: ", validQuesion);
   return validQuesion;
 };
 const simplifyOperation = (validQuestion: string[]): string[] => {
@@ -51,6 +50,5 @@ const simplifyOperation = (validQuestion: string[]): string[] => {
       validQuestion.splice(i + 1, 1);
     }
   }
-  console.log(validQuestion);
   return validQuestion;
 };
