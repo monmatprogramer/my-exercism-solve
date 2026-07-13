@@ -22,7 +22,6 @@ const cleanString = (question: string): string[] => {
     throw new Error("Syntax error");
   }
   const simplifyArr: string[] = simplify(toArray);
-  // const isSingleNum: boolean = hasOperationsOrNot(simplifyArr);
   const simplifyOper: string[] = simplifyOperation(simplifyArr);
   return simplifyOper;
 };
@@ -45,11 +44,16 @@ const simplify = (validQuesion: string[]): string[] => {
 };
 //Check it has operations  or not
 const hasSingleNumber = (question: string[]): boolean => {
-  if (!isNaN(Number(question[0]))) {
+  if (!isNaN(Number(question[0])) && question.length === 1) {
     //it is sinlge number
     return true;
   }
   //it is not single number
+  return false;
+};
+//Check for single operations
+const hasSingleOperation = (question: string[]): boolean => {
+  console.log("single operation");
   return false;
 };
 
@@ -61,6 +65,7 @@ const simplifyOperation = (validQuestion: string[]): string[] => {
       validQuestion.splice(i + 1, 1);
     }
   }
+  console.log("simplifyOperation : ", validQuestion);
   return validQuestion;
 };
 const calculate = (validQuestion: string[]): number => {
@@ -68,6 +73,7 @@ const calculate = (validQuestion: string[]): number => {
   if (singleNum) {
     return Number(validQuestion[0]);
   }
+  hasSingleOperation(validQuestion);
   let operations: number = validQuestion.filter((value) =>
     isNaN(Number(value)),
   ).length;
