@@ -53,10 +53,17 @@ const simplifyOperation = (validQuestion: string[]): string[] => {
   return validQuestion;
 };
 const calculate = (validQuestion: string[]): number => {
-  let oprations: number = validQuestion.filter((value) =>
+  let operations: number = validQuestion.filter((value) =>
     isNaN(Number(value)),
   ).length;
   let n: number = Number(validQuestion[0]);
   let i: number = 0;
+  while (i <= validQuestion.length - operations) {
+    if (validQuestion[i + 1] === "divided") {
+      n = n / Number(validQuestion[i + 2]);
+    } else if (validQuestion[i + 1] === "plus") {
+      n = n + Number(validQuestion[i + 2]);
+    }
+  }
   return 0;
 };
