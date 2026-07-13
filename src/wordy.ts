@@ -22,8 +22,8 @@ const cleanString = (question: string): string[] => {
     throw new Error("Syntax error");
   }
   const simplifyArr: string[] = simplify(toArray);
+  hasOperationsOrNot(simplifyArr);
   const simplifyOper: string[] = simplifyOperation(simplifyArr);
-  hasOperationsOrNot(simplifyOper);
   return simplifyOper;
 };
 
@@ -44,12 +44,13 @@ const simplify = (validQuesion: string[]): string[] => {
   return validQuesion;
 };
 //Check it has operations  or not
-const hasOperationsOrNot = (question: string[]) => {
-  const operResut: string[] = question.filter((value) => isNaN(Number(value)));
-  if (operResut.length < 0) {
-    throw new Error("Syntax error");
+const hasOperationsOrNot = (question: string[]): boolean => {
+  if (!isNaN(Number(question[0]))) {
+    //it is sinlge number
+    return true;
   }
-  console.log(operResut);
+  //it is not single number
+  return false;
 };
 
 const simplifyOperation = (validQuestion: string[]): string[] => {
