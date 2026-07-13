@@ -22,7 +22,7 @@ const cleanString = (question: string): string[] => {
     throw new Error("Syntax error");
   }
   const simplifyArr: string[] = simplify(toArray);
-  hasOperationsOrNot(simplifyArr);
+  // const isSingleNum: boolean = hasOperationsOrNot(simplifyArr);
   const simplifyOper: string[] = simplifyOperation(simplifyArr);
   return simplifyOper;
 };
@@ -64,6 +64,10 @@ const simplifyOperation = (validQuestion: string[]): string[] => {
   return validQuestion;
 };
 const calculate = (validQuestion: string[]): number => {
+  const singleNum: boolean = hasOperationsOrNot(validQuestion);
+  if (singleNum) {
+    return Number(validQuestion[0]);
+  }
   let operations: number = validQuestion.filter((value) =>
     isNaN(Number(value)),
   ).length;
