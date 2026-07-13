@@ -19,12 +19,11 @@ const cleanString = (question: string): string[] => {
     !(toArray[1] === "is") ||
     !toArray[toArray.length - 1].endsWith("?")
   ) {
-    throw new Error("Unknown operation");
+    throw new Error("Syntax error");
   }
   const simplifyArr: string[] = simplify(toArray);
-  hasOperationsOrNot(simplifyArr);
   const simplifyOper: string[] = simplifyOperation(simplifyArr);
-  console.log(simplifyOper);
+  hasOperationsOrNot(simplifyOper);
   return simplifyOper;
 };
 
@@ -47,6 +46,9 @@ const simplify = (validQuesion: string[]): string[] => {
 //Check it has operations  or not
 const hasOperationsOrNot = (question: string[]) => {
   const operResut: string[] = question.filter((value) => isNaN(Number(value)));
+  if (operResut.length < 0) {
+    throw new Error("Syntax error");
+  }
   console.log(operResut);
 };
 
