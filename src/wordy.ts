@@ -24,16 +24,15 @@ const cleanString = (question: string): string => {
   return question;
 };
 const simplify = (validQuesion: string[]): string[] => {
+  const ex = /\?/;
   //remove first element and second element
   validQuesion.splice(0, 1);
   validQuesion.splice(0, 1);
   if (validQuesion.length === 1) {
-    const ex = /\?/;
     let temp = validQuesion[0].replace(ex, "");
     validQuesion.pop();
     validQuesion.push(temp);
   } else {
-    const ex = /\?/;
     let temp: string = validQuesion.pop()!;
     temp = temp.replace(ex, "");
     validQuesion.push(temp);
