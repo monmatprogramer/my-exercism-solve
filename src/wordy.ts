@@ -1,10 +1,11 @@
 export const answer = (question: string): number => {
   console.log("question", question);
-  cleanString(question);
-  return 0;
+  const cleanStr: string[] = cleanString(question);
+  const result = calculate(cleanStr);
+  return result;
 };
 
-const cleanString = (question: string): string => {
+const cleanString = (question: string): string[] => {
   //conver to lowercase
   question = question.toLowerCase();
   const toArray: string[] = question.split(" ");
@@ -22,8 +23,7 @@ const cleanString = (question: string): string => {
   }
   const simplifyArr: string[] = simplify(toArray);
   const simplifyOper: string[] = simplifyOperation(simplifyArr);
-  console.log(simplifyOper);
-  return question;
+  return simplifyOper;
 };
 
 const simplify = (validQuesion: string[]): string[] => {
@@ -63,7 +63,12 @@ const calculate = (validQuestion: string[]): number => {
       n = n / Number(validQuestion[i + 2]);
     } else if (validQuestion[i + 1] === "plus") {
       n = n + Number(validQuestion[i + 2]);
+    } else if (validQuestion[i + 1] === "minus") {
+      n = n - Number(validQuestion[i + 2]);
+    } else {
+      n = n * Number(validQuestion[i + 2]);
     }
+    i = i + 2;
   }
-  return 0;
+  return n;
 };
