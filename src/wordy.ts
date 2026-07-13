@@ -72,12 +72,17 @@ const simplifyOperation = (validQuestion: string[]): string[] => {
   return validQuestion;
 };
 // Check unknow operation
-const checkUnknowOp = (validQuestion: string[]) => {
+const checkUnknowOp = (validQuestion: string[]): boolean => {
   if (validQuestion.length === 2) {
-    if (validQuestion[1] !== "plus") {
-      console.log("Not equal plus");
+    let temp = validQuestion.pop();
+    const operations: string[] = ["plus", "minus", "divided", "multiplied"];
+    let op: number = operations.filter((value) => value === temp).length;
+    // has unknow
+    if (op === 0) {
+      return true;
     }
   }
+  return false;
 };
 const calculate = (validQuestion: string[]): number => {
   const singleNum: boolean = hasSingleNumber(validQuestion);
@@ -96,7 +101,9 @@ const calculate = (validQuestion: string[]): number => {
       return (n = n * Number(validQuestion[2]));
     }
   }
-  checkUnknowOp(validQuestion);
+  if (checkUnknowOp(validQuestion)) {
+    throw new Error("Unknow operation");
+  }
   let operations: number = validQuestion.filter((value) =>
     isNaN(Number(value)),
   ).length;
