@@ -15,5 +15,5 @@ const cleanString = (question: string): string => {
   ) {
     throw new Error("Unknown operation");
   }
-  return "";
+  return question;
 };
