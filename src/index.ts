@@ -1,7 +1,11 @@
 import { List } from "./list-ops";
-const n = List.create(1, 2);
-const n2 = List.create(3);
-const n3 = List.create<number>();
-console.log(n);
 
-console.log(n2);
+const list2 = List.create(3);
+
+const list3 = List.create<number>();
+
+const list4 = List.create(4, 5, 6);
+
+const listOfLists = List.create(list2, list3, list4);
+
+const list1 = List.create(1, 2).concatenate(listOfLists);
