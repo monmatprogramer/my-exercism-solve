@@ -3,7 +3,7 @@ export class List {
   constructor(...items: unknown[]) {
     this.items = [...items];
   }
-  public static create(...values: unknown[]): unknown {
+  public static create<T>(...values: unknown[]): unknown {
     // Do *not* construct any array literal ([]) in your solution.
     // Do *not* construct any arrays through new Array in your solution.
     // DO *not* use any of the Array.prototype methods in your solution.
