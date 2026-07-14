@@ -69,6 +69,19 @@ const simplifyOperation = (validQuestion: string[]): string[] => {
     }
   }
   console.log("simplifyOperation : ", validQuestion);
+  //[1,'plus'] => Syntax error
+  if (
+    validQuestion.length > 1 &&
+    validQuestion.length < 3 &&
+    !isNaN(Number(validQuestion[0]))
+  ) {
+    const temp: string = validQuestion[validQuestion.length - 1]; //get last element
+    const operations: string[] = ["plus", "minus", "divided", "multiplied"];
+    const synErro: number = operations.filter((value) => value == temp).length;
+    if (synErro > 0) {
+      throw new Error("Syntax error");
+    }
+  }
   return validQuestion;
 };
 // Check unknow operation
@@ -104,6 +117,7 @@ const calculate = (validQuestion: string[]): number => {
   if (checkUnknowOp(validQuestion)) {
     throw new Error("Unknow operation");
   }
+  //if(){}
   let operations: number = validQuestion.filter((value) =>
     isNaN(Number(value)),
   ).length;
