@@ -34,7 +34,7 @@ export class List {
   };
   //filter
   filter = (conditionFunction: (val: unknown) => boolean): number[] => {
-    const result: unknown[] = [];
+    const result: number[] = [];
     for (const [index, value] of this.items.entries()) {
       if (typeof value === "number") {
         if (conditionFunction(value)) {
@@ -46,7 +46,7 @@ export class List {
   };
   //Map()
   map = (changeFunction: (val: number) => number): unknown => {
-    const result: unknown[] = [];
+    const result: number[] = [];
     for (const [index, value] of this.items.entries()) {
       if (typeof value === "number") {
         result.push(changeFunction(value));
@@ -59,11 +59,9 @@ export class List {
     callbackFunc: (acc: number, element: number) => number,
     initialValue: number,
   ): number => {
-    let accumulator = 0;
+    let accumulator = initialValue;
     for (const [index, value] of this.items.entries()) {
-      if (value === "number") {
-        callbackFunc(accumulator, value);
-      }
+      accumulator = callbackFunc(accumulator, value);
     }
     return accumulator;
   };
