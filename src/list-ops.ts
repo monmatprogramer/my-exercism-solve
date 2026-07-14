@@ -65,4 +65,14 @@ export class List {
     }
     return accumulator;
   };
+  // fold right
+  foldr = (
+    callbackFunc: (acc: number, element: number) => number,
+    initialValue: number,
+  ) => {
+    let accumulator = initialValue;
+    for (let i: number = this.items.length; i >= 0; i--) {
+      console.log(this.items[i]);
+    }
+  };
 }
