@@ -9,8 +9,7 @@ export class List {
     // DO *not* use any of the Array.prototype methods in your solution.
 
     // You may use the destructuring and spreading (...) syntax from Iterable.
-    //console.log(values);
-    return new List(values);
+    return values;
   }
   // foreach methods
   // function singature:fun_name: (param_name: param_dataType) => fun_type
@@ -28,8 +27,9 @@ export class List {
     }
     return count;
   };
-  append = (other: List): List => {
+  append = (other: List): unknown => {
     const combinedItems: unknown[] = [...this.items];
-    return new List();
+    combinedItems.push(...other.items);
+    return List.create(...combinedItems);
   };
 }
