@@ -32,4 +32,15 @@ export class List {
     combinedItems.push(...other.items);
     return List.create(...combinedItems);
   };
+  //filter
+  filter = (conditionFunction: (value: number) => boolean): unknown => {
+    const result: unknown[] = [];
+    for (const [index, value] of this.items.entries()) {
+      if (typeof value === "number") {
+        let t = conditionFunction(value);
+        console.log(t);
+      }
+    }
+    return List.create(...result);
+  };
 }
