@@ -13,10 +13,15 @@ export class List {
     return new List(values);
   }
   // foreach methods
+  // function singature:fun_name: (param_name: param_dataType) => fun_type
   forEach(callbackFunction: (param: unknown) => void) {
     //built-in variable.forEach(() =>logic_here)
     for (const [index, item] of this.items.entries()) {
       callbackFunction(item);
     }
   }
+  // use arrow key
+  length = (): number => {
+    return 0;
+  };
 }
