@@ -78,4 +78,12 @@ export class List {
     return accumulator;
   };
   //reverse
+  reverse = (): number[] => {
+    let reversedItems: number[] = [];
+    for (let i: number = this.items.length - 1; i >= 0; i--) {
+      reversedItems.push(this.items[i]);
+    }
+    console.log(reversedItems);
+    return List.create(...reversedItems);
+  };
 }
