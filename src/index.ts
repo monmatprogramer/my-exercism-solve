@@ -1,6 +1,7 @@
 import { List } from "./list-ops";
-const n = new List(1, 2, 3, 4);
-//const n2 = new List(1, 2, 3, 4);
-//const n3 = new List(n, n2);
-//n.concatenate(n3);
+const n = List.create(1, 2);
+const n2 = List.create(3);
+const n3 = List.create<number>();
 console.log(n);
+
+console.log(n2);
