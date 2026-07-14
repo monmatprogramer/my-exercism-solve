@@ -22,6 +22,10 @@ export class List {
   }
   // use arrow key
   length = (): number => {
-    return 0;
+    let count: number = 0;
+    for (const [index, item] of this.items.entries()) {
+      count = index + 1;
+    }
+    return count;
   };
 }
