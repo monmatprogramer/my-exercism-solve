@@ -57,12 +57,13 @@ export class List {
   foldl = (
     callbackFunc: (acc: number, element: number) => number,
     initalValue: number,
-  ): unknown => {
+  ): number => {
     let accumulator = initalValue;
     for (const [index, value] of this.items.entries()) {
-      if (value === "number") {
-        callbackFunc(accumulator, value);
-      }
+      console.log(typeof value);
+      //if (value === "number") {
+      // callbackFunc(accumulator, value);
+      //}
     }
     return accumulator;
   };
