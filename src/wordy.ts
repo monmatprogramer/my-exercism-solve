@@ -115,7 +115,7 @@ const calculate = (validQuestion: string[]): number => {
     }
   }
   if (checkUnknowOp(validQuestion)) {
-    throw new Error("Unknow operation");
+    throw new Error("Unknown operation");
   }
   //if(){}
   let operations: number = validQuestion.filter((value) =>
