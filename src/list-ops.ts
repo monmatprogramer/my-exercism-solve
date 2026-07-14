@@ -9,7 +9,7 @@ export class List {
     // DO *not* use any of the Array.prototype methods in your solution.
 
     // You may use the destructuring and spreading (...) syntax from Iterable.
-    return [this.items];
+    return [];
   }
   // foreach methods
   // function singature:fun_name: (param_name: param_dataType) => fun_type
@@ -28,7 +28,7 @@ export class List {
     return count;
   };
   append = (other: List): unknown => {
-    const combinedItems: number[] = [...this.items];
+    const combinedItems: unknown[] = [...this.items];
     combinedItems.push(...other.items);
     return List.create(...combinedItems);
   };
@@ -58,10 +58,13 @@ export class List {
   foldl = (
     callbackFunc: (acc: number, element: number) => number,
     initialValue: number,
-  ): number => {
+  ): unknown => {
     let accumulator = initialValue;
     for (const [index, value] of this.items.entries()) {
-      accumulator = callbackFunc(accumulator, value);
+      if (value === "number") {
+        const temValue: number = Number(value);
+        accumulator = callbackFunc(accumulator, temValue);
+      }
     }
     return accumulator;
   };
@@ -72,7 +75,7 @@ export class List {
   ) => {
     let accumulator = initialValue;
     for (let i: number = this.items.length - 1; i >= 0; i--) {
-      accumulator = callbackFunc(accumulator, this.items[i]);
+      accumulator = callbackFunc(accumulator, Number(this.items[i]));
     }
     return accumulator;
   };
@@ -80,7 +83,7 @@ export class List {
   reverse = (): unknown => {
     let reversedItems: number[] = [];
     for (let i: number = this.items.length - 1; i >= 0; i--) {
-      reversedItems.push(this.items[i]);
+      reversedItems.push(Number(this.items[i]));
     }
     console.log(reversedItems);
     return List.create(...reversedItems);
