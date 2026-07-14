@@ -22,6 +22,18 @@ const cleanString = (question: string): string[] => {
     if (toArray[toArray.length - 1] === "is?") {
       throw new Error("Syntax error");
     }
+    //toArray= [ 'what', 'is', '1', 'plus', 'plus', '2' ]
+    if (!isNaN(Number(toArray[2])) && toArray.length > 3) {
+      const [oper1, oera2] = [toArray[3], toArray[4]];
+      const operations: string[] = ["plus", "minus", "divided", "multiplied"];
+      const check1: number = operations.filter((v) => v === oper1).length;
+      const check2: number = operations.filter(
+        (value) => value === oera2,
+      ).length;
+      if (check2 > 1 && check2 > 1) {
+        throw new Error("Syntax error");
+      }
+    }
     throw new Error("Unknown operation");
   }
   const simplifyArr: string[] = simplify(toArray);
