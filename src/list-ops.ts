@@ -9,7 +9,7 @@ export class List {
     // DO *not* use any of the Array.prototype methods in your solution.
 
     // You may use the destructuring and spreading (...) syntax from Iterable.
-    return [];
+    return [...values];
   }
   // foreach methods
   // function singature:fun_name: (param_name: param_dataType) => fun_type
