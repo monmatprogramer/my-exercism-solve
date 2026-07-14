@@ -55,13 +55,13 @@ export class List {
     return List.create(...result);
   };
   foldl = (
-    callbackFunc: (val: number, element: number) => number,
+    callbackFunc: (acc: number, element: number) => number,
     initalValue: number,
   ): unknown => {
     let accumulator = initalValue;
     for (const [index, value] of this.items.entries()) {
       if (value === "number") {
-        callbackFunc(value);
+        callbackFunc(accumulator, value);
       }
     }
     return accumulator;
