@@ -19,6 +19,9 @@ const cleanString = (question: string): string[] => {
     !(toArray[1] === "is") ||
     !toArray[toArray.length - 1].endsWith("?")
   ) {
+    if (toArray[toArray.length - 1] === "is?") {
+      throw new Error("Syntax error");
+    }
     throw new Error("Unknown operation");
   }
   const simplifyArr: string[] = simplify(toArray);
