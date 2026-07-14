@@ -30,7 +30,7 @@ const cleanString = (question: string): string[] => {
       const check2: number = operations.filter(
         (value) => value === oera2,
       ).length;
-      if (check2 > 1 && check2 > 1) {
+      if (check1 >= 1 && check2 >= 1) {
         throw new Error("Syntax error");
       }
     }
@@ -84,6 +84,14 @@ const simplifyOperation = (validQuestion: string[]): string[] => {
     }
   }
   console.log("simplifyOperation : ", validQuestion);
+  if (validQuestion.length > 3) {
+    const operations: string[] = ["plus", "minus", "divided", "multiplied"];
+    const ch1: number = operations.filter((v) => v === validQuestion[1]).length;
+    const ch2: number = operations.filter((v) => v === validQuestion[2]).length;
+    if (ch1 >= 1 && ch2 >= 1) {
+      throw new Error("Syntax error");
+    }
+  }
   //[1,'plus'] => Syntax error
   if (
     validQuestion.length > 1 &&
