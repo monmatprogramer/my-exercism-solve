@@ -19,7 +19,7 @@ const cleanString = (question: string): string[] => {
     !(toArray[1] === "is") ||
     !toArray[toArray.length - 1].endsWith("?")
   ) {
-    throw new Error("Unknow operation");
+    throw new Error("Unknown operation");
   }
   const simplifyArr: string[] = simplify(toArray);
   const simplifyOper: string[] = simplifyOperation(simplifyArr);
