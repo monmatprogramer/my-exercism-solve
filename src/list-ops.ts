@@ -1,6 +1,6 @@
 export class List {
-  private items: number[];
-  constructor(...items: number[]) {
+  private items: unknown[];
+  constructor(...items: unknown[]) {
     this.items = [...items];
   }
   public static create(...values: unknown[]): unknown {
@@ -9,7 +9,7 @@ export class List {
     // DO *not* use any of the Array.prototype methods in your solution.
 
     // You may use the destructuring and spreading (...) syntax from Iterable.
-    return values;
+    return [this.items];
   }
   // foreach methods
   // function singature:fun_name: (param_name: param_dataType) => fun_type
