@@ -102,6 +102,14 @@ const simplifyOperation = (validQuestion: string[]): string[] => {
         throw new Error("Syntax error");
       }
     }
+    if (
+      validQuestion[0] === "plus" ||
+      validQuestion[0] === "minus" ||
+      validQuestion[0] === "divided" ||
+      validQuestion[0] === "multiplied"
+    ) {
+      throw new Error("Syntax error");
+    }
   }
   //[1,'plus'] => Syntax error
   if (
