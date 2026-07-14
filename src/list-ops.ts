@@ -1,9 +1,9 @@
 export class List {
-  private items: unknown[];
-  constructor(...items: unknown[]) {
+  private items: number[];
+  constructor(...items: number[]) {
     this.items = [...items];
   }
-  public static create(...values: unknown[]): unknown {
+  public static create(...values: number[]): number[] {
     // Do *not* construct any array literal ([]) in your solution.
     // Do *not* construct any arrays through new Array in your solution.
     // DO *not* use any of the Array.prototype methods in your solution.
@@ -27,13 +27,13 @@ export class List {
     }
     return count;
   };
-  append = (other: List): unknown => {
-    const combinedItems: unknown[] = [...this.items];
+  append = (other: List): number[] => {
+    const combinedItems: number[] = [...this.items];
     combinedItems.push(...other.items);
     return List.create(...combinedItems);
   };
   //filter
-  filter = (conditionFunction: (val: unknown) => boolean): unknown => {
+  filter = (conditionFunction: (val: unknown) => boolean): number[] => {
     const result: unknown[] = [];
     for (const [index, value] of this.items.entries()) {
       if (typeof value === "number") {
@@ -54,16 +54,16 @@ export class List {
     }
     return List.create(...result);
   };
+  // fold left
   foldl = (
     callbackFunc: (acc: number, element: number) => number,
-    initalValue: number,
+    initialValue: number,
   ): number => {
-    let accumulator = initalValue;
+    let accumulator = 0;
     for (const [index, value] of this.items.entries()) {
-      console.log(typeof value);
-      //if (value === "number") {
-      // callbackFunc(accumulator, value);
-      //}
+      if (value === "number") {
+        callbackFunc(accumulator, value);
+      }
     }
     return accumulator;
   };
