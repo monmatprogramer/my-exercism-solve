@@ -3,7 +3,7 @@ export class List {
   constructor(...items: number[]) {
     this.items = [...items];
   }
-  public static create(...values: number[]): number[] {
+  public static create(...values: unknown[]): unknown {
     // Do *not* construct any array literal ([]) in your solution.
     // Do *not* construct any arrays through new Array in your solution.
     // DO *not* use any of the Array.prototype methods in your solution.
@@ -27,13 +27,13 @@ export class List {
     }
     return count;
   };
-  append = (other: List): number[] => {
+  append = (other: List): unknown => {
     const combinedItems: number[] = [...this.items];
     combinedItems.push(...other.items);
     return List.create(...combinedItems);
   };
   //filter
-  filter = (conditionFunction: (val: unknown) => boolean): number[] => {
+  filter = (conditionFunction: (val: unknown) => boolean): unknown => {
     const result: number[] = [];
     for (const [index, value] of this.items.entries()) {
       if (typeof value === "number") {
@@ -74,11 +74,10 @@ export class List {
     for (let i: number = this.items.length - 1; i >= 0; i--) {
       accumulator = callbackFunc(accumulator, this.items[i]);
     }
-    console.log(accumulator);
     return accumulator;
   };
   //reverse
-  reverse = (): number[] => {
+  reverse = (): unknown => {
     let reversedItems: number[] = [];
     for (let i: number = this.items.length - 1; i >= 0; i--) {
       reversedItems.push(this.items[i]);
@@ -86,5 +85,8 @@ export class List {
     console.log(reversedItems);
     return List.create(...reversedItems);
   };
-  concatenate = (listOfLists: number[]): number[] => {};
+  concatenate = (listOfLists: unknown): unknown => {
+    console.log("listofLists: ", listOfLists);
+    return List.create();
+  };
 }
