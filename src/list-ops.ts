@@ -37,8 +37,9 @@ export class List {
     const result: unknown[] = [];
     for (const [index, value] of this.items.entries()) {
       if (typeof value === "number") {
-        let t = conditionFunction(value);
-        console.log(t);
+        if (conditionFunction(value)) {
+          result.push(value);
+        }
       }
     }
     return List.create(...result);
