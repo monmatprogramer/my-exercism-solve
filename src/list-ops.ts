@@ -86,4 +86,5 @@ export class List {
     console.log(reversedItems);
     return List.create(...reversedItems);
   };
+  concatenate = (listOfLists: number[]): number[] => {};
 }
