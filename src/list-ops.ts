@@ -1,4 +1,5 @@
 export class List {
+  private items: unknown[];
   public static create(...values: unknown[]): unknown {
     // Do *not* construct any array literal ([]) in your solution.
     // Do *not* construct any arrays through new Array in your solution.
