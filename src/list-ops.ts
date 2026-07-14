@@ -33,7 +33,7 @@ export class List {
     return List.create(...combinedItems);
   };
   //filter
-  filter = (conditionFunction: (value: number) => boolean): unknown => {
+  filter = (conditionFunction: (val: unknown) => boolean): unknown => {
     const result: unknown[] = [];
     for (const [index, value] of this.items.entries()) {
       if (typeof value === "number") {
@@ -42,6 +42,17 @@ export class List {
         }
       }
     }
+    return List.create(...result);
+  };
+  //Map()
+  map = (changeFunction: (val: number) => number): unknown => {
+    const result: unknown[] = [];
+    for (const [index, value] of this.items.entries()) {
+      if (typeof value === "number") {
+        result.push(changeFunction(value));
+      }
+    }
+    console.log(result);
     return List.create(...result);
   };
 }
