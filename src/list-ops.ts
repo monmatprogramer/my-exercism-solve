@@ -1,10 +1,7 @@
 export class List {
   private items: unknown[];
   constructor(...items: unknown[]) {
-    console.log(...items);
-    this.items = ["s"];
-    console.log("this.items: ", this.items);
-    console.log("constructor");
+    this.items = [...items];
   }
   public static create(...values: unknown[]): unknown {
     // Do *not* construct any array literal ([]) in your solution.
@@ -14,5 +11,12 @@ export class List {
     // You may use the destructuring and spreading (...) syntax from Iterable.
     //console.log(values);
     return new List(values);
+  }
+  // foreach methods
+  forEach(callbackFunction: (param: unknown) => void) {
+    //built-in variable.forEach(() =>logic_here)
+    for (const [index, item] of this.items.entries()) {
+      callbackFunction(item);
+    }
   }
 }
