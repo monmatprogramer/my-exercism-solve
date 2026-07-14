@@ -91,6 +91,9 @@ const simplifyOperation = (validQuestion: string[]): string[] => {
     if (ch1 >= 1 && ch2 >= 1) {
       throw new Error("Syntax error");
     }
+    if (ch1 >= 1 && !isNaN(Number(validQuestion[3]))) {
+      throw new Error("Syntax error");
+    }
   }
   //[1,'plus'] => Syntax error
   if (
