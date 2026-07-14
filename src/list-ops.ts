@@ -52,7 +52,18 @@ export class List {
         result.push(changeFunction(value));
       }
     }
-    console.log(result);
     return List.create(...result);
+  };
+  foldl = (
+    callbackFunc: (val: number, element: number) => number,
+    initalValue: number,
+  ): unknown => {
+    let accumulator = initalValue;
+    for (const [index, value] of this.items.entries()) {
+      if (value === "number") {
+        callbackFunc(value);
+      }
+    }
+    return accumulator;
   };
 }
