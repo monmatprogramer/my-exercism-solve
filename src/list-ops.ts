@@ -71,8 +71,11 @@ export class List {
     initialValue: number,
   ) => {
     let accumulator = initialValue;
-    for (let i: number = this.items.length; i >= 0; i--) {
-      console.log(this.items[i]);
+    for (let i: number = this.items.length - 1; i >= 0; i--) {
+      accumulator = callbackFunc(accumulator, this.items[i]);
     }
+    console.log(accumulator);
+    return accumulator;
   };
+  //reverse
 }
