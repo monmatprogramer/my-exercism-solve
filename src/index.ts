@@ -1,7 +1,7 @@
 import { answer } from "./wordy";
 
 try {
-  console.log(answer("What is 1 plus 2 1?"));
+  console.log(answer("What is 1 2 plus?"));
 } catch (e: any) {
   console.log(e.message);
 }

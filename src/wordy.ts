@@ -84,7 +84,7 @@ const simplifyOperation = (validQuestion: string[]): string[] => {
     }
   }
   console.log("simplifyOperation : ", validQuestion);
-  if (validQuestion.length > 3) {
+  if (validQuestion.length >= 3) {
     const operations: string[] = ["plus", "minus", "divided", "multiplied"];
     const ch1: number = operations.filter((v) => v === validQuestion[1]).length;
     const ch2: number = operations.filter((v) => v === validQuestion[2]).length;
@@ -93,6 +93,14 @@ const simplifyOperation = (validQuestion: string[]): string[] => {
     }
     if (ch1 >= 1 && !isNaN(Number(validQuestion[3]))) {
       throw new Error("Syntax error");
+    }
+    if (!isNaN(Number(validQuestion[0] && !isNaN(Number(validQuestion[1]))))) {
+      const ch3: number = operations.filter(
+        (v) => v === validQuestion[2],
+      ).length;
+      if (ch3 >= 1) {
+        throw new Error("Syntax error");
+      }
     }
   }
   //[1,'plus'] => Syntax error
