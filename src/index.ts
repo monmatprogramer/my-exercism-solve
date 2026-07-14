@@ -1,7 +1,3 @@
-import { answer } from "./wordy";
+import { List } from "./list-ops";
 
-try {
-  console.log(answer("What is plus 1 2?"));
-} catch (e: any) {
-  console.log(e.message);
-}
+List.create(1, 2, 3, 4);
