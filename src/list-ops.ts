@@ -28,4 +28,8 @@ export class List {
     }
     return count;
   };
+  append = (other: List): List => {
+    const combinedItems: unknown[] = [...this.items];
+    return new List();
+  };
 }
