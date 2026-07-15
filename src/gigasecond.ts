@@ -9,3 +9,6 @@ export class Gigasecond {
     return this.initialDate;
   }
 }
+
+const g = new Gigasecond();
+console.log(g.getDate);

@@ -68,7 +68,6 @@ export class List<T> {
     for (let i: number = this.items.length - 1; i >= 0; i--) {
       revesedList.push(this.items[i]);
     }
-    console.log(revesedList);
     return new List<T>(revesedList);
   }
   // concatenate array
