@@ -4,9 +4,15 @@ export class List<T> {
     this.items = items;
   }
   public static create<T>(...values: T[]): List<T> {
-    // add
     return new List<T>(values);
   }
+  // Foreach
+  forEach(callbackFun: (element: T) => void) {
+    for (const [index, element] of this.items.entries()) {
+      callbackFun(element);
+    }
+  }
+  // concatenate array
   public concatenate(otherList: List<List<T>>): T[] {
     const tempArray: T[] = [];
     for (const [index, value] of otherList.items.entries()) {
@@ -29,5 +35,4 @@ const list1 = List.create(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 const t1 = List.create(23, 32);
 const t2 = List.create(34, 44);
 const t3 = List.create(t1, t2);
-dis = list1.concatenate(t3);
-console.log(dis);
+list1.forEach((n) => console.log(n));
