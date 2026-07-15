@@ -20,6 +20,8 @@ export class List<T> {
     }
     return count;
   }
+  //append
+  append(other: List<T>): T[] {}
   // concatenate array
   public concatenate(otherList: List<List<T>>): T[] {
     const tempArray: T[] = [];
