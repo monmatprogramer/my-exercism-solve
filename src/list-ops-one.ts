@@ -29,11 +29,14 @@ export class List<T> {
     return new List<T>(combinedList);
   }
   // filter
-  filter(filteredFun: (element: T) => void): List<T> {
+  filter(filteredFun: (element: T) => boolean): List<T> {
     const filteredList: T[] = [];
     for (const [index, value] of this.items.entries()) {
-      filteredFun(value);
+      if (filteredFun(value)) {
+        filteredList.push(value);
+      }
     }
+    return new List<T>(filteredList);
   }
   // concatenate array
   public concatenate(otherList: List<List<T>>): List<T> {
