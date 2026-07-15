@@ -1,14 +1,9 @@
 export class List {
   private items: unknown[];
   constructor(...items: unknown[]) {
-    if (typeof items === "number") {
-      console.log("✍️true");
-    } else if (typeof items === "object") {
-      console.log("➡️ object");
-      const t: number = [...items];
-    }
     this.items = [...items];
-    console.log(this.items);
+
+    //console.log(this.items);
   }
   public static create<T>(...values: unknown[]): List {
     // Do *not* construct any array literal ([]) in your solution.
@@ -95,11 +90,15 @@ export class List {
     console.log(reversedItems);
     return List.create(...reversedItems);
   };
-  concatenate = (listOfLists: unknown): unknown => {
-    if (listOfLists instanceof List) {
-      console.log(listOfLists.items[0]);
+  concatenate = (listOfLists: List): unknown => {
+    const flatResult: number[] = [];
+    console.log(typeof this.items[0]);
+    console.log(JSON.stringify(this.items[0]));
+    const t = this.items[0];
+    console.log(typeof t[0] === "number");
+    for (const [index, value] of this.items.entries()) {
     }
-    // console.log("listofLists: ", new listOfLists.items());
+    console.log(flatResult);
     return List.create(1, 2, 3);
   };
 }
