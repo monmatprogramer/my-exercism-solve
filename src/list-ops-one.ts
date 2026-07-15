@@ -47,13 +47,13 @@ export class List<T> {
     return new List<T>(mappedList);
   }
   // Fold left
-  foldl(foldLeftFun: (accumu: T, element: T) => T, initialvalue: T): List<T> {
+  foldl(foldLeftFun: (accumu: T, element: T) => T, initialvalue: T): T {
     const foldedList: T[] = [];
+    let accumu: T = initialvalue;
     for (const [index, value] of this.items.entries()) {
-      initialvalue = foldLeftFun(initialvalue, value);
+      accumu = foldLeftFun(accumu, value);
     }
-    console.log(foldedList);
-    return new List<T>(foldedList);
+    return accumu;
   }
   // concatenate array
   public concatenate(otherList: List<List<T>>): List<T> {
