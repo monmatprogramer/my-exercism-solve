@@ -1,4 +1,12 @@
-export class List<T> {}
+export class List<T> {
+  private items: T[];
+  constructor(items: T[]) {
+    this.items = items;
+  }
+  public static create<T>(...values: T[]): List<T> {
+    return new List<T>(values);
+  }
+}
 
 // ---call class---
 
