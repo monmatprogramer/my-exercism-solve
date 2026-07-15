@@ -1,7 +1,11 @@
 //gigasecond
 export class Gigasecond {
-  private initialDate;
-  public date(/* Parameters go here */) {
-    throw new Error("Remove this line and implement the function");
+  private initialDate: Date;
+  constructor() {
+    this.initialDate = new Date();
+  }
+  public date(/* Parameters go here */) {}
+  get getDate(): Date {
+    return this.initialDate;
   }
 }
