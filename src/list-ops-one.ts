@@ -28,6 +28,7 @@ export class List<T> {
     }
     return new List<T>(combinedList);
   }
+  //
   // concatenate array
   public concatenate(otherList: List<List<T>>): T[] {
     const tempArray: T[] = [];
@@ -49,6 +50,8 @@ const list1 = List.create(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 //list1.concatenate(list2);
 
 const t1 = List.create(23, 32);
-const t2 = List.create(34, 44);
-const t3 = List.create(t1, t2);
-console.log(t1.append(t2));
+const t2 = List.create(34, 44, 55, 67);
+const tt2 = List.create<number>();
+const t3 = List.create(341, 441, 551, 671);
+const listOfLists = List.create(t2, tt2, t3);
+t1.concatenate(listOfLists);
