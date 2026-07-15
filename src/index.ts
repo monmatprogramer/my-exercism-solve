@@ -1,7 +1,7 @@
 import { List } from "./list-ops";
 
 const list2 = List.create(3);
-
+//it shoud be list2 = []
 const list3 = List.create<number>();
 
 const list4 = List.create(4, 5, 6);

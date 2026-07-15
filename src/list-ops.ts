@@ -1,7 +1,14 @@
 export class List {
   private items: unknown[];
   constructor(...items: unknown[]) {
+    if (typeof items === "number") {
+      console.log("✍️true");
+    } else if (typeof items === "object") {
+      console.log("➡️ object");
+      const t: number = [...items];
+    }
     this.items = [...items];
+    console.log(this.items);
   }
   public static create<T>(...values: unknown[]): List {
     // Do *not* construct any array literal ([]) in your solution.
@@ -90,7 +97,7 @@ export class List {
   };
   concatenate = (listOfLists: unknown): unknown => {
     if (listOfLists instanceof List) {
-      console.log("👌");
+      console.log(listOfLists.items[0]);
     }
     // console.log("listofLists: ", new listOfLists.items());
     return List.create(1, 2, 3);
