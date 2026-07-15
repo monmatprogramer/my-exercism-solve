@@ -12,6 +12,14 @@ export class List<T> {
       callbackFun(element);
     }
   }
+  // Length of array
+  length(): number {
+    let count = 0;
+    for (const [index, value] of this.items.entries()) {
+      count = index + 1;
+    }
+    return count;
+  }
   // concatenate array
   public concatenate(otherList: List<List<T>>): T[] {
     const tempArray: T[] = [];
@@ -35,4 +43,4 @@ const list1 = List.create(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 const t1 = List.create(23, 32);
 const t2 = List.create(34, 44);
 const t3 = List.create(t1, t2);
-list1.forEach((n) => console.log(n));
+console.log(list1.length());
