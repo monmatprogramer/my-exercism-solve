@@ -55,13 +55,14 @@ export class List<T> {
     }
     return accumu;
   }
-  folds(foldRighFun: (accumu: T, element: T) => T, initialValue: T): T {
+  foldr(foldRighFun: (accumu: T, element: T) => T, initialValue: T): T {
     let accumu: T = initialValue;
     for (let i: number = this.items.length - 1; i >= 0; i--) {
       accumu = foldRighFun(accumu, this.items[i]);
     }
     return accumu;
   }
+  // Revserse array
   // concatenate array
   public concatenate(otherList: List<List<T>>): List<T> {
     const tempArray: T[] = this.items;
@@ -87,4 +88,4 @@ const t2 = List.create(34);
 const tt2 = List.create<number>();
 const t3 = List.create(341, 441, 551, 671);
 const listOfLists = List.create(t2, tt2, t3);
-list1.folds((acc, el) => el * acc, 2);
+list1.foldr((acc, el) => el * acc, 2);
