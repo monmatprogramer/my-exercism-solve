@@ -1,12 +1,11 @@
 export class List {
-  public static create<T>(...values: unknown[]): unknown[] {
-    console.log(typeof values);
-    if (typeof values === "number") {
-      return [...values];
-    } else if (typeof values === "object") {
-      return [0];
-    }
-    return [1];
+  public static create<T>(
+    ...values: unknown[] | number[]
+  ): unknown[] | number[] {
+    return [...values];
+  }
+  concatenate(listOfLists: unknown[] | number[]) {
+    console.log(listOfLists);
   }
 }
 
