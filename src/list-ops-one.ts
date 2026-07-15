@@ -29,7 +29,12 @@ export class List<T> {
     return new List<T>(combinedList);
   }
   // filter
-  filter() {}
+  filter(filteredFun: (element: T) => void): List<T> {
+    const filteredList: T[] = [];
+    for (const [index, value] of this.items.entries()) {
+      filteredFun(value);
+    }
+  }
   // concatenate array
   public concatenate(otherList: List<List<T>>): List<T> {
     const tempArray: T[] = this.items;
