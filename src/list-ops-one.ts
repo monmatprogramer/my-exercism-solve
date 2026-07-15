@@ -63,6 +63,14 @@ export class List<T> {
     return accumu;
   }
   // Revserse array
+  reverse(): List<T> {
+    const revesedList: T[] = [];
+    for (let i: number = this.items.length - 1; i >= 0; i--) {
+      revesedList.push(this.items[i]);
+    }
+    console.log(revesedList);
+    return new List<T>(revesedList);
+  }
   // concatenate array
   public concatenate(otherList: List<List<T>>): List<T> {
     const tempArray: T[] = this.items;
@@ -87,5 +95,6 @@ const t1 = List.create(23, 32);
 const t2 = List.create(34);
 const tt2 = List.create<number>();
 const t3 = List.create(341, 441, 551, 671);
+
 const listOfLists = List.create(t2, tt2, t3);
-list1.foldr((acc, el) => el * acc, 2);
+list1.reverse();
