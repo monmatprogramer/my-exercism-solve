@@ -28,7 +28,8 @@ export class List<T> {
     }
     return new List<T>(combinedList);
   }
-  //
+  // filter
+  filter() {}
   // concatenate array
   public concatenate(otherList: List<List<T>>): List<T> {
     const tempArray: T[] = this.items;
@@ -54,5 +55,5 @@ const t2 = List.create(34);
 const tt2 = List.create<number>();
 const t3 = List.create(341, 441, 551, 671);
 const listOfLists = List.create(t2, tt2, t3);
-let d = t1.concatenate(listOfLists);
+let d = t1.filter((el) => el % 2 === 1);
 console.log(d);
