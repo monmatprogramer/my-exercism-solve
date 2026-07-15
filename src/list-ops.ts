@@ -93,9 +93,6 @@ export class List {
   concatenate = (listOfLists: List): unknown => {
     const flatResult: number[] = [];
     console.log(typeof this.items[0]);
-    console.log(JSON.stringify(this.items[0]));
-    const t = this.items[0];
-    console.log(typeof t[0] === "number");
     for (const [index, value] of this.items.entries()) {
     }
     console.log(flatResult);
