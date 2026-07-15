@@ -7,18 +7,20 @@ export class List<T> {
     // add
     return new List<T>(values);
   }
-  public concatenate(otherList: List<T>): void {
-    console.log(otherList.items);
-    console.log(this.items);
+  public concatenate(otherList: List<List<T>>): void {
+    console.log(otherList.items.length);
   }
 }
 
 // ---call class---
 
 const list1 = List.create(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-const list2 = List.create(20, 12, 13, 14, 15, 16, 17, 18, 19, 11);
-const list3 = List.create(130, 21, 31, 41, 51, 61, 71, 81, 91, 40);
-const list4 = List.create(list1, list2);
+//const list2 = List.create(20, 12, 13, 14, 15, 16, 17, 18, 19, 11);
+//const list3 = List.create(130, 21, 31, 41, 51, 61, 71, 81, 91, 40);
+//const list4 = List.create(list1, list2, list3);
 //list1.concatenate(list2);
 
-console.log(list4);
+const t1 = List.create(23, 32);
+const t2 = List.create(34, 44);
+const t3 = List.create(t1, t2);
+list1.concatenate(t3);
