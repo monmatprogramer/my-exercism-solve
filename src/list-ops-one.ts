@@ -30,14 +30,14 @@ export class List<T> {
   }
   //
   // concatenate array
-  public concatenate(otherList: List<List<T>>): T[] {
+  public concatenate(otherList: List<List<T>>): List<T> {
     const tempArray: T[] = [];
     for (const [index, value] of otherList.items.entries()) {
       for (const [jindex, jvalue] of value.items.entries()) {
         tempArray.push(jvalue);
       }
     }
-    return tempArray;
+    return new List<T>(tempArray);
   }
 }
 
@@ -54,4 +54,5 @@ const t2 = List.create(34, 44, 55, 67);
 const tt2 = List.create<number>();
 const t3 = List.create(341, 441, 551, 671);
 const listOfLists = List.create(t2, tt2, t3);
-t1.concatenate(listOfLists);
+let d = t1.concatenate(listOfLists);
+console.log(d);
