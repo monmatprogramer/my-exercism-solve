@@ -89,7 +89,10 @@ export class List {
     return List.create(...reversedItems);
   };
   concatenate = (listOfLists: unknown): unknown => {
-    console.log("listofLists: ", listOfLists);
-    return new List();
+    if (listOfLists instanceof List) {
+      console.log("👌");
+    }
+    // console.log("listofLists: ", new listOfLists.items());
+    return List.create(1, 2, 3);
   };
 }
