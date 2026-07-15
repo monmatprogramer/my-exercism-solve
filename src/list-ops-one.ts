@@ -1,10 +1,10 @@
 export class List {
   public static create<T>(...values: number[]): number[] {
-    console.log(values);
-    return [];
+    return [...values];
   }
 }
 
 // ---call class---
 
-List.create(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+const list1 = List.create(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+console.log(list1);
