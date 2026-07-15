@@ -8,7 +8,9 @@ export class List<T> {
     return new List<T>(values);
   }
   public concatenate(otherList: List<List<T>>): void {
-    console.log(otherList.items.length);
+    for (const [index, value] of otherList.items.entries()) {
+      console.log(value);
+    }
   }
 }
 
