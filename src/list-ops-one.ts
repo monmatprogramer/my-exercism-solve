@@ -44,7 +44,6 @@ export class List<T> {
     for (const [index, value] of this.items.entries()) {
       mappedList.push(mapFun(value));
     }
-    console.log(mappedList);
     return new List<T>(mappedList);
   }
   // concatenate array
@@ -72,3 +71,4 @@ const t2 = List.create(34);
 const tt2 = List.create<number>();
 const t3 = List.create(341, 441, 551, 671);
 const listOfLists = List.create(t2, tt2, t3);
+list1.map((v) => ++v);
