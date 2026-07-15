@@ -38,6 +38,7 @@ export class List<T> {
     }
     return new List<T>(filteredList);
   }
+
   // Map
   map(mapFun: (element: T) => T): List<T> {
     const mappedList: T[] = [];
@@ -48,10 +49,16 @@ export class List<T> {
   }
   // Fold left
   foldl(foldLeftFun: (accumu: T, element: T) => T, initialvalue: T): T {
-    const foldedList: T[] = [];
     let accumu: T = initialvalue;
     for (const [index, value] of this.items.entries()) {
       accumu = foldLeftFun(accumu, value);
+    }
+    return accumu;
+  }
+  folds(foldRighFun: (accumu: T, element: T) => T, initialValue: T): T {
+    let accumu: T = initialValue;
+    for (let i: number = this.items.length - 1; i >= 0; i--) {
+      accumu = foldRighFun(accumu, this.items[i]);
     }
     return accumu;
   }
@@ -80,4 +87,4 @@ const t2 = List.create(34);
 const tt2 = List.create<number>();
 const t3 = List.create(341, 441, 551, 671);
 const listOfLists = List.create(t2, tt2, t3);
-list1.foldl((acc, el) => el * acc, 2);
+list1.folds((acc, el) => el * acc, 2);
