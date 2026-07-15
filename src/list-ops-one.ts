@@ -1,18 +1,4 @@
-export class List {
-  private items: unknown[] | number[];
-  //constructor
-  constructor(items: unknown[] | number[]) {
-    this.items = items;
-  }
-  public static create<T>(
-    ...values: unknown[] | number[]
-  ): unknown[] | number[] {
-    return new List(values);
-  }
-  concatenate(listOfLists: unknown[] | number[]) {
-    console.log(listOfLists);
-  }
-}
+export class List<T> {}
 
 // ---call class---
 
