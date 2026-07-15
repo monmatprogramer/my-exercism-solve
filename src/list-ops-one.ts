@@ -8,9 +8,13 @@ export class List<T> {
     return new List<T>(values);
   }
   public concatenate(otherList: List<List<T>>): void {
+    const tempArray: T[] = [];
     for (const [index, value] of otherList.items.entries()) {
-      console.log(value);
+      for (const [jindex, jvalue] of value.items.entries()) {
+        tempArray.push(jvalue);
+      }
     }
+    console.log(tempArray);
   }
 }
 
