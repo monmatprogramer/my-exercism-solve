@@ -4,6 +4,7 @@ export class List<T> {
     this.items = items;
   }
   public static create<T>(...values: T[]): List<T> {
+    // add
     return new List<T>(values);
   }
   public concatenate(otherList: List<T>): void {
