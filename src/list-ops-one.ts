@@ -21,13 +21,12 @@ export class List<T> {
     return count;
   }
   //append
-  append(other: List<T>): T[] {
+  append(other: List<T>): List<T> {
     const combinedList: T[] = this.items;
     for (const [index, value] of other.items.entries()) {
       combinedList.push(value);
     }
-    console.log(combinedList);
-    return combinedList;
+    return new List<T>(combinedList);
   }
   // concatenate array
   public concatenate(otherList: List<List<T>>): T[] {
@@ -52,4 +51,4 @@ const list1 = List.create(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 const t1 = List.create(23, 32);
 const t2 = List.create(34, 44);
 const t3 = List.create(t1, t2);
-t1.append(t2);
+console.log(t1.append(t2));
