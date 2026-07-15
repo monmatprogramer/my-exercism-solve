@@ -46,6 +46,15 @@ export class List<T> {
     }
     return new List<T>(mappedList);
   }
+  // Fold left
+  foldl(foldLeftFun: (accumu: T, element: T) => T, initialvalue: T): List<T> {
+    const foldedList: T[] = [];
+    for (const [index, value] of this.items.entries()) {
+      initialvalue = foldLeftFun(initialvalue, value);
+    }
+    console.log(foldedList);
+    return new List<T>(foldedList);
+  }
   // concatenate array
   public concatenate(otherList: List<List<T>>): List<T> {
     const tempArray: T[] = this.items;
@@ -71,4 +80,4 @@ const t2 = List.create(34);
 const tt2 = List.create<number>();
 const t3 = List.create(341, 441, 551, 671);
 const listOfLists = List.create(t2, tt2, t3);
-list1.map((v) => ++v);
+list1.foldl((acc, el) => el * acc, 2);
