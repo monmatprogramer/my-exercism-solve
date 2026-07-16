@@ -45,13 +45,19 @@ export class Triangle {
   // all three sides totally different length
   get isScalene(): boolean {
     const sides: number[] = [this.sideA, this.sideB, this.sideC];
+    if (sides[1] + sides[2] < sides[0]) {
+      return false;
+    }
     if (sides.filter((n) => n === 0).length === 3) {
       return false;
     }
     if (this.isEquilateral) {
       return false;
     }
-    return true;
+    if (!this.isIsosceles) {
+      return true;
+    }
+    return false;
   }
 }
 
