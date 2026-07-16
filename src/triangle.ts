@@ -18,7 +18,8 @@ export class Triangle {
   get isIsosceles(): boolean {
     const sides: number[] = [this.sideA, this.sideB, this.sideC];
     const tempSides: number[] = sides;
-
+    console.log(tempSides);
+    console.log(sides.slice(2, 1));
     return true;
   }
 
