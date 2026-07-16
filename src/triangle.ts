@@ -20,6 +20,9 @@ export class Triangle {
     const tempSides: number[] = sides;
     let count: number = 0;
     let i: number = 0;
+    if (sides.filter((n) => n === 1).length > 1) {
+      return false;
+    }
     while (i < sides.length) {
       let temLen: number = 0;
       let temVal: number = tempSides.shift()!;
