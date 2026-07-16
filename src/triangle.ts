@@ -41,9 +41,16 @@ export class Triangle {
 
   // all three sides totally different length
   get isScalene(): boolean {
+    const sides: number[] = [this.sideA, this.sideB, this.sideC];
+    if (sides.filter((n) => n === 0).length === 3) {
+      return false;
+    }
+    if (this.isEquilateral) {
+      return false;
+    }
     return true;
   }
 }
 
-const t = new Triangle(1, 5, 2);
-console.log(t.isIsosceles);
+const t = new Triangle(4, 4, 4);
+console.log(t.isScalene);
