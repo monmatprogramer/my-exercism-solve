@@ -6,13 +6,9 @@ export function reverse(normalStr: string): string {
   } else {
     const normalStrArr: string[] = normalStr.split("");
     const len: number = normalStrArr.length - 1;
-    console.log(len);
-    for (let i: number = 5; i <= 0; i--) {
-      console.log(normalStrArr[i]);
-      console.log(i);
+    for (let i: number = len; i >= 0; i--) {
+      reversedStr.push(normalStrArr[i]);
     }
-
-    console.log(reversedStr);
   }
   return reversedStr.join("");
 }
