@@ -7,6 +7,7 @@ export class Gigasecond {
   public date(/* Parameters go here */) {}
   get getDate(): Date {
     return this.initialDate;
+    //return new object
   }
 }
 
