@@ -10,7 +10,8 @@ export class Triangle {
 
   // all three sides the exact same length
   get isEquilateral(): boolean {
-    return true;
+    const sides: number[] = [this.sideA, this.sideB, this.sideC];
+    return sides.filter((n) => n === this.sideA).length === 3;
   }
 
   // at least two sides the same length
@@ -24,4 +25,5 @@ export class Triangle {
   }
 }
 
-const t = new Triangle(2, 2, 2);
+const t = new Triangle(2, 3, 2);
+console.log(t.isEquilateral);
