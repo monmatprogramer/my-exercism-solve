@@ -24,8 +24,16 @@ export class Triangle {
       let temLen: number = 0;
       let temVal: number = tempSides.shift()!;
       temLen = tempSides.filter((n) => n === temVal).length;
+      if (temLen > 0) {
+        ++count;
+      }
+      tempSides.push(temVal);
+      i++;
     }
-    return true;
+    if (count > 1) {
+      return true;
+    }
+    return false;
   }
 
   // all three sides totally different length
@@ -34,5 +42,5 @@ export class Triangle {
   }
 }
 
-const t = new Triangle(2, 3, 2);
+const t = new Triangle(1, 5, 2);
 console.log(t.isIsosceles);
