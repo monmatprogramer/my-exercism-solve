@@ -14,7 +14,7 @@ export class Gigasecond {
     const total: number = millisecond + gigasecond;
     // convert total to date object
     const newDate: Date = new Date(total);
-    console.log("➡️", newDate);
+    return new Gigasecond(newDate);
   }
 
   // Get Date for debug
