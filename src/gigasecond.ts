@@ -5,7 +5,7 @@ export class Gigasecond {
     this.startDate = date;
   }
   // Date method
-  public date(): Gigasecond {
+  public date(): Date {
     // gigasecond
     const gigasecond: number = 1000000000000;
     // the startdate in millisecond
@@ -14,7 +14,7 @@ export class Gigasecond {
     const total: number = millisecond + gigasecond;
     // convert total to date object
     const newDate: Date = new Date(total);
-    return new Gigasecond(newDate);
+    return newDate;
   }
 
   // Get Date for debug
@@ -25,5 +25,4 @@ export class Gigasecond {
 }
 
 const g = new Gigasecond(new Date());
-const gg = g.date();
-console.log(gg.getDate);
+console.log(g.date());
