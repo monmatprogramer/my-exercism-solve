@@ -11,6 +11,9 @@ export class Triangle {
   // all three sides the exact same length
   get isEquilateral(): boolean {
     const sides: number[] = [this.sideA, this.sideB, this.sideC];
+    if (sides.filter((n) => n === 0).length === 3) {
+      return false;
+    }
     return sides.filter((n) => n === this.sideA).length === 3;
   }
 
@@ -52,5 +55,5 @@ export class Triangle {
   }
 }
 
-const t = new Triangle(4, 4, 4);
+const t = new Triangle(0, 0, 0);
 console.log(t.isScalene);
