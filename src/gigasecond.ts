@@ -1,8 +1,8 @@
 //gigasecond
 export class Gigasecond {
   private startDate: Date;
-  constructor() {
-    this.inhtialDate = new Date();
+  constructor(date: Date) {
+    this.inhtialDate = date;
   }
   public date(/* Parameters go here */) {}
   get getDate(): Date {
@@ -11,5 +11,11 @@ export class Gigasecond {
   }
 }
 
-const g = new Gigasecond();
-console.log(g.getDate);
+const g = new Gigasecond(new Date());
+//console.log(g.getDate);
+// Get user input date as string
+const dateString = "2011-04-25";
+// convert it into date object
+const dateObj = Date.parse(dateString);
+
+console.log(dateObj);
