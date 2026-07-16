@@ -1,8 +1,12 @@
 // triangle exercise
 export class Triangle {
-  private sides: number[];
+  private sideA: number;
+  private sideB: number;
+  private sideC: number;
+
   constructor(...sides: number[]) {
-    this.sides = sides;
+    [this.sideA, this.sideB, this.sideC] = [...sides];
+    console.log(this.sideA);
   }
 
   get isEquilateral(): boolean {
