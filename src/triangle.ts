@@ -16,6 +16,9 @@ export class Triangle {
 
   // at least two sides the same length
   get isIsosceles(): boolean {
+    const sides: number[] = [this.sideA, this.sideB, this.sideC];
+    const tempSides: number[] = sides;
+
     return true;
   }
 
@@ -26,4 +29,4 @@ export class Triangle {
 }
 
 const t = new Triangle(2, 3, 2);
-console.log(t.isEquilateral);
+console.log(t.isIsosceles);
