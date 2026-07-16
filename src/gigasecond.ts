@@ -10,7 +10,11 @@ export class Gigasecond {
     const gigasecond: number = 1000000000000;
     // the startdate in millisecond
     const millisecond = this.startDate.getTime();
-    console.log("➡️", millisecond);
+    // add millisecond with gigasecond
+    const total: number = millisecond + gigasecond;
+    // convert total to date object
+    const newDate: Date = new Date(total);
+    console.log("➡️", newDate);
   }
 
   // Get Date for debug
