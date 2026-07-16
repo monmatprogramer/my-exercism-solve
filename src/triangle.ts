@@ -1,10 +1,21 @@
 // triangle exercise
 export class Triangle {
-  constructor(...sides) {}
+  private sides: number[];
+  constructor(...sides: number[]) {
+    this.sides = sides;
+  }
 
-  get isEquilateral() {}
+  get isEquilateral(): boolean {
+    return true;
+  }
 
-  get isIsosceles() {}
+  get isIsosceles(): boolean {
+    return true;
+  }
 
-  get isScalene() {}
+  get isScalene(): boolean {
+    return true;
+  }
 }
+
+const t = new Triangle(2, 2, 2);
