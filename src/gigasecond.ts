@@ -20,5 +20,6 @@ const g = new Gigasecond(new Date());
 const dateString = "2011-04-25";
 // convert it into date object
 const dateObj = Date.parse(dateString);
-
-console.log(dateObj);
+// convert millisecond to date
+const date = new Date(dateObj);
+console.log(date);
