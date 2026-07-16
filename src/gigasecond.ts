@@ -5,7 +5,11 @@ export class Gigasecond {
     this.startDate = date;
   }
   // Date method
-  public date(/* Parameters go here */) {}
+  public date() {
+    // the startdate in millisecond
+    const timestamp = Date.parse(this.startDate);
+    console.log(timestamp);
+  }
 
   // Get Date for debug
   get getDate(): Date {
@@ -15,11 +19,5 @@ export class Gigasecond {
 }
 
 const g = new Gigasecond(new Date());
-//console.log(g.getDate);
-// Get user input date as string
-const dateString = "2011-04-25";
-// convert it into date object
-const dateObj = Date.parse(dateString);
-// convert millisecond to date
-const date = new Date(dateObj);
-console.log(date);
+g.date();
+console.log(g.getDate);

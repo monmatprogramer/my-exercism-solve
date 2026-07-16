@@ -1,1 +1,5 @@
-console.log(new Date());
+const date = new Date();
+
+const millisecond = date.getTime();
+
+console.log(millisecond);
