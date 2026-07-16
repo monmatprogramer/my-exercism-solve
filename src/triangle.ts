@@ -1,18 +1,10 @@
 // triangle exercise
 export class Triangle {
-  constructor(...sides) {
-    throw new Error("Remove this line and implement the function");
-  }
+  constructor(...sides) {}
 
-  get isEquilateral() {
-    throw new Error("Remove this line and implement the function");
-  }
+  get isEquilateral() {}
 
-  get isIsosceles() {
-    throw new Error("Remove this line and implement the function");
-  }
+  get isIsosceles() {}
 
-  get isScalene() {
-    throw new Error("Remove this line and implement the function");
-  }
+  get isScalene() {}
 }
