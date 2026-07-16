@@ -2,9 +2,12 @@
 export class Gigasecond {
   private startDate: Date;
   constructor(date: Date) {
-    this.inhtialDate = date;
+    this.startDate = date;
   }
+  // Date method
   public date(/* Parameters go here */) {}
+
+  // Get Date for debug
   get getDate(): Date {
     return this.startDate;
     //return new object
