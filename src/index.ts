@@ -1,2 +1,3 @@
 const num: number[] = [1, 2, 3];
-console.log(num.shift());
+const test: number = num.shift()!;
+console.log(typeof num.shift());

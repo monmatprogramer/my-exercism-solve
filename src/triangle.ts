@@ -17,9 +17,13 @@ export class Triangle {
   // at least two sides the same length
   get isIsosceles(): boolean {
     const sides: number[] = [this.sideA, this.sideB, this.sideC];
-    const tempSides: number[] = sides;
-    console.log(tempSides);
-    console.log(sides.slice(2, 1));
+    const tempSides: number[] = [];
+    let i: number = 0;
+    while (true) {
+      let tem = sides.shift();
+      tempSides.push(...tem);
+      sides.filter((n) => n === tempSides[i]);
+    }
     return true;
   }
 
