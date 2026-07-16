@@ -6,9 +6,11 @@ export class Gigasecond {
   }
   // Date method
   public date() {
+    // gigasecond
+    const gigasecond: number = 1000000000000;
     // the startdate in millisecond
-    const timestamp = Date.parse(this.startDate);
-    console.log(timestamp);
+    const millisecond = this.startDate.getTime();
+    console.log("➡️", millisecond);
   }
 
   // Get Date for debug
