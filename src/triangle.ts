@@ -6,17 +6,19 @@ export class Triangle {
 
   constructor(...sides: number[]) {
     [this.sideA, this.sideB, this.sideC] = [...sides];
-    console.log(this.sideA);
   }
 
+  // all three sides the exact same length
   get isEquilateral(): boolean {
     return true;
   }
 
+  // at least two sides the same length
   get isIsosceles(): boolean {
     return true;
   }
 
+  // all three sides totally different length
   get isScalene(): boolean {
     return true;
   }
