@@ -1,17 +1,12 @@
 export class Squares {
-  constructor(count: unknown) {
-    throw new Error("Remove this line and implement the function");
-  }
+  private _sumOfSquares: number;
+  private _squareOfSum: number;
+  private _difference: number;
+  constructor(count: number) {}
 
-  get sumOfSquares(): unknown {
-    throw new Error("Remove this line and implement the function");
-  }
+  get sumOfSquares(): number {}
 
-  get squareOfSum(): unknown {
-    throw new Error("Remove this line and implement the function");
-  }
+  get squareOfSum(): number {}
 
-  get difference(): unknown {
-    throw new Error("Remove this line and implement the function");
-  }
+  get difference(): number {}
 }
