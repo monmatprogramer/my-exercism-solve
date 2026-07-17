@@ -25,10 +25,13 @@ const AminoAcideObj: AminoAcidType = {
 
 export function translate(rna: string) {
   if (rna.length < 3) {
-    console.log(rna);
-    return;
+    throw new Error("Invalid condon");
   }
   return;
 }
 
-translate("AG");
+try {
+  translate("AG");
+} catch (e: any) {
+  console.log(e.message);
+}
