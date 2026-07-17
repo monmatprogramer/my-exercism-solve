@@ -30,7 +30,9 @@ for (const [scoreString, letterArray] of Object.entries(old)) {
   //Conver numerice to be number
   const scoreNumber = Number(scoreString);
   //loop on the array
+  console.log("👉: ", letterArray);
   for (const letter of letterArray) {
     console.log("➡️: ", letter);
+    console.log("\n");
   }
 }
