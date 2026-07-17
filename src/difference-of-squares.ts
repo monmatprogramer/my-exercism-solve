@@ -12,7 +12,7 @@ export class Squares {
     this._squareOfSum = Math.pow(sum, 2);
     //find sum of square
     this._sumOfSquares = (n * (n + 1) * (2 * n + 1)) / 6;
-    this._difference = this._sumOfSquares - this._squareOfSum;
+    this._difference = this._squareOfSum - this._sumOfSquares;
   }
 
   get sumOfSquares(): number {
@@ -27,3 +27,6 @@ export class Squares {
     return this._difference;
   }
 }
+
+const squares = new Squares(5);
+console.log(squares.squareOfSum);
