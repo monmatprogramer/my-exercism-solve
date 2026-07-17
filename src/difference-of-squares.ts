@@ -16,7 +16,7 @@ export class Squares {
   }
 
   get squareOfSum(): number {
-    return 0;
+    return this._squareOfSum;
   }
 
   get difference(): number {
