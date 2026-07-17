@@ -23,14 +23,14 @@ const aminoAcideObj: AminoAcidType = {
   UGA: "STOP",
 };
 
-export function translate(rna: string) {
+export function translate(rna: string): string[] {
   // amino dictionary
   const aminoDic: Map<string, string> = convertToMap(aminoAcideObj);
   if (rna.length < 3 || !isValidRna(aminoDic, rna)) {
     //not 3 letters long
     throw new Error("Invalid codon");
   }
-  return;
+  return [];
 }
 // Convert it into Map
 const convertToMap = (amino: AminoAcidType): Map<string, string> => {
