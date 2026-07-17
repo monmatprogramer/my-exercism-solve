@@ -3,7 +3,7 @@ type AminoAcidType = {
   [key: string]: string;
 };
 
-const AminoAcideObj: AminoAcidType = {
+const aminoAcideObj: AminoAcidType = {
   AUG: "Methionine",
   UUU: "Phenylalanine",
   UUC: "Phenylalanine",
@@ -25,13 +25,19 @@ const AminoAcideObj: AminoAcidType = {
 
 export function translate(rna: string) {
   if (rna.length < 3) {
+    //not 3 letters long
     throw new Error("Invalid condon");
   }
+  convertToMap(aminoAcideObj);
   return;
 }
+// Convert it into Map
+const convertToMap = (amino: AminoAcidType) => {
+  console.log(amino);
+};
 
 try {
-  translate("AG");
+  translate("AUG");
 } catch (e: any) {
   console.log(e.message);
 }
