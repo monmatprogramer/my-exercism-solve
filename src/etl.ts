@@ -6,10 +6,10 @@ type OldData = {
 type NewData = {
   [k: string]: number;
 };
-export function transform(oldData: OldData) {
+export function transform(oldData: OldData): NewData {
   // Convert to map object
   const d: Map<string, number> = convertToMap(oldData);
-  convertToSJsObject(d);
+  return convertToSJsObject(d);
 }
 
 const old = {
