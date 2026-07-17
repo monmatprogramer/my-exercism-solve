@@ -28,18 +28,21 @@ export function translate(rna: string) {
     //not 3 letters long
     throw new Error("Invalid condon");
   }
-  convertToMap(aminoAcideObj);
+  // amino map
+  const aminoDic: Map<string, string> = convertToMap(aminoAcideObj);
+  console.log(aminoDic);
   return;
 }
 // Convert it into Map
-const convertToMap = (amino: AminoAcidType) => {
+const convertToMap = (amino: AminoAcidType): Map<string, string> => {
   // first amino is a standard js object
   const rnaCodonLists: Map<string, string> = new Map<string, string>();
   // Read it from a amino and insert into new map
   for (const [cordonName, rnaName] of Object.entries(amino)) {
+    // insert into map
     rnaCodonLists.set(cordonName, rnaName);
   }
-  console.log(rnaCodonLists);
+  return rnaCodonLists;
 };
 
 try {
