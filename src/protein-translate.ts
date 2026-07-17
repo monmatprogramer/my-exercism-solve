@@ -1,3 +1,13 @@
-export function translate() {
-  throw new Error("Remove this line and implement the function");
-}
+// Amino Acid Dictionary
+type AminoAcidType = {
+  codonString: string;
+  aminoAcidString: string;
+};
+const listCodonStrins: AminoAcidType = {
+  codonString: "AUG",
+  aminoAcidString: "Methionine",
+  codonString: "AUG",
+  aminoAcidString: "Methionine",
+};
+export function translate() {}
+console.log(listCodonStrins);
