@@ -23,11 +23,11 @@ const old = {
   8: ["J", "X"],
   10: ["Q", "Z"],
 };
+//conver to map
+const letterScores = new Map<string, number>();
 
-const test1: NewDataTest = {
-  a: 1,
-  b: 2,
-  c: 3,
-};
-
-console.log(test1);
+for (const [scoreString, letterArray] of Object.entries(old)) {
+  //Conver numerice to be number
+  const scoreNumber = Number(scoreString);
+  console.log(scoreNumber);
+}
