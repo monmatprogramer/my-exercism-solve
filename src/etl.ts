@@ -35,4 +35,4 @@ for (const [scoreString, letterArray] of Object.entries(old)) {
   }
 }
 
-console.log(letterScores);
+console.log(typeof letterScores);
