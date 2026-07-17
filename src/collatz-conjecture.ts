@@ -4,7 +4,7 @@
 // n > 0 && not decimal (Only positive integers are allowed)
 export function steps(count: number): number {
   // check bad inputs and throw error handling
-  if (count <= 0) {
+  if (count <= 0 || !Number.isInteger(count)) {
     throw new Error("Only positive integers are allowed");
   }
   return 0;
