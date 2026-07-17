@@ -26,8 +26,7 @@ const aminoAcideObj: AminoAcidType = {
 export function translate(rna: string) {
   // amino dictionary
   const aminoDic: Map<string, string> = convertToMap(aminoAcideObj);
-
-  if (rna.length < 3) {
+  if (rna.length < 3 || !isValidRna(aminoDic, rna)) {
     //not 3 letters long
     throw new Error("Invalid condon");
   }
@@ -44,9 +43,18 @@ const convertToMap = (amino: AminoAcidType): Map<string, string> => {
   }
   return rnaCodonLists;
 };
+// finding the validation of rna
+const isValidRna = (
+  condonRnaDic: Map<string, string>,
+  rnaInput: string,
+): boolean => {
+  // Check existing key
+  // true: exist
+  return condonRnaDic.has(rnaInput);
+};
 
 try {
-  translate("AUG");
+  translate("XYZ");
 } catch (e: any) {
   console.log(e.message);
 }
