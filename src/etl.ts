@@ -1,14 +1,9 @@
 //etl exercise
 // create a type for old data
 type OldData = {
-  [key: number]: string[];
+  [key: string]: string[];
 };
-
-type NewData = {
-  [key: string]: number;
-};
-
-type NewDataTest = Map<string, number>;
+type OldDataRecord = Record<number, string[]>;
 
 export function transform(oldData: OldData) {
   console.log(oldData);
@@ -23,6 +18,7 @@ const old = {
   8: ["J", "X"],
   10: ["Q", "Z"],
 };
+transform(old);
 //conver to map
 const letterScores = new Map<string, number>();
 
@@ -34,5 +30,3 @@ for (const [scoreString, letterArray] of Object.entries(old)) {
     letterScores.set(letter, scoreNumber);
   }
 }
-
-console.log(typeof letterScores);
