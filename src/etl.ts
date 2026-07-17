@@ -5,8 +5,8 @@ type OldData = {
 };
 
 export function transform(oldData: OldData) {
-  console.log(oldData);
-  convertToMap(oldData);
+  let d = convertToMap(oldData);
+  console.log(d);
 }
 
 const old = {
@@ -29,7 +29,7 @@ function convertToMap(oldData: OldData): Map<string, number> {
     const scoreNumber = Number(scoreString);
     //loop on the array
     for (const letter of letterArray) {
-      letterScores.set(letter, scoreNumber);
+      letterScores.set(letter.toLocaleLowerCase(), scoreNumber);
     }
   }
   return letterScores;
