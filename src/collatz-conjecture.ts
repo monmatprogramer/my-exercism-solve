@@ -9,11 +9,26 @@ export function steps(count: number): number {
     throw new Error("Only positive integers are allowed");
   }
 
+  while (true) {
+    // check even number
+    if (isEven(count)) {
+      count = count / 2;
+    } else {
+      count = 3 * count + 1;
+    }
+    if (count === 1) break;
+  }
+
   return 0;
+}
+function isEven(count: number): boolean {
+  //true : even
+  //false: odd
+  return count % 2 === 0 ? true : false;
 }
 
 try {
-  steps(-2);
+  console.log(steps(1));
 } catch (e: any) {
   console.log(e.message);
 }
