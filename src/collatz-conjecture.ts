@@ -20,8 +20,9 @@ export function steps(count: number): number {
     } else {
       count = 3 * count + 1;
     }
-    if (count === 1) break;
     ++stepCount;
+
+    if (count === 1) break;
   }
 
   return stepCount;
@@ -33,7 +34,7 @@ function isEven(count: number): boolean {
 }
 
 try {
-  console.log(steps(1));
+  console.log(steps(12));
 } catch (e: any) {
   console.log(e.message);
 }
