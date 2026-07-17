@@ -7,6 +7,7 @@ type OldData = {
 type NewData = {
   [key: string]: number;
 };
+
 export function transform(oldData: OldData) {
   console.log(oldData);
 }
@@ -21,4 +22,6 @@ const old = {
   10: ["Q", "Z"],
 };
 
-transform(old);
+const newData: NewData = new Map<string, number>();
+
+console.log(newData);
