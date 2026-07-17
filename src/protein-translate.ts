@@ -61,7 +61,9 @@ const isStop = (
   rnaInput: string,
 ): boolean => {
   // true: stop
-  console.log(cdd.get(rnaInput));
+  if (cdd.get(rnaInput) === "STOP") {
+    return true;
+  }
   return false;
 };
 
