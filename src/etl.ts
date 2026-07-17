@@ -8,4 +8,4 @@ type NewData = {
 };
 export function transform(oldData: OldData) {}
 
-transform({ 1: ["A"] });
+console.log(JSON.stringify({ 1: ["A"] }));
