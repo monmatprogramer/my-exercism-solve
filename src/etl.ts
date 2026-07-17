@@ -3,6 +3,9 @@
 type OldData = {
   [key: string]: string[];
 };
+type NewData = {
+  [k: string]: number;
+};
 export function transform(oldData: OldData) {
   // Convert to map object
   const d: Map<string, number> = convertToMap(oldData);
@@ -35,8 +38,7 @@ function convertToMap(oldData: OldData): Map<string, number> {
   return letterScores;
 }
 // Convert it backt to a standard JS object
-function convertToSJsObject(oldData: Map<string, number>): OldData {
+function convertToSJsObject(oldData: Map<string, number>): NewData {
   let d = Object.fromEntries(oldData);
-  console.log(d);
   return d;
 }
