@@ -28,7 +28,7 @@ export function translate(rna: string) {
   const aminoDic: Map<string, string> = convertToMap(aminoAcideObj);
   if (rna.length < 3 || !isValidRna(aminoDic, rna)) {
     //not 3 letters long
-    throw new Error("Invalid condon");
+    throw new Error("Invalid codon");
   }
   return;
 }
