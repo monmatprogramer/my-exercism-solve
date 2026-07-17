@@ -27,7 +27,9 @@ export function translate(rna: string): string[] {
   // amino dictionary
   const aminoDic: Map<string, string> = convertToMap(aminoAcideObj);
   // Stop condition
-  isStop(aminoDic, rna);
+  if (isStop(aminoDic, rna)) {
+    return [];
+  }
   if (rna.length < 3 || !isValidRna(aminoDic, rna)) {
     //not 3 letters long
     throw new Error("Invalid codon");
@@ -68,7 +70,8 @@ const isStop = (
 };
 
 try {
-  translate("UGA");
+  let d: string[] = translate("UGA");
+  console.log(d);
 } catch (e: any) {
   console.log(e.message);
 }
