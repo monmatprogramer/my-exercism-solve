@@ -24,12 +24,13 @@ const aminoAcideObj: AminoAcidType = {
 };
 
 export function translate(rna: string) {
+  // amino dictionary
+  const aminoDic: Map<string, string> = convertToMap(aminoAcideObj);
+
   if (rna.length < 3) {
     //not 3 letters long
     throw new Error("Invalid condon");
   }
-  // amino dictionary
-  const aminoDic: Map<string, string> = convertToMap(aminoAcideObj);
   return;
 }
 // Convert it into Map
