@@ -5,8 +5,7 @@ type OldData = {
 };
 
 export function transform(oldData: OldData) {
-  let d = convertToMap(oldData);
-  console.log(d);
+  const d: Map<string, number> = convertToMap(oldData);
 }
 
 const old = {
