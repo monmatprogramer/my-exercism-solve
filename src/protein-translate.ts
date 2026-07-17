@@ -28,9 +28,8 @@ export function translate(rna: string) {
     //not 3 letters long
     throw new Error("Invalid condon");
   }
-  // amino map
+  // amino dictionary
   const aminoDic: Map<string, string> = convertToMap(aminoAcideObj);
-  console.log(aminoDic);
   return;
 }
 // Convert it into Map
