@@ -26,10 +26,13 @@ const aminoAcideObj: AminoAcidType = {
 export function translate(rna: string): string[] {
   // amino dictionary
   const aminoDic: Map<string, string> = convertToMap(aminoAcideObj);
+  // Stop condition
+  isStop(aminoDic, rna);
   if (rna.length < 3 || !isValidRna(aminoDic, rna)) {
     //not 3 letters long
     throw new Error("Invalid codon");
   }
+
   return [];
 }
 // Convert it into Map
@@ -52,9 +55,18 @@ const isValidRna = (
   // true: exist
   return condonRnaDic.has(rnaInput);
 };
+// Check stop rule
+const isStop = (
+  cdd: Map<string, string>, //cdd = codon dictionary
+  rnaInput: string,
+): boolean => {
+  // true: stop
+  console.log(cdd.get(rnaInput));
+  return false;
+};
 
 try {
-  translate("XYZ");
+  translate("UGA");
 } catch (e: any) {
   console.log(e.message);
 }
