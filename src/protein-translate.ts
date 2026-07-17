@@ -23,4 +23,12 @@ const AminoAcideObj: AminoAcidType = {
   UGA: "STOP",
 };
 
-export function translate() {}
+export function translate(rna: string) {
+  if (rna.length < 3) {
+    console.log(rna);
+    return;
+  }
+  return;
+}
+
+translate("AG");
