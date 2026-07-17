@@ -1,1 +1,6 @@
-console.log(Number.isInteger(23.2));
+const userRoles = new Map<number, string>();
+
+userRoles.set(101, "Admin");
+userRoles.set(102, "Moderator");
+
+console.log(userRoles.get(102));
