@@ -33,7 +33,13 @@ export function translate(rna: string) {
 }
 // Convert it into Map
 const convertToMap = (amino: AminoAcidType) => {
-  console.log(amino);
+  // first amino is a standard js object
+  const rnaCodonLists: Map<string, string> = new Map<string, string>();
+  // Read it from a amino and insert into new map
+  for (const [cordonName, rnaName] of Object.entries(amino)) {
+    rnaCodonLists.set(cordonName, rnaName);
+  }
+  console.log(rnaCodonLists);
 };
 
 try {
