@@ -5,14 +5,18 @@ export class Squares {
   constructor(n: number) {
     let sum: number = 0;
     // 1 to n
+    // find square of sum
     for (let i: number = 1; i <= n; i++) {
       sum = (n * (n + 1)) / 2;
     }
     this._squareOfSum = Math.pow(sum, 2);
+    //find sum of square
+    this._sumOfSquares = (n * (n + 1) * (2 * n + 1)) / 6;
+    this._difference = this._sumOfSquares - this._squareOfSum;
   }
 
   get sumOfSquares(): number {
-    return 0;
+    return this._sumOfSquares;
   }
 
   get squareOfSum(): number {
@@ -20,6 +24,6 @@ export class Squares {
   }
 
   get difference(): number {
-    return 0;
+    return this._difference;
   }
 }
