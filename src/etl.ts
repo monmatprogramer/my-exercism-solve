@@ -29,5 +29,8 @@ const letterScores = new Map<string, number>();
 for (const [scoreString, letterArray] of Object.entries(old)) {
   //Conver numerice to be number
   const scoreNumber = Number(scoreString);
-  console.log(scoreNumber);
+  //loop on the array
+  for (const letter of letterArray) {
+    console.log("➡️: ", letter);
+  }
 }
