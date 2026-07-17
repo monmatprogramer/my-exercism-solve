@@ -3,10 +3,10 @@
 type OldData = {
   [key: string]: string[];
 };
-type OldDataRecord = Record<number, string[]>;
 
 export function transform(oldData: OldData) {
   console.log(oldData);
+  convertToMap(oldData);
 }
 
 const old = {
@@ -18,15 +18,19 @@ const old = {
   8: ["J", "X"],
   10: ["Q", "Z"],
 };
-transform(old);
-//conver to map
-const letterScores = new Map<string, number>();
 
-for (const [scoreString, letterArray] of Object.entries(old)) {
-  //Conver numerice to be number
-  const scoreNumber = Number(scoreString);
-  //loop on the array
-  for (const letter of letterArray) {
-    letterScores.set(letter, scoreNumber);
+transform(old);
+function convertToMap(oldData: OldData): Map<string, number> {
+  //conver to map
+  const letterScores = new Map<string, number>();
+
+  for (const [scoreString, letterArray] of Object.entries(old)) {
+    //Conver numerice to be number
+    const scoreNumber = Number(scoreString);
+    //loop on the array
+    for (const letter of letterArray) {
+      letterScores.set(letter, scoreNumber);
+    }
   }
+  return letterScores;
 }
