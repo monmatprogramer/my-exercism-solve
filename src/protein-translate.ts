@@ -77,7 +77,7 @@ const isStop = (
 };
 
 try {
-  let d: string[] = translate("UGA");
+  let d: string[] = translate("UUCUUCUAAUGGU");
   console.log(d);
 } catch (e: any) {
   console.log(e.message);
