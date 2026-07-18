@@ -34,7 +34,12 @@ export function translate(rna: string): string[] {
   if (isStop(aminoDic, rna)) {
     return [];
   }
+
+  // Break it into 3
+  breakToThree(rna);
+
   // rna less than 3 and not in the list
+
   if (rna.length < 3 || !isValidRna(aminoDic, rna)) {
     //not 3 letters long
     throw new Error("Invalid codon");
@@ -43,7 +48,9 @@ export function translate(rna: string): string[] {
   return [];
 }
 // Break long rna to 3
-const breakToThree = (rna: string) => {};
+const breakToThree = (rna: string) => {
+  console.log("👉 ", rna);
+};
 // Convert it into Map
 const convertToMap = (amino: AminoAcidType): Map<string, string> => {
   // first amino is a standard js object
