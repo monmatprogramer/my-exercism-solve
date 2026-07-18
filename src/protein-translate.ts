@@ -54,14 +54,12 @@ export function translate(rna: string): string[] {
   return [];
 }
 // Break long rna to 3
-const breakToThree = (rna: string) => {
+const breakToThree = (rna: string): string[] => {
   const threeRnaGroup: string[] = [];
-  console.log(rna.length);
   for (let i: number = 0; i < rna.length; i += 3) {
     threeRnaGroup.push(rna.slice(i, i + 3));
   }
-
-  console.log(threeRnaGroup);
+  return threeRnaGroup;
 };
 // Convert it into Map
 const convertToMap = (amino: AminoAcidType): Map<string, string> => {
