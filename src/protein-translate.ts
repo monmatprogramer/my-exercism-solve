@@ -35,12 +35,16 @@ export function translate(rna: string): string[] {
     return [];
   }
 
+  // rna less than 3 and not in the list
+  if (rna.length < 3) {
+    //not 3 letters long
+    throw new Error("Invalid codon");
+  }
+
   // Break it into 3
   breakToThree(rna);
 
-  // rna less than 3 and not in the list
-
-  if (rna.length < 3 || !isValidRna(aminoDic, rna)) {
+  if (!isValidRna(aminoDic, rna)) {
     //not 3 letters long
     throw new Error("Invalid codon");
   }
