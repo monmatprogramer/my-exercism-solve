@@ -88,7 +88,12 @@ const isValidRna = (
 ): boolean => {
   // Check existing key
   // true: exist
-  return condonRnaDic.has(rnaInput);
+  const rex = /^[ACGU]+$/i;
+  // test false is not valid
+  if (condonRnaDic.has(rnaInput) && rex.test(rnaInput)) {
+    return true;
+  }
+  return false;
 };
 // Check stop rule
 const isStop = (
