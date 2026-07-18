@@ -44,10 +44,12 @@ export function translate(rna: string): string[] {
   // Break it into 3
   breakToThree(rna);
 
+  /*
   if (!isValidRna(aminoDic, rna)) {
     //not 3 letters long
     throw new Error("Invalid codon");
   }
+  */
 
   return [];
 }
