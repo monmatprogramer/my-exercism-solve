@@ -55,19 +55,12 @@ export function translate(rna: string): string[] {
 }
 // Break long rna to 3
 const breakToThree = (rna: string) => {
-  let count: number = 0;
   const threeRnaGroup: string[] = [];
-  let tempCharArr: string[] = [];
-  for (const char of rna) {
-    tempCharArr.push(char);
-    ++count;
-    if (count === 3) {
-      let singleString: string = tempCharArr.join("");
-      threeRnaGroup.push(singleString);
-      tempCharArr = [];
-      count = 0;
-    }
+  console.log(rna.length);
+  for (let i: number = 0; i < rna.length; i += 3) {
+    threeRnaGroup.push(rna.slice(i, i + 3));
   }
+
   console.log(threeRnaGroup);
 };
 // Convert it into Map
