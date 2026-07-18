@@ -1,8 +1,11 @@
 // Amino Acid Dictionary
+
+// It is a standard js object type
 type AminoAcidType = {
   [key: string]: string;
 };
 
+// It is a standard js object
 const aminoAcideObj: AminoAcidType = {
   AUG: "Methionine",
   UUU: "Phenylalanine",
@@ -26,10 +29,12 @@ const aminoAcideObj: AminoAcidType = {
 export function translate(rna: string): string[] {
   // amino dictionary
   const aminoDic: Map<string, string> = convertToMap(aminoAcideObj);
+
   // Stop condition
   if (isStop(aminoDic, rna)) {
     return [];
   }
+  // rna less than 3 and not in the list
   if (rna.length < 3 || !isValidRna(aminoDic, rna)) {
     //not 3 letters long
     throw new Error("Invalid codon");
