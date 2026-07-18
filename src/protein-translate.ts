@@ -42,6 +42,8 @@ export function translate(rna: string): string[] {
 
   return [];
 }
+// Break long rna to 3
+const breakToThree = (rna: string) => {};
 // Convert it into Map
 const convertToMap = (amino: AminoAcidType): Map<string, string> => {
   // first amino is a standard js object
