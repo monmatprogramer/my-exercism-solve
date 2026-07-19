@@ -114,8 +114,10 @@ const isStop = (
     }
   } else {
     const getValue: boolean[] = rnaInput.map((n) => cdd.get(n) === "STOP");
-    console.log(rnaInput.map((n) => cdd.get(n) === "STOP"));
-    console.log(getValue);
+    //FOR STOP condiction
+    if (getValue.length === getValue.filter((n) => n === true).length) {
+      return true;
+    }
   }
   return false;
 };
