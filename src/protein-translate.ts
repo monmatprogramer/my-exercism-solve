@@ -40,6 +40,13 @@ export function translate(rna: string): string[] {
     //not 3 letters long
     throw new Error("Invalid codon");
   }
+  // RNA input = 3
+  if (rna.length === 3) {
+    // check validation here
+    if (!isValidRna(rna)) {
+      throw new Error("Invalid codon");
+    }
+  }
 
   // Break it into 3
   const threeRna: string[] = breakToThree(rna);
@@ -98,7 +105,7 @@ const isStop = (
 
 try {
   //let d: string[] = translate("UUCUUCUAAUGGU");
-  let d: string[] = translate("AUGU");
+  let d: string[] = translate("UAGUGG");
   console.log(d);
 } catch (e: any) {
   console.log(e.message);
