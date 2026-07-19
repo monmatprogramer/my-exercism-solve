@@ -93,7 +93,7 @@ const isValidRna = (
   } else {
     //LOOP here
     for (const el of rnaInput) {
-      console.log(el);
+      return condonRnaDic.has(el) && rex.test(el);
     }
     return false;
   }
