@@ -103,6 +103,8 @@ const isValidRna = (
   }
   return false;
 };
+// Check value of RNA
+const filterRanValue = (): string[] => {};
 // Check stop rule
 const isStop = (
   cdd: Map<string, string>, //cdd = codon dictionary
