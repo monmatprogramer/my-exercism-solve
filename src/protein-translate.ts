@@ -59,6 +59,7 @@ export function translate(rna: string): string[] {
   if (isStop(aminoDic, threeRna)) {
     return [];
   }
+  //Check if stop and value live together
 
   return [];
 }
@@ -124,7 +125,7 @@ const isStop = (
 
 try {
   //let d: string[] = translate("UUCUUCUAAUGGU");
-  let d: string[] = translate("UAGUGG");
+  let d: string[] = translate("UAGUGA");
   console.log(d);
 } catch (e: any) {
   console.log(e.message);
