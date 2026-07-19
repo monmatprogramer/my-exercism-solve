@@ -51,7 +51,7 @@ export function translate(rna: string): string[] {
   // Break it into 3
   const threeRna: string[] = breakToThree(rna);
 
-  if (!isValidRna(aminoDic, rna)) {
+  if (!isValidRna(aminoDic, threeRna)) {
     //not 3 letters long
     throw new Error("Invalid codon");
   }
@@ -80,14 +80,20 @@ const convertToMap = (amino: AminoAcidType): Map<string, string> => {
 // finding the validation of rna
 const isValidRna = (
   condonRnaDic: Map<string, string>,
-  rnaInput: string,
+  rnaInput: string | string[],
 ): boolean => {
   // Check existing key
   // true: exist
   const rex = /^[ACGU]+$/i;
   // test false is not valid
-  if (condonRnaDic.has(rnaInput) && rex.test(rnaInput)) {
-    return true;
+  if (typeof rnaInput === "string") {
+    if (condonRnaDic.has(rnaInput) && rex.test(rnaInput)) {
+      return true;
+    }
+  } else {
+    //LOOP here
+    console.log("is not list array");
+    return false;
   }
   return false;
 };
