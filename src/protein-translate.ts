@@ -61,8 +61,8 @@ export function translate(rna: string): string[] {
   }
   //Check if stop and value live together
 
-  filterRanValue(aminoDic, threeRna);
-  return [];
+  const result: string[] = filterRanValue(aminoDic, threeRna);
+  return result;
 }
 // Break long rna to 3
 const breakToThree = (rna: string): string[] => {
@@ -109,10 +109,13 @@ const filterRanValue = (
   cdd: Map<string, string>,
   rnaInput: string[],
 ): string[] => {
+  const rnaValueArr: string[] = [];
   for (const v of rnaInput) {
-    console.log(v);
+    if (cdd.get(v) !== "STOP") {
+      rnaValueArr.push(cdd.get(v)!);
+    }
   }
-  return [];
+  return rnaValueArr;
 };
 // Check stop rule
 const isStop = (
