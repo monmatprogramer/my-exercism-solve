@@ -98,6 +98,7 @@ const isStop = (
 
 try {
   //let d: string[] = translate("UUCUUCUAAUGGU");
+  let d: string[] = translate("XYZ");
   console.log(d);
 } catch (e: any) {
   console.log(e.message);
