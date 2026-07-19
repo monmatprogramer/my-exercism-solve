@@ -55,6 +55,10 @@ export function translate(rna: string): string[] {
     //not 3 letters long
     throw new Error("Invalid codon");
   }
+  // Stop condition
+  if (isStop(aminoDic, threeRna)) {
+    return [];
+  }
 
   return [];
 }
@@ -95,18 +99,23 @@ const isValidRna = (
     for (const el of rnaInput) {
       return condonRnaDic.has(el) && rex.test(el);
     }
-    return false;
   }
   return false;
 };
 // Check stop rule
 const isStop = (
   cdd: Map<string, string>, //cdd = codon dictionary
-  rnaInput: string,
+  rnaInput: string | string[],
 ): boolean => {
   // true: stop
-  if (cdd.get(rnaInput) === "STOP") {
-    return true;
+  if (typeof rnaInput === "string") {
+    if (cdd.get(rnaInput) === "STOP") {
+      return true;
+    }
+  } else {
+    const getValue: boolean[] = rnaInput.map((n) => cdd.get(n) === "STOP");
+    console.log(rnaInput.map((n) => cdd.get(n) === "STOP"));
+    console.log(getValue);
   }
   return false;
 };
