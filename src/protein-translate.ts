@@ -61,6 +61,7 @@ export function translate(rna: string): string[] {
   }
   //Check if stop and value live together
 
+  filterRanValue(aminoDic, threeRna);
   return [];
 }
 // Break long rna to 3
@@ -104,7 +105,15 @@ const isValidRna = (
   return false;
 };
 // Check value of RNA
-const filterRanValue = (): string[] => {};
+const filterRanValue = (
+  cdd: Map<string, string>,
+  rnaInput: string[],
+): string[] => {
+  for (const v of rnaInput) {
+    console.log(v);
+  }
+  return [];
+};
 // Check stop rule
 const isStop = (
   cdd: Map<string, string>, //cdd = codon dictionary
@@ -127,7 +136,7 @@ const isStop = (
 
 try {
   //let d: string[] = translate("UUCUUCUAAUGGU");
-  let d: string[] = translate("UAGUGA");
+  let d: string[] = translate("UAGUGGUGCUGA");
   console.log(d);
 } catch (e: any) {
   console.log(e.message);
