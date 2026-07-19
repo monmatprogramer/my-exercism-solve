@@ -43,7 +43,7 @@ export function translate(rna: string): string[] {
   // RNA input = 3
   if (rna.length === 3) {
     // check validation here
-    if (!isValidRna(rna)) {
+    if (!isValidRna(aminoDic, rna)) {
       throw new Error("Invalid codon");
     }
   }
