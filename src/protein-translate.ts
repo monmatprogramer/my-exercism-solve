@@ -92,7 +92,9 @@ const isValidRna = (
     }
   } else {
     //LOOP here
-    console.log("is not list array");
+    for (const el of rnaInput) {
+      console.log(el);
+    }
     return false;
   }
   return false;
