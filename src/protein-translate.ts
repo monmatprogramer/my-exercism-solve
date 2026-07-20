@@ -110,12 +110,12 @@ const filterRanValue = (
   rnaInput: string[],
 ): string[] => {
   const rnaValueArr: string[] = [];
-  const lenOfRnaInput: number = ranInput.length;
+  const lenOfRnaInput: number = rnaInput.length;
   if (lenOfRnaInput < 2 && lenOfRnaInput > 0) {
-    if (ccd.get(ranInput[0]) === "STOP") {
+    if (cdd.get(rnaInput[0])! === "STOP") {
       return [];
     }
-    rnaValueArr.push(cdd.get(ranInput[0]));
+    rnaValueArr.push(cdd.get(rnaInput[0])!);
   } else
     for (let i: number = 0; i <= rnaInput.length - 2; i++) {
       if (cdd.get(rnaInput[i + 1]) === "STOP") {
