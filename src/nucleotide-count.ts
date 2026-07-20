@@ -4,6 +4,7 @@ type DnaType = {
 export function nucleotideCounts(input: string): DnaType {
   const dna: string = "ACGT";
   let [a, c, g, t] = [0, 0, 0, 0];
+  const rex = /^[ACGT]+$/i;
   for (const char of dna) {
     for (const ch of input) {
       //Check input equal to char
