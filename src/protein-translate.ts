@@ -120,7 +120,7 @@ const filterRanValue = (
   let tempArry: string[] = [];
 
   for (let i: number = 0; i <= rnaInput.length - 2; i++) {
-    if (cdd.get(rnaInput[i + 1]) === "STOP") {
+    if (cdd.get(rnaInput[i + 1]) !== "STOP") {
       let key: string = rnaInput[i];
       let value: string = cdd.get(key)!;
       tempArry.push(value);
