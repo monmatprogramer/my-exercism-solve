@@ -3,10 +3,7 @@ type DnaType = {
 };
 export function nucleotideCounts(input: string): DnaType {
   const dna: string = "ACGT";
-  let a = 0;
-  let c = 0;
-  let g = 0;
-  let t = 0;
+  let [a, c, g, t] = [0, 0, 0, 0];
   for (const char of dna) {
     for (const ch of input) {
       //Check input equal to char
@@ -26,11 +23,15 @@ export function nucleotideCounts(input: string): DnaType {
             t = t + 1;
             break;
         }
+      } else {
+        throw new Error("Invalid nucleotide in strand");
       }
     }
   }
-  if (a === 0 && c === 0 && g === 0 && t === 0) {
-    throw new Error("Invalid nucleotide in strand");
+  if (input !== "") {
+    if (a === 0 && c === 0 && g === 0 && t === 0) {
+      throw new Error("Invalid nucleotide in strand");
+    }
   }
   let dnaList: DnaType = {
     A: a,
@@ -42,8 +43,4 @@ export function nucleotideCounts(input: string): DnaType {
   return dnaList;
 }
 
-console.log(
-  nucleotideCounts(
-    "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC",
-  ),
-);
+console.log(nucleotideCounts("AGXXACT"));
