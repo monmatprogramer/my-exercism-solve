@@ -3,7 +3,7 @@ type DnaType = {
 };
 export function nucleotideCounts(input: string): DnaType {
   const dna: string = "ACGT";
-  const [a, c, g, t] = [0, 0, 0, 0];
+  let [a, c, g, t] = [0, 0, 0, 0];
 
   let dnaList: DnaType = {
     A: a,
@@ -11,6 +11,7 @@ export function nucleotideCounts(input: string): DnaType {
     G: g,
     T: t,
   };
+  let tempFlag: boolean[] = [];
   for (const char of dna) {
     //Check input equal to char
     if (input === char) {
@@ -19,12 +20,22 @@ export function nucleotideCounts(input: string): DnaType {
         case "A":
           a = a + 1;
           break;
+        case "C":
+          c = c + 1;
+          break;
+        case "G":
+          g = g + 1;
+          break;
+        case "T":
+          t = t + 1;
+          break;
+        default:
+          tempFlag.push(false);
+          break;
       }
     }
   }
-  return {
-    A: 0,
-  };
+  return dnaList;
 }
 
 console.log(nucleotideCounts("G"));
