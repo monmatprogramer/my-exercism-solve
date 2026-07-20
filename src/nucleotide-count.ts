@@ -6,10 +6,10 @@ export function nucleotideCounts(input: string): DnaType {
   const [a, c, g, t] = [0, 0, 0, 0];
 
   let dnaList: DnaType = {
-    A: 0,
-    C: 0,
-    G: 0,
-    T: 0,
+    A: a,
+    C: c,
+    G: g,
+    T: t,
   };
   for (const char of dna) {
     //Check input equal to char
@@ -17,6 +17,7 @@ export function nucleotideCounts(input: string): DnaType {
       // check what is dna letter
       switch (input) {
         case "A":
+          a = a + 1;
           break;
       }
     }
