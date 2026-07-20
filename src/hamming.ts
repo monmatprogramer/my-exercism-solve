@@ -3,10 +3,13 @@ export function compute(left: string, right: string): number {
   if (left.length !== right.length) {
     throw new Error("DNA strands must be of equal length.");
   }
-  for (const char of left) {
-    console.log(char);
+  const len: number = left.length;
+  for (let i: number = 0; i < len; i++) {
+    if (left[i] !== right[i]) {
+      ++differences;
+    }
   }
-  return 0;
+  return differences;
 }
 
-console.log(compute("GGACTGAAATCTG", "GGACTGAAATCTG"));
+console.log(compute("G", "T"));
