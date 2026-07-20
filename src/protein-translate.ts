@@ -50,7 +50,9 @@ export function translate(rna: string): string[] {
 
   // Break it into 3
   const threeRna: string[] = breakToThree(rna);
-
+  if (threeRna.length < 3 && threeRna[1].length < 3) {
+    throw new Error("Invalid codon");
+  }
   if (!isValidRna(aminoDic, threeRna)) {
     //not 3 letters long
     throw new Error("Invalid codon");
@@ -176,7 +178,7 @@ const isStop = (
 
 try {
   //let d: string[] = translate("UUCUUCUAAUGGU");
-  let d: string[] = translate("UGGUGUUAUUAAUGGUUU");
+  let d: string[] = translate("AUGU");
   console.log(d);
 } catch (e: any) {
   console.log(e.message);
