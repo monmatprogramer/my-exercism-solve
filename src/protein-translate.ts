@@ -119,12 +119,11 @@ const filterRanValue = (
   } else console.log("length > 2");
   let tempArry: string[] = [];
 
-  for (let i: number = 0; i <= rnaInput.length - 2; i++) {
+  for (let i: number = 0; i <= rnaInput.length - 1; i++) {
     if (cdd.get(rnaInput[i + 1]) !== "STOP") {
       let key: string = rnaInput[i];
       let value: string = cdd.get(key)!;
       tempArry.push(value);
-      console.log("👉: ", tempArry);
     } else {
       tempArry.push(cdd.get(rnaInput[i])!);
       tempArry.push(cdd.get(rnaInput[i + 1])!);
@@ -177,7 +176,7 @@ const isStop = (
 
 try {
   //let d: string[] = translate("UUCUUCUAAUGGU");
-  let d: string[] = translate("UGGUGUUAUUAAUGGUUU");
+  let d: string[] = translate("UUUUUU");
   console.log(d);
 } catch (e: any) {
   console.log(e.message);
