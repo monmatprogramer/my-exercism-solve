@@ -138,7 +138,14 @@ const filterRanValue = (
     }
 
   }*/
-
+  if (rnaInput[0] === rnaInput[1]) {
+    return rnaValueArr;
+  } else if (
+    rnaInput.length < 3 &&
+    cdd.get(rnaInput[0])! === cdd.get(rnaInput[1])!
+  ) {
+    return rnaValueArr;
+  }
   const uniqueArray: string[] = [...new Set(rnaValueArr)];
   //console.log(uniqueArray);
 
@@ -170,7 +177,7 @@ const isStop = (
 
 try {
   //let d: string[] = translate("UUCUUCUAAUGGU");
-  let d: string[] = translate("AUGUUUUGG");
+  let d: string[] = translate("UGGUAGUGG");
   console.log(d);
 } catch (e: any) {
   console.log(e.message);
