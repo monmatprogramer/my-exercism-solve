@@ -168,7 +168,7 @@ const isStop = (
 
 try {
   //let d: string[] = translate("UUCUUCUAAUGGU");
-  let d: string[] = translate("UUUUUU");
+  let d: string[] = translate("AUCUUUUGAUGG");
   console.log(d);
 } catch (e: any) {
   console.log(e.message);
