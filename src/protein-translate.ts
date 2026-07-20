@@ -124,6 +124,7 @@ const filterRanValue = (
       let key: string = rnaInput[i];
       let value: string = cdd.get(key)!;
       tempArry.push(value);
+      console.log("👉: ", tempArry);
     } else {
       tempArry.push(cdd.get(rnaInput[i])!);
       tempArry.push(cdd.get(rnaInput[i + 1])!);
