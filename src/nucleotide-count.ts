@@ -5,7 +5,7 @@ export function nucleotideCounts(input: string): DnaType {
   const dna: string = "ACGT";
   let [a, c, g, t] = [0, 0, 0, 0];
   const rex = /^[ACGT]+$/i;
-  if (!rex.test(input)) {
+  if (!rex.test(input) && input !== "") {
     throw new Error("Invalid nucleotide in strand");
   }
   for (const char of dna) {
@@ -47,4 +47,4 @@ export function nucleotideCounts(input: string): DnaType {
   return dnaList;
 }
 
-console.log(nucleotideCounts("AGXXACT"));
+console.log(nucleotideCounts(""));
