@@ -110,9 +110,21 @@ const filterRanValue = (
   rnaInput: string[],
 ): string[] => {
   const rnaValueArr: string[] = [];
-  for (let i: number = 0; i <= rnaInput.length - 2; i++) {
-    console.log(rnaInput[i]);
-  }
+  const lenOfRnaInput: number = ranInput.length;
+  if (lenOfRnaInput < 2 && lenOfRnaInput > 0) {
+    if (ccd.get(ranInput[0]) === "STOP") {
+      return [];
+    }
+    rnaValueArr.push(cdd.get(ranInput[0]));
+  } else
+    for (let i: number = 0; i <= rnaInput.length - 2; i++) {
+      if (cdd.get(rnaInput[i + 1]) === "STOP") {
+        console.log(rnaInput[i]);
+        let key: string = rnaInput[i];
+        let value: string = cdd.get(key)!;
+        rnaValueArr.push(value);
+      }
+    }
 
   /* 
   for (const v of rnaInput) {
@@ -151,7 +163,7 @@ const isStop = (
 
 try {
   //let d: string[] = translate("UUCUUCUAAUGGU");
-  let d: string[] = translate("UGGUAGUGG");
+  let d: string[] = translate("AUG");
   console.log(d);
 } catch (e: any) {
   console.log(e.message);
