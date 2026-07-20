@@ -139,8 +139,10 @@ const filterRanValue = (
 
   }*/
 
-  //const uniqueArray: string[] = [...new Set(rnaValueArr)];
-  return rnaValueArr;
+  const uniqueArray: string[] = [...new Set(rnaValueArr)];
+  //console.log(uniqueArray);
+
+  return uniqueArray;
 };
 // Check stop rule
 const isStop = (
@@ -168,7 +170,7 @@ const isStop = (
 
 try {
   //let d: string[] = translate("UUCUUCUAAUGGU");
-  let d: string[] = translate("AUCUUUUGAUGG");
+  let d: string[] = translate("AUGUUUUGG");
   console.log(d);
 } catch (e: any) {
   console.log(e.message);
