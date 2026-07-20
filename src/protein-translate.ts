@@ -116,7 +116,7 @@ const filterRanValue = (
     }
   }
   // check duplicate
-  const uniqueArray: string[] = { ...new Set(rnaValueArr) };
+  const uniqueArray: string[] = [...new Set(rnaValueArr)];
   return uniqueArray;
 };
 // Check stop rule
