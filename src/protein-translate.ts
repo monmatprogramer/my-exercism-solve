@@ -115,6 +115,7 @@ const filterRanValue = (
       rnaValueArr.push(cdd.get(v)!);
     }
   }
+  console.log("check duplicate here");
   return rnaValueArr;
 };
 // Check stop rule
@@ -144,7 +145,7 @@ const isStop = (
 
 try {
   //let d: string[] = translate("UUCUUCUAAUGGU");
-  let d: string[] = translate("UAGUGG");
+  let d: string[] = translate("UGGUAGUGG");
   console.log(d);
 } catch (e: any) {
   console.log(e.message);
