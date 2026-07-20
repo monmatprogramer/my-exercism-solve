@@ -115,7 +115,8 @@ const filterRanValue = (
       rnaValueArr.push(cdd.get(v)!);
     }
   }
-  console.log("check duplicate here");
+  // check duplicate
+  const uniqueArray: string[] = { ...new Set(rnaValueArr) };
   return rnaValueArr;
 };
 // Check stop rule
