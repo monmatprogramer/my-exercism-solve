@@ -137,6 +137,7 @@ const isStop = (
     if (getValue[0]) {
       return true;
     }
+    // IF stop in not first index
   }
   return false;
 };
