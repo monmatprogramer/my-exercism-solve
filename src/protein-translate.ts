@@ -110,14 +110,20 @@ const filterRanValue = (
   rnaInput: string[],
 ): string[] => {
   const rnaValueArr: string[] = [];
+  for (let i: number = 0; i <= rnaInput.length - 2; i++) {
+    console.log(rnaInput[i]);
+  }
+
+  /* 
   for (const v of rnaInput) {
     if (cdd.get(v) !== "STOP") {
       rnaValueArr.push(cdd.get(v)!);
     }
-  }
-  // check duplicate
-  const uniqueArray: string[] = [...new Set(rnaValueArr)];
-  return uniqueArray;
+
+  }*/
+
+  //const uniqueArray: string[] = [...new Set(rnaValueArr)];
+  return rnaValueArr;
 };
 // Check stop rule
 const isStop = (
@@ -139,7 +145,6 @@ const isStop = (
     if (getValue[0]) {
       return true;
     }
-    // IF stop in not first index
   }
   return false;
 };
