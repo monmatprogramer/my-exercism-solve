@@ -113,8 +113,6 @@ const filterRanValue = (
   for (const v of rnaInput) {
     if (cdd.get(v) !== "STOP") {
       rnaValueArr.push(cdd.get(v)!);
-    } else {
-      return [];
     }
   }
   return rnaValueArr;
@@ -135,13 +133,17 @@ const isStop = (
     if (getValue.length === getValue.filter((n) => n === true).length) {
       return true;
     }
+    //First index is stop
+    if (getValue[0]) {
+      return true;
+    }
   }
   return false;
 };
 
 try {
   //let d: string[] = translate("UUCUUCUAAUGGU");
-  let d: string[] = translate("UGGUAG");
+  let d: string[] = translate("UAGUGG");
   console.log(d);
 } catch (e: any) {
   console.log(e.message);
