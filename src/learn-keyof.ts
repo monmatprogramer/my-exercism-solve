@@ -49,3 +49,10 @@ type ServerSettings = {
   memorySizeGB: number;
   isOnline: boolean;
 };
+// create object
+const myNAS2: ServerSettings = {
+  serialNumber: "SN123456789",
+  model: "QNAP TS-433",
+  memorySizeGB: 4,
+  isOnline: true,
+};
