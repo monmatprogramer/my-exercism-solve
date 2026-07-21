@@ -19,6 +19,7 @@ export function nucleotideCounts(input: string): DnaType {
   inputArray.reduce(
     (counts, char) => {
       if (char in counts) {
+        console.log("📝 ", counts);
         console.log("👉 ", counts[char as keyof DnaType]);
         // Extract the value and plus it
         counts[char as keyof DnaType]++;
