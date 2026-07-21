@@ -4,6 +4,8 @@ interface User {
   email: string;
 }
 //UserKyes as "id" | "name" | "email"
-type UserKyes = keyof User;
+type UserKeys = keyof User;
 
-//let field: UserKeys;
+let field: UserKeys;
+field = "name"; // pass because it is key of User
+//field = "age"; //error
