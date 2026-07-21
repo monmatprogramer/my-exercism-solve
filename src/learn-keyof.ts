@@ -56,3 +56,4 @@ const myNAS2: ServerSettings = {
   memorySizeGB: 4,
   isOnline: true,
 };
+// myNAS2.model = "New Server"; // Error because it is locked
