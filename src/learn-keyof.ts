@@ -27,4 +27,5 @@ const myNAS = {
 };
 // -- Common Use Case ---
 // 1. Type-Safe Dynamic Property Access
+const currentRam = getProperty(myNAS, "memory");
 function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {}
