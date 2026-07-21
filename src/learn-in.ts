@@ -4,6 +4,7 @@ interface Person {
 }
 
 function printPersonInfo(person: Person) {
+  console.log(person);
   if ("age" in person) {
     console.log(`Name: ${person.name}, Age: ${person.age}`);
   } else {
