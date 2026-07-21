@@ -23,7 +23,7 @@ type AllowedKeys = keyof Server;
 const myNAS = {
   model: "QNAP TS-433",
   memory: "4G",
-  isOnline: true,
+  isOnline: false,
 };
 // -- Common Use Case ---
 // 1. Type-Safe Dynamic Property Access
@@ -33,5 +33,9 @@ function getProperty<T, K extends keyof T>(
   key: K,
   newValue: T[K],
 ): void {
+  // obj = { model: 'QNAP TS-433', memory: '4G', isOnline: false }
+  // key = isOnline ✅ because 'K extends keyof T'
+  // newvalue: true 'boolean', its type change automatically because T[K]
   obj[key] = newValue;
+  // obj = { model: 'QNAP TS-433', memory: '4G', isOnline: true ✅ }
 }
