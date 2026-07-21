@@ -6,4 +6,13 @@ const t: DnaType = {
   G: 0,
   T: 0,
 };
-console.log(t);
+
+export function nucleotideCounts(input: string): DnaType {
+  const dna: DnaType = {
+    A: 0,
+    C: 0,
+    G: 0,
+    T: 0,
+  };
+  return dna;
+}
