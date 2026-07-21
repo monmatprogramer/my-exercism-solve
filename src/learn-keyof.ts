@@ -40,5 +40,33 @@ function getProperty<T, K extends keyof T>(
   // newvalue: true 'boolean', its type change automatically because T[K]
   obj[key] = newValue;
   // obj = { model: 'QNAP TS-433', memory: '4G', isOnline: true ✅ }
-  console.log(obj);
 }
+
+// 3. Lock property
+type ServerSettings = {
+  readonly serialNumber: string;
+  readonly model: string;
+  memorySizeGB: number;
+  isOnline: boolean;
+};
+// create object
+const myNAS2: LockedMyNASServer = {
+  serialNumber: "SN123456789",
+  model: "QNAP TS-433",
+  memorySizeGB: 4,
+  isOnline: true,
+};
+const myNASObj = {
+  model: "QNAP TS-433",
+  memory: "5G",
+  isOnline: true,
+} as const; // mean locked all properties in this object
+//or
+const myNASObj2 = {
+  model: "QNAP TS-433",
+  memory: "5G",
+  isOnline: true,
+};
+type LockedMyNASServer = Readonly<ServerSettings>; // also  locked all properties
+
+// myNAS2.model = "New Server"; // Error because it is locked

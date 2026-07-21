@@ -17,14 +17,19 @@ export function nucleotideCounts(input: string): DnaType {
   //Covert input string into an array
   const inputArray: string[] = input.split("");
   inputArray.reduce((counts, char) => {
-    console.log("count: ", counts);
-    console.log("char: ", char);
-    console.log("\n");
-    if (char in counts) {
-      counts[char];
-    }
-    return "";
-  });
+  inputArray.reduce(
+    (counts, char) => {
+      // Loop for checking char in counts
+      if (char in counts) {
+        // Extract the value and plus it
+        counts[char as keyof DnaType]++;
+        // return new object that update its value
+        return counts;
+      }
+      throw new Error("Invalid nucleotideCounts");
+    },
+    { A: 0, C: 0, G: 0, T: 0 },
+  );
 
   return dna;
 }
