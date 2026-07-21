@@ -40,5 +40,12 @@ function getProperty<T, K extends keyof T>(
   // newvalue: true 'boolean', its type change automatically because T[K]
   obj[key] = newValue;
   // obj = { model: 'QNAP TS-433', memory: '4G', isOnline: true ✅ }
-  console.log(obj);
 }
+
+// 3. Lock property
+type ServerSettings = {
+  readonly serialNumber: string;
+  readonly model: string;
+  memorySizeGB: number;
+  isOnline: boolean;
+};
