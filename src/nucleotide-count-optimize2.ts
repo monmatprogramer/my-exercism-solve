@@ -14,5 +14,11 @@ export function nucleotideCounts(input: string): DnaType {
     G: 0,
     T: 0,
   };
+  //Covert input string into an array
+  const inputArray: string[] = input.split("");
+  console.log(input.split(""));
+
   return dna;
 }
+
+nucleotideCounts("ACGTTT");
