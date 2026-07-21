@@ -27,7 +27,7 @@ export const simulateGame = (
       let stateStringA: string = "A";
       let stateStringB: string = "B";
       let combinedState: string = stateStringA + "|" + stateStringB;
-      console.log(combinedState);
+
       game = false;
     }
   }
@@ -37,5 +37,6 @@ export const simulateGame = (
     tricks: 1,
   };
 };
-
-simulateGame();
+const playerA: string[] = ["2"];
+const playerB: string[] = ["3"];
+simulateGame(playerA, playerB);
