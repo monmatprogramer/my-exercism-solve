@@ -20,6 +20,9 @@ export function nucleotideCounts(input: string): DnaType {
     console.log("count: ", counts);
     console.log("char: ", char);
     console.log("\n");
+    if (char in counts) {
+      counts[char];
+    }
     return "";
   });
 
