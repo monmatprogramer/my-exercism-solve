@@ -16,7 +16,12 @@ export function nucleotideCounts(input: string): DnaType {
   };
   //Covert input string into an array
   const inputArray: string[] = input.split("");
-  console.log(input.split(""));
+  inputArray.reduce((counts, char) => {
+    console.log("count: ", counts);
+    console.log("char: ", char);
+    console.log("\n");
+    return "";
+  });
 
   return dna;
 }
