@@ -27,7 +27,9 @@ const myNAS = {
 };
 // -- Common Use Case ---
 // 1. Type-Safe Dynamic Property Access
-const currentRam = getProperty(myNAS, "isOnline", true);
+const currentOnline = getProperty(myNAS, "isOnline", true);
+const currentRam = getProperty(myNAS, "memory", "6G");
+
 function getProperty<T, K extends keyof T>(
   obj: T,
   key: K,
@@ -38,4 +40,5 @@ function getProperty<T, K extends keyof T>(
   // newvalue: true 'boolean', its type change automatically because T[K]
   obj[key] = newValue;
   // obj = { model: 'QNAP TS-433', memory: '4G', isOnline: true ✅ }
+  console.log(obj);
 }
