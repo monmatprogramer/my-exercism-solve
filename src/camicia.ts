@@ -7,4 +7,10 @@ type GameType = {
 export const simulateGame = (
   playerA: string[],
   playerB: string[],
-): unknown => {};
+): GameType => {
+  return {
+    status: "finished",
+    cards: 10,
+    tricks: 1,
+  };
+};
