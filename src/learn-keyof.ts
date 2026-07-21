@@ -17,6 +17,7 @@ type Server = {
   memory: string;
   isOnline: boolean;
 };
-
+//AllowedKeys = 'model' | 'memory' | 'isOnline'
+type AllowedKeys = keyof Server;
 // -- Common Use Case ---
 // 1. Type-Safe Dynamic Property Access
