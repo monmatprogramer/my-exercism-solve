@@ -17,11 +17,25 @@ export const simulateGame = (
   playerB: string[],
 ): GameType => {
   const pile: string[] = [];
-  let [totalCards, totalTricks] = [0, 0];
+  let [totalCards, totalTricks, penaltyAmount] = [0, 0, 0];
   let currentTurn: FaceCard = "A";
+  let historyOfDecks: string[] = [];
+  let playerOwed = null;
+  let game: boolean = true;
+  while (game) {
+    if (penaltyAmount === 0) {
+      let stateStringA: string = "A";
+      let stateStringB: string = "B";
+      let combinedState: string = stateStringA + "|" + stateStringB;
+      console.log(combinedState);
+      game = false;
+    }
+  }
   return {
     status: "finished",
     cards: 10,
     tricks: 1,
   };
 };
+
+simulateGame();
