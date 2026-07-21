@@ -50,6 +50,9 @@ export function translate(rna: string): string[] {
 
   // Break it into 3
   const threeRna: string[] = breakToThree(rna);
+  if (threeRna.length > 1 && threeRna[1].length < 3) {
+    throw new Error("Invalid codon");
+  }
 
   if (!isValidRna(aminoDic, threeRna)) {
     //not 3 letters long
@@ -110,12 +113,45 @@ const filterRanValue = (
   rnaInput: string[],
 ): string[] => {
   const rnaValueArr: string[] = [];
+  const lenOfRnaInput: number = rnaInput.length;
+  if (lenOfRnaInput < 2 && lenOfRnaInput > 0) {
+    if (cdd.get(rnaInput[0])! === "STOP") {
+      return [];
+    }
+    rnaValueArr.push(cdd.get(rnaInput[0])!);
+  } else console.log("length > 2");
+  let tempArry: string[] = [];
+
+  for (let i: number = 0; i <= rnaInput.length - 1; i++) {
+    if (cdd.get(rnaInput[i + 1]) !== "STOP") {
+      let key: string = rnaInput[i];
+      let value: string = cdd.get(key)!;
+      tempArry.push(value);
+    } else {
+      tempArry.push(cdd.get(rnaInput[i])!);
+      break;
+    }
+  }
+  rnaValueArr.push(...tempArry);
+
+  /* 
   for (const v of rnaInput) {
     if (cdd.get(v) !== "STOP") {
       rnaValueArr.push(cdd.get(v)!);
     }
+
+  }*/
+  if (rnaInput[0] === rnaInput[1]) {
+    return rnaValueArr;
+  } else if (
+    rnaInput.length < 3 &&
+    cdd.get(rnaInput[0])! === cdd.get(rnaInput[1])!
+  ) {
+    return rnaValueArr;
   }
-  return rnaValueArr;
+  const uniqueArray: string[] = [...new Set(rnaValueArr)];
+
+  return uniqueArray.filter((n) => n !== "STOP");
 };
 // Check stop rule
 const isStop = (
@@ -133,13 +169,17 @@ const isStop = (
     if (getValue.length === getValue.filter((n) => n === true).length) {
       return true;
     }
+    //First index is stop
+    if (getValue[0]) {
+      return true;
+    }
   }
   return false;
 };
 
 try {
   //let d: string[] = translate("UUCUUCUAAUGGU");
-  let d: string[] = translate("UAGUGG");
+  let d: string[] = translate("AUGU");
   console.log(d);
 } catch (e: any) {
   console.log(e.message);

@@ -6,4 +6,4 @@ interface User {
 //UserKyes as "id" | "name" | "email"
 type UserKyes = keyof User;
 
-let field: UserKeys;
+//let field: UserKeys;
