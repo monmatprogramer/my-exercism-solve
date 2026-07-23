@@ -1,8 +1,3 @@
-const obj: Record<string, number> = {
-  J: 1,
-  Q: 2,
-  K: 3,
-  A: 4,
-};
-
-console.log(obj);
+//check number
+const isNumberRex = /[0-9]/;
+console.log(isNumberRex.test("0")); // true

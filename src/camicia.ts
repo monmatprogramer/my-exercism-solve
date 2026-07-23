@@ -43,6 +43,9 @@ export const simulateGame = (
 };
 //
 function findPlayerDeck(playerName: string[]): string[] {
+  //check number
+  const isNumberRex = /[0-9]/;
+  console.log(isNumberRex.text("0")); // true
   return [];
 }
 
