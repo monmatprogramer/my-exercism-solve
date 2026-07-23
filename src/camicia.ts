@@ -25,11 +25,12 @@ export const simulateGame = (
   // Take without number cards (2-10)
   let playerA_Deck: string[] = findPlayerDeck(playerA);
   let playerB_Deck: string[] = findPlayerDeck(playerB);
+
   while (game) {
     // if no one is currely paying a penalty
     if (penaltyAmount === 0) {
-      let stateStringA: string = "A";
-      let stateStringB: string = "B";
+      let stateStringA: string[] = playerA_Deck;
+      let stateStringB: string[] = playerB_Deck;
       let combinedState: string = stateStringA + "|" + stateStringB;
 
       game = false;
