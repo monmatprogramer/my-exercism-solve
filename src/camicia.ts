@@ -41,6 +41,11 @@ export const simulateGame = (
     tricks: 1,
   };
 };
+//
+function findPlayerDeck(playerName: string[]): string[] {
+  return [];
+}
+
 const playerA: string[] = ["2"];
 const playerB: string[] = ["3"];
 simulateGame(playerA, playerB);
