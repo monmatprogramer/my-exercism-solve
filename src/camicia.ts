@@ -35,6 +35,12 @@ export const simulateGame = (
       //check combinedState
       //
       if (currentTurn === "A" && playerA_Deck.length < 0) {
+        return {
+          status: "finished",
+          cards: totalCards,
+          tricks: totalTricks,
+        };
+      } else if (currentTurn === "B" && playerB_Deck.length < 0) {
       }
       game = false;
     }
