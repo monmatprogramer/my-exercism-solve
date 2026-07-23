@@ -23,7 +23,7 @@ export const simulateGame = (
   let playerOwed = null;
   let game: boolean = true;
   // Take without number cards (2-10)
-  let playerA_Deck: string[] = [];
+  let playerA_Deck: string[] = ;
   let playerB_Deck: string[] = [];
   while (game) {
     // if no one is currely paying a penalty
@@ -42,11 +42,20 @@ export const simulateGame = (
   };
 };
 //
-function findPlayerDeck(playerName: string[]): string[] {
+export function findPlayerDeck(playerName: string[]): string[] {
   //check number
   const isNumberRex = /[0-9]/;
-  console.log(isNumberRex.text("0")); // true
-  return [];
+  const withoutNumber: string[] = [];
+  const withNumber: string[] = [];
+  for (const value of playerName) {
+    if (!isNumberRex.test(value)) {
+      withoutNumber.push(value);
+    } else {
+      withNumber.push(value);
+    }
+  }
+
+  return withoutNumber;
 }
 
 const playerA: string[] = ["2"];
