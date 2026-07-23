@@ -31,8 +31,11 @@ export const simulateGame = (
     if (penaltyAmount === 0) {
       let stateStringA: string[] = playerA_Deck;
       let stateStringB: string[] = playerB_Deck;
-      let combinedState: string = stateStringA + "|" + stateStringB;
-
+      //let combinedState: string = stateStringA + "|" + stateStringB;
+      //check combinedState
+      //
+      if (currentTurn === "A" && playerA_Deck.length < 0) {
+      }
       game = false;
     }
   }
