@@ -33,7 +33,8 @@ export const simulateGame = (
       let stateStringB: string[] = playerB_Deck;
       //let combinedState: string = stateStringA + "|" + stateStringB;
       //check combinedState
-      //
+
+      // 4. Check if someone Lost
       if (currentTurn === "A" && playerA_Deck.length === 0) {
         return {
           status: "finished",
@@ -47,6 +48,12 @@ export const simulateGame = (
           tricks: totalTricks,
         };
       }
+
+      // 5. Play a Card
+      // Remove the top card from the currentTurn player's desk
+      pile.push(currentTurn);
+      currentTurn = "";
+      totalCards = totalCards + 1;
 
       game = false;
     }
