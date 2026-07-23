@@ -1,3 +1,5 @@
-//check number
-const isNumberRex = /[0-9]/;
-console.log(isNumberRex.test("H")); // true
+const test: string[] = ["a", "3", "1", "2", "k"];
+
+for (const value of test) {
+  console.log(value);
+}
