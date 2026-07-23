@@ -23,8 +23,8 @@ export const simulateGame = (
   let playerOwed = null;
   let game: boolean = true;
   // Take without number cards (2-10)
-  let playerA_Deck: string[] = ;
-  let playerB_Deck: string[] = [];
+  let playerA_Deck: string[] = findPlayerDeck(playerA);
+  let playerB_Deck: string[] = findPlayerDeck(playerB);
   while (game) {
     // if no one is currely paying a penalty
     if (penaltyAmount === 0) {
