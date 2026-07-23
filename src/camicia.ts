@@ -55,6 +55,8 @@ export const simulateGame = (
       currentTurn = "";
       totalCards = totalCards + 1;
 
+      // 6. Check the Card Rules
+
       game = false;
     }
   }
