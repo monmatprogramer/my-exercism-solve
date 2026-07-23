@@ -23,6 +23,7 @@ export const simulateGame = (
   let playerOwed = null;
   let game: boolean = true;
   while (game) {
+    // if no one is currely paying a penalty
     if (penaltyAmount === 0) {
       let stateStringA: string = "A";
       let stateStringB: string = "B";
