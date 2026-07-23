@@ -22,6 +22,9 @@ export const simulateGame = (
   let historyOfDecks: string[] = [];
   let playerOwed = null;
   let game: boolean = true;
+  // Take without number cards (2-10)
+  let playerA_Deck: string[] = [];
+  let playerB_Deck: string[] = [];
   while (game) {
     // if no one is currely paying a penalty
     if (penaltyAmount === 0) {
