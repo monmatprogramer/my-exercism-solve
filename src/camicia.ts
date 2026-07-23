@@ -34,14 +34,20 @@ export const simulateGame = (
       //let combinedState: string = stateStringA + "|" + stateStringB;
       //check combinedState
       //
-      if (currentTurn === "A" && playerA_Deck.length < 0) {
+      if (currentTurn === "A" && playerA_Deck.length === 0) {
         return {
           status: "finished",
           cards: totalCards,
           tricks: totalTricks,
         };
-      } else if (currentTurn === "B" && playerB_Deck.length < 0) {
+      } else if (currentTurn === "B" && playerB_Deck.length === 0) {
+        return {
+          status: "finished",
+          cards: totalCards,
+          tricks: totalTricks,
+        };
       }
+
       game = false;
     }
   }
