@@ -33,6 +33,7 @@ export const simulateGame = (
   let numberOfCard: number = 0;
   let resultObj: GameType;
   let statusState = "finished";
+  const isNumRex = /^[0-9]/;
   while (loopCondition) {
     // Checking action
     switch (turn) {

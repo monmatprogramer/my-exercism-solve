@@ -1,5 +1,6 @@
 const test: string[] = ["a", "3", "1", "2", "k"];
 
-let t: string | number = 0;
+let t: string | number;
+const rex = /^[0-9]/;
 
-console.log(typeof t);
+console.log(rex.test("1"));
