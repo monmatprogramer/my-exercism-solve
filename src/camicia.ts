@@ -66,12 +66,14 @@ export const simulateGame = (
         if (continueCondition) {
           turn = "A";
         }
-      } else {
+      } else if (actionValueB > actionValueA) {
         collectionB = [...playerB_Deck, ...getPile];
         playerB = collectionB;
         continueCondition = playerA_Deck.length === 0 ? false : true;
         if (continueCondition) {
           turn = "B";
+        } else {
+          throw new Error("Error on action A and B and its turn ");
         }
       }
     } else {
