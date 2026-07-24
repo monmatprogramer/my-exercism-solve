@@ -28,7 +28,7 @@ export const simulateGame = (
   let getPile: string[] = [];
   let continueCondition: boolean = false;
   let loopCondition: boolean = true;
-  let stepCount: number = 1;
+  let stepCount: number = 0;
   let trickCount: number = 0;
   let numberOfCard: number = 0;
   let resultObj: GameType;
