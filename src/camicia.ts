@@ -38,14 +38,18 @@ export const simulateGame = (
     // Checking action
     switch (turn) {
       case "A":
-        actionValueA = collectionA[0];
+        actionValueA = isNumRex.test(collectionA[0])
+          ? Number(collectionA[0])
+          : collectionA[0];
         getPile = getPile.push(collectionA.shift());
         playerA_Deck = collectionA;
         turn = "B";
         break;
       case "B":
         break;
-        actionValueB = collectionB[0];
+        actionValueB = isNumRex.test(collectionB[0])
+          ? Number(collectionB[0])
+          : collectionB[0];
         getPile = getPile.push(collectionB.shift());
         playerB_Deck = collectionA;
         turn = "A";
