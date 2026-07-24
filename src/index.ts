@@ -1,3 +1,5 @@
-import { findPlayerDeck } from "./camicia";
 const test: string[] = ["a", "3", "1", "2", "k"];
-console.log([].length);
+
+let t: string | number = "0";
+
+console.log(t);
