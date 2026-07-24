@@ -37,14 +37,15 @@ export const simulateGame = (
   while (loopCondition) {
     // Checking action
     if (turn === "A") {
-      actionValueA = isNumRex.test(collectionA[0])
-        ? Number(collectionA[0])
+      actionValueA = isNumRex.test(playerA[0])
+        ? Number(playerA[0])
         : collectionA[0];
-      getPile.push(collectionA.shift()!);
-      playerA_Deck = collectionA;
+      getPile.push(playerA.shift()!);
+      playerA_Deck = playerA;
       turn = "B";
     }
     if (turn === "B") {
+      //TODO: correct here
       actionValueB = isNumRex.test(collectionB[0])
         ? Number(collectionB[0])
         : collectionB[0];
@@ -112,8 +113,8 @@ export const simulateGame = (
 };
 
 try {
-  const playerA: string[] = ["2"];
-  const playerB: string[] = ["3"];
+  const playerA = ["2", "4"];
+  const playerB = ["3"];
   console.log(simulateGame(playerA, playerB));
 } catch (e: any) {
   console.log(e.message);
