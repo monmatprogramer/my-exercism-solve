@@ -42,7 +42,7 @@ export const simulateGame = (
         : playerA[0];
       getPile.push(playerA.shift()!);
       playerA_Deck = playerA;
-      if (playerB_Deck.length !== 0) {
+      if (playerB.length !== 0) {
         turn = "B";
         ++stepCount;
       }
@@ -67,6 +67,7 @@ export const simulateGame = (
         playerA = collectionA;
         continueCondition = playerB_Deck.length === 0 ? false : true;
         if (continueCondition) {
+          player = playerA_Deck;
           turn = "A";
         }
       } else if (actionValueB > actionValueA) {
