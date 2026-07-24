@@ -90,8 +90,8 @@ export const simulateGame = (
       loopCondition = true;
       ++trickCount;
       if (stepCount === 0) {
-        tempCollectionA.push(collectionA);
-        tempCollectionB.push(collectionB);
+        tempCollectionA.push(String(collectionA));
+        tempCollectionB.push(String(collectionB));
       } else if (stepCount !== 1) {
         throw new Error("Not complete in step not equal 1");
       }
