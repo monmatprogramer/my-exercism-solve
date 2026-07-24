@@ -15,7 +15,12 @@ const penaltyType: Record<FaceCard, number> = {
 export const simulateGame = (
   playerA: string[],
   playerB: string[],
-): GameType => {};
+): GameType => {
+  let playerA_Deck: string[] = [];
+  let playerB_Deck: string[] = [];
+  let collectionA: string[] = playerA;
+  let collectionB: string[] = playerB;
+};
 
 const playerA: string[] = ["2"];
 const playerB: string[] = ["3"];
