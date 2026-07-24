@@ -36,26 +36,23 @@ export const simulateGame = (
   const isNumRex = /^[0-9]/;
   while (loopCondition) {
     // Checking action
-    switch (turn) {
-      case "A":
-        actionValueA = isNumRex.test(collectionA[0])
-          ? Number(collectionA[0])
-          : collectionA[0];
-        getPile.push(collectionA.shift()!);
-        playerA_Deck = collectionA;
-        turn = "B";
-        break;
-      case "B":
-        break;
-        actionValueB = isNumRex.test(collectionB[0])
-          ? Number(collectionB[0])
-          : collectionB[0];
-        getPile.push(collectionB.shift()!);
-        playerB_Deck = collectionA;
-        turn = "A";
-      default:
-        throw new Error("Invalid turn");
+    if (trun === "A") {
+      actionValueA = isNumRex.test(collectionA[0])
+        ? Number(collectionA[0])
+        : collectionA[0];
+      getPile.push(collectionA.shift()!);
+      playerA_Deck = collectionA;
+      turn = "B";
     }
+    if (turn === "B") {
+      actionValueB = isNumRex.test(collectionB[0])
+        ? Number(collectionB[0])
+        : collectionB[0];
+      getPile.push(collectionB.shift()!);
+      playerB_Deck = collectionA;
+      turn = "A";
+    }
+
     // Compare action
     if (
       typeof actionValueA! === "number" &&
