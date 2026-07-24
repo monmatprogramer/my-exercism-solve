@@ -74,17 +74,20 @@ export const simulateGame = (
         }
       } else if (actionValueB > actionValueA) {
         collectionB = [...playerB_Deck, ...getPile];
-        playerB = collectionB;
-        continueCondition = playerA_Deck.length === 0 ? false : true;
+        if (playerA_Deck.length !== 0) {
+          playerA = playerA_Deck;
+          turn = "A";
+        } else {
+          if (playerB.length !== 0) {
+            playerB = collectionB;
+            continueCondition = playerA_Deck.length === 0 ? false : true;
+          }
+        }
         if (continueCondition) {
           turn = "B";
         } else {
-          //if(){}
-          if (playerA.length > 1) {
-            throw new Error(
-              `💥 Error on action A and B and its turn: actionValueA ${actionValueA!} and actionValueB ${actionValueB!} and turn ${turn}`,
-            );
-          }
+          ++stepCount;
+          ++trickCount;
         }
       }
     } else {
@@ -105,6 +108,8 @@ export const simulateGame = (
       loopCondition = false;
     } else {
       loopCondition = false;
+      console.log(playerA_Deck);
+      console.log(playerA_Deck);
       if (playerA_Deck.length === 0 && playerB_Deck.length === 0) {
         ++trickCount;
         ++stepCount;
