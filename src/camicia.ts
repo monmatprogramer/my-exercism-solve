@@ -25,7 +25,7 @@ export const simulateGame = (
   let turn: string = "A";
   let actionValueA: string | number;
   let actionValueB: string | number;
-  let getPile: string[] = [];
+  let getPile: string[] | number[];
   let continueCondition: string[] = [];
   let loopCondition: boolean = true;
   let stepCount: number = 1;
