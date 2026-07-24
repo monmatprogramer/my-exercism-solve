@@ -88,7 +88,6 @@ export const simulateGame = (
     // Increase step action
     ++stepCount;
     ++numberOfCard;
-
     ++trickCount;
     if (continueCondition) {
       loopCondition = true;
@@ -106,7 +105,7 @@ export const simulateGame = (
   //Assign resultObj firt before calling.
   resultObj = {
     status: statusState,
-    cards: numberOfCard,
+    cards: stepCount,
     tricks: trickCount,
   };
   return resultObj;
