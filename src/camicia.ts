@@ -72,7 +72,9 @@ export const simulateGame = (
         if (continueCondition) {
           turn = "B";
         } else {
-          throw new Error("💥 Error on action A and B and its turn ");
+          throw new Error(
+            `💥 Error on action A and B and its turn: actionValueA ${typeof actionValueA!} and actionValueB ${typeof actionValueB!} and turn ${turn}`,
+          );
         }
       }
     } else {
