@@ -32,8 +32,17 @@ export const simulateGame = (
   let trickCount: number = 0;
   let numberOfCard: number = 0;
   let resultObj: GameType;
-
   let statusState = "finished";
+  while (loopCondition) {
+    switch (turn) {
+      case "A":
+        break;
+      case "B":
+        break;
+      default:
+        throw new Error("Invalid turn");
+    }
+  }
 
   //Assign resultObj firt before calling.
   resultObj = {
