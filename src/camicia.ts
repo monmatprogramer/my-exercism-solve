@@ -81,6 +81,17 @@ export const simulateGame = (
     }
     // Increase step action
     ++stepCount;
+    ++numberOfCard;
+    if (continueCondition) {
+      loopCondition = true;
+      ++trickCount;
+      if (stepCount === 0) {
+        tempCollectionA = collectionA;
+        tempCollectionB = collectionB;
+      } else if (stepCount !== 1) {
+        throw new Error("Not complete in step not equal 1");
+      }
+    }
   }
 
   //Assign resultObj firt before calling.
