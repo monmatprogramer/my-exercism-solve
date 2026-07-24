@@ -68,14 +68,17 @@ export const simulateGame = (
       } else if (actionValueB > actionValueA) {
         collectionB = [...playerB_Deck, ...getPile];
         playerB = collectionB;
-        console.log(collectionB);
         continueCondition = playerA_Deck.length === 0 ? false : true;
         if (continueCondition) {
           turn = "B";
         } else {
-          throw new Error(
-            `💥 Error on action A and B and its turn: actionValueA ${actionValueA!} and actionValueB ${actionValueB!} and turn ${turn}`,
-          );
+          //if(){}
+
+          if (playerB.length > 1) {
+            throw new Error(
+              `💥 Error on action A and B and its turn: actionValueA ${actionValueA!} and actionValueB ${actionValueB!} and turn ${turn}`,
+            );
+          }
         }
       }
     } else {
@@ -112,7 +115,7 @@ export const simulateGame = (
 try {
   const playerA: string[] = ["2"];
   const playerB: string[] = ["3"];
-  simulateGame(playerA, playerB);
+  console.log(simulateGame(playerA, playerB));
 } catch (e: any) {
   console.log(e.message);
 }
