@@ -73,8 +73,7 @@ export const simulateGame = (
           turn = "B";
         } else {
           //if(){}
-
-          if (playerB.length > 1) {
+          if (playerA.length > 1) {
             throw new Error(
               `💥 Error on action A and B and its turn: actionValueA ${actionValueA!} and actionValueB ${actionValueB!} and turn ${turn}`,
             );
@@ -89,9 +88,10 @@ export const simulateGame = (
     // Increase step action
     ++stepCount;
     ++numberOfCard;
+
+    ++trickCount;
     if (continueCondition) {
       loopCondition = true;
-      ++trickCount;
       if (stepCount === 0) {
         tempCollectionA.push(String(collectionA));
         tempCollectionB.push(String(collectionB));
