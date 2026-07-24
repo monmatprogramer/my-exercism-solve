@@ -28,7 +28,7 @@ export const simulateGame = (
   let getPile: string[] = [];
   let continueCondition: string[] = [];
   let loopCondition: boolean = true;
-  let septCount: number = 1;
+  let stepCount: number = 1;
   let trickCount: number = 0;
   let numberOfCard: number = 0;
   let resultObj: GameType;
@@ -79,6 +79,8 @@ export const simulateGame = (
     } else {
       throw new Error("Not complete logic on compare action ");
     }
+    // Increase step action
+    ++stepCount;
   }
 
   //Assign resultObj firt before calling.
