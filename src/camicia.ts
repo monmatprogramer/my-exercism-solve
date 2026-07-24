@@ -60,12 +60,16 @@ export const simulateGame = (
     // Compare action
     if (typeof actionValueA === "number" && typeof actionValueB === "number") {
       if (actionValueA > actionValueB) {
-        collectionA = [...playerB_Deck, ...getPile];
+        collectionA = [...playerA_Deck, ...getPile];
         playerA = collectionA;
         continueCondition = playerB_Deck.length === 0 ? false : true;
         if (continueCondition) {
           turn = "A";
         }
+      } else {
+        collectionB = [...playerB_Deck, ...getPile];
+        playerB = collectionB;
+        continueCondition = playerA_Deck.length === 0 ? false : true;
       }
     } else {
       throw new Error("Not complete logic on compare action ");
