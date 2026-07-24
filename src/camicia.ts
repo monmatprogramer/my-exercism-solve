@@ -51,6 +51,7 @@ export const simulateGame = (
         : playerB[0];
       getPile.push(playerB.shift()!);
       playerB_Deck = playerB;
+      console.log("➡️ ", playerB_Deck);
       turn = "A";
     }
     // Compare action
