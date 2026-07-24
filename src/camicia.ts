@@ -80,7 +80,7 @@ export const simulateGame = (
       }
     } else {
       throw new Error(
-        `💥 Not complete logic on compare action: actionValueA ${typeof actionValueA} and actionValueB ${typeof actionValueB}`,
+        `💥 Not complete logic on compare action: actionValueA ${typeof actionValueA!} and actionValueB ${typeof actionValueB!}`,
       );
     }
     // Increase step action
