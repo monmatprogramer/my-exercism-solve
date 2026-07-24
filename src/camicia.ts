@@ -42,8 +42,10 @@ export const simulateGame = (
         : playerA[0];
       getPile.push(playerA.shift()!);
       playerA_Deck = playerA;
-      turn = "B";
-      ++stepCount;
+      if (playerB_Deck.length !== 0) {
+        turn = "B";
+        ++stepCount;
+      }
     }
     if (turn === "B") {
       //TODO: correct here
@@ -88,8 +90,7 @@ export const simulateGame = (
       );
     }
     // Increase step action
-    ++numberOfCard;
-    ++trickCount;
+    //++trickCount;
     if (continueCondition) {
       loopCondition = true;
       if (stepCount === 0) {
@@ -101,8 +102,11 @@ export const simulateGame = (
       loopCondition = false;
     } else {
       loopCondition = false;
+      if (playerA_Deck.length === 0 && playerB_Deck.length === 0) {
+        ++trickCount;
+      }
     }
-    ++stepCount;
+    //++stepCount;
   }
 
   //Assign resultObj firt before calling.
@@ -115,10 +119,10 @@ export const simulateGame = (
 };
 
 try {
-  const playerA1 = ["2", "4"];
-  const playerB1 = ["3"];
-  const playerA = ["2"];
+  const playerA = ["2", "4"];
   const playerB = ["3"];
+  const playerA2 = ["2"];
+  const playerB2 = ["3"];
   console.log(simulateGame(playerA, playerB));
 } catch (e: any) {
   console.log(e.message);
