@@ -32,6 +32,8 @@ export const simulateGame = (
   let trickCount: number = 0;
   let numberOfCard: number = 0;
   let resultObj: GameType;
+
+  //Assign resultObj firt before calling.
   return resultObj;
 };
 
