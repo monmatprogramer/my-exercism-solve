@@ -34,6 +34,7 @@ export const simulateGame = (
   let resultObj: GameType;
   let statusState = "finished";
   while (loopCondition) {
+    // Checking action
     switch (turn) {
       case "A":
         actionValueA = collectionA[0];
@@ -47,10 +48,11 @@ export const simulateGame = (
         getPile = getPile.push(collectionB.shift());
         playerB_Deck = collectionA;
         turn = "A";
-
       default:
         throw new Error("Invalid turn");
     }
+
+    // Compare action
   }
 
   //Assign resultObj firt before calling.
