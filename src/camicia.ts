@@ -95,7 +95,6 @@ export const simulateGame = (
         if (continueCondition) {
           turn = "B";
         } else {
-          ++stepCount;
           ++trickCount;
         }
       }
@@ -117,11 +116,8 @@ export const simulateGame = (
       loopCondition = false;
     } else {
       loopCondition = false;
-      console.log(playerA_Deck);
-      console.log(playerA_Deck);
       if (playerA_Deck.length === 0 && playerB_Deck.length === 0) {
         ++trickCount;
-        ++stepCount;
       }
     }
     //++stepCount;
