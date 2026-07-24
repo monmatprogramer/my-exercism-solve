@@ -45,6 +45,8 @@ export const simulateGame = (
         break;
         actionValueB = collectionB[0];
         getPile = getPile.push(collectionB.shift());
+        playerB_Deck = collectionA;
+        turn = "A";
 
       default:
         throw new Error("Invalid turn");
