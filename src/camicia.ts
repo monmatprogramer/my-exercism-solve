@@ -40,7 +40,7 @@ export const simulateGame = (
       actionValueA = isNumRex.test(playerA[0])
         ? Number(playerA[0])
         : playerA[0];
-      getPile.push(actionValueB);
+      getPile.push(String(actionValueA!));
       playerA_Deck = playerA;
       if (playerB.length !== 0) {
         turn = "B";
@@ -64,7 +64,9 @@ export const simulateGame = (
     ) {
       if (actionValueA > actionValueB) {
         collectionA = [...playerA_Deck, ...getPile];
-        playerA = collectionA;
+        if (playerA_Deck.length === 0 && playerB_Deck.length === 0) {
+          playerA = collectionA;
+        }
         continueCondition = playerB_Deck.length === 0 ? false : true;
         if (continueCondition) {
           playerA = playerA_Deck;
