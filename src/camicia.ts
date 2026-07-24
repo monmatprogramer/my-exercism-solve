@@ -107,6 +107,7 @@ export const simulateGame = (
       loopCondition = false;
       if (playerA_Deck.length === 0 && playerB_Deck.length === 0) {
         ++trickCount;
+        ++stepCount;
       }
     }
     //++stepCount;
