@@ -53,7 +53,6 @@ export const simulateGame = (
       playerB_Deck = playerB;
       turn = "A";
     }
-
     // Compare action
     if (
       typeof actionValueA! === "number" &&
@@ -67,9 +66,7 @@ export const simulateGame = (
           turn = "A";
         }
       } else if (actionValueB > actionValueA) {
-        console.log("📝 ", getPile);
         collectionB = [...playerB_Deck, ...getPile];
-        console.log("--> ", collectionB);
         playerB = collectionB;
         continueCondition = playerA_Deck.length === 0 ? false : true;
         if (continueCondition) {
@@ -92,6 +89,7 @@ export const simulateGame = (
     ++stepCount;
     ++numberOfCard;
     ++trickCount;
+    console.log(continueCondition);
     if (continueCondition) {
       loopCondition = true;
       if (stepCount === 0) {
