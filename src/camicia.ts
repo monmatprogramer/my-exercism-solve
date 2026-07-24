@@ -68,6 +68,7 @@ export const simulateGame = (
       } else if (actionValueB > actionValueA) {
         collectionB = [...playerB_Deck, ...getPile];
         playerB = collectionB;
+        console.log(collectionB);
         continueCondition = playerA_Deck.length === 0 ? false : true;
         if (continueCondition) {
           turn = "B";
