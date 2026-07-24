@@ -4,3 +4,6 @@ let empt: string[] = [];
 
 const a: string[] = ["a", "b"];
 const b: string[] = ["c", "d"];
+
+empt = [...a, ...b];
+console.log(empt);
