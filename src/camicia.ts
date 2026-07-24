@@ -23,8 +23,8 @@ export const simulateGame = (
   const tempCollectionA: string[] = [];
   const tempCollectionB: string[] = [];
   let turn: string = "A";
-  let actionValueA: string = "";
-  let actionValueB: string = "";
+  let actionValueA: string | number;
+  let actionValueB: string | number;
   let getPile: string[] = [];
   let continueCondition: string[] = [];
   let loopCondition: boolean = true;
