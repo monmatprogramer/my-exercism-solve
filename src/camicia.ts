@@ -41,7 +41,6 @@ export const simulateGame = (
         actionValueA = isNumRex.test(collectionA[0])
           ? Number(collectionA[0])
           : collectionA[0];
-        console.log("➡️  ", collectionA);
         getPile.push(collectionA.shift()!);
         playerA_Deck = collectionA;
         turn = "B";
@@ -77,11 +76,11 @@ export const simulateGame = (
         if (continueCondition) {
           turn = "B";
         } else {
-          throw new Error("📝 Error on action A and B and its turn ");
+          throw new Error("💥 Error on action A and B and its turn ");
         }
       }
     } else {
-      throw new Error("➡️ Not complete logic on compare action ");
+      throw new Error("💥 Not complete logic on compare action ");
     }
     // Increase step action
     ++stepCount;
