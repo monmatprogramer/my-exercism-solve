@@ -41,6 +41,7 @@ export const simulateGame = (
         actionValueA = isNumRex.test(collectionA[0])
           ? Number(collectionA[0])
           : collectionA[0];
+        console.log("➡️  ", collectionA);
         getPile = getPile.push(collectionA.shift());
         playerA_Deck = collectionA;
         turn = "B";
