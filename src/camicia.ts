@@ -56,7 +56,6 @@ export const simulateGame = (
       default:
         throw new Error("Invalid turn");
     }
-
     // Compare action
     if (
       typeof actionValueA! === "number" &&
@@ -80,7 +79,9 @@ export const simulateGame = (
         }
       }
     } else {
-      throw new Error("💥 Not complete logic on compare action ");
+      throw new Error(
+        `💥 Not complete logic on compare action: actionValueA ${typeof actionValueA} and actionValueB ${typeof actionValueB}`,
+      );
     }
     // Increase step action
     ++stepCount;
