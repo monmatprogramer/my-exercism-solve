@@ -40,11 +40,13 @@ export const simulateGame = (
       actionValueA = isNumRex.test(playerA[0])
         ? Number(playerA[0])
         : playerA[0];
+      playerA.shift();
       getPile.push(String(actionValueA!));
       playerA_Deck = playerA;
+      ++stepCount;
+
       if (playerB.length !== 0) {
         turn = "B";
-        ++stepCount;
       }
     }
     if (turn === "B") {
@@ -52,11 +54,12 @@ export const simulateGame = (
       actionValueB = isNumRex.test(playerB[0])
         ? Number(playerB[0])
         : playerB[0];
-      getPile.push(playerB.shift()!);
+      playerB.shift();
+      getPile.push(String(actionValueB));
       playerB_Deck = playerB;
-      turn = "A";
       ++stepCount;
     }
+
     // Compare action
     if (
       typeof actionValueA! === "number" &&
@@ -69,20 +72,20 @@ export const simulateGame = (
         }
         continueCondition = playerB_Deck.length === 0 ? false : true;
         if (continueCondition) {
-          playerA = playerA_Deck;
           turn = "A";
         }
       } else if (actionValueB > actionValueA) {
-        collectionB = [...playerB_Deck, ...getPile];
         if (playerA_Deck.length !== 0) {
           playerA = playerA_Deck;
           turn = "A";
+          continueCondition = playerA_Deck.length === 0 ? false : true;
         } else {
+          collectionB = [...playerB_Deck, ...getPile];
+
           if (playerB.length !== 0) {
             playerB = collectionB;
             continueCondition = playerA_Deck.length === 0 ? false : true;
           } else {
-            collectionB = getPile;
             ++trickCount;
             resultObj = {
               status: "finished",
@@ -91,11 +94,6 @@ export const simulateGame = (
             };
             return resultObj;
           }
-        }
-        if (continueCondition) {
-          turn = "B";
-        } else {
-          ++trickCount;
         }
       }
     } else {
@@ -133,10 +131,10 @@ export const simulateGame = (
 };
 
 try {
-  const playerA1 = ["2", "4"];
-  const playerB1 = ["3"];
-  const playerA = ["2"];
+  const playerA = ["2", "4"];
   const playerB = ["3"];
+  const playerA1 = ["2"];
+  const playerB1 = ["3"];
   console.log(simulateGame(playerA, playerB));
 } catch (e: any) {
   console.log(e.message);
