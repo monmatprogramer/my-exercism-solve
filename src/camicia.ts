@@ -26,7 +26,7 @@ export const simulateGame = (
   let actionValueA: string | number;
   let actionValueB: string | number;
   let getPile: string[] = [];
-  let continueCondition: string[] = [];
+  let continueCondition: boolean = false;
   let loopCondition: boolean = true;
   let stepCount: number = 1;
   let trickCount: number = 0;
@@ -59,7 +59,10 @@ export const simulateGame = (
     }
 
     // Compare action
-    if (typeof actionValueA === "number" && typeof actionValueB === "number") {
+    if (
+      typeof actionValueA! === "number" &&
+      typeof actionValueB! === "number"
+    ) {
       if (actionValueA > actionValueB) {
         collectionA = [...playerA_Deck, ...getPile];
         playerA = collectionA;
