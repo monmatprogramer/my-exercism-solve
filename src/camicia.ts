@@ -86,10 +86,8 @@ export const simulateGame = (
       );
     }
     // Increase step action
-    //++stepCount;
     ++numberOfCard;
     ++trickCount;
-    console.log(stepCount);
     if (continueCondition) {
       loopCondition = true;
       if (stepCount === 0) {
@@ -98,6 +96,7 @@ export const simulateGame = (
       } else if (stepCount !== 1) {
         throw new Error("Not complete in step not equal 1");
       }
+      loopCondition = false;
     } else {
       loopCondition = false;
     }
