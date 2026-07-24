@@ -46,11 +46,11 @@ export const simulateGame = (
     }
     if (turn === "B") {
       //TODO: correct here
-      actionValueB = isNumRex.test(collectionB[0])
-        ? Number(collectionB[0])
-        : collectionB[0];
-      getPile.push(collectionB.shift()!);
-      playerB_Deck = collectionA;
+      actionValueB = isNumRex.test(playerB[0])
+        ? Number(playerB[0])
+        : playerB[0];
+      getPile.push(playerB.shift()!);
+      playerB_Deck = playerB;
       turn = "A";
     }
 
