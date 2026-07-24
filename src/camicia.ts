@@ -20,6 +20,19 @@ export const simulateGame = (
   let playerB_Deck: string[] = [];
   let collectionA: string[] = playerA;
   let collectionB: string[] = playerB;
+  const tempCollectionA: string[] = [];
+  const tempCollectionB: string[] = [];
+  let turn: string = "A";
+  let actionValueA: string[] = [];
+  let actionValueB: string[] = [];
+  let getPile: string[] = [];
+  let continueCondition: string[] = [];
+  let loopCondition: boolean = true;
+  let septCount: number = 1;
+  let trickCount: number = 0;
+  let numberOfCard: number = 0;
+  let resultObj: GameType;
+  return resultObj;
 };
 
 const playerA: string[] = ["2"];
