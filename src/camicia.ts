@@ -33,7 +33,14 @@ export const simulateGame = (
   let numberOfCard: number = 0;
   let resultObj: GameType;
 
+  let statusState = "finished";
+
   //Assign resultObj firt before calling.
+  resultObj = {
+    status: statusState,
+    cards: numberOfCard,
+    tricks: trickCount,
+  };
   return resultObj;
 };
 
