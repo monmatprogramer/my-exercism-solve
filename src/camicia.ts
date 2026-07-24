@@ -70,6 +70,9 @@ export const simulateGame = (
         collectionB = [...playerB_Deck, ...getPile];
         playerB = collectionB;
         continueCondition = playerA_Deck.length === 0 ? false : true;
+        if (continueCondition) {
+          turn = "B";
+        }
       }
     } else {
       throw new Error("Not complete logic on compare action ");
