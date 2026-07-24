@@ -43,6 +43,7 @@ export const simulateGame = (
       getPile.push(playerA.shift()!);
       playerA_Deck = playerA;
       turn = "B";
+      ++stepCount;
     }
     if (turn === "B") {
       //TODO: correct here
@@ -51,8 +52,8 @@ export const simulateGame = (
         : playerB[0];
       getPile.push(playerB.shift()!);
       playerB_Deck = playerB;
-      console.log("➡️ ", playerB_Deck);
       turn = "A";
+      ++stepCount;
     }
     // Compare action
     if (
