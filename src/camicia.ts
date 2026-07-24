@@ -58,6 +58,11 @@ export const simulateGame = (
     }
 
     // Compare action
+    if (typeof actionValueA === "number" && typeof actionValueB === "number") {
+      collectionA = 
+    } else {
+      throw new Error("Not complete logic on compare action ");
+    }
   }
 
   //Assign resultObj firt before calling.
@@ -69,6 +74,10 @@ export const simulateGame = (
   return resultObj;
 };
 
-const playerA: string[] = ["2"];
-const playerB: string[] = ["3"];
-simulateGame(playerA, playerB);
+try {
+  const playerA: string[] = ["2"];
+  const playerB: string[] = ["3"];
+  simulateGame(playerA, playerB);
+} catch (e: any) {
+  console.log(e.message);
+}
