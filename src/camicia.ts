@@ -36,7 +36,7 @@ export const simulateGame = (
   const isNumRex = /^[0-9]/;
   while (loopCondition) {
     // Checking action
-    if (trun === "A") {
+    if (turn === "A") {
       actionValueA = isNumRex.test(collectionA[0])
         ? Number(collectionA[0])
         : collectionA[0];
