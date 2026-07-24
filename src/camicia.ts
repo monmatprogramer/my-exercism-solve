@@ -96,7 +96,7 @@ export const simulateGame = (
         tempCollectionA.push(String(collectionA));
         tempCollectionB.push(String(collectionB));
       } else if (stepCount !== 1) {
-        throw new Error("Not complete in step not equal 1");
+        //throw new Error("Not complete in step not equal 1");
       }
       loopCondition = false;
     } else {
@@ -115,7 +115,9 @@ export const simulateGame = (
 };
 
 try {
-  const playerA = ["2", "4"];
+  const playerA1 = ["2", "4"];
+  const playerB1 = ["3"];
+  const playerA = ["2"];
   const playerB = ["3"];
   console.log(simulateGame(playerA, playerB));
 } catch (e: any) {
