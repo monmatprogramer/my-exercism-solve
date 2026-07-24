@@ -23,8 +23,8 @@ export const simulateGame = (
   const tempCollectionA: string[] = [];
   const tempCollectionB: string[] = [];
   let turn: string = "A";
-  let actionValueA: string[] = [];
-  let actionValueB: string[] = [];
+  let actionValueA:string = '';
+  let actionValueB: string = '';
   let getPile: string[] = [];
   let continueCondition: string[] = [];
   let loopCondition: boolean = true;
@@ -36,6 +36,8 @@ export const simulateGame = (
   while (loopCondition) {
     switch (turn) {
       case "A":
+        actionValueA = collectionA[0];
+        getPile = 
         break;
       case "B":
         break;
