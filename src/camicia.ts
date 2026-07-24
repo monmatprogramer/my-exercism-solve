@@ -25,7 +25,7 @@ export const simulateGame = (
   let turn: string = "A";
   let actionValueA: string | number;
   let actionValueB: string | number;
-  let getPile: string[];
+  let getPile: string[] = [];
   let continueCondition: string[] = [];
   let loopCondition: boolean = true;
   let stepCount: number = 1;
@@ -42,7 +42,7 @@ export const simulateGame = (
           ? Number(collectionA[0])
           : collectionA[0];
         console.log("➡️  ", collectionA);
-        getPile = getPile.push(collectionA.shift());
+        getPile.push(collectionA.shift()!);
         playerA_Deck = collectionA;
         turn = "B";
         break;
@@ -51,7 +51,7 @@ export const simulateGame = (
         actionValueB = isNumRex.test(collectionB[0])
           ? Number(collectionB[0])
           : collectionB[0];
-        getPile = getPile.push(collectionB.shift());
+        getPile.push(collectionB.shift()!);
         playerB_Deck = collectionA;
         turn = "A";
       default:
