@@ -91,6 +91,8 @@ export const simulateGame = (
       } else if (stepCount !== 1) {
         throw new Error("Not complete in step not equal 1");
       }
+    } else {
+      loopCondition = false;
     }
   }
 
