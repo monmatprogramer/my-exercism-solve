@@ -81,6 +81,15 @@ export const simulateGame = (
           if (playerB.length !== 0) {
             playerB = collectionB;
             continueCondition = playerA_Deck.length === 0 ? false : true;
+          } else {
+            collectionB = getPile;
+            ++trickCount;
+            resultObj = {
+              status: "finished",
+              cards: stepCount,
+              tricks: trickCount,
+            };
+            return resultObj;
           }
         }
         if (continueCondition) {
@@ -128,10 +137,10 @@ export const simulateGame = (
 };
 
 try {
-  const playerA = ["2", "4"];
+  const playerA1 = ["2", "4"];
+  const playerB1 = ["3"];
+  const playerA = ["2"];
   const playerB = ["3"];
-  const playerA2 = ["2"];
-  const playerB2 = ["3"];
   console.log(simulateGame(playerA, playerB));
 } catch (e: any) {
   console.log(e.message);
