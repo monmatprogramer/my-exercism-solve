@@ -77,7 +77,11 @@ function findIndex() {
 }
 // Calculate fib
 function fibMemo(n: number, memo: number[] = []) {
+  console.log(`Length memo: ${memo.length}`); //0
   memo[n] = 5;
+  for (const [index, value] of memo.entries()) {
+    console.log(`index[${index}: value ${value}]`);
+  }
 }
 
 function findFactorialFun(n: number): number {
