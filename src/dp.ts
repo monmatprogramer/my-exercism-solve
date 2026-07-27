@@ -49,5 +49,16 @@ function countStoredValue() {
       ++countResult;
     }
   }
+  console.log(countResult);
 }
-countStoredValue();
+
+function sumAllNumber() {
+  let memory: (number[] | undefined)[] = new Array(5).fill(undefined);
+  memory[0] = [1, 2];
+  memory[2] = [3];
+  memory[4] = [4, 5];
+  for (const [index, value] of memory) {
+    console.log(value);
+  }
+}
+sumAllNumber();
