@@ -80,10 +80,9 @@ function fibMemo(n: number, memo: number[] = []): number {
   if (n <= 1) return n;
   if (memo[n] !== undefined) return memo[n];
   memo[n] = fibMemo(n - 1, memo) + fibMemo(n - 2, memo);
-
   return memo[n];
 }
-
+//clim stairs
 function findFactorialFun(n: number): number {
   //let factorialMemory: (number | undefined)[] = new Array(6).from(6);
   return 0;
@@ -91,4 +90,4 @@ function findFactorialFun(n: number): number {
 
 //console.log(findFactorialFun(5));
 //console.log(fibMemo(5));
-fibMemo(5);
+//fibMemo(5);
