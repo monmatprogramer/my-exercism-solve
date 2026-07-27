@@ -130,8 +130,6 @@ function hello(n: number) {
 }
 
 function test(n: number) {
-  console.log(n);
-
   if (n === 0) {
     return;
   }
