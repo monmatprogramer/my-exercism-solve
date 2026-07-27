@@ -36,4 +36,11 @@ function ageFun() {
   console.log(ages);
 }
 
-ageFun();
+function courseFun() {
+  let courses: (number[] | undefined)[] = new Array(4).fill(undefined);
+  courses[0] = [101, 102];
+  courses[2] = [201];
+  courses[3] = [301, 302, 303];
+  console.log(courses);
+}
+courseFun();
