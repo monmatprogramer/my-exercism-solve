@@ -128,11 +128,24 @@ function hello(n: number) {
   hello(n - 1);
   console.log("End", n);
 }
+
+function test(n: number) {
+  console.log(n);
+
+  if (n === 0) {
+    return;
+  }
+
+  test(n - 1);
+
+  console.log(n);
+}
+
+test(2);
 function findFactorialFun(n: number): number {
   //let factorialMemory: (number | undefined)[] = new Array(6).from(6);
   return 0;
 }
-hello(3);
 //console.log(findFactorialFun(5));
 //console.log(fibMemo(5));
 //fibMemo(5);
