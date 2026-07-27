@@ -99,7 +99,13 @@ function countDown(n: number) {
   if (n === 1) {
     return;
   }
-  countDown(n - 1);
+  countDown(n - 1); //4,3,2,1
+}
+
+// count up
+function countUp(n: number) {
+  let i: number = 0;
+  if (i >= n) return;
 }
 function findFactorialFun(n: number): number {
   //let factorialMemory: (number | undefined)[] = new Array(6).from(6);
