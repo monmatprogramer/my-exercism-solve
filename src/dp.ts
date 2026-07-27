@@ -120,12 +120,19 @@ function substract(n: number): number {
   if (n === 1) return 1;
   return n - substract(n - 1);
 }
+function hello(n: number) {
+  console.log("Start", n);
+  if (n === 1) {
+    return;
+  }
+  hello(n - 1);
+  console.log("End", n);
+}
 function findFactorialFun(n: number): number {
   //let factorialMemory: (number | undefined)[] = new Array(6).from(6);
   return 0;
 }
-console.log(substract(4)); //2
-
+hello(3);
 //console.log(findFactorialFun(5));
 //console.log(fibMemo(5));
 //fibMemo(5);
