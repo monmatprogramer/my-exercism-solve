@@ -46,6 +46,7 @@ export const simulateGame = (
       getPile.push(String(actionValueA!));
       // Save player into playerA_Deck
       playerA_Deck = playerA;
+      //count card or steps
       ++stepCount;
 
       if (playerB.length !== 0) {
@@ -53,13 +54,15 @@ export const simulateGame = (
       }
     }
     if (turn === "B") {
-      //TODO: correct here
+      // Save data into actionValueB
       actionValueB = isNumRex.test(playerB[0])
         ? Number(playerB[0])
         : playerB[0];
+      // Remove an element
       playerB.shift();
       getPile.push(String(actionValueB));
       playerB_Deck = playerB;
+      //Count step or card
       ++stepCount;
     }
 
