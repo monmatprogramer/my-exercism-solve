@@ -62,7 +62,7 @@ export const simulateGame = (
       playerB.shift();
       getPile.push(String(actionValueB));
       playerB_Deck = playerB;
-      //Count step or card
+      //Count step or car
       ++stepCount;
     }
 
@@ -91,6 +91,9 @@ export const simulateGame = (
           if (playerB.length !== 0) {
             playerB = collectionB;
             continueCondition = playerA_Deck.length === 0 ? false : true;
+            if (continueCondition) {
+              turn = "B";
+            }
           } else {
             ++trickCount;
             resultObj = {
