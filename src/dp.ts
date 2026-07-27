@@ -66,4 +66,15 @@ function sumAllNumber() {
   }
   console.log(sumResult);
 }
-sumAllNumber();
+function findIndex() {
+  let memory: (number[] | undefined)[] = new Array(6).fill(undefined);
+
+  memory[0] = [1];
+  memory[1] = [2];
+  memory[3] = [3];
+  memory[5] = [5];
+  const result: number = memory.findIndex((el) => el === undefined);
+  console.log(result);
+}
+
+findIndex();
