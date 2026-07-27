@@ -54,11 +54,16 @@ function countStoredValue() {
 
 function sumAllNumber() {
   let memory: (number[] | undefined)[] = new Array(5).fill(undefined);
+  let sumResult: number = 0;
   memory[0] = [1, 2];
   memory[2] = [3];
   memory[4] = [4, 5];
+
   for (const [index, value] of memory.entries()) {
-    console.log(value);
+    if (value !== undefined) {
+      sumResult = value.reduce((acc, curr) => acc + curr, sumResult);
+    }
   }
+  console.log(sumResult);
 }
 sumAllNumber();
