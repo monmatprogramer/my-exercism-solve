@@ -76,7 +76,9 @@ function findIndex() {
   console.log(result);
 }
 // Calculate fib
-function fibMemo(n: number, memo: number[] = []) {}
+function fibMemo(n: number, memo: number[] = []) {
+  console.log("fib");
+}
 
 function findFactorialFun(n: number): number {
   //let factorialMemory: (number | undefined)[] = new Array(6).from(6);
