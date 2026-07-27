@@ -79,9 +79,6 @@ function findIndex() {
 function fibMemo(n: number, memo: number[] = []): number {
   if (n <= 1) return n;
   if (memo[n] !== undefined) return memo[n];
-  memo[n] = 20;
-  console.log(memo.indexOf(20));
-  return memo[n];
   memo[n] = fibMemo(n - 1, memo) + fibMemo(n - 2, memo);
 
   return memo[n];
@@ -93,4 +90,5 @@ function findFactorialFun(n: number): number {
 }
 
 //console.log(findFactorialFun(5));
-console.log(fibMemo(5));
+//console.log(fibMemo(5));
+fibMemo(5);
