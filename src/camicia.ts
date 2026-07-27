@@ -37,11 +37,14 @@ export const simulateGame = (
   while (loopCondition) {
     // Checking action
     if (turn === "A") {
+      // Save data in actionValueA
       actionValueA = isNumRex.test(playerA[0])
         ? Number(playerA[0])
         : playerA[0];
+      // Remove an element
       playerA.shift();
       getPile.push(String(actionValueA!));
+      // Save player into playerA_Deck
       playerA_Deck = playerA;
       ++stepCount;
 
