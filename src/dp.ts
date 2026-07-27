@@ -1,11 +1,5 @@
 // Dynamic Programming (DP) or Memoization
 
-import { score } from "./darts";
-
-const target = 4;
-
-let memory: (number[] | undefined)[] = new Array(target + 1).fill(undefined);
-
 function findStudentScore() {
   // we create 5 slotes to store score
   let scores: (number | undefined)[] = new Array(5).fill(undefined);
@@ -43,4 +37,17 @@ function courseFun() {
   courses[3] = [301, 302, 303];
   console.log(courses);
 }
-courseFun();
+//Count Stored Values
+function countStoredValue() {
+  let memory: (number[] | undefined)[] = new Array(6).fill(undefined);
+  memory[1] = [10];
+  memory[4] = [20, 30];
+  memory[5] = [40];
+  let countResult: number = 0;
+  for (let i: number = 0; i < 6; i++) {
+    if (memory[i] !== undefined) {
+      ++countResult;
+    }
+  }
+}
+countStoredValue();
