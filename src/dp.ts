@@ -77,4 +77,9 @@ function findIndex() {
   console.log(result);
 }
 
-findIndex();
+function findFactorialFun(n: number): number {
+  let factorialMemory: (number | undefined)[] = new Array(6).fill(undefined);
+  return 0;
+}
+
+console.log(findFactorialFun(5));
