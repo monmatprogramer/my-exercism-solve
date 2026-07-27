@@ -22,5 +22,8 @@ function favoritFruitsFun() {
   favoritFruits[0] = [1, 3];
   console.log(favoritFruits);
 }
+function ageFun() {
+  let ages: (number | undefined)[] = new Array(5).fill(undefined);
+}
 
-favoritFruitsFun();
+ageFun();
