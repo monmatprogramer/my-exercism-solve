@@ -104,19 +104,27 @@ function countDown(n: number) {
 
 // count up
 function countUp(n: number) {
+  console.log(n);
   let up: number = 5;
   if (n >= up) {
     return;
   }
-  console.log(n);
-  countUp(n + 1);
+}
+function sum(n: number): number {
+  if (n === 1) {
+    return 1;
+  }
+  return n + sum(n - 1);
+}
+function substract(n: number): number {
+  if (n === 1) return 1;
+  return n - substract(n - 1);
 }
 function findFactorialFun(n: number): number {
   //let factorialMemory: (number | undefined)[] = new Array(6).from(6);
   return 0;
 }
-
-countUp(1);
+console.log(substract(4)); //2
 
 //console.log(findFactorialFun(5));
 //console.log(fibMemo(5));
