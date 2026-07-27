@@ -57,7 +57,7 @@ function sumAllNumber() {
   memory[0] = [1, 2];
   memory[2] = [3];
   memory[4] = [4, 5];
-  for (const [index, value] of memory) {
+  for (const [index, value] of memory.entries()) {
     console.log(value);
   }
 }
