@@ -83,10 +83,22 @@ function fibMemo(n: number, memo: number[] = []): number {
   return memo[n];
 }
 //clim stairs
+function climbStairs(n: number, memo: number[] = []): number {
+  if (n === 1) return 1;
+  if (n === 2) return 2;
+
+  if (memo[n] !== undefined) {
+    return memo[n];
+  }
+  memo[n] = climbStairs(n - 1, memo) + climbStairs(n - 2, memo);
+  return memo[n];
+}
 function findFactorialFun(n: number): number {
   //let factorialMemory: (number | undefined)[] = new Array(6).from(6);
   return 0;
 }
+
+climbStairs(5);
 
 //console.log(findFactorialFun(5));
 //console.log(fibMemo(5));
