@@ -24,6 +24,16 @@ function favoritFruitsFun() {
 }
 function ageFun() {
   let ages: (number | undefined)[] = new Array(5).fill(undefined);
+  ages[0] = 18;
+  ages[3] = 25;
+  ages[5] = 30;
+  // Check before using
+  if (ages[2] !== undefined) {
+    console.log("Age found: ", ages[2]);
+  } else {
+    console.log("Age not found");
+  }
+  console.log(ages);
 }
 
 ageFun();
