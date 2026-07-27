@@ -4,7 +4,9 @@ const target = 4;
 
 let memory: (number[] | undefined)[] = new Array(target + 1).fill(undefined);
 
-memory[3] = [1, 2];
+function findStudentScore() {
+  let scores: (number | undefined)[] = new Array(5);
+  console.log("scores array: ", scores);
+}
 
-// There are 6 slots (0-5)
-console.log(memory);
+findStudentScore();
