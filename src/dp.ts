@@ -93,12 +93,20 @@ function climbStairs(n: number, memo: number[] = []): number {
   memo[n] = climbStairs(n - 1, memo) + climbStairs(n - 2, memo);
   return memo[n];
 }
+///count
+function countDown(n: number) {
+  console.log(n);
+  if (n === 1) {
+    return;
+  }
+  countDown(n - 1);
+}
 function findFactorialFun(n: number): number {
   //let factorialMemory: (number | undefined)[] = new Array(6).from(6);
   return 0;
 }
 
-climbStairs(5);
+countDown(5);
 
 //console.log(findFactorialFun(5));
 //console.log(fibMemo(5));
