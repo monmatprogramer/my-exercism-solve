@@ -68,7 +68,6 @@ function sumAllNumber() {
 }
 function findIndex() {
   let memory: (number[] | undefined)[] = new Array(6).fill(undefined);
-
   memory[0] = [1];
   memory[1] = [2];
   memory[3] = [3];
@@ -76,10 +75,13 @@ function findIndex() {
   const result: number = memory.findIndex((el) => el === undefined);
   console.log(result);
 }
+// Calculate fib
+function fibMemo(n: number, memo: number[] = []) {}
 
 function findFactorialFun(n: number): number {
-  let factorialMemory: (number | undefined)[] = new Array(6).fill(undefined);
+  //let factorialMemory: (number | undefined)[] = new Array(6).from(6);
   return 0;
 }
 
-console.log(findFactorialFun(5));
+//console.log(findFactorialFun(5));
+fibMemo(5);
