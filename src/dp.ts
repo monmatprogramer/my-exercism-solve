@@ -175,4 +175,4 @@ function findFactorialFun(n: number): number {
 }
 
 //Call grid function
-gridTraveler(2, 2);
+console.log(gridTraveler(4, 4));
