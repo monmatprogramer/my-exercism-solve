@@ -5,8 +5,11 @@ function twoDimensionArray(row: number, col: number) {
   const grid: (number | undefined)[][] = Array.from({ length: rowNum }, () =>
     Array(rowCol).fill(undefined),
   );
-  grid[0][2] = 3;
-  grid[2][0] = 7;
+
+  //Fill a column all
+  for (const [rowIndex, rowValue] of grid.entries()) {
+    grid[rowIndex][0] = Math.floor(Math.random() * 10);
+  }
   console.log(grid);
 }
 const r: number = 3;
