@@ -1,7 +1,7 @@
 // Learn 2 dimension
 function twoDimensionArray(row: number, col: number) {
-  const rowNum: number = 2;
-  const rowCol: number = 3;
+  const rowNum: number = row;
+  const rowCol: number = col;
   const grid: (number | undefined)[][] = Array.from({ length: rowNum }, () =>
     Array(rowCol).fill(undefined),
   );
