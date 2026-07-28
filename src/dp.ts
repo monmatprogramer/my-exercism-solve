@@ -160,11 +160,12 @@ function gridTraveler(
 ): number {
   if (m === 1 && n === 1) return 1;
   if (m === 0 && n === 0) return 0;
-  const key = m + ' ' + n;
-  if(cached[key] !== undefined)[
+  const key = m + " " + n;
+  if (cached[key] !== undefined) {
     return cached[key];
-  ]
-  const waysToWin = gridTraveler(m-1, n, cached) + gridTraveler(m,n-1, cached);
+  }
+  const waysToWin =
+    gridTraveler(m - 1, n, cached) + gridTraveler(m, n - 1, cached);
   cached[key] = waysToWin;
   return waysToWin;
 }
