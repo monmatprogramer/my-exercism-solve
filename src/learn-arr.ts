@@ -1,5 +1,5 @@
 // Learn 2 dimension
-function twoDimensionArray() {
+function twoDimensionArray(row: number, col: number) {
   const rowNum: number = 2;
   const rowCol: number = 3;
   const grid: (number | undefined)[][] = Array.from({ length: rowNum }, () =>
@@ -7,5 +7,6 @@ function twoDimensionArray() {
   );
   console.log(grid);
 }
-
-twoDimensionArray();
+const r: number = 3;
+const c: number = 3;
+twoDimensionArray(r, c);
