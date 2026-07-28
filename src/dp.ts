@@ -174,5 +174,7 @@ function findFactorialFun(n: number): number {
   return 0;
 }
 // find pyramid
-function findPyramid(n: number) {}
+function findPyramid(n: number, cach: Record<number, number> = {}): number {
+  if (n === 1) return 1;
+}
 console.log(findPyramid(3)); // 6;
