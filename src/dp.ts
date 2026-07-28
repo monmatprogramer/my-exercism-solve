@@ -156,8 +156,8 @@ function test(n: number) {
 // grid traveler
 function gridTraveler(row: number, colum: number): number {
   // Create array with default
-  const grid: (number | undefined)[][] = Array.from({ length: 2 }, () =>
-    Array((2).fill(undefined)),
+  const grid: (number | undefined)[][] = Array.from({ length: 3 }, () =>
+    Array(5).fill(undefined),
   );
   console.log(grid);
   return 0;
