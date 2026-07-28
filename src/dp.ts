@@ -159,8 +159,8 @@ function gridTraveler(
   cached: Record<string, number> = {},
 ): number {
   if (m === 1 && n === 1) return 1;
-  if (m === 0 && n === 0) return 0;
-  const key = m + " " + n;
+  if (m === 0 || n === 0) return 0;
+  const key = m + "," + n;
   if (cached[key] !== undefined) {
     return cached[key];
   }
