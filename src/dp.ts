@@ -102,10 +102,10 @@ function fibonacciMemo(n: number, cached: Record<number, number> = {}): number {
   if (cached[n] !== undefined) {
     return cached[n];
   }
-  const resul: number =
+  const result: number =
     fibonacciMemo(n - 1, cached) + fibonacciMemo(n - 2, cached);
-  cached[n] = resul;
-  return resul;
+  cached[n] = result;
+  return result;
 }
 ///count
 function countDown(n: number) {
