@@ -143,15 +143,6 @@ function hello(n: number) {
   console.log("End", n);
 }
 
-function test(n: number) {
-  if (n === 0) {
-    return;
-  }
-
-  test(n - 1);
-
-  console.log(n);
-}
 // grid traveler
 function gridTraveler(
   m: number,
@@ -176,5 +167,11 @@ function findFactorialFun(n: number): number {
 // find pyramid
 function findPyramid(n: number, cach: Record<number, number> = {}): number {
   if (n === 1) return 1;
+  if (cach[n] !== undefined) {
+    return cach[n];
+  }
+  const result: number = findPyramid(n) + findPyramid(n - 1);
+  cach[n] = result;
+  return result;
 }
-console.log(findPyramid(3)); // 6;
+console.log(findPyramid(5)); // 6;
