@@ -5,6 +5,7 @@ function twoDimensionArray(row: number, col: number) {
   const grid: (number | undefined)[][] = Array.from({ length: rowNum }, () =>
     Array(rowCol).fill(undefined),
   );
+  grid = [0][2];
   console.log(grid);
 }
 const r: number = 3;
