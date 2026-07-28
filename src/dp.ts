@@ -170,7 +170,8 @@ function findPyramid(n: number, cach: Record<number, number> = {}): number {
   if (cach[n] !== undefined) {
     return cach[n];
   }
-  const result: number = findPyramid(n) + findPyramid(n - 1);
+  const result: number = findPyramid(n, cach) + findPyramid(n - 1, cach);
+
   cach[n] = result;
   return result;
 }
