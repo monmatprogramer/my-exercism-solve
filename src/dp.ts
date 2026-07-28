@@ -93,16 +93,21 @@ function climbStairs(n: number, memo: number[] = []): number {
   memo[n] = climbStairs(n - 1, memo) + climbStairs(n - 2, memo);
   return memo[n];
 }
-function fibonacciMemo(n: number, cached: Record<number, number> = {}):number {
+function fibonacciMemo(n: number, cached: Record<number, number> = {}): number {
   // 1. base case
-  if(n === 0) return 0;
-  if(n===1) return 1:
+  if (n === 0) return 0;
+  if (n === 1) return 1;
 
   // 2. Check the notepad(cached)
-  if(cached[n] !== undefined){
-    return cached[n]
+  if (cached[n] !== undefined) {
+    return cached[n];
   }
+  const resul: number =
+    fibonacciMemo(n - 1, cached) + fibonacciMemo(n - 2, cached);
+  cached[n] = resul;
+  return resul;
 }
+console.log(fibonacciMemo(5));
 ///count
 function countDown(n: number) {
   console.log(n);
@@ -148,8 +153,10 @@ function test(n: number) {
 
   console.log(n);
 }
-
-test(2);
+// grid traveler
+function gridTraveler(row: number, colum: number): number {
+  return 0;
+}
 function findFactorialFun(n: number): number {
   //let factorialMemory: (number | undefined)[] = new Array(6).from(6);
   return 0;
