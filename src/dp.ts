@@ -173,6 +173,6 @@ function findFactorialFun(n: number): number {
   //let factorialMemory: (number | undefined)[] = new Array(6).from(6);
   return 0;
 }
-
-//Call grid function
-console.log(gridTraveler(4, 4));
+// find pyramid
+function findPyramid(n: number) {}
+console.log(findPyramid(3)); // 6;
