@@ -155,12 +155,17 @@ function test(n: number) {
 }
 // grid traveler
 function gridTraveler(row: number, colum: number): number {
+  // Create array with default
+  const grid: (number | undefined)[][] = Array.from({ length: 2 }, () =>
+    Array((2).fill(undefined)),
+  );
+  console.log(grid);
   return 0;
 }
 function findFactorialFun(n: number): number {
   //let factorialMemory: (number | undefined)[] = new Array(6).from(6);
   return 0;
 }
-//console.log(findFactorialFun(5));
-//console.log(fibMemo(5));
-//fibMemo(5);
+
+//Call grid function
+gridTraveler(2, 2);
