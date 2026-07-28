@@ -1,30 +1,23 @@
-//Learn array
-const input: string = "one car two car three car three dog four car";
-let notFoundWord: string [] = input.split(" ");
+// Learn 2 dimension
+function twoDimensionArray(row: number, col: number) {
+  const rowNum: number = row;
+  const rowCol: number = col;
+  const grid: (number | undefined)[][] = Array.from({ length: rowNum }, () =>
+    Array(rowCol).fill(undefined),
+  );
 
-console.log(notFoundWord.indexOf('one'));
-
-/*
- *Document 
- *  ## Remove specific index of array
- *  use splice(index, number of element want to remove)
- * */
-
-const value: string = notFoundWord[0];
-const two: string = notFoundWord[1];
-const three: string = notFoundWord[2];
-const myMap = new Map<string,number>();
-const match: string[] = notFoundWord.filter((v) => v === value);
-const matchTwo: string[] = notFoundWord.filter((v) => v === two);
-const matchThree: string[] = notFoundWord.filter((v) => v === three);
-let result: string[] = [];
-for(let i:number = 0; i < notFoundWord.length; i++){
-  let value: string = notFoundWord[i];
-  //index: 0, 1
-  result = notFoundWord.filter((v) => v === value );
-  myMap.set(value, result.length); 
+  //Fill a column all
+  for (const [rowIndex, rowValue] of grid.entries()) {
+    grid[rowIndex][0] = Math.floor(Math.random() * 10);
+  }
+  // Fill a row all
+  for (const [rowIndex, rowValue] of grid.entries()) {
+    for (const [colIndex, colValue] of rowValue.entries()) {
+      grid[1][colIndex] = Math.floor(Math.random() * 10);
+    }
+  }
+  console.log(grid);
 }
-
-
-console.log(input);
-console.log(myMap);
+const r: number = 3;
+const c: number = 3;
+twoDimensionArray(r, c);
