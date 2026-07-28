@@ -93,6 +93,16 @@ function climbStairs(n: number, memo: number[] = []): number {
   memo[n] = climbStairs(n - 1, memo) + climbStairs(n - 2, memo);
   return memo[n];
 }
+function fibonacciMemo(n: number, cached: Record<number, number> = {}):number {
+  // 1. base case
+  if(n === 0) return 0;
+  if(n===1) return 1:
+
+  // 2. Check the notepad(cached)
+  if(cached[n] !== undefined){
+    return cached[n]
+  }
+}
 ///count
 function countDown(n: number) {
   console.log(n);
