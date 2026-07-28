@@ -10,6 +10,12 @@ function twoDimensionArray(row: number, col: number) {
   for (const [rowIndex, rowValue] of grid.entries()) {
     grid[rowIndex][0] = Math.floor(Math.random() * 10);
   }
+  // Fill a row all
+  for (const [rowIndex, rowValue] of grid.entries()) {
+    for (const [colIndex, colValue] of rowValue.entries()) {
+      grid[1][colIndex] = Math.floor(Math.random() * 10);
+    }
+  }
   console.log(grid);
 }
 const r: number = 3;
