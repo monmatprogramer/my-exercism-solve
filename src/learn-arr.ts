@@ -6,6 +6,7 @@ function twoDimensionArray(row: number, col: number) {
     Array(rowCol).fill(undefined),
   );
   grid[0][2] = 3;
+  grid[2][0] = 7;
   console.log(grid);
 }
 const r: number = 3;
