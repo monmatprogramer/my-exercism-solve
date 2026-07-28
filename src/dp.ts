@@ -107,7 +107,6 @@ function fibonacciMemo(n: number, cached: Record<number, number> = {}): number {
   cached[n] = resul;
   return resul;
 }
-console.log(fibonacciMemo(5));
 ///count
 function countDown(n: number) {
   console.log(n);
@@ -157,11 +156,17 @@ function test(n: number) {
 function gridTraveler(
   m: number,
   n: number,
-  cached: Record<number, number> = {},
+  cached: Record<string, number> = {},
 ): number {
   if (m === 1 && n === 1) return 1;
   if (m === 0 && n === 0) return 0;
-  return 0;
+  const key = m + ' ' + n;
+  if(cached[key] !== undefined)[
+    return cached[key];
+  ]
+  const waysToWin = gridTraveler(m-1, n, cached) + gridTraveler(m,n-1, cached);
+  cached[key] = waysToWin;
+  return waysToWin;
 }
 function findFactorialFun(n: number): number {
   //let factorialMemory: (number | undefined)[] = new Array(6).from(6);
