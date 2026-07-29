@@ -75,5 +75,8 @@ function toUpperCase(rawWord: WordType): string {
 // Calculate total score
 const findTotalScore = (wordUpper: string): number => {
   let total: number = 0;
+  for (const char of wordUpper) {
+    total = total + letterScores[char];
+  }
   return total;
 };
