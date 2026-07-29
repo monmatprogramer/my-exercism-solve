@@ -166,14 +166,14 @@ function findFactorialFun(n: number): number {
 }
 // find pyramid
 function findPyramid(n: number, cach: Record<number, number> = {}): number {
-  if (n === 1) return 1;
-  if (n === 0) return 0;
+  if (n === 1) return 2;
+  if (n === 0) return 2;
   if (cach[n] !== undefined) {
     return cach[n];
   }
-  const result: number = findPyramid(n - 1, cach) + findPyramid(n, cach);
+  const result: number = findPyramid(n - 1, cach) + findPyramid(n - 2, cach);
 
   cach[n] = result;
   return result;
 }
-console.log(findPyramid(5)); // 6;
+console.log(findPyramid(4)); // 10;
