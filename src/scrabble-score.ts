@@ -9,3 +9,7 @@ export function score(word: string | undefined | null = null): number {
   //Check letter to uppercase
   return 0;
 }
+// Create a function to change each letters to upper case
+function toUpperCase(rawWord: string): string {
+  return "";
+}
