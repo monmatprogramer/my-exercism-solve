@@ -10,7 +10,7 @@ export function score(word?: WordType): number {
   if (word === "" || word === undefined) {
     return 0;
   } //Check letter to uppercase
-  //letterUpperCase = toUpperCase(word);
+  letterUpperCase = toUpperCase(word);
 
   return 0;
 }
