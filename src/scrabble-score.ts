@@ -11,7 +11,6 @@ export function score(word?: WordType): number {
     return 0;
   } //Check letter to uppercase
   letterUpperCase = toUpperCase(word);
-  console.log(letterUpperCase);
 
   return 0;
 }
