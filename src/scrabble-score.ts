@@ -47,8 +47,9 @@ export function score(word?: WordType): number {
     return 0;
   } //Check letter to uppercase
   letterUpperCase = toUpperCase(word);
-  console.log(letterUpperCase);
-  return 0;
+  // find total score
+  totalScore = findTotalScore(letterUpperCase);
+  return totalScore;
 }
 // Check validation
 function isValid(rawWord: WordType): boolean {
@@ -71,3 +72,8 @@ function toUpperCase(rawWord: WordType): string {
 
   return lastResult;
 }
+// Calculate total score
+const findTotalScore = (wordUpper: string): number => {
+  let total: number = 0;
+  return total;
+};
