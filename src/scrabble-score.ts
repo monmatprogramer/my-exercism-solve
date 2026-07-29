@@ -15,14 +15,17 @@ export function score(word?: WordType): number {
   return 0;
 }
 // Check validation
-function isValid(rawWord: string): boolean {
-  const wordRex = /^[a-zA-Z]/;
-  console.log(wordRex.test(rawWord));
+function isValid(rawWord: WordType): boolean {
+  //Flase : inValid
+  //True: Valid
+  const wordRex = /^[a-zA-Z]+$/;
+  console.log(wordRex.test(rawWord!));
+  rawWord === "" || rawWord === undefined || (rawWord === null && false);
   return false;
 }
 // Create a function to change each letters to upper case
-function toUpperCase(rawWord: string): string {
+function toUpperCase(rawWord: WordType): string {
   // Check validation here
-
+  isValid(rawWord);
   return "";
 }
