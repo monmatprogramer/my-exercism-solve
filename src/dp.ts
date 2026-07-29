@@ -176,4 +176,4 @@ function findPyramid(n: number, cach: Record<number, number> = {}): number {
   cach[n] = result;
   return result;
 }
-console.log(findPyramid(4)); // 10;
+console.log(findPyramid(3)); // 6;

@@ -1,4 +1,3 @@
-const test: string[] = ["3", "1", "2", "k"];
+import { score } from "./scrabble-score";
 
-let t: string[] = [];
-console.log(t);
+score();
