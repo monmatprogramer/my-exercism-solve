@@ -1,4 +1,4 @@
 import { score } from "./scrabble-score";
 
-let ds: number = score("a2");
+let ds: number = score("aa");
 console.log(ds);

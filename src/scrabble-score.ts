@@ -11,6 +11,7 @@ export function score(word?: WordType): number {
     return 0;
   } //Check letter to uppercase
   letterUpperCase = toUpperCase(word);
+  console.log(letterUpperCase);
 
   return 0;
 }
@@ -30,7 +31,7 @@ function toUpperCase(rawWord: WordType): string {
   if (isTrue) {
     lastResult = rawWord!.toLocaleUpperCase();
   } else {
-    return "";
+    throw new Error("Invalid rawWord");
   }
 
   return lastResult;
