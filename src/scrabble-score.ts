@@ -19,13 +19,15 @@ function isValid(rawWord: WordType): boolean {
   //Flase : inValid
   //True: Valid
   const wordRex = /^[a-zA-Z]+$/;
-  console.log(wordRex.test(rawWord!));
   rawWord === "" || rawWord === undefined || (rawWord === null && false);
-  return false;
+  return wordRex.test(rawWord!);
 }
 // Create a function to change each letters to upper case
 function toUpperCase(rawWord: WordType): string {
+  let lastResult: string = "";
   // Check validation here
-  isValid(rawWord);
-  return "";
+  let isTrue: boolean = isValid(rawWord);
+  if (isTrue) {
+  }
+  return lastResult;
 }
