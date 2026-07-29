@@ -1,6 +1,6 @@
 //scrabble score exercise
-
-export function score(word: string | undefined): number {
+// Create unique type for word (user input 999999999999999999)
+export function score(word: string | undefined | null = null): number {
   //create empty totalScore
   let totalScore: number = 0;
   // Create letterUpperCase
@@ -14,6 +14,6 @@ export function score(word: string | undefined): number {
   return 0;
 }
 // Create a function to change each letters to upper case
-function toUpperCase(rawWord: string | undefined): string {
+function toUpperCase(rawWord: string | undefined | null = null): string {
   return "";
 }
