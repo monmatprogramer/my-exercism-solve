@@ -1,4 +1,6 @@
 //scrabble score exercise
+// Create wordScore object
+
 // Create unique type for word (user input)
 type WordType = string | undefined | null;
 export function score(word?: WordType): number {
