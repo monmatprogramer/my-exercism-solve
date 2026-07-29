@@ -29,6 +29,8 @@ function toUpperCase(rawWord: WordType): string {
   let isTrue: boolean = isValid(rawWord);
   if (isTrue) {
     lastResult = rawWord!.toLocaleUpperCase();
+  } else {
+    return "";
   }
 
   return lastResult;
