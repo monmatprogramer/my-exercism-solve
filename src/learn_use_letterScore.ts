@@ -12,4 +12,6 @@ const wordUpper: string = word.toUpperCase();
 // find word in letter scores
 for (const char of wordUpper) {
   // final result must  22;
+  totalScore = totalScore + letterScores[char];
 }
+console.log(totalScore);
