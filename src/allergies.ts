@@ -17,7 +17,7 @@ export class Allergies {
 
   public list(): string[] {
     //correct order
-    return this.allergens;
+    return this.allergens.filter((value) => this.allergicTo(value) === true);
   }
 
   public allergicTo(allergen: string): boolean {
