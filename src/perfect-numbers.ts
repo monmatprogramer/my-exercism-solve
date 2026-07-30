@@ -5,5 +5,9 @@ export function classify(num: number) {
   if (num <= 0) {
     throw new Error(ERRMSG);
   }
-  for (let i: number = 1; i <= num - 1; i++) {}
+  for (let i: number = 1; i <= num - 1; i++) {
+    if (num % i === 0) {
+      sum = sum + i;
+    }
+  }
 }
