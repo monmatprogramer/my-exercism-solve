@@ -46,11 +46,11 @@ export class ComplexNumber {
   }
 
   public get abs(): number {
-    return 0;
+    return Math.sqrt(Math.pow(this.a, 2) + Math.pow(this.b, 2));
   }
 
   public get conj(): ComplexNumber {
-    return new ComplexNumber(0, 0);
+    return new ComplexNumber(this.a, -this.b);
   }
 
   public get exp(): ComplexNumber {
