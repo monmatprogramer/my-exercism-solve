@@ -1,4 +1,4 @@
-let d: string = "12 345 334 34";
+import { valid } from "./luhn";
 
-d = d.replaceAll(" ", "");
-console.log(d);
+let d: string = "12 345 334 34";
+valid(d);
