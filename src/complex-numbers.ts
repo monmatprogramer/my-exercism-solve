@@ -28,7 +28,9 @@ export class ComplexNumber {
   }
 
   public div(other: ComplexNumber): ComplexNumber {
-    return other;
+    const newReal: number = this.a * other.real - this.b * other.imag;
+    const newImag: number = this.b * other.real - this.a * other.real;
+    return new ComplexNumber(newReal, newImag);
   }
 
   public mul(other: ComplexNumber): ComplexNumber {
