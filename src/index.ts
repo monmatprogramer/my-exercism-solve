@@ -1,3 +1,4 @@
-import { ComplexNumber } from "./complex-numbers";
-const actual = new ComplexNumber(5, 0).conj;
-console.log(actual);
+let d: string = "12 345 334 34";
+
+d = d.replaceAll(" ", "");
+console.log(d);
