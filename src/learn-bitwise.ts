@@ -28,8 +28,8 @@ function lesson3Fun() {
 }
 
 function practiceFun() {
-  const SCORE: number = 34;
-  const ITEM_SCORE: number = 2;
+  const SCORE: number = 512;
+  const ITEM_SCORE: number = 256;
   console.log(SCORE & ITEM_SCORE);
 }
 
