@@ -50,7 +50,7 @@ export class ComplexNumber {
   }
 
   public get conj(): ComplexNumber {
-    return new ComplexNumber(this.a, -this.b);
+    return new ComplexNumber(this.a, -this.b === -0 ? 0 : -this.b);
   }
 
   public get exp(): ComplexNumber {
