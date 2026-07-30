@@ -54,6 +54,8 @@ export class ComplexNumber {
   }
 
   public get exp(): ComplexNumber {
-    return new ComplexNumber(0, 0);
+    const newReal: number = Math.exp(this.a) * Math.cos(this.b);
+    const newImag: number = Math.exp(this.a) * Math.sin(this.b);
+    return new ComplexNumber(newReal, newImag);
   }
 }
