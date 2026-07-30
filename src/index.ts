@@ -1,4 +1,7 @@
 import { Allergies } from "./allergies";
 
 // Maybe arugment is index of allergen
-const a = new Allergies(0);
+const allergies = new Allergies(5);
+allergies.allergicTo("peanuts");
+allergies.allergicTo("cats");
+allergies.allergicTo("strawberries");
