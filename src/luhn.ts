@@ -10,7 +10,8 @@ export function valid(digitString: string): boolean {
 
   let totalSum: number = 0;
   let isSecondDigit: boolean = false;
-  console.log(digitString.split(""));
+  const digitStringArr: string[] = digitString.split("");
+  console.log(digitStringArr);
   //const digitStringArr: number[] = Number(digitString.split(""));
   //console.log(digitStringArr);
   return true;
