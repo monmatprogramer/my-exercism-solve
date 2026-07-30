@@ -8,11 +8,11 @@ export class ComplexNumber {
   }
 
   public get real(): number {
-    return 0;
+    return this.a;
   }
 
   public get imag(): number {
-    return 0;
+    return this.b;
   }
 
   public add(other: ComplexNumber): ComplexNumber {
