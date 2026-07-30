@@ -1,6 +1,5 @@
 //Luhn exercise
 export function valid(digitString: string): boolean {
-  console.log("🔍: ", digitString);
   const getNumOnlyRex = /^[0-9]+$/;
   //condition 1:  remove  all space from input string
   digitString = digitString.trim().replace(" ", "");
@@ -27,6 +26,7 @@ export function valid(digitString: string): boolean {
     isSecondDigit = !isSecondDigit;
   }
 
+  console.log("🔍: ", totalSum);
   if (totalSum % 10 === 0) {
     return true;
   } else {
