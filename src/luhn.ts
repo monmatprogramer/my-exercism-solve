@@ -10,8 +10,11 @@ export function valid(digitString: string): boolean {
 
   let totalSum: number = 0;
   let isSecondDigit: boolean = false;
+  console.log("📝: ", digitString);
   const digitStringArr: string[] = digitString.split("");
+  console.log("👉: ", digitStringArr);
   const digitNumberArr: number[] = digitStringArr.map(Number);
+  console.log("➡️: ", digitNumberArr);
   let tempNumber: number = 0;
   for (let i: number = digitNumberArr.length - 1; i >= 0; i--) {
     isSecondDigit = i % 3 === 1;
