@@ -4,10 +4,8 @@ export function valid(digitString: string): boolean {
   // remove  all space from input string
   digitString = digitString.trim().replaceAll(" ", "");
   // check length of digitString
-  console.log("➡️ ", digitString.length);
-  return digitString.length < 2 && false;
-  console.log("👉 ", digitString);
-  return getNumOnlyRex.test(digitString) === false && false;
-  console.log(digitString);
-  return false;
+  if (digitString.length < 2) return false;
+
+  if (!getNumOnlyRex.test(digitString)) return false;
+  return true;
 }
