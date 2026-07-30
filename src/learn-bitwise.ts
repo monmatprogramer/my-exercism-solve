@@ -27,4 +27,9 @@ function lesson3Fun() {
   }
 }
 
-lesson3Fun();
+function practiceFun() {
+  const TOTAL: number = 2;
+  console.log(TOTAL);
+}
+
+practiceFun();
