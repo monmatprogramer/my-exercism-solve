@@ -7,10 +7,12 @@ export class Allergies {
   }
 
   public list(): string[] {
+    //correct order
     return [""];
   }
 
   public allergicTo(allergen: string): boolean {
+    //check one item
     return true;
   }
 }
