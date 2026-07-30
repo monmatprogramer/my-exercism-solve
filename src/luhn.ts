@@ -1,11 +1,11 @@
 //Luhn exercise
 export function valid(digitString: string): boolean {
   const getNumOnlyRex = /^[0-1]+$/;
-  // remove  all space from input string
+  //condition 1:  remove  all space from input string
   digitString = digitString.trim().replaceAll(" ", "");
-  // check length of digitString
+  //condition 2:  check length of digitString
   if (digitString.length < 2) return false;
-
+  //condition 3:
   if (!getNumOnlyRex.test(digitString)) return false;
   return true;
 }
