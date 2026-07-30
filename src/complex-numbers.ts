@@ -16,11 +16,15 @@ export class ComplexNumber {
   }
 
   public add(other: ComplexNumber): ComplexNumber {
-    return other;
+    const newReal: number = this.a + other.real;
+    const newImg: number = this.b + other.imag;
+    return new ComplexNumber(newReal, newImg);
   }
 
   public sub(other: ComplexNumber): ComplexNumber {
-    return other;
+    const newReal: number = this.a - other.real;
+    const newImg: number = this.b - other.real;
+    return new ComplexNumber(newReal, newImg);
   }
 
   public div(other: ComplexNumber): ComplexNumber {
