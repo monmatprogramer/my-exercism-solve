@@ -1,5 +1,6 @@
 //Luhn exercise
 export function valid(digitString: string): boolean {
+  console.log("🔍: ", digitString);
   const getNumOnlyRex = /^[0-9]+$/;
   //condition 1:  remove  all space from input string
   digitString = digitString.trim().replace(" ", "");
@@ -15,8 +16,8 @@ export function valid(digitString: string): boolean {
   let tempNumber: number = 0;
   for (let i: number = digitNumberArr.length - 1; i >= 0; i--) {
     isSecondDigit = i % 3 === 1;
+    tempNumber = digitNumberArr[i];
     if (isSecondDigit) {
-      console.log("🔍: ", digitNumberArr[i]);
       tempNumber = digitNumberArr[i] * 2;
       if (tempNumber > 9) {
         tempNumber = tempNumber - 9;
