@@ -1,4 +1,3 @@
-import { score } from "./scrabble-score";
+import { Allergies } from "./allergies";
 
-let ds: number = score("aa");
-console.log(ds);
+const a = new Allergies(0);
