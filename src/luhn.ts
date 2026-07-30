@@ -4,7 +4,7 @@ export function valid(digitString: string): boolean {
   // remove  all space from input string
   digitString = digitString.trim().replaceAll(" ", "");
   // check length of digitString
-  console.log("➡️ ", digitString);
+  console.log("➡️ ", digitString.length);
   return digitString.length < 2 && false;
   console.log("👉 ", digitString);
   return getNumOnlyRex.test(digitString) === false && false;
