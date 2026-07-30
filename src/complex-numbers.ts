@@ -23,7 +23,7 @@ export class ComplexNumber {
 
   public sub(other: ComplexNumber): ComplexNumber {
     const newReal: number = this.a - other.real;
-    const newImg: number = this.b - other.real;
+    const newImg: number = this.b - other.imag;
     return new ComplexNumber(newReal, newImg);
   }
 
