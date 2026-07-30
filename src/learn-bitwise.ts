@@ -17,4 +17,14 @@ function lesson3Fun() {
   const READ = 4; // 0100
   const WRITE = 2; // 0010
   const EXECUTE = 1; // 0001
+  // If we allow user to READ + WRITE
+  let userPermission = 6; // 6 = READ + WRITE
+  let canWrite = (userPermission & WRITE) === WRITE;
+  if (canWrite) {
+    console.log("User is allowed to write files");
+  } else {
+    console.log("Access denied");
+  }
 }
+
+lesson3Fun();
