@@ -34,7 +34,9 @@ export class ComplexNumber {
   }
 
   public mul(other: ComplexNumber): ComplexNumber {
-    return other;
+    const newReal: number = this.a * other.real - this.b * other.imag;
+    const newImag: number = this.b * other.real - this.a * other.imag;
+    return new ComplexNumber(newReal, newImag);
   }
 
   public get abs(): number {
