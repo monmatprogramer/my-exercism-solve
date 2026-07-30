@@ -14,13 +14,18 @@ export function valid(digitString: string): boolean {
   const digitNumberArr: number[] = digitStringArr.map(Number);
   let tempNumber: number = 0;
   for (let i: number = digitNumberArr.length - 1; i >= 0; i--) {
-    if (i % 3 === 1) {
+    isSecondDigit = i % 3 === 1;
+    if (isSecondDigit) {
       tempNumber = digitNumberArr[i] * 2;
       if (tempNumber > 9) {
         tempNumber = tempNumber - 9;
       }
     }
+    totalSum = tempNumber;
+    tempNumber = !tempNumber;
   }
+
+  console.log("total_sum: ", totalSum);
   //const digitStringArr: number[] = Number(digitString.split(""));
   //console.log(digitStringArr);
   return true;
