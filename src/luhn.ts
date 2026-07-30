@@ -7,5 +7,8 @@ export function valid(digitString: string): boolean {
   if (digitString.length < 2) return false;
   //condition 3:
   if (!getNumOnlyRex.test(digitString)) return false;
+
+  let totalSum: number = 0;
+  let isSecondDigit: boolean = false;
   return true;
 }
