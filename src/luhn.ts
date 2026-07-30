@@ -12,8 +12,14 @@ export function valid(digitString: string): boolean {
   let isSecondDigit: boolean = false;
   const digitStringArr: string[] = digitString.split("");
   const digitNumberArr: number[] = digitStringArr.map(Number);
+  let tempNumber: number = 0;
   for (let i: number = digitNumberArr.length - 1; i >= 0; i--) {
-    console.log(digitNumberArr[i]);
+    if (i % 3 === 1) {
+      tempNumber = digitNumberArr[i] * 2;
+      if (tempNumber > 9) {
+        tempNumber = tempNumber - 9;
+      }
+    }
   }
   //const digitStringArr: number[] = Number(digitString.split(""));
   //console.log(digitStringArr);
