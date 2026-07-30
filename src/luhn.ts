@@ -22,7 +22,7 @@ export function valid(digitString: string): boolean {
       }
     }
     totalSum = tempNumber;
-    tempNumber = !tempNumber;
+    isSecondDigit = !isSecondDigit;
   }
 
   console.log("total_sum: ", totalSum);
