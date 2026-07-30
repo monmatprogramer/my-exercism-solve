@@ -28,8 +28,8 @@ export class ComplexNumber {
   }
 
   public div(other: ComplexNumber): ComplexNumber {
-    const newReal: number = this.a * other.real - this.b * other.imag;
-    const newImag: number = this.b * other.real - this.a * other.imag;
+    const newReal: number = 0;
+    const newImag: number = 0;
     return new ComplexNumber(newReal, newImag);
   }
 
