@@ -11,7 +11,10 @@ export function valid(digitString: string): boolean {
   let totalSum: number = 0;
   let isSecondDigit: boolean = false;
   const digitStringArr: string[] = digitString.split("");
-  console.log(digitStringArr);
+  const digitNumberArr: number[] = digitStringArr.map(Number);
+  for (let i: number = digitNumberArr.length - 1; i >= 0; i--) {
+    console.log(digitNumberArr[i]);
+  }
   //const digitStringArr: number[] = Number(digitString.split(""));
   //console.log(digitStringArr);
   return true;
