@@ -26,7 +26,9 @@ export function valid(digitString: string): boolean {
   }
 
   console.log("total_sum: ", totalSum);
-  //const digitStringArr: number[] = Number(digitString.split(""));
-  //console.log(digitStringArr);
-  return true;
+  if (totalSum % 10 === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
