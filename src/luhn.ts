@@ -14,9 +14,12 @@ export function valid(digitString: string): boolean {
   const digitNumberArr: number[] = digitStringArr.map(Number);
   let tempNumber: number = 0;
   for (let i: number = digitNumberArr.length - 1; i >= 0; i--) {
+    console.log("➡️: ", i);
     isSecondDigit = i % 3 === 1;
+    console.log("👉: ", isSecondDigit);
     tempNumber = digitNumberArr[i];
     if (isSecondDigit) {
+      console.log("🔍: ", tempNumber);
       tempNumber = digitNumberArr[i] * 2;
       if (tempNumber > 9) {
         tempNumber = tempNumber - 9;
@@ -26,7 +29,6 @@ export function valid(digitString: string): boolean {
     isSecondDigit = !isSecondDigit;
   }
 
-  console.log("🔍: ", totalSum);
   if (totalSum % 10 === 0) {
     return true;
   } else {
