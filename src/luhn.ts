@@ -1,2 +1,4 @@
 //Luhn exercise
-export function valid(digitString: unknown): unknown {}
+export function valid(digitString: string): boolean {
+  return false;
+}
