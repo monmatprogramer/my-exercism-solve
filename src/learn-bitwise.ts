@@ -9,5 +9,12 @@ function lesson2Fun(num: number): boolean {
   return (num & 1) === 1;
 }
 
-console.log(lesson2Fun(5));
-console.log(lesson2Fun(8));
+//console.log(lesson2Fun(5)); // true;
+//console.log(lesson2Fun(8)); // false
+
+// Learn about setting up permission
+function lesson3Fun() {
+  const READ = 4; // 0100
+  const WRITE = 2; // 0010
+  const EXECUTE = 1; // 0001
+}
