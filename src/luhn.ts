@@ -1,6 +1,6 @@
 //Luhn exercise
 export function valid(digitString: string): boolean {
-  const getNumOnlyRex = /^[0-1]+$/;
+  const getNumOnlyRex = /^[0-9]+$/;
   //condition 1:  remove  all space from input string
   digitString = digitString.trim().replaceAll(" ", "");
   //condition 2:  check length of digitString
