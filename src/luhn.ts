@@ -5,6 +5,7 @@ export function valid(digitString: string): boolean {
   digitString = digitString.trim().replaceAll(" ", "");
   // check length of digitString
   return digitString.length < 2 && false;
+  console.log("👉:w ", digitString);
   return getNumOnlyRex.test(digitString) === false && false;
   console.log(digitString);
   return false;
