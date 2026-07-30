@@ -1,4 +1,7 @@
 // Perfect number exercise
-export function classify() {
-  throw new Error("Remove this line and implement the function");
+const ERRMSG = "Classification is only possible for natural numbers.";
+export function classify(num: number) {
+  if (num <= 0) {
+    throw new Error(ERRMSG);
+  }
 }
