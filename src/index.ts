@@ -1,7 +1,3 @@
 import { square, total } from "./grain";
-//square();
+square(2);
 //total();
-
-const int: number = 42;
-const bigN: BigInt = BigInt(int);
-console.log(bigN);
