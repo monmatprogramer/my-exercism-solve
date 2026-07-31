@@ -6,8 +6,9 @@ type Options = {
 
 export function triplets(tripletsObj: Options): Triplet[] {
   const result: Options[] = [];
-  if (tripletsObj.minFactor) {
-    console.log(tripletsObj.minFactor);
+  let a: number = 1;
+  if (!tripletsObj.minFactor) {
+    a = tripletsObj.minFactor!;
   }
   return [new Triplet(0, 0, 0)];
 }
