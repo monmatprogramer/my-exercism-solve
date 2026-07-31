@@ -5,7 +5,7 @@ type Options = {
 };
 
 export function triplets(tripletsObj: Options): Triplet[] {
-  const result: Options[] = [];
+  const result: Triplet[] = [];
   let a: number = 1;
   let b: number = 0;
   let c: number = 0;
@@ -22,7 +22,10 @@ export function triplets(tripletsObj: Options): Triplet[] {
   if (Number.isInteger(a) && b > a) {
     c = tripletsObj.sum - a - b;
   }
-  return [new Triplet(0, 0, 0)];
+  if (b >= tripletsObj.minFactor! || c <= tripletsObj.maxFactor!) {
+    result.push(new Triplet(a, b, c));
+  }
+  return result;
 }
 
 class Triplet {
