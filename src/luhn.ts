@@ -21,7 +21,9 @@ export function valid(digitString: string): boolean {
       console.log(tempNumber);
     }
     isSecondDigit = !isSecondDigit;
-  } while (isSecondDigit && stardRigthIndex > 0);
+    --stardRigthIndex;
+    isSecondDigit = stardRigthIndex < 0 && false;
+  } while (isSecondDigit);
   if (totalSum % 10 === 0) {
     return true;
   } else {
