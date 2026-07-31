@@ -35,7 +35,7 @@ type Profile = {
   username: string;
   avtarUrl?: string;
 };
-
+// Example1
 function displayProfile(profile: Profile) {
   console.log("User: " + profile.username);
   if (profile.avtarUrl) {
@@ -45,4 +45,8 @@ function displayProfile(profile: Profile) {
   }
 }
 
-displayProfile({ username: "Admin", avtarUrl: "http://image.com/me.png" });
+//displayProfile({ username: "Admin", avtarUrl: "http://image.com/me.png" });
+
+//displayProfile({ username: "Guest" });
+
+//Example 2
