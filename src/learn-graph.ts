@@ -10,7 +10,6 @@ function lesson1Fun() {
 
   for (const [parentName, childrenArray] of Object.entries(configFile)) {
     for (let i: number = 0; i < childrenArray.length; i++) {
-      console.log(childrenArray[i]);
       for (let j: number = i + 1; j < childrenArray.length; j++) {
         const siblingA = childrenArray[i];
         const siblingB = childrenArray[j];
