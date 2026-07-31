@@ -18,12 +18,12 @@ export function triplets({ minFactor, maxFactor, sum }: Options): Triplet[] {
     topPart = sum * sum - 2 * sum * a;
     bottomPart = 2 * (sum - a);
     b = topPart / bottomPart;
-  }
-  if (Number.isInteger(a) && b > a) {
-    c = sum - a - b;
-  }
-  if (b >= minFactor! || c <= maxFactor!) {
-    result.push(new Triplet(a, b, c));
+    if (Number.isInteger(a) && b > a) {
+      c = sum - a - b;
+    }
+    if (b >= minFactor! || c <= maxFactor!) {
+      result.push(new Triplet(a, b, c));
+    }
   }
 
   return result;
