@@ -28,4 +28,19 @@ function checkServer(server: ServerInfo) {
   }
 }
 
-checkServer({ model: "QNAP NAS TS-433", memoryGb: 4, isOnline: true });
+//checkServer({ model: "QNAP NAS TS-433", memoryGb: 4, isOnline: true });
+
+// --- Lesson3 optional param ---
+type Profile = {
+  username: string;
+  avtarUrl?: string;
+};
+
+function displayProfile(profile: Profile) {
+  console.log("User: " + profile.username);
+  if (profile.avtarUrl) {
+    console.log("Loading image from: " + profile.avtarUrl);
+  } else {
+    console.log("Loading default empty image.");
+  }
+}
