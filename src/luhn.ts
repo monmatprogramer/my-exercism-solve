@@ -16,16 +16,19 @@ export function valid(digitString: string): boolean {
   let stardRigthIndex: number = digitNumberArr.length - 1;
   do {
     tempNumber = digitNumberArr[stardRigthIndex];
-    console.log(stardRigthIndex);
-    console.log(isSecondDigit);
-    console.log("\n");
     if (isSecondDigit) {
-      console.log(tempNumber);
+      tempNumber = digitNumberArr[stardRigthIndex] * 2;
+      if (tempNumber > 9) {
+        tempNumber = tempNumber - 9;
+      }
     }
+    totalSum = totalSum + tempNumber;
+
     isSecondDigit = !isSecondDigit;
     --stardRigthIndex;
-    isSecondDigit = stardRigthIndex < 0 && false;
-    console.log("Checking condition: ", isSecondDigit);
+    if (stardRigthIndex < 0) {
+      isSecondDigit = false;
+    }
   } while (isSecondDigit);
 
   if (totalSum % 10 === 0) {
