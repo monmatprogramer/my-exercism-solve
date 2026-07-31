@@ -7,10 +7,11 @@ function lesson1Fun() {
     Vera: ["Tomoko", "Toyota", "Yamaha"],
     Tomoko: ["Aditi"],
   };
+
   for (const [parentName, childrenArray] of Object.entries(configFile)) {
     for (let i: number = 0; i < childrenArray.length; i++) {
-      console.log(i);
-      for (let j: number = 0; j < childrenArray.length; j++) {
+      console.log(childrenArray[i]);
+      for (let j: number = i + 1; j < childrenArray.length; j++) {
         console.log(j);
       }
     }
