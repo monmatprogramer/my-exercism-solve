@@ -1,6 +1,6 @@
-import { degreesOfSeparation } from "./relative-distance";
+import { degreesOfSeparation, FamilyTreeType } from "./relative-distance";
 
-const familyTree = {
+const familyTree: FamilyTreeType = {
   Vera: ["Tomoko"],
   Tomoko: ["Aditi"],
 };

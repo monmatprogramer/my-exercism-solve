@@ -1,6 +1,7 @@
 // relative distance
+export type FamilyTreeType = Record<string, string[]>;
 export function degreesOfSeparation(
-  familyTree: unknown,
+  familyTree: FamilyTreeType,
   personA: unknown,
   personB: unknown,
 ): unknown {
