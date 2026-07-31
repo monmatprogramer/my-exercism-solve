@@ -82,4 +82,11 @@ function connectDb(db: Database) {
   }
 }
 
-connectDb({ name: "Postgres", port: "7000" });
+//connectDb({ name: "Postgres", port: "7000" });
+
+// Update profile
+type UserProfile = {
+  userId: number;
+  email?: string;
+  password?: string;
+};
