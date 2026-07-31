@@ -61,4 +61,4 @@ function createButton(props: ButtonProps) {
   console.log("Creating " + props.color + " button: " + props.label);
   console.log("Is it disable? " + disabledSdtate);
 }
-createButton({ label: "Save", color: "Blue", isDisable: true });
+//createButton({ label: "Save", color: "Blue", isDisable: true });
