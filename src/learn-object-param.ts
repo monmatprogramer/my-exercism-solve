@@ -71,11 +71,15 @@ type Database = {
 };
 
 function connectDb(db: Database) {
-  db.port = db.port || "8080";
+  const portState = db.port || "8080";
   console.log("Connecting to " + db.name);
-  if (!db.port) {
+
+  // check port
+  if (!portState) {
     console.log("Default port: ", db.port);
+  } else {
+    console.log("Your port: ", db.port);
   }
 }
 
-connectDb({ name: "Postgres" });
+connectDb({ name: "Postgres", port: "7000" });
