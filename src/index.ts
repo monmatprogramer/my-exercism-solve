@@ -1,3 +1,8 @@
 import { degreesOfSeparation } from "./relative-distance";
 
-degreesOfSeparation;
+const familyTree = {
+  Vera: ["Tomoko"],
+  Tomoko: ["Aditi"],
+};
+console.log(typeof familyTree);
+//degreesOfSeparation(familyTree, "Vera", "Tomoko");
