@@ -4,7 +4,10 @@ export const square = (N: number): BigInt => {
     throw new Error("Square must be between 1 and 64");
   }
   const bigN: BigInt = BigInt(N);
-  return 2n ** (bigN - 1n);
+  console.log(bigN);
+  console.log(2n - 1n);
+  //return 2n ** (bigN - 1n);
+  return 0n;
 };
 
 export const total = () => {
