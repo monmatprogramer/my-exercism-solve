@@ -6,14 +6,11 @@ type Options = {
 
 export function triplets({ minFactor, maxFactor, sum }: Options): Triplet[] {
   const result: Triplet[] = [];
-  let a: number = 1;
+  let a: number = minFactor !== undefined ? minFactor : 1;
   let b: number = 0;
   let c: number = 0;
   let topPart: number = 0;
   let bottomPart: number = 0;
-  if (minFactor !== undefined) {
-    a = minFactor!;
-  }
   while (a < sum / 3) {
     topPart = sum * sum - 2 * sum * a;
     bottomPart = 2 * (sum - a);
@@ -29,7 +26,7 @@ export function triplets({ minFactor, maxFactor, sum }: Options): Triplet[] {
     }
     a = a + 1;
   }
-
+  console.log("➡️ ", result);
   return result;
 }
 
