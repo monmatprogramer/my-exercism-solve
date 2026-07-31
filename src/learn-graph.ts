@@ -12,7 +12,10 @@ function lesson1Fun() {
     for (let i: number = 0; i < childrenArray.length; i++) {
       console.log(childrenArray[i]);
       for (let j: number = i + 1; j < childrenArray.length; j++) {
-        console.log(j);
+        const siblingA = childrenArray[i];
+        const siblingB = childrenArray[j];
+        console.log("siblingA: ", siblingA);
+        console.log("siblingB: ", siblingB);
       }
     }
   }
