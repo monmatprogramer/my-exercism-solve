@@ -19,7 +19,6 @@ export function valid(digitString: string): boolean {
     tempNumber = digitNumberArr[stardRigthIndex];
 
     if (isSecondDigit) {
-      console.log(i);
       ++i;
       tempNumber = digitNumberArr[stardRigthIndex] * 2;
       if (tempNumber > 9) {
