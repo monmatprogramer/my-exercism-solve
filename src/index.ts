@@ -1,3 +1,4 @@
-import { square, total } from "./grain";
-console.log(square(2));
-//total();
+import { triplets } from "./pythagorean-triplet";
+
+let options = {}
+console.log(triplets({...options, 12}));

@@ -4,25 +4,25 @@ type Options = {
   sum: number;
 };
 
-export function triplets(tripletsObj: Options): Triplet[] {
+export function triplets({ minFactor, maxFactor, sum }: Options): Triplet[] {
   const result: Triplet[] = [];
   let a: number = 1;
   let b: number = 0;
   let c: number = 0;
   let topPart: number = 0;
   let bottomPart: number = 0;
-  if (!tripletsObj.minFactor) {
-    a = tripletsObj.minFactor!;
+  if (!minFactor) {
+    a = minFactor!;
   }
   do {
-    topPart = tripletsObj.sum * tripletsObj.sum - 2 * tripletsObj.sum * a;
-    bottomPart = 2 * (tripletsObj.sum - a);
+    topPart = sum * sum - 2 * sum * a;
+    bottomPart = 2 * (sum - a);
     b = topPart / bottomPart;
-  } while (a < tripletsObj.sum / 3);
+  } while (a < sum / 3);
   if (Number.isInteger(a) && b > a) {
-    c = tripletsObj.sum - a - b;
+    c = sum - a - b;
   }
-  if (b >= tripletsObj.minFactor! || c <= tripletsObj.maxFactor!) {
+  if (b >= minFactor! || c <= maxFactor!) {
     result.push(new Triplet(a, b, c));
   }
   return result;
