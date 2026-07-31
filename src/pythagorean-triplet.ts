@@ -8,6 +8,7 @@ export function triplets(tripletsObj: Options): Triplet[] {
   const result: Options[] = [];
   let a: number = 1;
   let b: number = 0;
+  let c: number = 0;
   let topPart: number = 0;
   let bottomPart: number = 0;
   if (!tripletsObj.minFactor) {
@@ -16,7 +17,11 @@ export function triplets(tripletsObj: Options): Triplet[] {
   do {
     topPart = tripletsObj.sum * tripletsObj.sum - 2 * tripletsObj.sum * a;
     bottomPart = 2 * (tripletsObj.sum - a);
+    b = topPart / bottomPart;
   } while (a < tripletsObj.sum / 3);
+  if (Number.isInteger(a) && b > a) {
+    c = tripletsObj.sum - a - b;
+  }
   return [new Triplet(0, 0, 0)];
 }
 
