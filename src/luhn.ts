@@ -13,22 +13,10 @@ export function valid(digitString: string): boolean {
   const digitStringArr: string[] = digitString.split("");
   const digitNumberArr: number[] = digitStringArr.map(Number);
   let tempNumber: number = 0;
-  for (let i: number = digitNumberArr.length - 1; i >= 0; i--) {
-    console.log("➡️: ", i);
-    isSecondDigit = i % 3 === 1;
-    console.log("👉: ", isSecondDigit);
-    tempNumber = digitNumberArr[i];
-    if (isSecondDigit) {
-      console.log("🔍: ", tempNumber);
-      tempNumber = digitNumberArr[i] * 2;
-      if (tempNumber > 9) {
-        tempNumber = tempNumber - 9;
-      }
-    }
-    totalSum = tempNumber;
-    isSecondDigit = !isSecondDigit;
-  }
-
+  let stardRigthIndex: number = digitNumberArr.length - 1;
+  console.log(stardRigthIndex);
+  return false;
+  do {} while (isSecondDigit);
   if (totalSum % 10 === 0) {
     return true;
   } else {
