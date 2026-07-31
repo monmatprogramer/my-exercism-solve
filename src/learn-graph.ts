@@ -7,8 +7,8 @@ function lesson1Fun() {
     Vera: ["Tomoko"],
     Tomoko: ["Aditi"],
   };
-  for (const [paraentName, childrenArray] of Object.entries(configFile)) {
-    console.log("Main Server: ", paraentName);
+  for (const [parentName, childrenArray] of Object.entries(configFile)) {
+    console.log("Main Server: ", parentName);
     console.log("Backup Server: ", childrenArray);
   }
 }
