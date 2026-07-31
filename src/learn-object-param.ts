@@ -44,3 +44,5 @@ function displayProfile(profile: Profile) {
     console.log("Loading default empty image.");
   }
 }
+
+displayProfile({ username: "Admin", avtarUrl: "http://image.com/me.png" });
