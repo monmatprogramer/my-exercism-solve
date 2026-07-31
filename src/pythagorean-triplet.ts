@@ -26,7 +26,6 @@ export function triplets({ minFactor, maxFactor, sum }: Options): Triplet[] {
     }
     a = a + 1;
   }
-  console.log("➡️ ", result);
   return result;
 }
 
