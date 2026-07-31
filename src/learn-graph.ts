@@ -1,8 +1,12 @@
 // We learn about graph algorithm which cause our system easy to search
 
-const networkMap = new Map<string, Set<string>>();
+function lesson1Fun() {
+  const networkMap = new Map<string, Set<string>>();
 
-const configFile = {
-  Vera: ["Tomoko"],
-  Tomoko: ["Aditi"],
-};
+  const configFile = {
+    Vera: ["Tomoko"],
+    Tomoko: ["Aditi"],
+  };
+}
+
+lesson1Fun();
