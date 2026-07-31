@@ -1,7 +1,3 @@
-import { triplets } from "./pythagorean-triplet";
+import { degreesOfSeparation } from "./relative-distance";
 
-let options = {};
-const sum: number = 12;
-console.log(triplets({ ...options, sum }));
-
-const num = undefined;
+degreesOfSeparation;
