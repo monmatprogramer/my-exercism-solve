@@ -9,11 +9,13 @@ export function triplets(tripletsObj: Options): Triplet[] {
   let a: number = 1;
   let b: number = 0;
   let topPart: number = 0;
+  let bottomPart: number = 0;
   if (!tripletsObj.minFactor) {
     a = tripletsObj.minFactor!;
   }
   do {
-    topPart = tripletsObj.sum * (tripletsObj.sum - 2) * tripletsObj.sum * a;
+    topPart = tripletsObj.sum * tripletsObj.sum - 2 * tripletsObj.sum * a;
+    bottomPart = 2 * (tripletsObj.sum - a);
   } while (a < tripletsObj.sum / 3);
   return [new Triplet(0, 0, 0)];
 }
