@@ -101,4 +101,8 @@ const updateProfile = (profileInfo: UserProfile) => {
   console.log("Your user id: ", profileInfo.userId);
 };
 
-updateProfile({ userId: 1 });
+updateProfile({
+  userId: 1,
+  email: "monsokmeanmon@gmail.com",
+  password: "070836110",
+});
