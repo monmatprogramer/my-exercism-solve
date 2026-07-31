@@ -50,3 +50,8 @@ function displayProfile(profile: Profile) {
 //displayProfile({ username: "Guest" });
 
 //Example 2
+type ButtonProps = {
+  label: string;
+  color: string;
+  isDisable?: boolean;
+};
