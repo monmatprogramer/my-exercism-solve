@@ -9,8 +9,13 @@ export function triplets({}: Options): Triplet[] {
 }
 
 class Triplet {
+  private a: number;
+  private b: number;
+  private c: number;
   constructor() {
-    throw new Error("Remove this line and implement the function");
+    this.a = 0;
+    this.b = 0;
+    this.c = 0;
   }
 
   toArray(): [number, number, number] {
