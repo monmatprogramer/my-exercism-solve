@@ -69,3 +69,7 @@ type Database = {
   name: string;
   port?: string;
 };
+
+function connectDb(db: Database) {
+  console.log("Connecting to " + db.name);
+}
