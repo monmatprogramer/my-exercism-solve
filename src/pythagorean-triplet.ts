@@ -11,21 +11,21 @@ export function triplets({ minFactor, maxFactor, sum }: Options): Triplet[] {
   let c: number = 0;
   let topPart: number = 0;
   let bottomPart: number = 0;
-  if (!minFactor) {
+  if (minFactor !== undefined) {
     a = minFactor!;
-    console.log(a);
   }
-  do {
+  while (a < sum / 3) {
     topPart = sum * sum - 2 * sum * a;
     bottomPart = 2 * (sum - a);
     b = topPart / bottomPart;
-  } while (a < sum / 3);
+  }
   if (Number.isInteger(a) && b > a) {
     c = sum - a - b;
   }
   if (b >= minFactor! || c <= maxFactor!) {
     result.push(new Triplet(a, b, c));
   }
+
   return result;
 }
 
