@@ -7,6 +7,10 @@ function lesson1Fun() {
     Vera: ["Tomoko"],
     Tomoko: ["Aditi"],
   };
+  for (const [paraentName, childrenArray] of Object.entries(configFile)) {
+    console.log("Main Server: ", paraentName);
+    console.log("Backup Server: ", childrenArray);
+  }
 }
 
 lesson1Fun();
