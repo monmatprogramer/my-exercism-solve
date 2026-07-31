@@ -5,7 +5,7 @@ type Options = {
 };
 
 export function triplets({ sum, minFactor, maxFactor }: Options): Triplet[] {
-  throw new Error("Remove this line and implement the function");
+  const result: Options[] = [];
 }
 
 class Triplet {
