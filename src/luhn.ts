@@ -14,9 +14,14 @@ export function valid(digitString: string): boolean {
   const digitNumberArr: number[] = digitStringArr.map(Number);
   let tempNumber: number = 0;
   let stardRigthIndex: number = digitNumberArr.length - 1;
-  console.log(stardRigthIndex);
-  return false;
-  do {} while (isSecondDigit);
+  do {
+    isSecondDigit = false;
+    tempNumber = digitNumberArr[stardRigthIndex];
+    if (isSecondDigit) {
+      console.log(tempNumber);
+    }
+    isSecondDigit = !isSecondDigit;
+  } while (isSecondDigit && stardRigthIndex > 0);
   if (totalSum % 10 === 0) {
     return true;
   } else {
