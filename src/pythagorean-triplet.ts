@@ -17,12 +17,12 @@ export function triplets({ minFactor, maxFactor, sum }: Options): Triplet[] {
     b = topPart / bottomPart;
     if (Number.isInteger(b) && b > a) {
       c = sum - a - b;
-    }
-    if (
-      (minFactor === undefined || b >= minFactor) &&
-      (maxFactor === undefined || c <= maxFactor)
-    ) {
-      result.push(new Triplet(a, b, c));
+      if (
+        (minFactor === undefined || b >= minFactor) &&
+        (maxFactor === undefined || c <= maxFactor)
+      ) {
+        result.push(new Triplet(a, b, c));
+      }
     }
     a = a + 1;
   }
