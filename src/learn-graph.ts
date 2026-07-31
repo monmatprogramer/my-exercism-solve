@@ -4,7 +4,7 @@ function lesson1Fun() {
   const networkMap = new Map<string, Set<string>>();
 
   const configFile = {
-    Vera: ["Tomoko"],
+    Vera: ["Tomoko", "Toyota", "Yamaha"],
     Tomoko: ["Aditi"],
   };
   for (const [parentName, childrenArray] of Object.entries(configFile)) {
