@@ -8,10 +8,8 @@ function lesson1Fun() {
     Tomoko: ["Aditi"],
   };
   for (const [parentName, childrenArray] of Object.entries(configFile)) {
-    console.log("Main Server: ", parentName);
-    console.log("Backup Server: ", childrenArray);
-    for (const childName of childrenArray) {
-      //logic here
+    for (let i: number = 0; i < childrenArray.length; i++) {
+      console.log(i);
     }
   }
 }
