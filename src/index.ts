@@ -1,4 +1,5 @@
 import { triplets } from "./pythagorean-triplet";
 
-let options = {}
-console.log(triplets({...options, 12}));
+let options = {};
+const sum: number = 12;
+console.log(triplets({ ...options, sum }));
