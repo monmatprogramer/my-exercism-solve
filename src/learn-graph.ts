@@ -10,6 +10,9 @@ function lesson1Fun() {
   for (const [parentName, childrenArray] of Object.entries(configFile)) {
     console.log("Main Server: ", parentName);
     console.log("Backup Server: ", childrenArray);
+    for (const childName of childrenArray) {
+      //logic here
+    }
   }
 }
 
