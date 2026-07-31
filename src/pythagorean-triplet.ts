@@ -4,11 +4,12 @@ type Options = {
   sum: number;
 };
 
-export function triplets({ sum, minFactor, maxFactor }: Options): Triplet[] {
+export function triplets(tripletsObj: Options): Triplet[] {
   const result: Options[] = [];
-  if (minFactor) {
-    console.log(minFactor);
+  if (tripletsObj.minFactor) {
+    console.log(tripletsObj.minFactor);
   }
+  return [new Triplet(0, 0, 0)];
 }
 
 class Triplet {
