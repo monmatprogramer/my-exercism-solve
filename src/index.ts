@@ -1,4 +1,7 @@
 import { valid } from "./luhn";
 
-let d: string = "12 345 334 34";
-console.log(valid("59"));
+let d: string = "055 444 285";
+
+//console.log(valid(d));
+d.trim().replace(" ", "");
+console.log(d);

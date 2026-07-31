@@ -3,6 +3,7 @@ export function valid(digitString: string): boolean {
   const getNumOnlyRex = /^[0-9]+$/;
   //condition 1:  remove  all space from input string
   digitString = digitString.trim().replace(" ", "");
+  console.log("remove space: ", digitString);
   //condition 2:  check length of digitString
   if (digitString.length < 2) return false;
   //condition 3:
