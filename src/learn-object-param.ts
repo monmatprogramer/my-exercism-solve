@@ -62,3 +62,10 @@ function createButton(props: ButtonProps) {
   console.log("Is it disable? " + disabledSdtate);
 }
 //createButton({ label: "Save", color: "Blue", isDisable: true });
+
+// Challenge
+// 1 Database
+type Database = {
+  name: string;
+  port?: string;
+};
