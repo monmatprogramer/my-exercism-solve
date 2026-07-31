@@ -12,13 +12,13 @@ class Triplet {
   private a: number;
   private b: number;
   private c: number;
-  constructor() {
-    this.a = 0;
-    this.b = 0;
-    this.c = 0;
+  constructor(a: number, b: number, c: number) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
   }
 
   toArray(): [number, number, number] {
-    throw new Error("Remove this line and implement the function");
+    return [this.a, this.b, this.c];
   }
 }
