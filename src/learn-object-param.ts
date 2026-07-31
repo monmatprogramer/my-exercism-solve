@@ -55,3 +55,9 @@ type ButtonProps = {
   color: string;
   isDisable?: boolean;
 };
+
+function createButton(props: ButtonProps) {
+  const disabledSdtate = props.isDisable || false;
+  console.log("Creating " + props.color + " button: " + props.label);
+  console.log("Is it disable? " + disabledSdtate);
+}
