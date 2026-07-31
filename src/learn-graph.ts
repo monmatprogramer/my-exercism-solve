@@ -13,6 +13,7 @@ function lesson1Fun() {
       for (let j: number = i + 1; j < childrenArray.length; j++) {
         const siblingA = childrenArray[i];
         const siblingB = childrenArray[j];
+
         console.log("siblingA: ", siblingA);
         console.log("siblingB: ", siblingB);
       }
