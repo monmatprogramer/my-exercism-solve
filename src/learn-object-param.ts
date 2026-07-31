@@ -93,11 +93,9 @@ type UserProfile = {
 
 const updateProfile = (profileInfo: UserProfile) => {
   const emailState = profileInfo.email;
-  console.log(emailState);
-  console.log(!emailState);
-  if (!emailState) {
+  if (emailState) {
     console.log("Your email is updated successful.");
-  } else if (!profileInfo.password) {
+  } else if (profileInfo.password) {
     console.log("Your password is updated successful.");
   }
   console.log("Your user id: ", profileInfo.userId);
