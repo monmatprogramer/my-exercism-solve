@@ -11,11 +11,10 @@ export function triplets({ minFactor, maxFactor, sum }: Options): Triplet[] {
   let c: number = 0;
   let topPart: number = 0;
   let bottomPart: number = 0;
-  console.log(a);
   if (!minFactor) {
     a = minFactor!;
+    console.log(a);
   }
-  console.log(a);
   do {
     topPart = sum * sum - 2 * sum * a;
     bottomPart = 2 * (sum - a);
