@@ -21,7 +21,10 @@ export function triplets({ minFactor, maxFactor, sum }: Options): Triplet[] {
     if (Number.isInteger(b) && b > a) {
       c = sum - a - b;
     }
-    if (b >= minFactor! && c <= maxFactor!) {
+    if (
+      (minFactor === undefined || b >= minFactor) &&
+      (maxFactor === undefined || c <= maxFactor)
+    ) {
       result.push(new Triplet(a, b, c));
     }
     a = a + 1;
