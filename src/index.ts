@@ -1,3 +1,3 @@
 import { square, total } from "./grain";
-square(2);
+console.log(square(2));
 //total();

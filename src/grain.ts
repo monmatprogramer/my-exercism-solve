@@ -7,6 +7,6 @@ export const square = (N: number): BigInt => {
   return 2n ** (bigN - 1n);
 };
 
-export const total = () => {
-  console.log("total");
+export const total = (): BigInt => {
+  return 2n ** 64n - 1n;
 };
