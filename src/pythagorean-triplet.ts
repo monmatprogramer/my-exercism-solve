@@ -6,6 +6,9 @@ type Options = {
 
 export function triplets({ sum, minFactor, maxFactor }: Options): Triplet[] {
   const result: Options[] = [];
+  if (minFactor) {
+    console.log(minFactor);
+  }
 }
 
 class Triplet {
