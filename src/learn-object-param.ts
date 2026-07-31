@@ -27,3 +27,5 @@ function checkServer(server: ServerInfo) {
     console.log("Alert: Server is down");
   }
 }
+
+checkServer({ model: "QNAP NAS TS-433", memoryGb: 4, isOnline: true });
