@@ -15,7 +15,6 @@ export function valid(digitString: string): boolean {
   let tempNumber: number = 0;
   let stardRigthIndex: number = digitNumberArr.length - 1;
   do {
-    isSecondDigit = false;
     tempNumber = digitNumberArr[stardRigthIndex];
     if (isSecondDigit) {
       console.log(tempNumber);
