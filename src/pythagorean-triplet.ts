@@ -7,9 +7,11 @@ type Options = {
 export function triplets(tripletsObj: Options): Triplet[] {
   const result: Options[] = [];
   let a: number = 1;
+  let b: number = 0;
   if (!tripletsObj.minFactor) {
     a = tripletsObj.minFactor!;
   }
+  do {} while (a < sum / 3);
   return [new Triplet(0, 0, 0)];
 }
 
