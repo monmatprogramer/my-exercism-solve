@@ -9,10 +9,11 @@ function lession1Fun() {
   // Method of set as following:
   // --- 1. add
   processedTransactions.add("transaction1");
+  dis(processedTransactions);
 }
 
 // For displaying in cmd
-const dis = (param: string) => {
+const dis = (param: any) => {
   console.log(`➡️ Result: ${param}`);
 };
 
