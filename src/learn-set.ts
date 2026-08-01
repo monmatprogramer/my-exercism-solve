@@ -23,6 +23,15 @@ function lession1Fun() {
 function manageAdmin() {
   // Create a set to store only admin ID number
   const adminId = new Set<number>();
+  // Add the admin ID
+  const adminIdLists: number[] = [501, 502, 501];
+  try {
+    for (let i: number = 0; i < adminIdLists.length; i++) {
+      adminId.add(adminIdLists[i]);
+    }
+  } catch (e: any) {
+    console.log(e.message);
+  }
 }
 // ###### Call the lession #####
 lession1Fun();
