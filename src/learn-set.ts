@@ -37,6 +37,7 @@ function manageAdmin() {
   console.log("---END----");
 }
 // == Challenge 2
+// -> Clean dirty data from out resource
 
 // ###### Call the lession #####
 manageAdmin();
