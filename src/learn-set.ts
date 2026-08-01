@@ -13,8 +13,9 @@ function lession1Fun() {
 }
 
 // For displaying in cmd
-const dis = (param: any) => {
-  console.log(`➡️ Result: ${param}`);
+const dis = (param: unknown) => {
+  if (param === "object") {
+  } else console.log(`➡️ Result: ${param}`);
 };
 
 // ###### Call the lession #####
