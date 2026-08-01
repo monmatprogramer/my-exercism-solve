@@ -14,6 +14,7 @@ function lession1Fun() {
   // --- 3. Delete specific value
   processedTransactions.delete("transaction1");
   // --- 4. Check size like check lenght of an array
+  console.log(processedTransactions.size);
   console.log("->", processedTransactions);
 }
 
