@@ -15,6 +15,7 @@ function lession1Fun() {
   processedTransactions.delete("transaction1");
   // --- 4. Check size like check lenght of an array
   processedTransactions.size; //Set(0){}
+  // --- 5. Clear every value in the set list like delete whole an array element
   console.log("->", processedTransactions);
 }
 
