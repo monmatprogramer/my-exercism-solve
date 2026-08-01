@@ -33,7 +33,6 @@ function manageAdmin() {
     console.log(e.message);
   }
 
-  console.log(adminId.has(501));
   console.log("---END----");
 }
 
