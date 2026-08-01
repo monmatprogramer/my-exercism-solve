@@ -32,7 +32,7 @@ function manageAdmin() {
   } catch (e: any) {
     console.log(e.message);
   }
-
+  console.log(adminId.size);
   console.log("---END----");
 }
 
