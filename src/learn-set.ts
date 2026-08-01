@@ -36,6 +36,7 @@ function manageAdmin() {
   console.log(adminId.size);
   console.log("---END----");
 }
+// == Challenge 2
 
 // ###### Call the lession #####
 manageAdmin();
