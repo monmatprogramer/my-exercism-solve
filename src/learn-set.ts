@@ -6,4 +6,6 @@ function lession1Fun() {
   const badSet = new Set();
   // --- good declaring and clean coding
   const processedTransactions = new Set<string>();
+  // Method of set as following:
+  // --- 1. add
 }
