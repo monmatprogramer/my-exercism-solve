@@ -21,7 +21,8 @@ function lession1Fun() {
 // ###### Challenges ########
 // -> it manages admin to our server
 function manageAdmin() {
-  const adminId = new set<string>();
+  // Create a set to store only admin ID number
+  const adminId = new Set<number>();
 }
 // ###### Call the lession #####
 lession1Fun();
