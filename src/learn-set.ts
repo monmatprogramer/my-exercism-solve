@@ -14,7 +14,7 @@ function lession1Fun() {
 
 // For displaying in cmd
 const dis = (param: unknown) => {
-  if (param === "object") {
+  if (typeof param === "object") {
     console.log(JSON.stringify(param));
   } else console.log(`➡️ Result: ${param}`);
 };
