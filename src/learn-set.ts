@@ -11,5 +11,10 @@ function lession1Fun() {
   processedTransactions.add("transaction1");
 }
 
+// For displaying in cmd
+const dis = (param: string) => {
+  console.log(`➡️ Result: ${param}`);
+};
+
 // ###### Call the lession #####
 lession1Fun();
