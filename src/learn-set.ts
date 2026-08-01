@@ -32,6 +32,7 @@ function manageAdmin() {
   } catch (e: any) {
     console.log(e.message);
   }
+  console.log(adminId);
   console.log("---END----");
 }
 
