@@ -32,6 +32,8 @@ function manageAdmin() {
   } catch (e: any) {
     console.log(e.message);
   }
+  console.log("---END----");
 }
+
 // ###### Call the lession #####
-lession1Fun();
+manageAdmin();
