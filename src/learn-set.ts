@@ -17,8 +17,11 @@ function lession1Fun() {
   processedTransactions.size; //Set(0){}
   // --- 5. Clear every value in the set list like delete whole an array element
   processedTransactions.clear(); // No any return cus it is void method
-  console.log("->", processedTransactions);
 }
-
+// ###### Challenges ########
+// -> it manages admin to our server
+function manageAdmin() {
+  const adminId = new set<string>();
+}
 // ###### Call the lession #####
 lession1Fun();
