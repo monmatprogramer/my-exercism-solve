@@ -10,8 +10,7 @@ function lession1Fun() {
   // --- 1. add
   processedTransactions.add("transaction1");
   console.log("->", processedTransactions);
-
-
+}
 
 // ###### Call the lession #####
 lession1Fun();
