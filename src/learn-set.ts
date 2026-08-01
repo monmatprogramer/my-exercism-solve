@@ -8,4 +8,5 @@ function lession1Fun() {
   const processedTransactions = new Set<string>();
   // Method of set as following:
   // --- 1. add
+  processedTransactions.add("transaction1");
 }
