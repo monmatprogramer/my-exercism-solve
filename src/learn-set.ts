@@ -9,6 +9,8 @@ function lession1Fun() {
   // Method of set as following:
   // --- 1. add
   processedTransactions.add("transaction1");
+  // --- 2. check the value exist or not in the set list
+  console.log(processedTransactions.has("transaction1"));
   console.log("->", processedTransactions);
 }
 
