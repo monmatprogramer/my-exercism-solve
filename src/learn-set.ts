@@ -32,7 +32,8 @@ function manageAdmin() {
   } catch (e: any) {
     console.log(e.message);
   }
-  console.log(adminId);
+
+  console.log(adminId.has(501));
   console.log("---END----");
 }
 
