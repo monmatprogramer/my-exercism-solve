@@ -9,6 +9,7 @@ function lession1Fun() {
   // Method of set as following:
   // --- 1. add
   processedTransactions.add("transaction1");
+  console.log("->", processedTransactions);
   dis(processedTransactions);
 }
 
