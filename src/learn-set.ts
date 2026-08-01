@@ -19,6 +19,7 @@ function lession1Fun() {
   processedTransactions.clear(); // No any return cus it is void method
 }
 // ###### Challenges ########
+// == Challenge 1
 // -> it manages admin to our server
 function manageAdmin() {
   // Create a set to store only admin ID number
