@@ -10,15 +10,8 @@ function lession1Fun() {
   // --- 1. add
   processedTransactions.add("transaction1");
   console.log("->", processedTransactions);
-  dis(processedTransactions);
-}
 
-// For displaying in cmd
-const dis = (param: unknown) => {
-  if (typeof param === "object") {
-    console.log(JSON.stringify(param));
-  } else console.log(`➡️ Result: ${param}`);
-};
+
 
 // ###### Call the lession #####
 lession1Fun();
