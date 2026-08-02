@@ -117,6 +117,14 @@ function manageNetworkSecurity() {
     console.log(`Scanning IP: [${eachIp}]`);
   }
 }
-
+// challenge 4
+// -> Save unique objecto
+function saveAlertObject() {
+  const alerts = [
+    { code: "ERR-01", message: "CPU High" },
+    { code: "ERR-02", message: "Memory Low" },
+    { code: "ERR-01", message: "CPU High" },
+  ];
+}
 // ###### Call the lession #####
 inputUniqueData();
