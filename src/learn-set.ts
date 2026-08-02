@@ -78,7 +78,8 @@ function manageNetworkSecurity() {
     "192.168.1.1",
     "172.16.0.2",
   ];
-  const cleanLoginLogs: Set<string> = new Set<string>(loginLogs);
+  //const cleanLoginLogs: Set<string> = new Set<string>(loginLogs);
+  const cleanLoginLogs: string[] = [...new Set(loginLogs)];
   for (const eachIp of cleanLoginLogs) {
     console.log(`Scanning IP: [${eachIp}]`);
   }
