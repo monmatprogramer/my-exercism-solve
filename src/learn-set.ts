@@ -24,8 +24,11 @@ function lession1Fun() {
 // * need to run nightly script
 // * calculate interest for bank
 function calculateInterestBack() {
+  // 1. we recieve a daily log with duplication account number
   const dailyTransactions: string[] = [...transactions];
-  console.log(dailyTransactions);
+  // 2. Clean code: convert to a set to gurantee unique accounts
+  const accountsToProcess = new Set<string>(dailyTransactions);
+  console.log(accountsToProcess);
 }
 // ###### Challenges ########
 // == Challenge 1
