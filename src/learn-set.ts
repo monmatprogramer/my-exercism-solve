@@ -161,10 +161,13 @@ function preventNetworkDuplicate() {
 
   // Start to clear duplication transaction id
   for (const incomingPayment of incomingPayments) {
-    if (!uniqueTransactionIdSet.has(inputUniqueData.transactionId)) {
+    if (!uniqueTransactionIdSet.has(incomingPayment.transactionId)) {
       // we need to add transaction id here becuase we need to take condition
-      uniqueTransactionIdSet.add(inputUniqueData.transactionId);
+      uniqueTransactionIdSet.add(incomingPayment.transactionId);
+      // Save the into clean store place
+      cleanPayments.push(incomingPayment);
     }
+    console.log(cleanPayments);
   }
 }
 //
