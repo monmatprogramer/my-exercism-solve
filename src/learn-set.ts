@@ -18,6 +18,10 @@ function lession1Fun() {
   // --- 5. Clear every value in the set list like delete whole an array element
   processedTransactions.clear(); // No any return cus it is void method
 }
+// -> Description
+// * need to run nightly script
+// * calculate interest for bank
+function calculateInterestBack() {}
 // ###### Challenges ########
 // == Challenge 1
 // -> it manages admin to our server
@@ -49,9 +53,8 @@ function converSetToArray() {
   const uniqueAccounts = new Set<string>();
   uniqueAccounts.add("Acc-1");
   uniqueAccounts.add("Acc-2");
-  console.log([...uniqueAccounts]);
   const finalArray: string[] = [...uniqueAccounts];
   console.log(finalArray);
 }
+
 // ###### Call the lession #####
-converSetToArray();
