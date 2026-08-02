@@ -25,6 +25,7 @@ function lession1Fun() {
 // * calculate interest for bank
 function calculateInterestBack() {
   const dailyTransactions: string[] = [...transactions];
+  console.log(dailyTransactions);
 }
 // ###### Challenges ########
 // == Challenge 1
