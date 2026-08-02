@@ -55,6 +55,10 @@ function inputUniqueData() {
     { id: "C-02", name: "Sarah", balance: 8000 },
     { id: "C-01", name: "David", balance: 5000 },
   ];
+  for (const c of customersFromDB) {
+    console.log(c);
+  }
+  return;
   const uniqueCustomerIds = new Set<string>();
   const cleanCustomerList = [];
   for (const customer of customersFromDB) {
