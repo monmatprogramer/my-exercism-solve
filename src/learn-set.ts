@@ -49,8 +49,9 @@ function converSetToArray() {
   const uniqueAccounts = new Set<string>();
   uniqueAccounts.add("Acc-1");
   uniqueAccounts.add("Acc-2");
+  console.log([...uniqueAccounts]);
   const finalArray: string[] = [...uniqueAccounts];
-  console.log(finalArray)
+  console.log(finalArray);
 }
 // ###### Call the lession #####
-converSetToArray():
+converSetToArray();
