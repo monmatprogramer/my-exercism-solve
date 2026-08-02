@@ -144,6 +144,16 @@ inteface Transactions{
 }
 function preventNetworkDuplicate(){
 //incoming transaction that will be filter what something duplicate
+  const incomingPayments: Transactions[] = [
+    { transactionId: "TXN-991", customerName: "Alice", amount: 150 },
+    { transactionId: "TXN-992", customerName: "Bob", amount: 300 },
+    { transactionId: "TXN-991", customerName: "Alice", amount: 150 }, // Duplicate!
+    { transactionId: "TXN-993", customerName: "Charlie", amount: 50 },
+    { transactionId: "TXN-992", customerName: "Bob", amount: 300 }
+  ]
+  // Create a set to store transaction id only
+  // This purpose to remove duplicate transaction twice 
+  const uniqueTransactionIdSet: Set<string> = new Set<string>();
 }
 //
 // ###### Call the lession #####
