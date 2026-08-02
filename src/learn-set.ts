@@ -79,7 +79,9 @@ function manageNetworkSecurity() {
     "172.16.0.2",
   ];
   const cleanLoginLogs: Set<string> = new Set<string>(loginLogs);
-  console.log(cleanLoginLogs);
+  for (const eachIp of cleanLoginLogs) {
+    console.log(`Scanning IP: [${eachIp}]`);
+  }
 }
 
 // ###### Call the lession #####
