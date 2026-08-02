@@ -154,6 +154,11 @@ function preventNetworkDuplicate(){
   // Create a set to store transaction id only
   // This purpose to remove duplicate transaction twice 
   const uniqueTransactionIdSet: Set<string> = new Set<string>();
+  
+  //After we clean data, we need to create an array to store the cleaned data
+  //
+const cleanPayments: Transactions[] = [];
 }
 //
 // ###### Call the lession #####
+preventNetworkDuplicate();
