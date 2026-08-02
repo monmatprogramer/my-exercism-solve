@@ -43,6 +43,7 @@ function saveObjectInSet() {
   const customerSet = new Set<Customer>();
   customerSet.add({ id: "C-01", name: "David" });
   customerSet.add({ id: "C-01", name: "David" });
+  console.log(customerSet.size);
 }
 // ###### Challenges ########
 // == Challenge 1
@@ -97,4 +98,4 @@ function manageNetworkSecurity() {
 }
 
 // ###### Call the lession #####
-manageNetworkSecurity();
+saveObjectInSet();
