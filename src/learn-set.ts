@@ -45,5 +45,10 @@ function cleanDirtyData() {
 }
 // -> Convert array back into set
 // bacuase some platforms like postgress and React UI work well with array
+function converSetToArray() {
+  const uniqueAccounts = new Set<string>();
+  uniqueAccounts.add("Acc-1");
+  uniqueAccounts.add("Acc-2");
+}
 // ###### Call the lession #####
 cleanDirtyData();
