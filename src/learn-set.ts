@@ -58,8 +58,8 @@ function inputUniqueData() {
   const uniqueCustomerIds = new Set<string>();
   const cleanCustomerList = [];
   for (const customer of customersFromDB) {
-    if (!uniqueAccounts.has(costomer.id)) {
-      uniqueCustomerIds.add(costomer.id);
+    if (!uniqueCustomerIds.has(customer.id)) {
+      uniqueCustomerIds.add(customer.id);
       cleanCustomerList.push(customer);
     }
   }
