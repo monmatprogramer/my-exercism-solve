@@ -45,6 +45,17 @@ function saveObjectInSet() {
   customerSet.add({ id: "C-01", name: "David" });
   console.log(customerSet.size);
 }
+// -> Description
+// Do not insert whole object in set
+// but insert only where unique value into its
+function inputUniqueData() {
+  // This data is unique on id
+  const customersFromDB = [
+    { id: "C-01", name: "David", balance: 5000 },
+    { id: "C-02", name: "Sarah", balance: 8000 },
+    { id: "C-01", name: "David", balance: 5000 },
+  ];
+}
 // ###### Challenges ########
 // == Challenge 1
 // -> it manages admin to our server
