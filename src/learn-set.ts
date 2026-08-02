@@ -33,6 +33,17 @@ function calculateInterestBack() {
     console.log(`Processing 5% interest for account: ${account}`);
   }
 }
+// -> Description
+// * The save same data in the object can be save in set because its based on those objects
+interface Customer {
+  id: string;
+  name: string;
+}
+function saveObjectInSet() {
+  const customerSet = new Set<Customer>();
+  customerSet.add({ id: "C-01", name: "David" });
+  customerSet.add({ id: "C-01", name: "David" });
+}
 // ###### Challenges ########
 // == Challenge 1
 // -> it manages admin to our server
