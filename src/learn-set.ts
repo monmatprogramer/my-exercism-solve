@@ -68,5 +68,11 @@ function converSetToArray() {
   console.log(finalArray);
 }
 
+// == Challenge 3
+// -> Manage network security
+function manageNetworkSecurity() {
+  // 1. we have a list of IP
+}
+
 // ###### Call the lession #####
 calculateInterestBack();
