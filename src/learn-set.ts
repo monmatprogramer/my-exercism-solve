@@ -137,27 +137,35 @@ function saveAlertObject() {
 }
 // Chanllege 5
 // -> Prevent network glitch
-inteface Transactions{
+interface Transactions {
   transactionId: string;
   customerName: string;
   amount: number;
 }
-function preventNetworkDuplicate(){
-//incoming transaction that will be filter what something duplicate
+function preventNetworkDuplicate() {
+  //incoming transaction that will be filter what something duplicate
   const incomingPayments: Transactions[] = [
     { transactionId: "TXN-991", customerName: "Alice", amount: 150 },
     { transactionId: "TXN-992", customerName: "Bob", amount: 300 },
     { transactionId: "TXN-991", customerName: "Alice", amount: 150 }, // Duplicate!
     { transactionId: "TXN-993", customerName: "Charlie", amount: 50 },
-    { transactionId: "TXN-992", customerName: "Bob", amount: 300 }
-  ]
+    { transactionId: "TXN-992", customerName: "Bob", amount: 300 },
+  ];
   // Create a set to store transaction id only
-  // This purpose to remove duplicate transaction twice 
+  // This purpose to remove duplicate transaction twice
   const uniqueTransactionIdSet: Set<string> = new Set<string>();
-  
-  //After we clean data, we need to create an array to store the cleaned data
-  //
-const cleanPayments: Transactions[] = [];
+
+  // After we clean data, we need to create an array to store the cleaned data
+  // This only store the clean data only
+  const cleanPayments: Transactions[] = [];
+
+  // Start to clear duplication transaction id
+  for (const incomingPayment of incomingPayments) {
+    if (!uniqueTransactionIdSet.has(inputUniqueData.transactionId)) {
+      // we need to add transaction id here becuase we need to take condition
+      uniqueTransactionIdSet.add(inputUniqueData.transactionId);
+    }
+  }
 }
 //
 // ###### Call the lession #####
