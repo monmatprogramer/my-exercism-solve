@@ -37,7 +37,7 @@ function manageAdmin() {
   console.log("---END----");
 }
 // == Challenge 2
-// -> Clean dirty data from out resource
+// -> Clean dirty data from out resource or convert array into set
 function cleanDirtyData() {
   // Assumpt we have got dirt data as array
   const dirtyArray: string[] = ["Acc-1", "Acc-2", "Acc-1", "Acc-3", "Acc-2"];
