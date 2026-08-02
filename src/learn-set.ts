@@ -125,6 +125,25 @@ function saveAlertObject() {
     { code: "ERR-02", message: "Memory Low" },
     { code: "ERR-01", message: "CPU High" },
   ];
+  const uniqueAlert: Set<string> = new Set<string>();
+  const cleanAlert = [];
+  for (const unique of alerts) {
+    if (!uniqueAlert.has(unique.code)) {
+      uniqueAlert.add(unique.code);
+      cleanAlert.push(unique);
+    }
+  }
+  console.log(cleanAlert);
 }
+// Chanllege 5
+// -> Prevent network glitch
+inteface Transactions{
+  transactionId: string;
+  customerName: string;
+  amount: number;
+}
+function preventNetworkDuplicate(){
+//incoming transaction that will be filter what something duplicate
+}
+//
 // ###### Call the lession #####
-inputUniqueData();
