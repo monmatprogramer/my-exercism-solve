@@ -71,7 +71,13 @@ function converSetToArray() {
 // == Challenge 3
 // -> Manage network security
 function manageNetworkSecurity() {
-  // 1. we have a list of IP
+  // 1. we have a list of IP into log
+  const loginLogs: string[] = [
+    "192.168.1.1",
+    "10.0.0.5",
+    "192.168.1.1",
+    "172.16.0.2",
+  ];
 }
 
 // ###### Call the lession #####
