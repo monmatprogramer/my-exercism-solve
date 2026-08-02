@@ -78,7 +78,9 @@ function manageNetworkSecurity() {
     "192.168.1.1",
     "172.16.0.2",
   ];
+  const cleanLoginLogs: Set<string> = new Set<string>(loginLogs);
+  console.log(cleanLoginLogs);
 }
 
 // ###### Call the lession #####
-calculateInterestBack();
+manageNetworkSecurity();
