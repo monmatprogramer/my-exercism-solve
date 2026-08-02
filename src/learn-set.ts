@@ -28,7 +28,10 @@ function calculateInterestBack() {
   const dailyTransactions: string[] = [...transactions];
   // 2. Clean code: convert to a set to gurantee unique accounts
   const accountsToProcess = new Set<string>(dailyTransactions);
-  console.log(accountsToProcess);
+  // 3. Read each value in set
+  for (const account of accountsToProcess) {
+    console.log(`Processing 5% interest for account: ${account}`);
+  }
 }
 // ###### Challenges ########
 // == Challenge 1
