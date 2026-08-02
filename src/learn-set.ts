@@ -43,5 +43,7 @@ function cleanDirtyData() {
   const dirtyArray: string[] = ["Acc-1", "Acc-2", "Acc-1", "Acc-3", "Acc-2"];
   const cleanSet: Set<string> = new Set<string>(dirtyArray);
 }
+// -> Convert array back into set
+// bacuase some platforms like postgress and React UI work well with array
 // ###### Call the lession #####
 cleanDirtyData();
