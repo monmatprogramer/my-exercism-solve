@@ -1,4 +1,6 @@
 // Learn set from first step to finish graph algorithm
+// I declare globle variable for using in this file
+const transactions: string[] = ["001-A", "002-B", "001-A", "003-C"];
 
 function lession1Fun() {
   // define new set
@@ -21,7 +23,9 @@ function lession1Fun() {
 // -> Description
 // * need to run nightly script
 // * calculate interest for bank
-function calculateInterestBack() {}
+function calculateInterestBack() {
+  const dailyTransactions: string[] = [];
+}
 // ###### Challenges ########
 // == Challenge 1
 // -> it manages admin to our server
