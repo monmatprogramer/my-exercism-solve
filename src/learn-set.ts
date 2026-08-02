@@ -41,6 +41,8 @@ function manageAdmin() {
 function cleanDirtyData() {
   // Assumpt we have got dirt data as array
   const dirtyArray: string[] = ["Acc-1", "Acc-2", "Acc-1", "Acc-3", "Acc-2"];
+  const testSet: Set<string> = new Set<string>(dirtyArray);
+  console.log(testSet.size);
 }
 // ###### Call the lession #####
-manageAdmin();
+cleanDirtyData();
