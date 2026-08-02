@@ -55,6 +55,14 @@ function inputUniqueData() {
     { id: "C-02", name: "Sarah", balance: 8000 },
     { id: "C-01", name: "David", balance: 5000 },
   ];
+  const uniqueCustomerIds = new Set<string>();
+  const cleanCustomerList = [];
+  for (const customer of customersFromDB) {
+    if (!uniqueAccounts.has(costomer.id)) {
+      uniqueCustomerIds.add(costomer.id);
+      cleanCustomerList.push(customer);
+    }
+  }
 }
 // ###### Challenges ########
 // == Challenge 1
@@ -109,4 +117,4 @@ function manageNetworkSecurity() {
 }
 
 // ###### Call the lession #####
-saveObjectInSet();
+inputUniqueData();
