@@ -24,7 +24,7 @@ function lession1Fun() {
 // * need to run nightly script
 // * calculate interest for bank
 function calculateInterestBack() {
-  const dailyTransactions: string[] = [];
+  const dailyTransactions: string[] = [...transactions];
 }
 // ###### Challenges ########
 // == Challenge 1
@@ -62,3 +62,4 @@ function converSetToArray() {
 }
 
 // ###### Call the lession #####
+calculateInterestBack();
