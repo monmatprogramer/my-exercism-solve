@@ -45,13 +45,12 @@ function toWayThree() {
   featureFlags.set("darkMode", true);
   featureFlags.set("betaFeatures", false);
   featureFlags.set("darkMode", false);
-  const isDardMode = featureFlags.get("darkMode");
+  const isDardMode = featureFlags.get("darkMode"); // false
   //check
   featureFlags.has("acb"); //false
   // loop
   for (const featureName of featureFlags) {
     console.log(featureName);
   }
-  console.log(isDardMode); // true
 }
 toWayThree();
