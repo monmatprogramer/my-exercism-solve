@@ -52,8 +52,9 @@ function toWayThree() {
   for (const featureName of featureFlags) {
     ///console.log(featureName);
   }
-  const familyTree = new Map<string, string[]>();
-  familyTree.set("Marry", ["Same", "Leo"]);
+  const familyTree: Record<string, string[]> = {
+    Marry: ["Same", "Leo"],
+  };
   //familyTree.set("Marry", ["Leo", "Same"]); // it is overrided
   const grap = new Map<string, string[]>();
   for (const [parent, children] of Object.entries(familyTree)) {
