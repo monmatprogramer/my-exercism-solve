@@ -7,7 +7,10 @@ function toWayOne() {
     Bob: 34,
   };
   userAges["Alice"] = 22;
-  console.log(userAges);
+  // Read each value
+  for (const name of Object.entries(userAges)) {
+    console.log(name);
+  }
   //{ Alice: 22, Bob: 34 }
 }
 
@@ -41,4 +44,4 @@ function toWayThree() {
   }
   console.log(isDardMode); // true
 }
-toWayThree();
+toWayOne();
