@@ -171,5 +171,12 @@ function preventNetworkDuplicate() {
 }
 // Challenge 6
 // -> combine ip address
+function combineIP() {
+  // Safe IPs from your AWS EC2 server
+  const awsIps: string[] = ["192.168.1.10", "10.0.0.5", "172.16.0.8"];
+
+  // Safe IPs from your Koyeb server
+  const koyebIps: string[] = ["10.0.0.5", "192.168.1.20", "192.168.1.10"];
+}
 // ###### Call the lession #####
-preventNetworkDuplicate();
+combineIP();
