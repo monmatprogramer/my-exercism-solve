@@ -33,6 +33,8 @@ function toWayThree() {
   featureFlags.set("darkMode", true);
   featureFlags.set("betaFeatures", false);
   const isDardMode = featureFlags.get("darkMode");
+  //check
+  featureFlags.has("acb"); //false
   console.log(isDardMode); // true
 }
 toWayThree();
