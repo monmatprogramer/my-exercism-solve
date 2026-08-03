@@ -53,5 +53,7 @@ function toWayThree() {
     ///console.log(featureName);
   }
   const familyTree = new Map<string, string[]>();
+  familyTree.set("Marry", ["Same", "Leo"]);
+  console.log(familyTree);
 }
 toWayThree();
