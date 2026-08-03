@@ -56,11 +56,12 @@ function toWayThree() {
     Marry: ["Same", "Leo"],
   };
   //familyTree.set("Marry", ["Leo", "Same"]); // it is overrided
-  const grap = new Map<string, string[]>();
+  const graph = new Map<string, string[]>();
   for (const [parent, children] of Object.entries(familyTree)) {
     for (let i: number = 0; i < children.length; i++) {
-      console.log(children[i]);
+      graph.set(parent, [children[i]]);
     }
   }
+  console.log(graph);
 }
 toWayThree();
