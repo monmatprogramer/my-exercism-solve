@@ -180,6 +180,7 @@ function combineIP() {
   const combineIParray: string[] = [...awsIps, ...koyebIps];
   const removeDup: Set<string> = new Set<string>(combineIParray);
   const masterWhitelist: string[] = [...removeDup];
+  console.log(masterWhitelist);
 }
 // ###### Call the lession #####
 combineIP();
