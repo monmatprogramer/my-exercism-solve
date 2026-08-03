@@ -39,5 +39,6 @@ function toWayThree() {
   for (const featureName of featureFlags) {
     console.log(featureName);
   }
+  console.log(isDardMode); // true
 }
 toWayThree();
