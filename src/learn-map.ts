@@ -15,6 +15,10 @@ function toWayOne() {
   for (const value of Object.values(userAges)) {
     console.log(value);
   }
+  // Read only key
+  for (const key of Object.keys(userAges)) {
+    console.log(key);
+  }
   //{ Alice: 22, Bob: 34 }
 }
 
