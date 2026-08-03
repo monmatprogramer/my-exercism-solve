@@ -35,6 +35,9 @@ function toWayThree() {
   const isDardMode = featureFlags.get("darkMode");
   //check
   featureFlags.has("acb"); //false
-  console.log(isDardMode); // true
+  // loop
+  for (const featureName of featureFlags) {
+    console.log(featureName);
+  }
 }
 toWayThree();
