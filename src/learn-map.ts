@@ -50,7 +50,8 @@ function toWayThree() {
   featureFlags.has("acb"); //false
   // loop
   for (const featureName of featureFlags) {
-    console.log(featureName);
+    ///console.log(featureName);
   }
+  const familyTree = new Map<string, string[]>();
 }
 toWayThree();
