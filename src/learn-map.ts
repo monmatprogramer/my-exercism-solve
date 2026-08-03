@@ -6,6 +6,7 @@ function toWayOne() {
     Alice: 28,
     Bob: 34,
   };
+
   userAges["Alice"] = 22;
   // Read each value
   for (const name of Object.entries(userAges)) {
@@ -41,8 +42,9 @@ function toWayTwo() {
 // Use case: need advanced key types
 function toWayThree() {
   const featureFlags = new Map<string, boolean>();
-:e  featureFlags.set("darkMode", true);
+  featureFlags.set("darkMode", true);
   featureFlags.set("betaFeatures", false);
+  featureFlags.set("darkMode", false);
   const isDardMode = featureFlags.get("darkMode");
   //check
   featureFlags.has("acb"); //false
@@ -52,4 +54,4 @@ function toWayThree() {
   }
   console.log(isDardMode); // true
 }
-toWayOne();
+toWayThree();
