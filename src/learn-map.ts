@@ -8,5 +8,6 @@ function toWayOne() {
   userAges["Alice"] = 22;
   console.log(userAges);
 }
-
-toWayOne();
+// # 2. use Index
+function toWayTwo() {}
+toWayTwo();
