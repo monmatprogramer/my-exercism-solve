@@ -27,6 +27,7 @@ function toWayTwo() {
 }
 
 // # 3. use Map
+// Use case: need advanced key types
 function toWayThree() {
   const featureFlags = new Map<string, boolean>();
   featureFlags.set("darkMode", true);
