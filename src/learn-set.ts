@@ -179,6 +179,7 @@ function combineIP() {
   const koyebIps: string[] = ["10.0.0.5", "192.168.1.20", "192.168.1.10"];
   const combineIParray: string[] = [...awsIps, ...koyebIps];
   const removeDup: Set<string> = new Set<string>(combineIParray);
+  const cleanIP: string[] = [...removeDup];
 }
 // ###### Call the lession #####
 combineIP();
