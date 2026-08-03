@@ -8,5 +8,5 @@ const familyTree2 = {
   Dalia: ["Olga", "Yassin"],
 };
 
-console.log(typeof familyTree);
-//degreesOfSeparation(familyTree, "Vera", "Tomoko");
+degreesOfSeparation(familyTree, "Vera", "Tomoko");
+degreesOfSeparation(familyTree2, "Olga", "Yassin");
