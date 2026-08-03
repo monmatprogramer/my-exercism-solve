@@ -9,5 +9,9 @@ function toWayOne() {
   console.log(userAges);
 }
 // # 2. use Index
+// - 2.1 create an  interface
+interface StringNumberDic {
+  [key: string]: number;
+}
 function toWayTwo() {}
 toWayTwo();
