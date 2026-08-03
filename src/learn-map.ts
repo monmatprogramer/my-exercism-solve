@@ -54,7 +54,10 @@ function toWayThree() {
   }
   const familyTree = new Map<string, string[]>();
   familyTree.set("Marry", ["Same", "Leo"]);
-  familyTree.set("Marry", ["Leo", "Same"]); // it is overrided
+  //familyTree.set("Marry", ["Leo", "Same"]); // it is overrided
   const grap = new Map<string, string[]>();
+  for (const [parent, children] of Object.entries(familyTree)) {
+    console.log(parent);
+  }
 }
 toWayThree();
