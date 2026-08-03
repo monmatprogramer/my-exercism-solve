@@ -1,5 +1,6 @@
 // --- The to create a dictionary in typeScript
 // # 1. use Record
+// Use case: simple object-based
 function toWayOne() {
   const userAges: Record<string, number> = {
     Alice: 28,
@@ -12,6 +13,7 @@ function toWayOne() {
 
 // # 2. use Index (tranditional way)
 // - 2.1 create an  interface
+// Use case : use with existing interface
 interface StringNumberDic {
   [key: string]: number;
 }
