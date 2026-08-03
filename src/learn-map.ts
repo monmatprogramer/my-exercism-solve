@@ -13,5 +13,11 @@ function toWayOne() {
 interface StringNumberDic {
   [key: string]: number;
 }
-function toWayTwo() {}
+function toWayTwo() {
+  const scores: StringNumberDic = {
+    player1: 100,
+    player2: 250,
+  };
+  console.log(scores);
+}
 toWayTwo();
