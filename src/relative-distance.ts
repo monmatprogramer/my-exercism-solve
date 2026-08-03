@@ -4,6 +4,6 @@ export function degreesOfSeparation(
   familyTree: FamilyTreeType,
   personA: unknown,
   personB: unknown,
-): unknown {
-  throw new Error("Remove this line and implement the function");
+): number {
+  return 0;
 }
