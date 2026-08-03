@@ -61,7 +61,7 @@ function toWayThree() {
     console.log(children.length);
     for (let i: number = 0; i < children.length; i++) {
       let tempArr: string = children[i];
-      graph.set(parent, [...tempArr]);
+      graph.set(parent, [tempArr]);
     }
   }
   console.log(graph);
