@@ -9,7 +9,7 @@ export function degreesOfSeparation(
   const graph: Map<string, string> = new Map<string, string>();
   // Read parent and children
   for (const parent of Object.entries(familyTree)) {
-    //logic here
+    console.log(parent);
   }
   return 0;
 }
