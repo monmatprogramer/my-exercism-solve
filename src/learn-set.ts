@@ -169,6 +169,7 @@ function preventNetworkDuplicate() {
     }
   }
 }
-//
+// Challenge 6
+// -> combine ip address
 // ###### Call the lession #####
 preventNetworkDuplicate();
