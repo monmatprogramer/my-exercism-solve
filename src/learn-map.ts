@@ -54,7 +54,7 @@ function toWayThree() {
   }
   const familyTree: Record<string, string[]> = {
     Marry: ["Same", "Leo"],
-    Sokchan: ["Kunthea", "Duch", "Teav"],
+    //Sokchan: ["Kunthea", "Duch", "Teav"],
   };
 
   //familyTree.set("Marry", ["Leo", "Same"]); // it is overrided
@@ -63,9 +63,7 @@ function toWayThree() {
   for (const [parent, children] of Object.entries(familyTree)) {
     //Marry [Same, Leo]
     for (let i: number = 0; i < children.length; i++) {
-      for (let j: number = i + 1; j < children.length; j++) {
-        console.log(j);
-      }
+      for (let j: number = i + 1; j < children.length; j++) {}
     }
   }
   // console.log(graph);
