@@ -61,8 +61,10 @@ function toWayThree() {
   const graph = new Map<string, string[]>();
 
   for (const [parent, children] of Object.entries(familyTree)) {
-    //Marry
-    console.log(parent);
+    //Marry [Same, Leo]
+    for (let i: number = 0; i < children.length; i++) {
+      console.log(children[i]);
+    }
   }
   // console.log(graph);
 }
