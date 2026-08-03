@@ -8,7 +8,7 @@ export function degreesOfSeparation(
   // creae an empty graph dictionary
   const graph: Map<string, string> = new Map<string, string>();
   // Read parent and children
-  for (const parent of Object.entries(familyTree)) {
+  for (const parent of Object.keys(familyTree)) {
     console.log(parent);
   }
   return 0;
