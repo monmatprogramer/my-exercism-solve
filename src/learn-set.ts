@@ -167,7 +167,6 @@ function preventNetworkDuplicate() {
       // Save the into clean store place
       cleanPayments.push(incomingPayment);
     }
-    console.log(cleanPayments);
   }
 }
 //
