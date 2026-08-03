@@ -177,10 +177,8 @@ function combineIP() {
 
   // Safe IPs from your Koyeb server
   const koyebIps: string[] = ["10.0.0.5", "192.168.1.20", "192.168.1.10"];
-  const combineIParray: string[] = [...awsIps, ...koyebIps];
-  const removeDup: Set<string> = new Set<string>(combineIParray);
+  const removeDup = new Set<string>([...awsIps, ...koyebIps]);
   const masterWhitelist: string[] = [...removeDup];
-  console.log(masterWhitelist);
 }
 // ###### Call the lession #####
 combineIP();
