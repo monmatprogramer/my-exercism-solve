@@ -68,11 +68,16 @@ function toWayThree() {
   const graph = new Map<string, string[]>();
   let i: number = 0;
   for (const [parent, children] of Object.entries(familyTree5)) {
+    let tempP: string = parent;
+    let tempCh: string[] = children;
     do {
-      if (!graph.has(parent)) {
-        graph.set(parent, children);
+      if (!graph.has(tempP)) {
+        graph.set(tempP, tempCh);
       }
-    } while (true);
+      tempP = children[i];
+      tempCh = [tempP, children[i + 1]];
+      i++;
+    } while (i <= children.length);
   }
 
   console.log(graph);
