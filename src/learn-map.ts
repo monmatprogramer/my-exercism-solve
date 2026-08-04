@@ -62,6 +62,10 @@ function toWayThree() {
     Bob: ["Alice", "Charlie"],
     Charlie: ["Alice", "Bob"],
   };
+  const familyTree5 = {
+    John: ["Anna", "Tome"],
+  };
+
   const graph = new Map<string, string[]>();
 }
 toWayThree();
