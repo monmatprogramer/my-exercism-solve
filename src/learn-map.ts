@@ -68,7 +68,9 @@ function toWayThree() {
 
   const graph = new Map<string, string[]>();
   for (const [parent, children] of Object.entries(familyTree5)) {
-    console.log(parent);
+    for (const child of children) {
+      console.log(child);
+    }
   }
 }
 
