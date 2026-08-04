@@ -57,15 +57,11 @@ function toWayThree() {
     //Sokchan: ["Kunthea", "Duch", "Teav"],
   };
 
-  //familyTree.set("Marry", ["Leo", "Same"]); // it is overrided
+  const familyTree4 = {
+    Alice: ["Bob", "Charlie"],
+    Bob: ["Alice", "Charlie"],
+    Charlie: ["Alice", "Bob"],
+  };
   const graph = new Map<string, string[]>();
-
-  for (const [parent, children] of Object.entries(familyTree)) {
-    //Marry [Same, Leo]
-    for (let i: number = 0; i < children.length; i++) {
-      for (let j: number = i + 1; j < children.length; j++) {}
-    }
-  }
-  // console.log(graph);
 }
 toWayThree();
