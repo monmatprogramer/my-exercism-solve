@@ -65,13 +65,21 @@ function toWayThree() {
   const familyTree5 = {
     John: ["Anna", "Tome"],
   };
-
   const graph = new Map<string, string[]>();
   for (const [parent, children] of Object.entries(familyTree5)) {
-    for (const child of children) {
-      console.log(child);
+    if (!graph.has(parent)) {
+      graph.set(parent, children);
+    } else {
+      for (const [index, value] of children) {
+        if (!graph.has(parent)) {
+          graph.set(parent, children);
+        } else {
+        }
+      }
     }
   }
+
+  console.log(graph);
 }
 
 toWayThree();
