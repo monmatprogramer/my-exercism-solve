@@ -65,12 +65,15 @@ function toWayThree() {
   const familyTree5 = {
     John: ["Anna", "Tome"],
   };
+  const familyTree6 = {
+    A: ["B", "C", "D"],
+  };
   const graph = new Map<string, string[]>();
   let i: number = 0;
   let init: boolean = true;
   let tempChil: string = "";
   let tempparent: string = "";
-  for (const [parent, children] of Object.entries(familyTree5)) {
+  for (const [parent, children] of Object.entries(familyTree6)) {
     if (!graph.has(parent)) {
       graph.set(parent, children);
     }
@@ -78,7 +81,8 @@ function toWayThree() {
     while (init) {
       let tmp = [parent, children[i + 1]];
       if (i === children.length - 1) {
-        tmp = [parent, children[i]];
+        tmp = [parent, children[i - 1]];
+        init = false;
       }
       graph.set(children[i], tmp);
       i++;
