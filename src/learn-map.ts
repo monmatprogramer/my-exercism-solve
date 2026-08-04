@@ -78,14 +78,9 @@ function toWayThree() {
       graph.set(parent, children);
     }
 
-    while (init) {
-      let tmp = [parent, children[i + 1]];
-      if (i === children.length - 1) {
-        tmp = [parent, children[i - 1]];
-        init = false;
-      }
-      graph.set(children[i], tmp);
-      i++;
+    let tempArray: string[] = [""];
+    for (let i: number = 0; i < children.length; i++) {
+      for (let j: number = 0; j < children.length; j++) {}
     }
   }
 
