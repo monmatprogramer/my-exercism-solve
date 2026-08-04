@@ -78,12 +78,15 @@ function toWayThree() {
       graph.set(parent, children);
     }
 
-    let tempArray: string[] = [""];
+    let tempArray: string[] = [];
+    let tempChildren: string[] = children;
     for (let i: number = 0; i < children.length; i++) {
-      for (let j: number = 0; j < children.length; j++) {}
+      for (let j: number = 1; j < children.length; j++) {
+        tempArray.push(children[j]);
+      }
+      graph.set(tempChildren[i], [parent, ...tempArray]);
     }
   }
-
   console.log(graph);
 }
 
