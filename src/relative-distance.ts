@@ -25,19 +25,20 @@ function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
     let firstEle: string;
     let secondEle: string;
     for (let i: number = 0; i < children.length; i++) {
+      let tempI: number = i;
       tempParent = tempChildren.shift();
       remainArray = tempChildren;
 
       tempChildren = [tempParent!, ...remainArray];
       firstEle = tempChildren[0];
-      if (!tempChildren[i + 1]) {
-        secondEle = tempChildren[i - 1];
+      if (!tempChildren[tempI + 1]) {
+        secondEle = tempChildren[tempI - 1];
         tempChildren[0] = secondEle;
-        tempChildren[i - 1] = firstEle;
+        tempChildren[tempI - 1] = firstEle;
       } else {
-        secondEle = tempChildren[i + 1];
+        secondEle = tempChildren[tempI + 1];
         tempChildren[0] = secondEle;
-        tempChildren[i + 1] = firstEle;
+        tempChildren[tempI + 1] = firstEle;
       }
       remainArray = [parent, ...remainArray];
 
