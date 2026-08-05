@@ -10,9 +10,14 @@ export function degreesOfSeparation(
   console.log("grap: ", graph);
   return 0;
 }
-function prepareSearchTool() {
+function prepareSearchTool(
+  grap: Map<string, string>,
+  startPerson: string,
+  targetPerson: string,
+): number {
   const queue: [string, number][] = [];
   const visited = new Set<string>();
+  if (!graph.has(startPeson) || !graph.has(targetPerson)) return -1;
 }
 // Add family tree to graph
 function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
