@@ -46,7 +46,14 @@ function mapOfObject() {
     Tomoko: ["Bob"],
   };
   graph = new Map(Object.entries(object));
-  console.log(graph.get("Vera"));
+  //graph.get("Vera") = [Bob, Alice]
+  let neighbord: string[] = [];
+  let hasOrNot: string[] | undefined = graph.get("Vera");
+  if (!hasOrNot) {
+    throw new Error("This person not found");
+  }
+  neighbord = graph.get("Vera")!;
+  console.log(neighbord);
 }
 
 // # 3. use Map
