@@ -26,8 +26,9 @@ function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
     for (let i: number = 0; i < children.length; i++) {
       let tempI: number = i;
       //tempParent = tempChildren.shift();
-      console.log(i);
-      console.log(tempI);
+      tempChildren = [];
+      console.log("tempChildren: ", tempChildren);
+      console.log("tempI: ", tempI);
       //console.log(tempParent);
       //remainArray = tempChildren;
       //tempChildren = [tempParent!, ...remainArray];
