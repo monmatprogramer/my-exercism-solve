@@ -49,7 +49,9 @@ function byReferenceArray() {
 //learn array to store as queue
 function toArrayQueue() {
   // Array of tuples
-  let test = [
+  // * Fix length but unknown type
+  // Tuple type  is [string,number]
+  let test: [string, number][] = [
     ["string", 0],
     ["string2", 1],
     ["string3", 0],
