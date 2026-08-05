@@ -18,8 +18,8 @@ function prepareSearchTool(
   const queue: [string, number][] = [];
   const visited = new Set<string>();
   if (!graph.has(startPerson) || !graph.has(targetPerson)) return -1;
-  queue.push([startPeson, 0]);
-  visited.add(startPeson);
+  queue.push([startPerson, 0]);
+  visited.add(startPerson);
   console.log("queue: ", queue);
   console.log("visited", visited);
   return 0;
