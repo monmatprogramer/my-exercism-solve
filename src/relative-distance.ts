@@ -7,10 +7,11 @@ export function degreesOfSeparation(
 ): number {
   // graph
   const graph: Map<string, string> = addToGrap(familyTree);
+  console.log(graph);
   return 0;
 }
 
-function addToGrap(familyTree: Record): Map<string, string[]> {
+function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
   const graph = new Map<string, string[]>();
 
   for (const [parent, children] of Object.entries(familyTree)) {
