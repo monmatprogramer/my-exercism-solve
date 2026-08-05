@@ -68,6 +68,7 @@ function toWayThree() {
   const familyTree6 = {
     A: ["B", "C", "D"],
   };
+  const graph = new Map<string, string[]>();
 
   for (const [parent, children] of Object.entries(familyTree6)) {
     let tempChildren: string[] = children;
@@ -75,7 +76,7 @@ function toWayThree() {
     let tempParent: string | undefined;
     let firstEle: string;
     let secondEle: string;
-    for (const [index, value] of children) {
+    for (let i: number = 0; i < children.length; i++) {
       tempParent = tempChildren.shift();
       remainArray = tempChildren;
       /*
@@ -83,9 +84,16 @@ function toWayThree() {
          
       }
       */
+      tempChildren = [tempParent!, ...remainArray];
+      firstEle = tempChildren[0];
+      secondEle = tempChildren[i + 1];
+      tempChildren[0] = secondEle;
+      tempChildren[i + 1] = firstEle;
+      remainArray = [parent, ...remainArray];
+
+      graph.set(tempParent!, remainArray);
     }
   }
-  const graph = new Map<string, string[]>();
   console.log(graph);
 }
 
