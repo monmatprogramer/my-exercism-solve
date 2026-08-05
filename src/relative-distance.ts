@@ -7,7 +7,7 @@ export function degreesOfSeparation(
 ): number {
   // graph
   const graph: Map<string, string[]> = addToGrap(familyTree);
-  console.log("grap: ", graph);
+  prepareSearchTool(grap, personA, personB);
   return 0;
 }
 function prepareSearchTool(
@@ -20,6 +20,8 @@ function prepareSearchTool(
   if (!graph.has(startPeson) || !graph.has(targetPerson)) return -1;
   queue.push([startPeson, 0]);
   visited.add(startPeson);
+  console.log("queue: ", queue);
+  console.log("visited", visited);
   return 0;
 }
 // Add family tree to graph
