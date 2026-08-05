@@ -18,6 +18,12 @@ function twoDimensionArray(row: number, col: number) {
   }
   console.log(grid);
 }
-const r: number = 3;
-const c: number = 3;
-twoDimensionArray(r, c);
+// Learn how to add other array inot existing an array that has already has element
+function addExsistingArray() {
+  let arr1: string[] = ["B", "C"];
+  let arr2: string[] = ["A"];
+  arr2 = [...arr2, ...arr1];
+  console.log(arr2);
+}
+
+addExsistingArray();
