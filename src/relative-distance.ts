@@ -17,7 +17,7 @@ function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
     if (!graph.has(parent)) {
       graph.set(parent, [...children]);
     }
-    let tempChildren: string[] = children;
+    let tempChildren: string[] = [...children];
     let remainArray: string[];
     let tempParent: string | undefined;
     let firstEle: string;
@@ -26,16 +26,10 @@ function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
     for (let i: number = 0; i < children.length; i++) {
       let tempI: number = i;
       tempParent = tempChildren.shift();
-      tempChildren = [tempParent!, ...tempChildren];
-      console.log("tmepParent: ", tempParent);
+      remainArray = tempChildren;
+      tempChildren = [tempParent!, ...remainArray];
+      firstEle = tempChildren[0];
 
-      console.log("tempChildren: ", tempChildren);
-      console.log("i: ", i);
-      //console.log(tempParent);
-      //remainArray = tempChildren;
-      //tempChildren = [tempParent!, ...remainArray];
-      // firstEle = tempChildren[0];
-      /*
       if (!tempChildren[tempI + 1]) {
         secondEle = tempChildren[i];
         tempChildren[0] = secondEle;
@@ -44,9 +38,7 @@ function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
         secondEle = tempChildren[tempI + 1];
         tempChildren[0] = secondEle;
         tempChildren[tempI + 1] = firstEle;
-      }*/
-      //remainArray = [parent, ...remainArray];
-      // graph.set(tempParent!, remainArray);
+      }
     }
   }
   return graph;
