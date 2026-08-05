@@ -43,6 +43,10 @@ function toWayTwo() {
 function toWayThree() {
   const featureFlags = new Map<string, boolean>();
   const relatives = new Map<string, string[]>();
+  console.log(relatives.get("Mat"));
+  return;
+  //-- fill relative
+  relatives.set("Mat", ["Meng", "Mouy", "Heng"]);
   featureFlags.set("darkMode", true);
   featureFlags.set("betaFeatures", false);
   featureFlags.set("darkMode", false);
