@@ -39,8 +39,10 @@ function addExsistingArray() {
 function byReferenceArray() {
   //length = 5
   const originalArray: number[] = [1, 2, 3, 4, 5];
+  console.log("Original array length: ", originalArray.length);
   // Store by reference
   let referOrginalArray = originalArray;
+  console.log("Referencce Original array length: ", referOrginalArray.length);
   console.log(referOrginalArray);
 }
 
