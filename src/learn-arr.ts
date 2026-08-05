@@ -27,6 +27,10 @@ function addExsistingArray() {
   if (!arr2[3]) {
     // undefined === undefined => true
     console.log(arr2[3]);
+  } else {
+    for (let i: number = 0; arr2.length; i++) {
+      console.log(arr2[i + 1]);
+    }
   }
 }
 
