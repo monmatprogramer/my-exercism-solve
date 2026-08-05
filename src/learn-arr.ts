@@ -23,8 +23,9 @@ function addExsistingArray() {
   let arr1: string[] = ["B", "C"];
   let arr2: string[] = ["A"];
   arr2 = ["A", ...arr1];
+  // =[A,B,C]
 
-  console.log(arr2);
+  console.log(arr2[3]);
 }
 
 addExsistingArray();

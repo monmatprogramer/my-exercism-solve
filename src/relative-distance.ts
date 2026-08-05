@@ -11,6 +11,7 @@ export function degreesOfSeparation(
   return 0;
 }
 
+// Add family tree to graph
 function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
   const graph = new Map<string, string[]>();
 
