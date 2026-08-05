@@ -30,9 +30,15 @@ function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
 
       tempChildren = [tempParent!, ...remainArray];
       firstEle = tempChildren[0];
-      secondEle = tempChildren[i + 1];
-      tempChildren[0] = secondEle;
-      tempChildren[i + 1] = firstEle;
+      if (!tempChildren[i + 1]) {
+        secondEle = tempChildren[i - 1];
+        tempChildren[0] = secondEle;
+        tempChildren[i - 1] = firstEle;
+      } else {
+        secondEle = tempChildren[i + 1];
+        tempChildren[0] = secondEle;
+        tempChildren[i + 1] = firstEle;
+      }
       remainArray = [parent, ...remainArray];
 
       graph.set(tempParent!, remainArray);
