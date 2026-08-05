@@ -11,7 +11,7 @@ export function degreesOfSeparation(
   return 0;
 }
 function prepareSearchTool(
-  graph: Map<string, string>,
+  graph: Map<string, string[]>,
   startPerson: string,
   targetPerson: string,
 ): number {
