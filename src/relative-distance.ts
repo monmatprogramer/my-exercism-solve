@@ -44,7 +44,6 @@ function prepareSearchTool(
     if (currenPerson === targetPerson) return currenDistance;
     let neighbord: string[] = graph.get(currenPerson)!;
     for (const [index, value] of neighbord) {
-      //logic here
     }
   }
 
