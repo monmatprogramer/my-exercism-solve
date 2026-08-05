@@ -22,7 +22,8 @@ function twoDimensionArray(row: number, col: number) {
 function addExsistingArray() {
   let arr1: string[] = ["B", "C"];
   let arr2: string[] = ["A"];
-  arr2 = [...arr2, ...arr1];
+  arr2 = ["A", ...arr1];
+
   console.log(arr2);
 }
 
