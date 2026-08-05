@@ -6,7 +6,7 @@ export function degreesOfSeparation(
   personB: string,
 ): number {
   // graph
-  const graph: Map<string, string> = addToGrap(familyTree);
+  const graph: Map<string, string[]> = addToGrap(familyTree);
   console.log(graph);
   return 0;
 }
