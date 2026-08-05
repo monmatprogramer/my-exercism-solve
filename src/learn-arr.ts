@@ -48,7 +48,8 @@ function byReferenceArray() {
 
 //learn array to store as queue
 function toArrayQueue() {
-  let test: string[][] = [
+  // Array of tuples
+  let test = [
     ["string", 0],
     ["string2", 1],
     ["string3", 0],
