@@ -72,11 +72,17 @@ function toWayThree() {
   for (const [parent, children] of Object.entries(familyTree6)) {
     let tempChildren: string[] = children;
     let remainArray: string[];
-    let tempParent: string;
+    let tempParent: string | undefined;
     let firstEle: string;
     let secondEle: string;
     for (const [index, value] of children) {
       tempParent = tempChildren.shift();
+      remainArray = tempChildren;
+      /*
+      for(const[index, valueJ] of tempChildren){
+         
+      }
+      */
     }
   }
   const graph = new Map<string, string[]>();
