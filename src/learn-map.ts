@@ -42,6 +42,7 @@ function toWayTwo() {
 // Use case: need advanced key types
 function toWayThree() {
   const featureFlags = new Map<string, boolean>();
+  const relatives = new Map<string, string[]>();
   featureFlags.set("darkMode", true);
   featureFlags.set("betaFeatures", false);
   featureFlags.set("darkMode", false);

@@ -36,8 +36,15 @@ function prepareSearchTool(
   if (!graph.has(startPerson) || !graph.has(targetPerson)) return -1;
   queue.push([startPerson, 0]);
   visited.add(startPerson);
-  console.log("queue: ", queue);
-  console.log("visited", visited);
+  while (queue.length > 0) {
+    const [currenPerson, currenDistance] = [
+      queue.shift()![0],
+      queue.shift()![1],
+    ];
+    if (currenPerson === targetPerson) return currenDistance;
+    let neighbord: string[] = [];
+    neighbord = graph.get(currenPerson);
+  }
   return 0;
 }
 // Add family tree to graph
