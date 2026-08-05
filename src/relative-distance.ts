@@ -22,6 +22,15 @@ function prepareSearchTool(
   startPerson: string,
   targetPerson: string,
 ): number {
+  //Mock data graph
+  //
+  let object = {
+    Vera: ["Bob", "Alice"],
+    Bob: ["Vera", "Tomoko"],
+    Alice: ["Vera"],
+    Tomoko: ["Bob"],
+  };
+  graph = new Map(Object.entries(object));
   const queue: [string, number][] = [];
   const visited = new Set<string>();
   if (!graph.has(startPerson) || !graph.has(targetPerson)) return -1;
