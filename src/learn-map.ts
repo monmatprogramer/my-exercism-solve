@@ -37,7 +37,16 @@ function toWayTwo() {
   console.log(scores);
   //{ player1: 100, player2: 250 }
 }
-
+function mapOfObject() {
+  const graph = new Map<string, string[]>();
+  let object = {
+    Vera: ["Bob", "Alice"],
+    Bob: ["Vera", "Tomoko"],
+    Alice: ["Vera"],
+    Tomoko: ["Bob"],
+  };
+  graph = new Map(Object.entries(object));
+}
 // # 3. use Map
 // Use case: need advanced key types
 function toWayThree() {
@@ -45,8 +54,6 @@ function toWayThree() {
   const relatives = new Map<string, string[]>();
   //-- fill relative
   relatives.set("Mat", ["Meng", "Mouy", "Heng"]);
-  console.log(relatives.get("Mat"));
-  return;
   featureFlags.set("darkMode", true);
   featureFlags.set("betaFeatures", false);
   featureFlags.set("darkMode", false);
