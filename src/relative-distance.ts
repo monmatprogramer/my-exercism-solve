@@ -20,7 +20,7 @@ export function degreesOfSeparation(
 function addToGrap(familyTree: Record) {
   const graph = new Map<string, string[]>();
 
-  for (const [parent, children] of Object.entries(familyTree4)) {
+  for (const [parent, children] of Object.entries(familyTree)) {
     if (!graph.has(parent)) {
       graph.set(parent, [...children]);
     }
