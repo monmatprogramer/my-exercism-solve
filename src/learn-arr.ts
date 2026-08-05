@@ -62,8 +62,6 @@ function toArrayQueue() {
   }
   test.push(["string4", 0]);
   for (let i: number = 0; i < test.length; i++) {
-    console.log(test[i]);
+    //console.log(test[i]);
   }
 }
-
-toArrayQueue();

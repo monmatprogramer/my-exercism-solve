@@ -10,7 +10,7 @@ export function degreesOfSeparation(
   console.log("grap: ", graph);
   return 0;
 }
-
+function prepareSearchTool() {}
 // Add family tree to graph
 function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
   const graph = new Map<string, string[]>();
