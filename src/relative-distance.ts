@@ -18,6 +18,9 @@ function prepareSearchTool(
   const queue: [string, number][] = [];
   const visited = new Set<string>();
   if (!graph.has(startPeson) || !graph.has(targetPerson)) return -1;
+  queue.push([startPeson, 0]);
+  visited.add(startPeson);
+  return 0;
 }
 // Add family tree to graph
 function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
