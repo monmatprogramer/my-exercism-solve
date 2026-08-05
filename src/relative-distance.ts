@@ -7,11 +7,11 @@ export function degreesOfSeparation(
 ): number {
   // graph
   const graph: Map<string, string[]> = addToGrap(familyTree);
-  prepareSearchTool(grap, personA, personB);
+  prepareSearchTool(graph, personA, personB);
   return 0;
 }
 function prepareSearchTool(
-  grap: Map<string, string>,
+  graph: Map<string, string>,
   startPerson: string,
   targetPerson: string,
 ): number {
