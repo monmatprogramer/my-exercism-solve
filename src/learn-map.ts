@@ -38,7 +38,7 @@ function toWayTwo() {
   //{ player1: 100, player2: 250 }
 }
 function mapOfObject() {
-  const graph = new Map<string, string[]>();
+  let graph = new Map<string, string[]>();
   let object = {
     Vera: ["Bob", "Alice"],
     Bob: ["Vera", "Tomoko"],
@@ -46,7 +46,9 @@ function mapOfObject() {
     Tomoko: ["Bob"],
   };
   graph = new Map(Object.entries(object));
+  console.log(graph.get("Vera"));
 }
+
 // # 3. use Map
 // Use case: need advanced key types
 function toWayThree() {
@@ -111,5 +113,4 @@ function toWayThree() {
   }
   console.log(graph);
 }
-
-toWayThree();
+mapOfObject();
