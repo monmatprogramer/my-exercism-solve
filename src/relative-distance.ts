@@ -17,7 +17,7 @@ export function degreesOfSeparation(
   return 0;
 }
 
-function addToGrap(familyTree: Record) {
+function addToGrap(familyTree: Record): Map<string, string[]> {
   const graph = new Map<string, string[]>();
 
   for (const [parent, children] of Object.entries(familyTree)) {
@@ -32,11 +32,7 @@ function addToGrap(familyTree: Record) {
     for (let i: number = 0; i < children.length; i++) {
       tempParent = tempChildren.shift();
       remainArray = tempChildren;
-      /*
-      for(const[index, valueJ] of tempChildren){
-         
-      }
-      */
+
       tempChildren = [tempParent!, ...remainArray];
       firstEle = tempChildren[0];
       secondEle = tempChildren[i + 1];
