@@ -19,7 +19,7 @@ const familyTree5 = {
   John: ["Anna", "Tom"],
 };
 const familyTree6 = {
-  Vera: ["Bob", "Alice"],
+  Vera: ["Bob", "Alice", "Tomoko"],
 };
 degreesOfSeparation(familyTree6, "Vera", "Tomoko");
 //degreesOfSeparation(familyTree2, "Olga", "Yassin");
