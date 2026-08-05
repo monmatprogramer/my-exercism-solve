@@ -38,6 +38,9 @@ function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
         tempChildren[0] = secondEle;
         tempChildren[tempI + 1] = firstEle;
       }
+      remainArray = [parent, ...remainArray];
+      graph.set(tempParent!, remainArray);
+      remainArray = [];
     }
   }
   return graph;

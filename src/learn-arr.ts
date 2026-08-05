@@ -46,4 +46,10 @@ function byReferenceArray() {
   console.log("Original array length: ", originalArray.length);
 }
 
-byReferenceArray();
+//learn array to store as queue
+function toArrayQueue() {
+  let test = [["string", 0]];
+  console.log(test.length);
+}
+
+toArrayQueue();
