@@ -38,8 +38,10 @@ function addExsistingArray() {
 // Learn arrays by reference
 function byReferenceArray() {
   //length = 5
-
   const originalArray: number[] = [1, 2, 3, 4, 5];
+  // Store by reference
+  let referOrginalArray = originalArray;
+  console.log(referOrginalArray);
 }
 
-addExsistingArray();
+byReferenceArray();
