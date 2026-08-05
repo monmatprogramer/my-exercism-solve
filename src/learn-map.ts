@@ -70,7 +70,10 @@ function toWayThree() {
   };
   const graph = new Map<string, string[]>();
 
-  for (const [parent, children] of Object.entries(familyTree6)) {
+  for (const [parent, children] of Object.entries(familyTree4)) {
+    if (!graph.has(parent)) {
+      graph.set(parent, [...children]);
+    }
     let tempChildren: string[] = children;
     let remainArray: string[];
     let tempParent: string | undefined;
