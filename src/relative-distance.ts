@@ -43,5 +43,5 @@ function addToGrap(familyTree: Record): Map<string, string[]> {
       graph.set(tempParent!, remainArray);
     }
   }
-  console.log(graph);
+  return graph;
 }
