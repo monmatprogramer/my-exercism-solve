@@ -48,8 +48,12 @@ function byReferenceArray() {
 
 //learn array to store as queue
 function toArrayQueue() {
-  let test = [["string", 0]];
-  console.log(test.length);
+  let test: string[][] = [
+    ["string", 0],
+    ["string2", 1],
+    ["string3", 0],
+  ];
+  console.log(test);
 }
 
 toArrayQueue();
