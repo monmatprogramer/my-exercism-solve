@@ -123,5 +123,5 @@ function toWayThree() {
 try {
   mapOfObject();
 } catch (e: any) {
-  console.log(e.message);
+  console.log("💥: ", e.message);
 }
