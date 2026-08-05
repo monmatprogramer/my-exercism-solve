@@ -7,14 +7,12 @@ export function degreesOfSeparation(
 ): number {
   // graph
   const graph: Map<string, string[]> = addToGrap(familyTree);
-  console.log(graph);
   return 0;
 }
 
 // Add family tree to graph
 function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
   const graph = new Map<string, string[]>();
-
   for (const [parent, children] of Object.entries(familyTree)) {
     if (!graph.has(parent)) {
       graph.set(parent, [...children]);
@@ -24,13 +22,17 @@ function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
     let tempParent: string | undefined;
     let firstEle: string;
     let secondEle: string;
+
     for (let i: number = 0; i < children.length; i++) {
       let tempI: number = i;
-      tempParent = tempChildren.shift();
-      remainArray = tempChildren;
-
-      tempChildren = [tempParent!, ...remainArray];
-      firstEle = tempChildren[0];
+      //tempParent = tempChildren.shift();
+      console.log(i);
+      console.log(tempI);
+      //console.log(tempParent);
+      //remainArray = tempChildren;
+      //tempChildren = [tempParent!, ...remainArray];
+      // firstEle = tempChildren[0];
+      /*
       if (!tempChildren[tempI + 1]) {
         secondEle = tempChildren[i];
         tempChildren[0] = secondEle;
@@ -39,10 +41,9 @@ function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
         secondEle = tempChildren[tempI + 1];
         tempChildren[0] = secondEle;
         tempChildren[tempI + 1] = firstEle;
-      }
-      remainArray = [parent, ...remainArray];
-
-      graph.set(tempParent!, remainArray);
+      }*/
+      //remainArray = [parent, ...remainArray];
+      // graph.set(tempParent!, remainArray);
     }
   }
   return graph;
