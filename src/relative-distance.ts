@@ -24,6 +24,7 @@ function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
     let tempParent: string | undefined;
     let firstEle: string;
     let secondEle: string;
+    console.log("length of child: ", children.length);
     for (let i: number = 0; i < children.length; i++) {
       tempParent = tempChildren.shift();
       remainArray = tempChildren;
