@@ -48,7 +48,7 @@ function mapOfObject() {
   graph = new Map(Object.entries(object));
   //graph.get("Vera") = [Bob, Alice]
   let neighbord: string[] = [];
-  let hasOrNot: string[] | undefined = graph.get("Vera");
+  let hasOrNot: string[] | undefined = graph.get("Ver");
   if (!hasOrNot) {
     throw new Error("This person not found");
   }
@@ -120,4 +120,8 @@ function toWayThree() {
   }
   console.log(graph);
 }
-mapOfObject();
+try {
+  mapOfObject();
+} catch (e: any) {
+  console.log(e.message);
+}
