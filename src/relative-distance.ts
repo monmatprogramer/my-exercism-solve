@@ -12,6 +12,7 @@ export function degreesOfSeparation(
 }
 function seach(queue: [string, number][]) {
   if (queue.length !== 0) {
+    for (let i: number = 0; i < queue.length; i++) {}
   } else {
     throw new Error("queue is zero");
   }

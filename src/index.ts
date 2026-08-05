@@ -18,7 +18,10 @@ const familyTree4 = {
 const familyTree5 = {
   John: ["Anna", "Tom"],
 };
-degreesOfSeparation(familyTree, "Vera", "Tomoko");
+const familyTree6 = {
+  Vera: ["Bob", "Alice"],
+};
+degreesOfSeparation(familyTree6, "Vera", "Tomoko");
 //degreesOfSeparation(familyTree2, "Olga", "Yassin");
 //degreesOfSeparation(familyTree3, "Olga", "Yassin");
 //degreesOfSeparation(familyTree5, "Olga", "Yassin");
