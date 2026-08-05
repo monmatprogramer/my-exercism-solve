@@ -42,8 +42,8 @@ function prepareSearchTool(
       queue.shift()![1],
     ];
     if (currenPerson === targetPerson) return currenDistance;
-    let neighbord: string[] = [];
-    neighbord = graph.get(currenPerson);
+
+    let neighbord: string[] = graph.get(currenPerson)!;
   }
   return 0;
 }
