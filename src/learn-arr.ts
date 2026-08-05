@@ -30,6 +30,7 @@ function addExsistingArray() {
   } else {
     for (let i: number = 0; arr2.length; i++) {
       console.log(arr2[i + 1]);
+      console.log("step: ", i);
     }
   }
 }
