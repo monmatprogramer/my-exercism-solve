@@ -7,6 +7,7 @@ export function degreesOfSeparation(
 ): number {
   // graph
   const graph: Map<string, string[]> = addToGrap(familyTree);
+  console.log("grap: ", graph);
   return 0;
 }
 
@@ -22,14 +23,12 @@ function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
     let tempParent: string | undefined;
     let firstEle: string;
     let secondEle: string;
-
     for (let i: number = 0; i < children.length; i++) {
       let tempI: number = i;
       tempParent = tempChildren.shift();
       remainArray = tempChildren;
       tempChildren = [tempParent!, ...remainArray];
       firstEle = tempChildren[0];
-
       if (!tempChildren[tempI + 1]) {
         secondEle = tempChildren[i];
         tempChildren[0] = secondEle;
