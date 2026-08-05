@@ -57,8 +57,12 @@ function toArrayQueue() {
     ["string3", 0],
   ];
   for (const [index, value] of test) {
-    console.log(index);
-    console.log(value);
+    // console.log(index); string
+    // console.log(value); 0
+  }
+  test.push(["string4", 0]);
+  for (let i: number = 0; i < test.length; i++) {
+    console.log(test[i]);
   }
 }
 
