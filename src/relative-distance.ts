@@ -10,6 +10,12 @@ export function degreesOfSeparation(
   prepareSearchTool(graph, personA, personB);
   return 0;
 }
+function seach(queue: [string, number][]) {
+  if (queue.length !== 0) {
+  } else {
+    throw new Error("queue is zero");
+  }
+}
 function prepareSearchTool(
   graph: Map<string, string[]>,
   startPerson: string,
