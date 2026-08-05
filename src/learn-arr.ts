@@ -57,6 +57,7 @@ function toArrayQueue() {
     ["string3", 0],
   ];
   for (const [index, value] of test) {
+    console.log(index);
     console.log(value);
   }
 }
