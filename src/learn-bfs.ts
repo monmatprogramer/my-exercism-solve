@@ -11,7 +11,7 @@ function bfs(graph: Record<string, string[]>, startNode: string) {
     const currentNode: string = queue.shift()!;
     if (graphM.has(currentNode)) {
       const neighbors: string[] = graphM.get(currentNode)!;
-      neighbors.filter((neighborPerson) => graphM.has(neighborPerson));
+      neighbors.filter((neighborNode) => currentNode === neighborNode);
     }
   }
 }
