@@ -68,4 +68,33 @@ function toArrayQueue() {
   console.log(a);
   console.log(b);
 }
-toArrayQueue();
+
+// Learn about search array in array
+function searchArrayInArray() {
+  const arr1: string[] = ["Sokha", "Pupha", "Chanra", "Chanmuney"];
+  const arr2: string[] = ["Chanmuney", "Sokchan", "Sokha"];
+  // conver to set
+  const searchSet = new Set(arr1);
+  // start searching
+  console.log("------- Start searching ------");
+  console.log("Method 1: ");
+  console.log("---------");
+  for (const v1 of arr2) {
+    for (const v2 of arr1) {
+      if (v1 === v2) {
+        console.log(v1);
+      }
+    }
+  }
+  console.log("\nMethod 2: ");
+  console.log("---------");
+  arr2.forEach((v1) => {
+    console.log(arr1.filter((v2) => v1 === v2));
+  });
+  console.log("\nMethod 3: ");
+  console.log("---------");
+  console.log("Best method");
+  const matches = arr2.filter((name) => searchSet.has(name));
+  console.log(matches);
+}
+searchArrayInArray();
