@@ -73,6 +73,9 @@ function toArrayQueue() {
 function searchArrayInArray() {
   const arr1: string[] = ["Sokha", "Pupha", "Chanra", "Chanmuney"];
   const arr2: string[] = ["Chanmuney", "Sokchan", "Sokha"];
+  // conver to set
+  const searchSet = new Set(arr1);
+  console.log(searchSet);
   // start searching
   console.log("------- Start searching ------");
   console.log("Method 1: ");
