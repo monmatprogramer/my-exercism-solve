@@ -20,5 +20,14 @@ function lesson1Fun() {
     }
   }
 }
+function lesson2Fun() {
+  // Create a record
+  const graph: Record<string, string[]> = {
+    Vera: ["Bob", "Alice"],
+    Bob: ["Vera", "Tomoko"],
+    Alice: ["Vera"],
+    Tomoko: ["Bob"],
+  };
+}
 
 lesson1Fun();

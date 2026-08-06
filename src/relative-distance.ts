@@ -40,6 +40,7 @@ function prepareSearchTool(
     const [currenPerson, currenDistance] = queue.shift()!;
 
     if (currenPerson === targetPerson) return currenDistance;
+
     let neighbord: string[] = graph.get(currenPerson)!;
     for (const [index, value] of neighbord) {
     }
