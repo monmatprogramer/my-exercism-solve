@@ -9,7 +9,10 @@ function bfs(graph: Record<string, string[]>, startNode: string) {
   const visited: Set<string> = new Set<string>([startNode]);
   while (queue.length > 0) {
     const currentNode: string = queue.shift()!;
-    console.log(graphM.has(currentNode));
+    if (graphM.has(currentNode)) {
+      const neighbors: string[] = graphM.get(currentNode)!;
+      neighbors.filter((neighborPerson) => graphM.has(neighborPerson));
+    }
   }
 }
 
@@ -19,4 +22,4 @@ const graph: Record<string, string[]> = {
   C: [],
   D: [],
 };
-bfs(graph, "stringA");
+bfs(graph, "A");
