@@ -28,6 +28,8 @@ function lesson2Fun() {
     Alice: ["Vera"],
     Tomoko: ["Bob"],
   };
+
+  console.log(graph["Vera"]);
 }
 
 lesson1Fun();
