@@ -95,6 +95,6 @@ function searchArrayInArray() {
   console.log("---------");
   console.log("Best method");
   const matches = arr2.filter((name) => searchSet.has(name));
-  console.log(matches);
+  console.log(matches.includes("Sokha"));
 }
 searchArrayInArray();
