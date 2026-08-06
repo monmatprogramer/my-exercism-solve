@@ -91,6 +91,5 @@ function searchArrayInArray() {
   });
   console.log("\nMethod 3: ");
   console.log("---------");
-  console.log(arr1.map((v) => v + " one"));
 }
 searchArrayInArray();
