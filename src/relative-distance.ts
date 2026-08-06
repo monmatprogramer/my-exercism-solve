@@ -55,6 +55,10 @@ function prepareSearchTool(
 }
 // Add family tree to graph
 function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {
+  /*familyTree: {
+  Vera: ["Bob", "Alice", "Tomoko"],
+};*/
+
   const graph = new Map<string, string[]>();
   for (const [parent, children] of Object.entries(familyTree)) {
     if (!graph.has(parent)) {
