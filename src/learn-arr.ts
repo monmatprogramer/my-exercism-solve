@@ -87,7 +87,10 @@ function searchArrayInArray() {
   console.log("\nMethod 2: ");
   console.log("---------");
   arr2.forEach((v1) => {
-    arr1.filter((v2) => v1 === v2);
+    console.log(arr1.filter((v2) => v1 === v2));
   });
+  console.log("\nMethod 3: ");
+  console.log("---------");
+  console.log(arr2.filter((value) => arr1.map((v) => v === value)));
 }
 searchArrayInArray();
