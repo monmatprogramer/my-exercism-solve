@@ -9,5 +9,7 @@ function bfs(graph: Record<string, string[]>, startNode: string) {
 const graph: Record<string, string[]> = {
   A: ["B", "C"],
   B: ["D"],
+  C: [],
+  D: [],
 };
 bfs(graph, "stringA");
