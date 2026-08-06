@@ -8,10 +8,14 @@ function bfs(graph: Record<string, string[]>, startNode: string) {
   const queue: string[] = [startNode];
   const visited: Set<string> = new Set<string>([startNode]);
   while (queue.length > 0) {
-    const currentNode: string = queue.shift()!;
+    const currentNode: string = queue.shift()!; //a
     if (graphM.has(currentNode)) {
-      const neighbors: string[] = graphM.get(currentNode)!;
-      neighbors.filter((neighborNode) => currentNode === neighborNode);
+      const neighbors: string[] = graphM.get(currentNode)!; //[b,c]
+      for (const neighbor of neighbors) {
+        if (!visited.has(neighbor)) {
+          visited.add(neighbor);
+        }
+      }
     }
   }
 }
