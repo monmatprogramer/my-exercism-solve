@@ -75,7 +75,6 @@ function searchArrayInArray() {
   const arr2: string[] = ["Chanmuney", "Sokchan", "Sokha"];
   // conver to set
   const searchSet = new Set(arr1);
-  console.log(searchSet);
   // start searching
   console.log("------- Start searching ------");
   console.log("Method 1: ");
@@ -94,5 +93,8 @@ function searchArrayInArray() {
   });
   console.log("\nMethod 3: ");
   console.log("---------");
+  console.log("Best method");
+  const matches = arr2.filter((name) => searchSet.has(name));
+  console.log(matches);
 }
 searchArrayInArray();
