@@ -76,6 +76,7 @@ function searchArrayInArray() {
   // start searching
   console.log("------- Start searching ------");
   console.log("Method 1: ");
+  console.log("---------");
   for (const v1 of arr2) {
     for (const v2 of arr1) {
       if (v1 === v2) {
@@ -83,6 +84,11 @@ function searchArrayInArray() {
       }
     }
   }
-  console.log("Method 2: ");
+  console.log("\nMethod 2: ");
+  console.log("---------");
+  arr2.forEach((v1) => {
+    let result: string[] = arr1.filter((v2) => v1 === v2);
+    console.log(result.length);
+  });
 }
 searchArrayInArray();
