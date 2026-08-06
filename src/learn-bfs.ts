@@ -20,9 +20,7 @@ function bfs(graph: Record<string, string[]>, startNode: string) {
         }
       }
     }
-    console.log(queue);
   }
-  console.log(graph);
 }
 
 const graph: Record<string, string[]> = {
