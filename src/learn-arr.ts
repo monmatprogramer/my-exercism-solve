@@ -47,6 +47,7 @@ function byReferenceArray() {
 }
 
 //learn array to store as queue
+// Tuble array
 function toArrayQueue() {
   // Array of tuples
   // * Fix length but unknown type
@@ -63,6 +64,8 @@ function toArrayQueue() {
   for (let i: number = 0; i < test.length; i++) {
     //console.log(test[i]);
   }
-  console.log(test.shift()![0]); //[string,0]
+  const [a, b] = test.shift()!;
+  console.log(a);
+  console.log(b);
 }
 toArrayQueue();

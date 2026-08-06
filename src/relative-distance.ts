@@ -37,10 +37,8 @@ function prepareSearchTool(
   queue.push([startPerson, 0]);
   visited.add(startPerson);
   while (queue.length > 0) {
-    const [currenPerson, currenDistance] = [
-      queue.shift()![0],
-      queue.shift()![1],
-    ];
+    const [currenPerson, currenDistance] = queue.shift()!;
+
     if (currenPerson === targetPerson) return currenDistance;
     let neighbord: string[] = graph.get(currenPerson)!;
     for (const [index, value] of neighbord) {
