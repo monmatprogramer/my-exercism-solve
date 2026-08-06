@@ -24,15 +24,17 @@ function prepareSearchTool(
 ): number {
   //Mock data graph
   //
+  /*
   let object = {
     Vera: ["Bob", "Alice"],
     Bob: ["Vera", "Tomoko"],
     Alice: ["Vera"],
     Tomoko: ["Bob"],
   };
-  graph = new Map(Object.entries(object));
+  graph = new Map(Object.entries(object));*/
   const queue: [string, number][] = [];
   const visited = new Set<string>();
+
   if (!graph.has(startPerson) || !graph.has(targetPerson)) return -1;
   queue.push([startPerson, 0]);
   visited.add(startPerson);
@@ -41,12 +43,16 @@ function prepareSearchTool(
 
     if (currenPerson === targetPerson) return currenDistance;
 
-    let neighbord: string[] = graph.get(currenPerson)!;
-    for (const [index, value] of neighbord) {
+    let neighbords: string[] = graph.get(currenPerson)!;
+    for (const neighbord of neighbords) {
+      if (!visited.has(neighbord)) {
+        visited.add(neighbord);
+        queue.push([neighbord, currenDistance + 1]);
+      }
     }
   }
 
-  return 0;
+  return -1;
 }
 // Add family tree to graph
 function addToGrap(familyTree: FamilyTreeType): Map<string, string[]> {

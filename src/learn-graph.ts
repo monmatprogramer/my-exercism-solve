@@ -32,4 +32,4 @@ function lesson2Fun() {
   console.log(graph["Vera"]);
 }
 
-lesson1Fun();
+lesson2Fun();
