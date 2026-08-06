@@ -13,15 +13,13 @@ function bfs(graph: Record<string, string[]>, startNode: string) {
     if (graphM.has(currentNode)) {
       //true
       queue = [...queue, ...graphM.get(currentNode)!]; //[b,c]
-
       for (const neighbor of queue) {
         if (!visited.has(neighbor)) {
-          visited.add(neighbor);
+          visited.add(neighbor); // [b,c]
         }
       }
     }
   }
-  console.log(visited);
 }
 
 const graph: Record<string, string[]> = {
