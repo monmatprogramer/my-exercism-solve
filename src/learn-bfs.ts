@@ -2,11 +2,11 @@
 function bfs(graph: Record<string, string[]>, startNode: string) {
   // Create a queue
   const queue: string[] = [startNode];
-  console.log(queue);
+  const visited: Set<string> = new Set<string>(startNode);
 }
 
 const graph: Record<string, string[]> = {
   A: ["B", "C"],
   B: ["D"],
 };
-bfs(graph, "A");
+bfs(graph, "stringA");
