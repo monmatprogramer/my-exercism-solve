@@ -7,8 +7,7 @@ export function degreesOfSeparation(
 ): number {
   // graph
   const graph: Map<string, string[]> = addToGrap(familyTree);
-  prepareSearchTool(graph, personA, personB);
-  return 0;
+  return prepareSearchTool(graph, personA, personB);
 }
 function seach(queue: [string, number][]) {
   if (queue.length !== 0) {
