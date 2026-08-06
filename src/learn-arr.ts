@@ -68,4 +68,10 @@ function toArrayQueue() {
   console.log(a);
   console.log(b);
 }
-toArrayQueue();
+
+// Learn about search array in array
+function searchArrayInArray() {
+  const arr1: string[] = ["Sokha", "Pupha", "Chanra", "Chanmuney"];
+  const arr2: string[] = ["Chanmuney", "Sokchan", "Sokha"];
+}
+searchArrayInArray();
