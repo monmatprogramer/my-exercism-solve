@@ -123,9 +123,12 @@ function toWayThree() {
   console.log(graph);
 }
 // Get empty map
-function getEmptyMap() {}
+function getEmptyMap() {
+  const graphM = toMap(graph);
+  console.log(graphM);
+}
 try {
-  mapOfObject();
+  getEmptyMap();
 } catch (e: any) {
   console.log("💥: ", e.message);
 }

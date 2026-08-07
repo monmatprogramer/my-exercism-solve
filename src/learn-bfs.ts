@@ -43,7 +43,7 @@ function bfs(
   return -1;
 }
 // Conver record to map
-function toMap(graph: Record<string, string[]>): Map<string, string[]> {
+export function toMap(graph: Record<string, string[]>): Map<string, string[]> {
   return new Map<string, string[]>(Object.entries(graph));
 }
 function backFarwd(
@@ -80,7 +80,7 @@ function backFarwd(
   console.log("camFrom :  ", camFrom);
   return [];
 }
-const graph: Record<string, string[]> = {
+export const graph: Record<string, string[]> = {
   A: ["B", "C"],
   B: ["D"],
   C: ["E"],
