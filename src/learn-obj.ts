@@ -21,12 +21,12 @@ function lesson2() {
   }
 
   const koyeb: BackendService = {
-    name: 'Koyeb',
-    memory: 8
-    start: () =>{
-      console.log(`${name} is start...`)
-    }
-  }
+    name: "Koyeb",
+    memory: 8,
+    start: () => {
+      console.log(`Koyerb is start...`);
+    },
+  };
   koyeb.start();
 }
 lesson2();
