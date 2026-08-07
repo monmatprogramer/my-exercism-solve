@@ -56,10 +56,14 @@ function backFarwd(
       `This start node: ${startNode} is not found in family tree`,
     );
   }
+  const camFrom: Map<string, string> = new Map<strig, string>();
   const queue: string[] = [startNode]; //[A]
   const visited = new Set<string>([startNode]); //[A]
   while (queue.length > 0) {
     let currentNode: string = queue.shift()!; // [A],
+    if (visited.has(currentNode)) {
+      // true
+    }
   }
   console.log("graphM :  ", graphM);
   return [];
@@ -72,7 +76,7 @@ const graph: Record<string, string[]> = {
 };
 //console.log(bfs(graph, "A", "C"));
 try {
-  backFarwd(graph, "");
+  backFarwd(graph, "A");
 } catch (e: any) {
   console.log(`💥 ${colors.red}Error message: ${e.message}${colors.reset}`);
 }
