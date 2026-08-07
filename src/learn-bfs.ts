@@ -10,9 +10,6 @@ function bfs(
   targetNode: string,
 ) {
   // convert object to map
-  //const graphM: Map<string, string[]> = new Map<string, string[]>(
-  //Object.entries(graph),
-  //);
   const graphM: Map<string, string[]> = toMap(graph);
   // Create a queue
   let queue: QueueObjType[] = [{ node: startNode, distance: 0 }]; //[{node: , distance: }]
