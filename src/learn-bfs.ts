@@ -38,8 +38,21 @@ function bfs(
 function toMap(graph: Record<string, string[]>): Map<string, string[]> {
   return new Map<string, string[]>(Object.entries(graph));
 }
-function backFarwd(graph: Record<string, string[]>): string[] {
+function backFarwd(
+  graph: Record<string, string[]>,
+  startNode: string,
+): string[] {
   const graphM = toMap(graph);
+  if (!graphM.has(startNode) || startNode.length === 0) {
+    throw new Error(
+      `This start node: ${startNode} is not found in family tree`,
+    );
+  }
+  const queue: string[] = [startNode]; //[A]
+  const visited = new Set<string>([startNode]); //[A]
+  while (queue.length > 0) {
+    let currentNode: string = queue.shift()!; // [A],
+  }
   console.log("graphM :  ", graphM);
   return [];
 }
@@ -50,4 +63,8 @@ const graph: Record<string, string[]> = {
   D: [],
 };
 //console.log(bfs(graph, "A", "C"));
-backFarwd(graph);
+try {
+  backFarwd(graph, "");
+} catch (e: any) {
+  console.log(`💥 Error message: ${e.message}`);
+}
