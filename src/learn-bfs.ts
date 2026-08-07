@@ -1,5 +1,9 @@
 // Learn about breadth-first searching
-function bfs(graph: Record<string, string[]>, startNode: string) {
+function bfs(
+  graph: Record<string, string[]>,
+  startNode: string,
+  targetNode: string,
+) {
   // convert object to map
   const graphM: Map<string, string[]> = new Map<string, string[]>(
     Object.entries(graph),
@@ -26,7 +30,7 @@ function bfs(graph: Record<string, string[]>, startNode: string) {
 const graph: Record<string, string[]> = {
   A: ["B", "C"],
   B: ["D"],
-  C: [],
+  C: ["E"],
   D: [],
 };
-bfs(graph, "A");
+bfs(graph, "A", "E");
