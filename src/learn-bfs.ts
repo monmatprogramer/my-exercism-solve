@@ -1,7 +1,8 @@
 // Learn about breadth-first searching
 // object of queue type
 type QueueObjType = {
-  string: number;
+  node: string;
+  distance: number;
 };
 function bfs(
   graph: Record<string, string[]>,
