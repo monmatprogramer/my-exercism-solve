@@ -20,12 +20,13 @@ function bfs(
     //true,
     let currentNode: QueueObjType = queue.shift()!; //{node:..., distance:...}
     if (graphM.has(currentNode.node)) {
+      // node: ....,
       //true
-      const neighbors: string[] = graphM.get(currentNode)!; //[b,c]
+      const neighbors: string[] = graphM.get(currentNode.node)!; //[b,c]
       for (const neighbor of neighbors) {
         if (!visited.has(neighbor)) {
           visited.add(neighbor); // [b,c]
-          queue.push(neighbor);
+          queue.push({ node: neighbor, distance: currentNode.distance + 1 });
         }
       }
     }
