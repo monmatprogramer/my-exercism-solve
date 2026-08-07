@@ -56,16 +56,28 @@ function backFarwd(
       `This start node: ${startNode} is not found in family tree`,
     );
   }
-  const camFrom: Map<string, string> = new Map<strig, string>();
+  const camFrom: Map<string, string> = new Map<string, string>();
   const queue: string[] = [startNode]; //[A]
   const visited = new Set<string>([startNode]); //[A]
   while (queue.length > 0) {
-    let currentNode: string = queue.shift()!; // [A],
+    //[A] = 1, [B,C]= 2,[C]= 1, [E] =1
+    let currentNode: string = queue.shift()!; // A =>[],B = [C], C=[], E=[]
     if (visited.has(currentNode)) {
-      // true
+      //Visited = [A, B, C, E]
+      // true,
+      const neighbors = graphM.get(currentNode)!; //[B,C], [D], [E],[]
+      for (const neighbor of neighbors) {
+        camFrom.set(neighbor, currentNode);
+        /*{B: A, C: A}
+         *{D: B}
+         *{E: C}
+         * */
+        queue.push(neighbor); // [E]
+        visited.add(neighbor); //[A,B,C, E]
+      }
     }
   }
-  console.log("graphM :  ", graphM);
+  console.log("camFrom :  ", camFrom);
   return [];
 }
 const graph: Record<string, string[]> = {

@@ -97,4 +97,11 @@ function searchArrayInArray() {
   const matches = arr2.filter((name) => searchSet.has(name));
   console.log(matches.includes("Sokha"));
 }
-searchArrayInArray();
+function loopEmtpyArray() {
+  const emptyArray: number[] = [];
+  for (const emp of emptyArray) {
+    console.log(emp);
+  }
+}
+
+loopEmtpyArray();
