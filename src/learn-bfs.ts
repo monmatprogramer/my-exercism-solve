@@ -1,4 +1,9 @@
+const colors = {
+  reset: "\x1b[0m",
+  red: "\x1b[31m",
+};
 // Learn about breadth-first searching
+
 // object of queue type
 type QueueObjType = {
   node: string;
@@ -66,5 +71,5 @@ const graph: Record<string, string[]> = {
 try {
   backFarwd(graph, "");
 } catch (e: any) {
-  console.log(`💥 Error message: ${e.message}`);
+  console.log(`💥 ${colors.red}Error message: ${e.message}${colors.reset}`);
 }
