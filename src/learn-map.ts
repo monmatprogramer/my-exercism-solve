@@ -1,3 +1,5 @@
+//import graph for testing here
+import { graph, toMap } from "./learn-bfs";
 // --- The to create a dictionary in typeScript
 // # 1. use Record
 // Use case: simple object-based
@@ -120,6 +122,8 @@ function toWayThree() {
   }
   console.log(graph);
 }
+// Get empty map
+function getEmptyMap() {}
 try {
   mapOfObject();
 } catch (e: any) {
