@@ -38,11 +38,16 @@ function bfs(
 function toMap(graph: Record<string, string[]>): Map<string, string[]> {
   return new Map<string, string[]>(Object.entries(graph));
 }
-function backFarwd() {}
+function backFarwd(graph: Record<string, string[]>): string[] {
+  const graphM = toMap(graph);
+  console.log("graphM :  ", graphM);
+  return [];
+}
 const graph: Record<string, string[]> = {
   A: ["B", "C"],
   B: ["D"],
   C: ["E"],
   D: [],
 };
-console.log(bfs(graph, "A", "C"));
+//console.log(bfs(graph, "A", "C"));
+backFarwd(graph);
