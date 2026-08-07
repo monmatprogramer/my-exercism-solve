@@ -1,4 +1,8 @@
 // Learn about breadth-first searching
+// object of queue type
+type QueueObjType = {
+  [key: string]: number;
+};
 function bfs(
   graph: Record<string, string[]>,
   startNode: string,
@@ -9,7 +13,7 @@ function bfs(
     Object.entries(graph),
   );
   // Create a queue
-  let queue: string[] = [startNode]; //[a]
+  let queue: QueueObjType[] = [{ node: startNode, distance: 0 }]; //[{node: , distance: }]
   const visited: Set<string> = new Set<string>([startNode]); //[a]
   while (queue.length > 0) {
     //true,
