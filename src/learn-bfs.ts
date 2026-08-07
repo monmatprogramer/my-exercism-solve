@@ -19,6 +19,9 @@ function bfs(
   while (queue.length > 0) {
     //true,
     let currentNode: QueueObjType = queue.shift()!; //{node:..., distance:...}
+    if (currentNode.node === targetNode) {
+      return currentNode.distance;
+    }
     if (graphM.has(currentNode.node)) {
       // node: ....,
       //true
