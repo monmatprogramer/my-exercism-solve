@@ -18,8 +18,8 @@ function bfs(
   const visited: Set<string> = new Set<string>([startNode]); //[a]
   while (queue.length > 0) {
     //true,
-    const currentNode: string = queue.shift()!; //a
-    if (graphM.has(currentNode)) {
+    let currentNode: QueueObjType = queue.shift()!; //{node:..., distance:...}
+    if (graphM.has(currentNode.node)) {
       //true
       const neighbors: string[] = graphM.get(currentNode)!; //[b,c]
       for (const neighbor of neighbors) {
