@@ -60,20 +60,14 @@ function backFarwd(
   const queue: string[] = [startNode]; //[A]
   const visited = new Set<string>([startNode]); //[A]
   while (queue.length > 0) {
-    //[A] = 1, [B,C]= 2,[C]= 1, [E] =1
-    let currentNode: string = queue.shift()!; // A =>[],B = [C], C=[], E=[]
+    //
+    let currentNode: string = queue.shift()!;
     if (visited.has(currentNode)) {
-      //Visited = [A, B, C, E]
-      // true,
-      const neighbors = graphM.get(currentNode)!; //[B,C], [D], [E],[]
+      const neighbors = graphM.get(currentNode)!;
       for (const neighbor of neighbors) {
         camFrom.set(neighbor, currentNode);
-        /*{B: A, C: A}
-         *{D: B}
-         *{E: C}
-         * */
-        queue.push(neighbor); // [E]
-        visited.add(neighbor); //[A,B,C, E]
+        queue.push(neighbor);
+        visited.add(neighbor);
       }
     }
   }
