@@ -5,8 +5,7 @@ B     C
 D     E
 
 backFarwd(graph, E) => backward[E, C, A] final result[A,C,E] 
-
-IF startNode === default or null:
-    startNode = 
-
-queue = [startNode]
+startNode
+endNode
+queue = [startNode] // queue = [A]
+visited = [startNode] // visited = [A]
