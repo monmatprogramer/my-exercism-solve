@@ -9,3 +9,9 @@ startNode
 endNode
 queue = [startNode] // queue = [A]
 visited = [startNode] // visited = [A]
+while queue.lenght>0:
+    currentNode = queue.shift()!; // A
+    currentNode === visited: // queue=[A] === visited [A] => true
+        graph.has(currentNode) // graph ={A: [B,C]}
+            
+            
