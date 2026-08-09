@@ -13,5 +13,5 @@ while queue.lenght>0:
     currentNode = queue.shift()!; // A
     currentNode === visited: // queue=[A] === visited [A] => true
         graph.has(currentNode) // graph ={A: [B,C]}
-            
+           visited.add(graph.get(currentNode)) // visited = [A, B, C] 
             
