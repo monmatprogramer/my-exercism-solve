@@ -66,28 +66,27 @@ function backFarwd(
   const newPath: string[] = [];
   while (queue.length > 0) {
     // queue = [D,E]
-    let currentNode: string = queue.shift()!; //A, B, C,D,E
-    //  A,B, C, D, E === E => True
+    let currentNode: string = queue.shift()!; //B,C,D
+    //  D === D => True
     if (currentNode === targetNode) {
       break;
     }
-    // visited = [A,B,C,D] has A,B, C,D => true
+    // visited = [A,B,C] has A,B,C => true
     if (visited.has(currentNode)) {
-      //currentNode = A,B,C, D
-      // neighbors = [B,C], [D], [E], []
+      //currentNode = C
+      // neighbors = [E]
       const neighbors = graphM.get(currentNode)!;
-      //neighbors =[B,C], [D], [E], []
       for (const neighbor of neighbors) {
         camFrom.set(neighbor, currentNode);
         /*
           *camFrom = {
-            B: A,
-            C: A
-            D: B
-            E: C
+          B: A,
+          C: A
+          D: B
+          C: E
         }
           * */
-        //queue = [B,C], [C,D] , [D,E],[E,D]
+        //queue = [D,E]
         queue.push(neighbor);
         //visited = [A,B,C,D,E]
         visited.add(neighbor);
