@@ -65,10 +65,14 @@ function backFarwd(
     // visited = [A]
     // True
     if (visited.has(currentNode)) {
+      // neighbors = [B,C]
       const neighbors = graphM.get(currentNode)!;
       for (const neighbor of neighbors) {
+        //{B: A}
         camFrom.set(neighbor, currentNode);
+        //queue = [B]
         queue.push(neighbor);
+        //visited = [B]
         visited.add(neighbor);
       }
     }

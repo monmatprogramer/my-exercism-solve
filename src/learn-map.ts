@@ -122,13 +122,11 @@ function toWayThree() {
   }
   console.log(graph);
 }
-// Get empty map
-function getEmptyMap() {
-  const graphM = toMap(graph);
-  console.log(graphM);
-}
-try {
-  getEmptyMap();
-} catch (e: any) {
-  console.log("💥: ", e.message);
-}
+const familyTree4 = {
+  Alice: ["Bob", "Charlie"],
+  Bob: ["Alice", "Charlie"],
+  Charlie: ["Alice", "Bob"],
+};
+const familyTree4Map = toMap(familyTree4);
+
+console.log(familyTree4Map.get("Alice"));
