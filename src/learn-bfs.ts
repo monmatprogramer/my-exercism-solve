@@ -105,7 +105,7 @@ export const graph: Record<string, string[]> = {
 };
 //console.log(bfs(graph, "A", "C"));
 try {
-  backFarwd(graph, "E");
+  backFarwd(graph, "A", "E");
 } catch (e: any) {
   console.log(`💥 ${colors.red}Error message: ${e.message}${colors.reset}`);
 }
