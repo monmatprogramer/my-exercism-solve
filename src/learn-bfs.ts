@@ -49,6 +49,7 @@ export function toMap(graph: Record<string, string[]>): Map<string, string[]> {
 function backFarwd(
   graph: Record<string, string[]>,
   startNode: string,
+  targetNode: string,
 ): string[] {
   const graphM = toMap(graph);
   if (!graphM.has(startNode) || startNode.length === 0) {
@@ -59,7 +60,7 @@ function backFarwd(
   const camFrom: Map<string, string> = new Map<string, string>();
   const queue: string[] = [startNode]; //[A]
   const visited = new Set<string>([startNode]); //[A]
-  //path
+  //newPath= [];
   const newPath: string[] = [];
   while (queue.length > 0) {
     //
