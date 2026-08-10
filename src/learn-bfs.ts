@@ -111,9 +111,12 @@ function backward(
   const queue: string[] = [startNode]; //[A]
   const visited = new Set<string>([startNode]);
   let currentNode: string;
+  let neighbor: string[];
   while (queue.length > 0) {
     currentNode = queue.shift()!;
-    console.log(graphM.has(currentNode));
+    graphM.has(currentNode);
+    neighbor = graphM.get(currentNode)!;
+    console.log(neighbor);
   }
 }
 
