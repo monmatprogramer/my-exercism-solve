@@ -100,9 +100,9 @@ function backward(
   graph: Record<string, string[]>,
   startNode: string,
   targetNode: string,
-) {
+): string[] {
   const graphM = toMap(graph);
-  if (!graphM.has(startNode) || startNode.length === 0) {
+  if (startNode.length === 0) {
     throw new Error(
       `This start node: ${startNode} is not found in family tree`,
     );
@@ -111,17 +111,25 @@ function backward(
   const queue: string[] = [startNode]; //[A]
   const visited = new Set<string>([startNode]);
   let currentNode: string;
-  let neighbor: string[];
+  let neighbors: string[];
+  const fw: string[] = [];
   while (queue.length > 0) {
     currentNode = queue.shift()!;
     graphM.has(currentNode);
-    neighbor = graphM.get(currentNode)!;
+    neighbors = graphM.get(currentNode)!;
     if (currentNode === targetNode) {
-      //return [targetNode];
+      fw.push(targetNode);
+      return fw;
       console.log(targetNode);
     }
-    console.log(neighbor);
+    for (const neighbor of neighbors) {
+      if (neighbor === targetNode) {
+        fw.push(...[currentNode, neighbor]);
+        return fw;
+      }
+    }
   }
+  return fw;
 }
 
 //Sample
@@ -133,7 +141,8 @@ export const graph: Record<string, string[]> = {
 };
 //console.log(bfs(graph, "A", "C"));
 try {
-  backward(graph, "A", "E");
+  let result = backward(graph, "A", "E");
+  console.log(result);
 } catch (e: any) {
   console.log(`💥 ${colors.red}Error message: ${e.message}${colors.reset}`);
 }
