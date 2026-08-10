@@ -100,7 +100,7 @@ function backward(
   graph: Record<string, string[]>,
   startNode: string,
   targetNode: string,
-): string[] {
+): Set<string> {
   const graphM = toMap(graph);
   if (startNode.length === 0) {
     throw new Error(
@@ -112,20 +112,20 @@ function backward(
   const visited = new Set<string>([startNode]);
   let currentNode: string;
   let neighbors: string[];
-  const fw: string[] = [];
+  const fw: Set<string> = new Set<string>();
   while (queue.length > 0) {
     currentNode = queue.shift()!;
     graphM.has(currentNode);
     neighbors = graphM.get(currentNode)!;
     if (currentNode === targetNode) {
-      fw.push(targetNode);
+      fw.add(targetNode);
       return fw;
       console.log(targetNode);
     }
     for (const neighbor of neighbors) {
       if (neighbor === targetNode) {
-        fw.push(...[startNode, currentNode, neighbor]);
-        return fw;
+        let temp = [startNode, currentNode, neighbor];
+        return new Set<string>(temp);
       }
       queue.push(neighbor);
       visited.add(neighbor);
@@ -143,7 +143,7 @@ export const graph: Record<string, string[]> = {
 };
 //console.log(bfs(graph, "A", "C"));
 try {
-  let result = backward(graph, "A", "D");
+  let result = backward(graph, "A", "E");
   console.log(result);
 } catch (e: any) {
   console.log(`💥 ${colors.red}Error message: ${e.message}${colors.reset}`);
