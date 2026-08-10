@@ -124,9 +124,11 @@ function backward(
     }
     for (const neighbor of neighbors) {
       if (neighbor === targetNode) {
-        fw.push(...[currentNode, neighbor]);
+        fw.push(...[startNode, currentNode, neighbor]);
         return fw;
       }
+      queue.push(neighbor);
+      visited.add(neighbor);
     }
   }
   return fw;
@@ -141,7 +143,7 @@ export const graph: Record<string, string[]> = {
 };
 //console.log(bfs(graph, "A", "C"));
 try {
-  let result = backward(graph, "A", "E");
+  let result = backward(graph, "A", "D");
   console.log(result);
 } catch (e: any) {
   console.log(`💥 ${colors.red}Error message: ${e.message}${colors.reset}`);
