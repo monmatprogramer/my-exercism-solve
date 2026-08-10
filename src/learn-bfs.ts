@@ -61,7 +61,9 @@ function backFarwd(
   const visited = new Set<string>([startNode]); //[A]
   while (queue.length > 0) {
     //
-    let currentNode: string = queue.shift()!;
+    let currentNode: string = queue.shift()!; // A
+    // visited = [A]
+    // True
     if (visited.has(currentNode)) {
       const neighbors = graphM.get(currentNode)!;
       for (const neighbor of neighbors) {
