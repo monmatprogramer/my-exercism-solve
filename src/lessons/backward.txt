@@ -3,32 +3,4 @@
 B     C
 |     |
 D --  E
-graph = {
-    A: [B,C]
-    B: [D]
-    C: [E]
-    
-}
-queue = [B,C]
-visited = [A,B,C];
 
-backFarwd(graph, E) => backward[E, C, A] final result[A,C,E] 
-startNode = A
-endNode = E
-neighbor: string[]=[]
-
-queue = [startNode] // queue = [A]
-visited = [startNode] // visited = [A]
-
-while queue.lenght>0:
-    currentNode = queue.shift()!; // A
-    IF currentNode === endNode: // false A !== E
-        currentNode === visited: // queue=[A] === visited [A] => true
-            graph.has(currentNode) // graph ={A: [B,C]}
-                neighbor = graph.get(currentNode)// [B,C]
-                for(i=0;i<neighbor.lenght;i++){
-                    queue.push(neighbor); // queue= [B,C]
-                }
-                visited.add(...queue) // visited = [A, B, C] 
-
-            
