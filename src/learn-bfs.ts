@@ -97,6 +97,23 @@ function backFarwd(
   console.log("camFrom :  ", camFrom);
   return [];
 }
+function backward(
+  graph: Record<string, string[]>,
+  startNode: string,
+  targetNode: string,
+) {
+  const graphM = toMap(graph);
+  if (!graphM.has(startNode) || startNode.length === 0) {
+    throw new Error(
+      `This start node: ${startNode} is not found in family tree`,
+    );
+  }
+  const camFrom: Map<string, string> = new Map<string, string>();
+  const queue: string[] = [startNode]; //[A]
+  const visited = new Set<string>([startNode]);
+}
+
+//Sample
 export const graph: Record<string, string[]> = {
   A: ["B", "C"],
   B: ["D"],
@@ -105,7 +122,7 @@ export const graph: Record<string, string[]> = {
 };
 //console.log(bfs(graph, "A", "C"));
 try {
-  backFarwd(graph, "A", "E");
+  backward(graph, "A", "E");
 } catch (e: any) {
   console.log(`💥 ${colors.red}Error message: ${e.message}${colors.reset}`);
 }

@@ -1,14 +1,1 @@
-   A
-  /  \
-B     C
-|     |
-D --  E
 
-const camFrom = new Map<string, string>();
-let queue: string [] = [startNode] // queue = [A]
-const visited = new Set<string>([startNode]); //visited = [A]
-
-
-while(queue.lenght >0){
-    
-}
