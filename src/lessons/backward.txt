@@ -14,13 +14,15 @@ visited = [A,B,C];
 
 backFarwd(graph, E) => backward[E, C, A] final result[A,C,E] 
 startNode
-endNode
+endNode = E
 queue = [startNode] // queue = [A]
 visited = [startNode] // visited = [A]
 while queue.lenght>0:
     currentNode = queue.shift()!; // A
-    currentNode === visited: // queue=[A] === visited [A] => true
-        graph.has(currentNode) // graph ={A: [B,C]}
-            queue.push(..visited);
-           visited.add(graph.get(currentNode)) // visited = [A, B, C] 
+    IF currentNode === endNode: // false A !== E
+        currentNode === visited: // queue=[A] === visited [A] => true
+            graph.has(currentNode) // graph ={A: [B,C]}
+                queue.push(..visited); // queue= [B,C]
+                visited.add(graph.get(currentNode)) // visited = [A, B, C] 
+
             
