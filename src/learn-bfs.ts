@@ -113,6 +113,7 @@ function backward(
   let currentNode: string;
   while (queue.length > 0) {
     currentNode = queue.shift()!;
+    console.log(graphM.has(currentNode));
   }
 }
 
