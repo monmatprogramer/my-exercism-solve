@@ -110,6 +110,10 @@ function backward(
   const camFrom: Map<string, string> = new Map<string, string>();
   const queue: string[] = [startNode]; //[A]
   const visited = new Set<string>([startNode]);
+  let currentNode: string;
+  while (queue.length > 0) {
+    currentNode = queue.shift()!;
+  }
 }
 
 //Sample
