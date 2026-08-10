@@ -116,6 +116,10 @@ function backward(
     currentNode = queue.shift()!;
     graphM.has(currentNode);
     neighbor = graphM.get(currentNode)!;
+    if (currentNode === targetNode) {
+      //return [targetNode];
+      console.log(targetNode);
+    }
     console.log(neighbor);
   }
 }
