@@ -2,8 +2,12 @@
   /  \
 B     C
 |     |
-D     E
-
+D --  E
+{
+    A: [B,C]
+    B: [D]
+    C: [E]
+}
 backFarwd(graph, E) => backward[E, C, A] final result[A,C,E] 
 startNode
 endNode
