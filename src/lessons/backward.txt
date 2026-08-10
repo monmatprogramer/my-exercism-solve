@@ -25,8 +25,10 @@ while queue.lenght>0:
     IF currentNode === endNode: // false A !== E
         currentNode === visited: // queue=[A] === visited [A] => true
             graph.has(currentNode) // graph ={A: [B,C]}
-                neighbor = graph.get(currentNode)//
-                queue.push(..visited); // queue= [B,C]
-                visited.add(graph.get(currentNode)) // visited = [A, B, C] 
+                neighbor = graph.get(currentNode)// [B,C]
+                for(i=0;i<neighbor.lenght;i++){
+                    queue.push(neighbor); // queue= [B,C]
+                }
+                visited.add(...queue) // visited = [A, B, C] 
 
             
