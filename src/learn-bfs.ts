@@ -48,7 +48,9 @@ export function toMap(graph: Record<string, string[]>): Map<string, string[]> {
 }
 function backFarwd(
   graph: Record<string, string[]>,
+  //A
   startNode: string,
+  //E
   targetNode: string,
 ): string[] {
   const graphM = toMap(graph);
@@ -67,6 +69,7 @@ function backFarwd(
     let currentNode: string = queue.shift()!; // A
     // visited = [A]
     // True
+    // A === E => False
     if (currentNode === targetNode) {
       break;
     }
@@ -74,11 +77,13 @@ function backFarwd(
       // neighbors = [B,C]
       const neighbors = graphM.get(currentNode)!;
       for (const neighbor of neighbors) {
+        //C
         //{B: A}
+        //{C: A}
         camFrom.set(neighbor, currentNode);
-        //queue = [B]
+        //queue = [B,C]
         queue.push(neighbor);
-        //visited = [B]
+        //visited = [A,B,C]
         visited.add(neighbor);
       }
     }
