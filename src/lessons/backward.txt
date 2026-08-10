@@ -9,7 +9,7 @@ graph = {
     C: [E]
     
 }
-queue = []
+queue = [B,C]
 visited = [A,B,C];
 
 backFarwd(graph, E) => backward[E, C, A] final result[A,C,E] 
@@ -21,7 +21,6 @@ while queue.lenght>0:
     currentNode = queue.shift()!; // A
     currentNode === visited: // queue=[A] === visited [A] => true
         graph.has(currentNode) // graph ={A: [B,C]}
+            queue.push(..visited);
            visited.add(graph.get(currentNode)) // visited = [A, B, C] 
-           queue.shift(); queue = [];
-
             
