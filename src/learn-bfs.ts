@@ -59,11 +59,16 @@ function backFarwd(
   const camFrom: Map<string, string> = new Map<string, string>();
   const queue: string[] = [startNode]; //[A]
   const visited = new Set<string>([startNode]); //[A]
+  //path
+  const newPath: string[] = [];
   while (queue.length > 0) {
     //
     let currentNode: string = queue.shift()!; // A
     // visited = [A]
     // True
+    if (currentNode === targetNode) {
+      break;
+    }
     if (visited.has(currentNode)) {
       // neighbors = [B,C]
       const neighbors = graphM.get(currentNode)!;
