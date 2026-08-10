@@ -128,5 +128,12 @@ const familyTree4 = {
   Charlie: ["Alice", "Bob"],
 };
 const familyTree4Map = toMap(familyTree4);
+const camFrom: Record<string, string> = {
+  B: "A",
+  C: "A",
+  D: "B",
+  E: "C",
+};
 
-console.log(familyTree4Map.get("Alice"));
+let camFromMap = new Map<string, string>(Object.entries(camFrom));
+console.log(camFromMap);
