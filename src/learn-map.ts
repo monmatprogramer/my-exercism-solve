@@ -137,5 +137,7 @@ const camFrom: Record<string, string> = {
 
 const camFromMap = new Map<string, string>(Object.entries(camFrom));
 const backwardReult = new Set<string>();
-for (const key of camFromMap) {
+for (const [key, value] of camFromMap) {
+  backwardReult.add(value);
 }
+console.log(backwardReult);
