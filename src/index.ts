@@ -1,6 +1,5 @@
-import { degreesOfSeparation, FamilyTreeType } from "./relative-distance";
-
-const familyTree: FamilyTreeType = {
+import { degreesOfSeparation } from "./relative-distance2";
+const familyTree: Record<string, string[]> = {
   Vera: ["Tomoko"],
   Tomoko: ["Aditi"],
 };
@@ -21,7 +20,9 @@ const familyTree5 = {
 const familyTree6 = {
   Vera: ["Bob", "Alice", "Tomoko"],
 };
-degreesOfSeparation(familyTree6, "Vera", "Tomoko");
+
+let result = degreesOfSeparation(familyTree2, "Olga", "Yassin");
+console.log(result);
 //degreesOfSeparation(familyTree2, "Olga", "Yassin");
 //degreesOfSeparation(familyTree3, "Olga", "Yassin");
 //degreesOfSeparation(familyTree5, "Olga", "Yassin");
