@@ -1,11 +1,12 @@
 //for testing
-/*
+
 const graphM = new Map<string, string[]>();
 graphM.set("Khadija", ["Mateo"]);
 graphM.set("Mateo", ["Rami"]);
+graphM.set("Rami", ["Mateo"]);
 const startNodeG: string = "Khadija";
 const targetNodeG: string = "Rami";
-*/
+
 // object of queue type
 type QueueObjType = {
   node: string;
@@ -18,8 +19,10 @@ export function degreesOfSeparation(
   targetNode: string,
 ) {
   // convert object to map
-  const graphM: Map<string, string[]> = addToGrap(graph);
-  console.log(graphM);
+  //const graphM: Map<string, string[]> = addToGrap(graph);
+  startNode = startNodeG;
+  targetNode = targetNodeG;
+
   // Create a queue
   let queue: QueueObjType[] = [{ node: startNode, distance: 0 }]; //[{node: , distance: }]
   const visited: Set<string> = new Set<string>([startNode]); //[a]
