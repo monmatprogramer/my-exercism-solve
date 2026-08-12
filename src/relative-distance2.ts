@@ -12,7 +12,7 @@ export function degreesOfSeparation(
 ) {
   // convert object to map
   const graphM: Map<string, string[]> = toMap(graph);
-  console.log(graphM);
+
   // Create a queue
   let queue: QueueObjType[] = [{ node: startNode, distance: 0 }]; //[{node: , distance: }]
   const visited: Set<string> = new Set<string>([startNode]); //[a]
@@ -39,4 +39,44 @@ export function degreesOfSeparation(
 // Conver record to map
 export function toMap(graph: Record<string, string[]>): Map<string, string[]> {
   return new Map<string, string[]>(Object.entries(graph));
+}
+// Add family tree to graph
+function addToGrap(
+  familyTree: Record<string, string[]>,
+): Map<string, string[]> {
+  /*familyTree: {
+  Vera: ["Bob", "Alice", "Tomoko"],
+};*/
+
+  const graph = new Map<string, string[]>();
+  for (const [parent, children] of Object.entries(familyTree)) {
+    if (!graph.has(parent)) {
+      graph.set(parent, [...children]);
+    }
+    let tempChildren: string[] = [...children];
+    let remainArray: string[];
+    let tempParent: string | undefined;
+    let firstEle: string;
+    let secondEle: string;
+    for (let i: number = 0; i < children.length; i++) {
+      let tempI: number = i;
+      tempParent = tempChildren.shift();
+      remainArray = tempChildren;
+      tempChildren = [tempParent!, ...remainArray];
+      firstEle = tempChildren[0];
+      if (!tempChildren[tempI + 1]) {
+        secondEle = tempChildren[i];
+        tempChildren[0] = secondEle;
+        tempChildren[i] = firstEle;
+      } else {
+        secondEle = tempChildren[tempI + 1];
+        tempChildren[0] = secondEle;
+        tempChildren[tempI + 1] = firstEle;
+      }
+      remainArray = [parent, ...remainArray];
+      graph.set(tempParent!, remainArray);
+      remainArray = [];
+    }
+  }
+  return graph;
 }
