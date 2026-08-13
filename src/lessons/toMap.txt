@@ -32,6 +32,12 @@ C: [A, B]
 }
 
 
+--------------------
+// {}
+parentGraph = new Map<string,string[]>();
+parentTree = {A: [B, C, D]}
+
+
 
 
 
