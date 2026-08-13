@@ -1,0 +1,14 @@
+// Learn to map parent child
+Problem
+const familyTree = {
+      Khadija: ['Mateo'],
+      Mateo: ['Rami'],
+    }
+const actual = degreesOfSeparation(familyTree, 'Khadija', 'Rami')
+
+Solution result
+Map(3) {
+  'Khadija' => [ 'Mateo' ],
+  'Mateo' => [ 'Rami' ],
+  'Rami' => [ 'Mateo' ]
+}
