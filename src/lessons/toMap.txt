@@ -61,7 +61,7 @@ IF parentGraph.size() === 1:
         //i = 2 => tempValue = C => childValue = [D, B,C] => childValue = [D,B,C] => tempValue = ? => parentGraph = ?
       if(tempValue){
            childValue.unshift(tempValue);
-           childValue[0], childValue[i] = [childValue[i], childValue[0]]
+           [childValue[0], childValue[i]]= [childValue[i], childValue[0]]
          }
         tempValue = childValue.shift();
         parentGraph.set(tempValue, [parentKey, childValue])
