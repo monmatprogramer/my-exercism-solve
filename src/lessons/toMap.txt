@@ -58,8 +58,9 @@ IF parentGraph.size() === 1:
     FOR 0 < childLen:
         //i=0
         //childValue.shift() = B (childValue = [C,D])
+        //parentGraph = {B: [A, C, D]}
         //i=1
-        //childValue.shift() = C (childValue = [D]) ❌
+        //childValue.shift() = C (childValue = [D]) ❌ (childValue = [B,D]) ✅
         parentGraph.set(childValue.shift()!, [parentKey, childValue])
 
 
