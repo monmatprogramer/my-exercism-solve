@@ -58,7 +58,7 @@ IF parentGraph.size() === 1:
     FOR 0 < childLen:  
         //i = 0 => tempValue = undefined  => tempValue = B ([C,D]) => parentGraph = {B: [A,C,D]}
         //i = 1 => tempValue = 8 => childValue = [B,C,D] => childValue = [C,B,D] => tempValue = C => parentGraph = {C: [A, B,D]}
-        //i = 2 => tempValue = C => childValue = [D, B,C] => childValue = [D,B,C] => tempValue = ? => parentGraph = ?
+        //i = 2 => tempValue = C => childValue = [D, B,C] => childValue = [D,B,C] => tempValue = D => parentGraph = {D: [A, B, C]}
       if(tempValue){
            childValue.unshift(tempValue);
            [childValue[0], childValue[i]]= [childValue[i], childValue[0]]
