@@ -56,12 +56,22 @@ IF parentGraph.size() === 1:
     //childValue = [B,C,D]
     childValue = parentGraph.get();
     FOR 0 < childLen:
+        
         //i=0
-        //childValue.shift() = B (childValue = [C,D])
+        //tempValue = childValue.shift() = B (childValue = [C,D])
         //parentGraph = {B: [A, C, D]}
+        //
+
         //i=1
         //childValue.shift() = C (childValue = [D]) ❌ (childValue = [B,D]) ✅
-        parentGraph.set(childValue.shift()!, [parentKey, childValue])
+        //parentGraph = {C: [A, B,D]}
+       
+         if(tempValue){
+           childValue.unshift(tempValue);
+         }else{
+            tempValue = childValue.shift();
+         }
+        parentGraph.set(tempValue, [parentKey, childValue])
 
 
 
