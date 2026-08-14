@@ -52,8 +52,12 @@ IF parentGraph.size() === 1:
     // parentKey = A
     parentKey = parentGraph.keys();
     // childLen = 3
-    childLen = parentGraph.get()
-    FOR 0 < 3
+    childLen = parentGraph.get().length()
+    //childValue = [B,C,D]
+    childValue = parentGraph.get();
+    FOR 0 < 3:
+        //i=0
+        parentGraph.
 
 
 
