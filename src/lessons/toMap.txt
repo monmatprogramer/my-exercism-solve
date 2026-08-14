@@ -35,12 +35,20 @@ C: [A, B]
 --------------------
 // {}
 parentGraph = new Map<string,string[]>();
+
+// type of parenttree is Record<string, string[]>()
 parentTree = {A: [B, C, D]}
+
+
+
 //step 1
 // Add original parent tree into parentGraph
 //parentGraph = {A: [B, C, D]}
 parentGraph.set();
 
 
+//step 2
+// Get child from parent A
+parentTree.
 
 
