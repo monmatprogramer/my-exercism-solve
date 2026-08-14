@@ -108,7 +108,15 @@ function addTheFirst() {
   const arr: string[] = ["C"];
   arr.unshift("B");
   arr.unshift("A");
-  console.log(arr); // [A,B,C]
+  //arr = [A,B,C]
 }
 
-addTheFirst();
+// Learn how to swap array
+function swapArray() {
+  let arr: string[] = ["A", "B", "C"];
+  //swap
+  [arr[0], arr[2]] = [arr[2], arr[0]];
+  console.log(arr);
+}
+
+swapArray();
