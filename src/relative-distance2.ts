@@ -2,8 +2,8 @@
 
 const graphM = new Map<string, string[]>();
 graphM.set("Khadija", ["Mateo"]);
-graphM.set("Mateo", ["Rami"]);
-graphM.set("Rami", ["Mateo"]);
+graphM.set("Mateo", ["Khadija", "Rami"]);
+graphM.set("Rami", ["Khandija", "Mateo"]);
 const startNodeG: string = "Khadija";
 const targetNodeG: string = "Rami";
 
@@ -23,6 +23,7 @@ export function degreesOfSeparation(
   startNode = startNodeG;
   targetNode = targetNodeG;
 
+  console.log(graphM);
   // Create a queue
   let queue: QueueObjType[] = [{ node: startNode, distance: 0 }]; //[{node: , distance: }]
   const visited: Set<string> = new Set<string>([startNode]); //[a]
@@ -63,6 +64,7 @@ function addToGrap(
     if (!graph.has(parent)) {
       graph.set(parent, [...children]);
     }
+
     let tempChildren: string[] = [...children];
     let remainArray: string[];
     let tempParent: string | undefined;
