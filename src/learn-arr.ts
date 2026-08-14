@@ -103,5 +103,12 @@ function loopEmtpyArray() {
     console.log(emp);
   }
 }
+// Array at the first element
+function addTheFirst() {
+  const arr: string[] = ["C"];
+  arr.unshift("B");
+  arr.unshift("A");
+  console.log(arr); // [A,B,C]
+}
 
-loopEmtpyArray();
+addTheFirst();
