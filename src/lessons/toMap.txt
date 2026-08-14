@@ -66,5 +66,5 @@ IF parentGraph.size() === 1:
         tempValue = childValue.shift();
         parentGraph.set(tempValue, [parentKey, childValue])
 
-
+Else parentGraph.size() > 1:
 
