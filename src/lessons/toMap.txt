@@ -49,8 +49,11 @@ parentGraph = new Map<string,string[]>(Object.entries(parentTree))
 // parentGraph = {A: [B, C, D]}  
 // Get child from parent A
 IF parentGraph.size() === 1:
+    // parentKey = A
     parentKey = parentGraph.keys();
+    // childLen = 3
     childLen = parentGraph.get()
+    FOR 0 < 3
 
 
 
