@@ -67,10 +67,13 @@ IF parentGraph.size() === 1:
         //parentGraph = {C: [A, B,D]}
        
          if(tempValue){
+            // tempValue = B
+            // childValue = [B,C,D]
            childValue.unshift(tempValue);
-         }else{
-            tempValue = childValue.shift();
+           //Swab array => childValue [C,B,D]
+           childValue[0], childValue[1] = [childValue[1], childValue[0]]
          }
+        tempValue = childValue.shift();
         parentGraph.set(tempValue, [parentKey, childValue])
 
 
