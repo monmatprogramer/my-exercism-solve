@@ -19,7 +19,7 @@ export function degreesOfSeparation(
   targetNode: string,
 ) {
   // convert object to map
-  //const graphM: Map<string, string[]> = addToGrap(graph);
+  const graphM: Map<string, string[]> = enhanceAddToGraph(graph);
   startNode = startNodeG;
   targetNode = targetNodeG;
 
@@ -51,6 +51,15 @@ export function degreesOfSeparation(
 export function toMap(graph: Record<string, string[]>): Map<string, string[]> {
   return new Map<string, string[]>(Object.entries(graph));
 }
+function enhanceAddToGraph(
+  graph: Record<string, string[]>,
+): Map<string, string[]> {
+  // Create graph that is converted from record
+  const parentGraph = new Map<string, string[]>(Object.entries(graph));
+
+  return parentGraph;
+}
+
 // Add family tree to graph
 function addToGrap(
   familyTree: Record<string, string[]>,

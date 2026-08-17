@@ -30,4 +30,3 @@ let result = degreesOfSeparation(familyTree7, "Khadija", "Rami");
 //degreesOfSeparation(familyTree3, "Olga", "Yassin");
 //degreesOfSeparation(familyTree5, "Olga", "Yassin");
 //
-console.log("Hello world")
