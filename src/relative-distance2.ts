@@ -23,7 +23,6 @@ export function degreesOfSeparation(
   startNode = startNodeG;
   targetNode = targetNodeG;
 
-  console.log(graphM);
   // Create a queue
   let queue: QueueObjType[] = [{ node: startNode, distance: 0 }]; //[{node: , distance: }]
   const visited: Set<string> = new Set<string>([startNode]); //[a]
@@ -56,7 +55,12 @@ function enhanceAddToGraph(
 ): Map<string, string[]> {
   // Create graph that is converted from record
   const parentGraph = new Map<string, string[]>(Object.entries(graph));
-
+  if (parentGraph.size > 1) {
+    for (let i: number = 0; i < parentGraph.size; i++) {
+      console.log(i);
+    }
+  }
+  console.log("parentGraph:", parentGraph);
   return parentGraph;
 }
 
