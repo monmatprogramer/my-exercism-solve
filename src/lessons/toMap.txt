@@ -69,13 +69,13 @@ IF parentGraph.size() === 1:
 Else parentGraph.size() > 1:
     //parentGraph = {A:[B], B:[C]}
     Loop in parentGraph:
-        //parent1
-        // parentKey = A
+        //parent1,2
+        // parentKey = A, B
        parentKey = parentGraph.keys(); 
        //Get child
-       //childValue= [B]
+       //childValue= [B],[C]
        childValue = parentGraph.get(parentKey)
        //Add into parentGraph
-       // parentGraph = {B: [A, C]}
-       parentGraph.set(childValue, [parentKey,parentGraph.get(childValue) ])
+       // parentGraph = {B: [A, C]}, {C: [A, ?]}
+       parentGraph.set(childValue, [parentKey,parentGraph.get(childValue) === "" ? parentKey :parentGraph.get(childValue)  )
 
