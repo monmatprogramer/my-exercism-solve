@@ -73,5 +73,8 @@ Else parentGraph.size() > 1:
         // parentKey = A
        parentKey = parentGraph.keys(); 
        //Get child
+       //childValue= [B]
        childValue = parentGraph.get(parentKey)
+       //Add into parentGraph
+       parentGraph.set(childValue, [parentKey, ])
 
