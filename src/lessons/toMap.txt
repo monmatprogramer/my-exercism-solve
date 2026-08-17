@@ -70,4 +70,5 @@ Else parentGraph.size() > 1:
     //parentGraph = {A:[B], B:[C]}
     Loop in parentGraph:
         //parent1
-        
+        // parentKey = A
+       parentKey = parentGraph.keys(); 
