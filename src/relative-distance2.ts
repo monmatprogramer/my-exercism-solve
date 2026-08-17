@@ -64,10 +64,13 @@ function enhanceAddToGraph(
   let parentKey: string;
   // Create child value
   let childValue: string[];
+  // total child
+  let totalChildren: number = 0;
   if (parentGraph.size > 1) {
     for (const [parent, child] of parentGraph) {
-      console.log(child.length);
+      totalChildren += child.length;
     }
+    console.log(totalChildren);
   }
   return parentGraph;
 }
