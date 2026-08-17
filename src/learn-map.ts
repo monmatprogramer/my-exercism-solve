@@ -127,19 +127,6 @@ const familyTree4 = {
   Bob: ["Alice", "Charlie"],
   Charlie: ["Alice", "Bob"],
 };
-const familyTree4Map = toMap(familyTree4);
-const camFrom: Record<string, string> = {
-  B: "A",
-  C: "A",
-  D: "B",
-  E: "C",
-};
-
-const camFromMap = new Map<string, string>(Object.entries(camFrom));
-const backwardReult = new Set<string>();
-for (const [key, value] of camFromMap) {
-  backwardReult.add(value);
-}
 
 //Get key from map
 function getKeyFromMap() {
@@ -148,7 +135,14 @@ function getKeyFromMap() {
     ["b", 2],
     ["c", 3],
   ]);
+  console.log("Map");
+  console.log(map);
+  console.log("Get all keys");
   const keys = [...map.keys()];
-  console.log("keys=>", keys);
+  console.log("keys: ", keys);
+  //get the first key
+  console.log("Get the first key");
+  const firstKey = map.keys().next().value;
+  console.log(firstKey);
 }
 getKeyFromMap();
