@@ -53,8 +53,13 @@ export function toMap(graph: Record<string, string[]>): Map<string, string[]> {
 function enhanceAddToGraph(
   graph: Record<string, string[]>,
 ): Map<string, string[]> {
+  graph = {
+    A: ["B", "C"],
+    B: ["C", "D"],
+  };
   // Create graph that is converted from record
   const parentGraph = new Map<string, string[]>(Object.entries(graph));
+
   // Create parent key
   let parentKey: string;
   // Create child value
@@ -63,9 +68,9 @@ function enhanceAddToGraph(
     for (const [key, value] of parentGraph) {
       parentKey = key;
       childValue = value;
+      console.log(value);
     }
   }
-  console.log("parentGraph:", parentGraph);
   return parentGraph;
 }
 
