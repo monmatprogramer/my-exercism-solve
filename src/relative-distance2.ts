@@ -65,10 +65,8 @@ function enhanceAddToGraph(
   // Create child value
   let childValue: string[];
   if (parentGraph.size > 1) {
-    for (const [key, value] of parentGraph) {
-      parentKey = key;
-      childValue = value;
-      console.log(value);
+    for (const [parent, child] of parentGraph) {
+      console.log(child.length);
     }
   }
   return parentGraph;
