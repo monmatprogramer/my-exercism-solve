@@ -57,9 +57,12 @@ function enhanceAddToGraph(
   const parentGraph = new Map<string, string[]>(Object.entries(graph));
   // Create parent key
   let parentKey: string;
+  // Create child value
+  let childValue: string[];
   if (parentGraph.size > 1) {
     for (const [key, value] of parentGraph) {
       parentKey = key;
+      childValue = value;
     }
   }
   console.log("parentGraph:", parentGraph);
