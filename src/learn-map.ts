@@ -149,5 +149,6 @@ function getKeyFromMap() {
     ["c", 3],
   ]);
   const keys = [...map.keys()];
-  console.log(keys);
+  console.log("keys=>", keys);
 }
+getKeyFromMap();
