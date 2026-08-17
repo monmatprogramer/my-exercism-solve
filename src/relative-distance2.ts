@@ -67,6 +67,11 @@ function enhanceAddToGraph(
   // total child
   let totalChildren: number = 0;
   if (parentGraph.size > 1) {
+    let firstParent = parentGraph.keys().next().value;
+    let nextParent: string = parentGraph.get(firstParent!)![0];
+    console.log(nextParent);
+    for (const [parent, children] of parentGraph) {
+    }
   }
   return parentGraph;
 }
