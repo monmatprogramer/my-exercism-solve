@@ -55,9 +55,11 @@ function enhanceAddToGraph(
 ): Map<string, string[]> {
   // Create graph that is converted from record
   const parentGraph = new Map<string, string[]>(Object.entries(graph));
+  // Create parent key
+  let parentKey: string;
   if (parentGraph.size > 1) {
-    for (let i: number = 0; i < parentGraph.size; i++) {
-      console.log(i);
+    for (const [key, value] of parentGraph) {
+      parentKey = key;
     }
   }
   console.log("parentGraph:", parentGraph);
