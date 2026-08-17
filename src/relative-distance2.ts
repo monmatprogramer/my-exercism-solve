@@ -67,10 +67,11 @@ function enhanceAddToGraph(
   // total child
   let totalChildren: number = 0;
   if (parentGraph.size > 1) {
-    for (const [parent, child] of parentGraph) {
-      totalChildren += child.length;
+    for (const child of parentGraph) {
+      for (const [parent, child2] of child) {
+        console.log(parent);
+      }
     }
-    console.log(totalChildren);
   }
   return parentGraph;
 }
