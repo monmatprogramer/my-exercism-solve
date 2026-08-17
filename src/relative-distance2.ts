@@ -69,8 +69,10 @@ function enhanceAddToGraph(
   if (parentGraph.size > 1) {
     let firstParent = parentGraph.keys().next().value;
     let nextParent: string = parentGraph.get(firstParent!)![0];
-    console.log(nextParent);
     for (const [parent, children] of parentGraph) {
+      if (parent === nextParent) {
+        children.unshift(firstParent!);
+      }
     }
   }
   return parentGraph;
