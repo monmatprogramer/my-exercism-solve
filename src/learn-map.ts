@@ -140,11 +140,14 @@ const backwardReult = new Set<string>();
 for (const [key, value] of camFromMap) {
   backwardReult.add(value);
 }
-// Learn map
-function learnMoreMap() {
-  // Example we have this map
-  /*
-  {A:[B, C, D]}
-  * */
-  // We want to know parent in the map
+
+//Get key from map
+function getKeyFromMap() {
+  const map = new Map<string, number>([
+    ["a", 1],
+    ["b", 2],
+    ["c", 3],
+  ]);
+  const keys = [...map.keys()];
+  console.log(keys);
 }
