@@ -72,4 +72,6 @@ Else parentGraph.size() > 1:
         //parent1
         // parentKey = A
        parentKey = parentGraph.keys(); 
+       //Get child
+       childValue = parentGraph.get(parentKey)
 
