@@ -25,8 +25,7 @@ const familyTree7 = {
   Khadija: ["Mateo"],
   Mateo: ["Rami"],
 };
-let result = degreeOfSeparation(familyTree7, "Khadija", "Rami");
-console.log(result);
+degreeOfSeparation(familyTree4, "Khadija", "Rami");
 //degreesOfSeparation(familyTree2, "Olga", "Yassin");
 //degreesOfSeparation(familyTree3, "Olga", "Yassin");
 //degreesOfSeparation(familyTree5, "Olga", "Yassin");

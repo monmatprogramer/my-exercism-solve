@@ -52,5 +52,3 @@ function checkObject() {
   const hasZack = Object.prototype.hasOwnProperty.call(familyTree, "Zack");
   console.log(hasZack);
 }
-
-checkObject();
