@@ -145,4 +145,18 @@ function getKeyFromMap() {
   const firstKey = map.keys().next().value;
   console.log(firstKey);
 }
-getKeyFromMap();
+
+// Check the next of the Map
+
+function checkNextValueInMap() {
+  // If we have a map like
+  const myMap = new Map<string, number>([
+    ["a", 1],
+    ["b", 2],
+  ]);
+
+  // Check values
+  const iterator = myMap.values();
+  console.log(iterator);
+}
+checkNextValueInMap();
