@@ -29,12 +29,12 @@ const addEdge = (u: string, v: string) => {
   if (!graph.has(v)) {
     graph.set(v, []);
   }
-  graph.get(u)!.push(v); //[b,c,d,b]
-  graph.get(v)!.push(u); //
+  graph.get(u)!.push(v); //[b,c,d,h]
+  graph.get(v)!.push(u); //[j,k,l,a]
 
   console.log(graph.get(u));
 };
 
 const u: string = "a";
-const v: string = "b";
+const v: string = "h";
 addEdge(u, v);
