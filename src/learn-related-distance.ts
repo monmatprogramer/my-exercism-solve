@@ -20,8 +20,9 @@ export function degreeOfSeparation(
   if (person1 === person2) {
     return 0;
   }
+
   for (const parent in familyTree) {
-    console.log(parent);
+    console.log(Object.prototype.hasOwnProperty.call(familyTree, parent));
   }
 }
 
@@ -36,7 +37,15 @@ const addEdge = (u: string, v: string) => {
   graph.get(v)!.push(u); //[j,k,l,a]
 };
 
-const familyTree7 = {
-  Khadija: ["Mateo"],
-  Mateo: ["Rami"],
-};
+function checkObject() {
+  const familyTree: Record<string, string[]> = {
+    Alice: ["Bob", "Charlie"],
+    David: ["Eve"],
+  };
+  const hasAlice = Object.prototype.hasOwnProperty.call(familyTree, "Alice");
+  //familyTree.hasOwnProperty('Alice')
+  const hasZack = Object.prototype.hasOwnProperty.call(familyTree, "Zack");
+  console.log(hasZack);
+}
+
+checkObject();
