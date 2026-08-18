@@ -26,7 +26,9 @@ export function degreeOfSeparation(
       const children = familyTree[parent];
       //children = [Bob, Charlie]
       //children = [Eve]
-      console.log(children);
+      for (let i: number = 0; i < children.length; i++) {
+        addEdge(parent, children[i]);
+      }
     }
   }
 }
