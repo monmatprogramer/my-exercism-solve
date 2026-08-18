@@ -181,7 +181,14 @@ function usePeekableIterator() {
     ["e", ["f", "g", "h"]],
     ["i", ["j", "k", "l"]],
   ]);
-  //const mapIterator = new PeekableIterator(myMap.values());
-  const myIterator = new PeekableIterator(testMap.values());
 }
-usePeekableIterator();
+
+// search element in map
+function searchElementInMap() {
+  //Test map
+  const testMap = new Map<string, string[]>([
+    ["a", ["b", "c", "d"]],
+    ["c", ["f", "g", "h"]],
+    ["h", ["j", "k", "l"]],
+  ]);
+}
