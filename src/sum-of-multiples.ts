@@ -1,3 +1,3 @@
 export function sum() {
-  console.log("sum");
+  //creat a empty set to hold unqiue multiples
 }
