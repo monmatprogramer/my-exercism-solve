@@ -20,7 +20,7 @@ export function degreeOfSeparation(
   if (person1 === person2) {
     return 0;
   }
-  for (const parent in graph) {
+  for (const parent in familyTree) {
     console.log(parent);
   }
 }
@@ -40,4 +40,3 @@ const familyTree7 = {
   Khadija: ["Mateo"],
   Mateo: ["Rami"],
 };
-degreeOfSeparation(familyTree7, "a", "a");
