@@ -22,7 +22,12 @@ export function degreeOfSeparation(
   }
 
   for (const parent in familyTree) {
-    console.log(Object.prototype.hasOwnProperty.call(familyTree, parent));
+    if (Object.prototype.hasOwnProperty.call(familyTree, parent)) {
+      const children = familyTree[parent];
+      //children = [Bob, Charlie]
+      //children = [Eve]
+      console.log(children);
+    }
   }
 }
 
@@ -43,7 +48,7 @@ function checkObject() {
     David: ["Eve"],
   };
   const hasAlice = Object.prototype.hasOwnProperty.call(familyTree, "Alice");
-  //familyTree.hasOwnProperty('Alice')
+  //familyTree.hasOwnProperty('Alice') //<--standard object literal
   const hasZack = Object.prototype.hasOwnProperty.call(familyTree, "Zack");
   console.log(hasZack);
 }
