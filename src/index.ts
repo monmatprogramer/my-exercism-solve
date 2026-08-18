@@ -1,3 +1,3 @@
 import { sum } from "./sum-of-multiples";
 
-sum();
+let result: number = sum([3, 5], 1);
