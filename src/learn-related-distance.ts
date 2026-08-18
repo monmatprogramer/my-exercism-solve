@@ -23,7 +23,10 @@ export function degreeOfSeparation(
 }
 
 const addEdge = (u: string, v: string) => {
-  console.log(graph.has(u));
+  if (!graph.has(u)) {
+    graph.set(u, []);
+  }
+  console.log(graph.get(u));
 };
 
 const u: string = "a";
