@@ -182,7 +182,6 @@ function usePeekableIterator() {
     ["i", ["j", "k", "l"]],
   ]);
   //const mapIterator = new PeekableIterator(myMap.values());
-  console.log(testMap.values());
   const myIterator = new PeekableIterator(testMap.values());
 }
 usePeekableIterator();
