@@ -71,6 +71,7 @@ function enhanceAddToGraph(
     let nextParent: string = parentGraph.get(firstParent!)![0];
     for (const [parent, children] of parentGraph) {
       if (parent === nextParent) {
+        //Add parent into child
         children.unshift(firstParent!);
       }
     }
