@@ -1,5 +1,6 @@
 //import graph for testing here
 import { graph, toMap } from "./learn-bfs";
+import { PeekableIterator } from "./peekable_iterator";
 // --- The to create a dictionary in typeScript
 // # 1. use Record
 // Use case: simple object-based
@@ -157,6 +158,30 @@ function checkNextValueInMap() {
 
   // Check values
   const iterator = myMap.values();
-  console.log(iterator);
+  console.log(iterator); //[Map Iterator] { 1, 2 }
+
+  let current = iterator.next();
+  console.log(current); //{ value: 1, done: false }
+
+  if (!current.done) {
+    console.log("Next value is: ", current.value);
+  } else {
+    console.log("No more values. ");
+  }
 }
-checkNextValueInMap();
+//Use of peekable iterator class
+function usePeekableIterator() {
+  const myMap = new Map<string, number>([
+    ["a", 1],
+    ["b", 2],
+  ]);
+  //Test map
+  const testMap = new Map<string, string[]>([
+    ["a", ["b", "c", "d"]],
+    ["e", ["f", "g", "h"]],
+    ["i", ["j", "k", "l"]],
+  ]);
+  //const mapIterator = new PeekableIterator(myMap.values());
+  console.log(myMap.values());
+}
+usePeekableIterator();
