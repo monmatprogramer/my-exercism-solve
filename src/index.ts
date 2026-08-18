@@ -1,32 +1,3 @@
-import { degreeOfSeparation } from "./learn-related-distance";
-const familyTree: Record<string, string[]> = {
-  Vera: ["Tomoko"],
-  Tomoko: ["Aditi"],
-};
-const familyTree2 = {
-  Dalia: ["Olga", "Yassin"],
-};
-const familyTree3 = {
-  Mary: ["Same", "Leo"],
-};
-const familyTree4 = {
-  Alice: ["Bob", "Charlie"],
-  Bob: ["Alice", "Charlie"],
-  Charlie: ["Alice", "Bob"],
-};
-const familyTree5 = {
-  John: ["Anna", "Tom"],
-};
-const familyTree6 = {
-  Vera: ["Bob", "Alice", "Tomoko"],
-};
+import { sum } from "./sum-of-multiples";
 
-const familyTree7 = {
-  Khadija: ["Mateo"],
-  Mateo: ["Rami"],
-};
-degreeOfSeparation(familyTree7, "Khadija", "Rami");
-//degreesOfSeparation(familyTree2, "Olga", "Yassin");
-//degreesOfSeparation(familyTree3, "Olga", "Yassin");
-//degreesOfSeparation(familyTree5, "Olga", "Yassin");
-//
+sum();
