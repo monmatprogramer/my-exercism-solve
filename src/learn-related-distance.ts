@@ -20,6 +20,9 @@ export function degreeOfSeparation(
   if (person1 === person2) {
     return 0;
   }
+  for (const parent in graph) {
+    console.log(parent);
+  }
 }
 
 const addEdge = (u: string, v: string) => {
@@ -31,10 +34,10 @@ const addEdge = (u: string, v: string) => {
   }
   graph.get(u)!.push(v); //[b,c,d,h]
   graph.get(v)!.push(u); //[j,k,l,a]
-
-  console.log(graph.get(u));
 };
 
-const u: string = "a";
-const v: string = "h";
-addEdge(u, v);
+const familyTree7 = {
+  Khadija: ["Mateo"],
+  Mateo: ["Rami"],
+};
+degreeOfSeparation(familyTree7, "a", "a");
