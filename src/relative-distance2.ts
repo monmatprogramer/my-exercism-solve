@@ -1,122 +1,65 @@
-//for testing
-
-const graphM = new Map<string, string[]>();
-graphM.set("Khadija", ["Mateo"]);
-graphM.set("Mateo", ["Khadija", "Rami"]);
-graphM.set("Rami", ["Khandija", "Mateo"]);
-const startNodeG: string = "Khadija";
-const targetNodeG: string = "Rami";
-
-// object of queue type
-type QueueObjType = {
-  node: string;
-  distance: number;
-};
-
 export function degreesOfSeparation(
-  graph: Record<string, string[]>,
-  startNode: string,
-  targetNode: string,
-) {
-  // convert object to map
-  const graphM: Map<string, string[]> = enhanceAddToGraph(graph);
-  startNode = startNodeG;
-  targetNode = targetNodeG;
+  familyTree: Record<string, string[]>,
+  person1: string,
+  person2: string,
+): number {
+  if (person1 === person2) {
+    return 0;
+  }
 
-  // Create a queue
-  let queue: QueueObjType[] = [{ node: startNode, distance: 0 }]; //[{node: , distance: }]
-  const visited: Set<string> = new Set<string>([startNode]); //[a]
-  while (queue.length > 0) {
-    //true,
-    let currentNode: QueueObjType = queue.shift()!; //{node:..., distance:...}
-    if (currentNode.node === targetNode) {
-      return currentNode.distance;
-    }
-    if (graphM.has(currentNode.node)) {
-      // node: ....,
-      //true
-      const neighbors: string[] = graphM.get(currentNode.node)!; //[b,c]
-      for (const neighbor of neighbors) {
-        if (!visited.has(neighbor)) {
-          visited.add(neighbor); // [b,c]
-          queue.push({ node: neighbor, distance: currentNode.distance + 1 });
+  // Build an undirected graph
+  const graph = new Map<string, string[]>();
+
+  const addEdge = (u: string, v: string) => {
+    if (!graph.has(u)) graph.set(u, []);
+    if (!graph.has(v)) graph.set(v, []);
+    graph.get(u)!.push(v);
+    graph.get(v)!.push(u);
+  };
+
+  // Populate graph relationships
+  for (const parent in familyTree) {
+    if (Object.prototype.hasOwnProperty.call(familyTree, parent)) {
+      const children = familyTree[parent];
+      for (let i = 0; i < children.length; i++) {
+        // Parent is connected to each child (1 degree)
+        addEdge(parent, children[i]);
+
+        // Siblings are directly connected to each other (1 degree)
+        for (let j = i + 1; j < children.length; j++) {
+          addEdge(children[i], children[j]);
         }
       }
     }
   }
+
+  // Breadth-First Search (BFS) to find the shortest path
+  const queue: { node: string; dist: number }[] = [];
+  const visited = new Set<string>();
+
+  queue.push({ node: person1, dist: 0 });
+  visited.add(person1);
+
+  let head = 0; // index pointer for O(1) dequeue
+  while (head < queue.length) {
+    const { node, dist } = queue[head++];
+
+    const neighbors = graph.get(node);
+    if (neighbors) {
+      for (const neighbor of neighbors) {
+        // Target found
+        if (neighbor === person2) {
+          return dist + 1;
+        }
+        // Explore unvisited neighbors
+        if (!visited.has(neighbor)) {
+          visited.add(neighbor);
+          queue.push({ node: neighbor, dist: dist + 1 });
+        }
+      }
+    }
+  }
+
+  // Nodes are disconnected
   return -1;
-}
-// Conver record to map
-export function toMap(graph: Record<string, string[]>): Map<string, string[]> {
-  return new Map<string, string[]>(Object.entries(graph));
-}
-function enhanceAddToGraph(
-  graph: Record<string, string[]>,
-): Map<string, string[]> {
-  graph = {
-    A: ["B", "C"],
-    B: ["C", "D"],
-  };
-  // Create graph that is converted from record
-  const parentGraph = new Map<string, string[]>(Object.entries(graph));
-
-  // Create parent key
-  let parentKey: string;
-  // Create child value
-  let childValue: string[];
-  // total child
-  let totalChildren: number = 0;
-  if (parentGraph.size > 1) {
-    let firstParent = parentGraph.keys().next().value;
-    let nextParent: string = parentGraph.get(firstParent!)![0];
-    for (const [parent, children] of parentGraph) {
-      if (parent === nextParent) {
-        //Add parent into child
-        children.unshift(firstParent!);
-      }
-    }
-  }
-  return parentGraph;
-}
-
-// Add family tree to graph
-function addToGrap(
-  familyTree: Record<string, string[]>,
-): Map<string, string[]> {
-  /*familyTree: {
-  Vera: ["Bob", "Alice", "Tomoko"],
-};*/
-
-  const graph = new Map<string, string[]>();
-  for (const [parent, children] of Object.entries(familyTree)) {
-    if (!graph.has(parent)) {
-      graph.set(parent, [...children]);
-    }
-
-    let tempChildren: string[] = [...children];
-    let remainArray: string[];
-    let tempParent: string | undefined;
-    let firstEle: string;
-    let secondEle: string;
-    for (let i: number = 0; i < children.length; i++) {
-      let tempI: number = i;
-      tempParent = tempChildren.shift();
-      remainArray = tempChildren;
-      tempChildren = [tempParent!, ...remainArray];
-      firstEle = tempChildren[0];
-      if (!tempChildren[tempI + 1]) {
-        secondEle = tempChildren[i];
-        tempChildren[0] = secondEle;
-        tempChildren[i] = firstEle;
-      } else {
-        secondEle = tempChildren[tempI + 1];
-        tempChildren[0] = secondEle;
-        tempChildren[tempI + 1] = firstEle;
-      }
-      remainArray = [parent, ...remainArray];
-      graph.set(tempParent!, remainArray);
-      remainArray = [];
-    }
-  }
-  return graph;
 }
