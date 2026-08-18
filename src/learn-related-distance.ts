@@ -29,6 +29,9 @@ const addEdge = (u: string, v: string) => {
   if (!graph.has(v)) {
     graph.set(v, []);
   }
+  graph.get(u)!.push(v); //[b,c,d,b]
+  graph.get(v)!.push(u); //
+
   console.log(graph.get(u));
 };
 
