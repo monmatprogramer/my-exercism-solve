@@ -1,6 +1,7 @@
 import { Anagram } from "./anagram";
 try {
-  const subject = new Anagram("diaper");
+  //diaper
+  const subject = new Anagram("hello");
   const matches = subject.matches("hello", "world", "zombies", "pants");
   console.log(matches);
 } catch (e: any) {
