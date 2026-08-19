@@ -8,11 +8,15 @@ export function sum(baseValues: number[], level: number) {
   // base value is empty
   if (baseValues.length === 0) {
     return total_sum;
+  } else if (baseValues.length === 1 && baseValues[0] === 0) {
+    return total_sum;
   } else {
     for (let i: number = 0; i < baseValues.length; i++) {
       let j: number = 1;
       while (true) {
-        current_multiples = baseValues[i] * j;
+        if (baseValues[i] !== 0) {
+          current_multiples = baseValues[i] * j;
+        }
         // compare with level
         if (current_multiples >= level) {
           break;
@@ -21,7 +25,6 @@ export function sum(baseValues: number[], level: number) {
         ++j;
         set_result_muliples.add(current_multiples);
       }
-      console.log(set_result_muliples);
     }
   }
 
