@@ -3,7 +3,7 @@ export function parse(phrase: string): string {
   // expression removing punctuation
   const expression = /^[a-zA-Z\s-]+$/;
   const hyphen = /^[a-zA-Z\-]+$/;
-  const isSpace = removeSpace(phrase);
+  const isSpace = checkSpace(phrase);
   //spliter
   let spliter: string;
   if (expression.test(phrase)) {
@@ -18,8 +18,8 @@ export function parse(phrase: string): string {
   console.log(findWords);
   return "";
 }
-const removeSpace = (rwPhrase: string): boolean => {
+//Remove space
+const checkSpace = (rwPhrase: string): boolean => {
   const space = /^[a-zA-Z\s]+$/;
-
   return space.test(rwPhrase);
 };
