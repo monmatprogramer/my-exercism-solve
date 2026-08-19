@@ -1,9 +1,10 @@
 export class Anagram {
-  constructor(input: unknown) {
-    throw new Error("Remove this line and implement the function");
+  private input: string;
+  constructor(input: string) {
+    this.input = input.toLowerCase();
   }
 
-  public matches(...potentials: unknown[]): unknown {
-    throw new Error("Remove this line and implement the function");
+  public matches(...potentials: string[]): string[] {
+    return [""];
   }
 }
