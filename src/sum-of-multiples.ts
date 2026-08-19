@@ -21,5 +21,7 @@ export function sum(baseValues: number[], level: number) {
       }
     }
   }
-  return total_sum;
+
+  // Total sum in set
+  for (const value of total_sum) return total_sum;
 }

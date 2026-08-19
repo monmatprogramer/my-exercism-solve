@@ -180,5 +180,9 @@ function combineIP() {
   const removeDup = new Set<string>([...awsIps, ...koyebIps]);
   const masterWhitelist: string[] = [...removeDup];
 }
+
+const total_sum = new Set<number>();
+total_sum.add(10);
+total_sum.add(20);
+console.log(total_sum);
 // ###### Call the lession #####
-combineIP();
