@@ -21,5 +21,5 @@ export function parse(phrase: string): string {
 const removeSpace = (rwPhrase: string): boolean => {
   const space = /^[a-zA-Z\s]+$/;
 
-  return true;
+  return space.test(rwPhrase);
 };
