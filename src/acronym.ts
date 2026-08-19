@@ -1,4 +1,7 @@
 // acronym
-export function parse(phrase: unknown): unknown {
-  throw new Error("Remove this line and implement the function");
+export function parse(phrase: string): string {
+  //Find the words
+  const findWords = new Set<string>([phrase]);
+
+  return "";
 }

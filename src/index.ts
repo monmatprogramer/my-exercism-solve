@@ -1,4 +1,3 @@
-import { sum } from "./sum-of-multiples";
+import { parse } from "./acronym";
 
-let result: number = sum([3, 0], 4);
-console.log(result);
+console.log(parse("Portable Network Graphics"));
