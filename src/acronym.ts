@@ -3,10 +3,11 @@ export function parse(phrase: string): string {
   // expression removing punctuation
   const expression = /^[a-zA-Z\s-]+$/;
   const hyphen = /^[a-zA-Z\-]+$/;
+  const isSpace = removeSpace(phrase);
   //spliter
   let spliter: string;
   if (expression.test(phrase)) {
-    if (space.test(phrase)) {
+    if (isSpace) {
       spliter = " ";
     } else {
       spliter = "-";
