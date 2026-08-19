@@ -14,13 +14,14 @@ export function sum(baseValues: number[], level: number) {
       while (true) {
         current_multiples = baseValues[i] * j;
         // compare with level
-        if (current_multiples > level) {
+        if (current_multiples >= level) {
           break;
         }
         // Increase number for next multiples
         ++j;
         set_result_muliples.add(current_multiples);
       }
+      console.log(set_result_muliples);
     }
   }
 
