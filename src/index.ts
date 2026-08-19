@@ -1,5 +1,4 @@
-import { parse } from "./acronym";
+import { Anagram } from "./anagram";
 
-//console.log(parse("Portable Network Graphics"));
-console.log(parse("Portable-Network Graphics"));
-console.log(parse("HyperText Markup Language"));
+const subject = new Anagram("diaper");
+const matches = subject.matches("hello", "world", "zombies", "pants");
