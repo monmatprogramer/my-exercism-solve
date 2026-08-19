@@ -1,4 +1,4 @@
-export function sum(baseValues: number[], multipler: number) {
+export function sum(baseValues: number[], level: number) {
   //creat a empty set to hold unqiue multiples
   const total_sum = new Set<number>();
   // set current multiples
@@ -11,6 +11,7 @@ export function sum(baseValues: number[], multipler: number) {
       let j: number = 1;
       while (true) {
         current_multiples = baseValues[i] * j;
+        // compare with level
       }
     }
   }
