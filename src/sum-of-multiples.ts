@@ -2,7 +2,7 @@ export function sum(baseValues: number[], level: number) {
   //creat a empty set to hold unqiue multiples
   const total_sum = new Set<number>();
   // set current multiples
-  let current_multiples: number;
+  let current_multiples: number = 0;
   // base value is empty
   if (baseValues.length === 0) {
     return total_sum.add(0);
@@ -12,8 +12,14 @@ export function sum(baseValues: number[], level: number) {
       while (true) {
         current_multiples = baseValues[i] * j;
         // compare with level
+        if (current_multiples > level) {
+          break;
+        }
+        // Increase number for next multiples
+        ++j;
+        total_sum.add(current_multiples);
       }
     }
   }
-  return 0;
+  return total_sum;
 }
