@@ -1,12 +1,12 @@
 // acronym
 export function parse(phrase: string): string {
   // expression removing punctuation
-  const expression = /^[a-zA-Z\s-]+$/;
+  const isValidString = checkString(phrase);
   const isSpace = checkSpace(phrase);
   const isHyphen = checkHyphen(phrase);
   //spliter
   let spliter: string;
-  if (expression.test(phrase)) {
+  if (isValidString) {
     if (isSpace) {
       spliter = " ";
     } else {
@@ -18,12 +18,18 @@ export function parse(phrase: string): string {
   console.log(findWords);
   return "";
 }
-//Remove space
+// Check validation string
+const checkString = (rwPhrase: string): boolean => {
+  const expression = /^[a-zA-Z\s-]+$/;
+
+  return expression.test(rwPhrase);
+};
+//Check  space
 const checkSpace = (rwPhrase: string): boolean => {
   const space = /^[a-zA-Z\s]+$/;
   return space.test(rwPhrase);
 };
-
+//Check hyphen
 const checkHyphen = (rwPhrase: string): boolean => {
   const hyphen = /^[a-zA-Z\-]+$/;
 
