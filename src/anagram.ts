@@ -46,7 +46,7 @@ export class Anagram {
           indexFound.push(index);
         }
       } else {
-        console.log(isGreekCapitalLetter(result));
+        console.log(result);
         if (anagramStr.toLocaleLowerCase() === result.toLocaleLowerCase()) {
           console.log("lower case: ", anagramStr.toLocaleLowerCase());
           indexFound.push(index);
@@ -73,9 +73,13 @@ const isGreek = (rwInput: string): boolean => {
   const hasGreek = /\p{Script=Greek}/u;
   return hasGreek.test(rwInput);
 };
-const isGreekCapitalLetter = (value: string) => {
+const isGreekCapitalLetter = (value: string): boolean => {
   const express = /^\p{Script=Greek}$/u;
-  return express.test(value) && value === value.toUpperCase();
+  return (
+    express.test(value) &&
+    value === value.toUpperCase() &&
+    value !== value.toLowerCase()
+  );
 };
 const allOperations = (rwInput: string): string => {
   const splitLetter = splitSingleLetter(rwInput);
