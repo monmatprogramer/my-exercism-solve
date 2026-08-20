@@ -13,10 +13,13 @@ export class Anagram {
     let result: string[] = potentials.filter(
       (value) => this.input === value.toLocaleLowerCase(),
     );
-    if (result.length > 0) {
+    if (result.length > 0 && potentials.length === 1) {
       return [];
-    }
-    //save index where found
+    } else {
+      for (let i: number = 0; i < result.length; i++) {
+        potentials = potentials.filter((value) => value !== result[i]);
+      }
+    } //save index where found
     const indexFound: number[] = [];
     const anagramStr: string = allOperations(this.input);
     //
@@ -27,6 +30,7 @@ export class Anagram {
         indexFound.push(index);
       }
     }
+    console.log(indexFound);
     let finalResult: string[] = [];
     for (const [index, value] of indexFound.entries()) {
       finalResult.push(potentials.at(value)!);
