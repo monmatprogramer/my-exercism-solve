@@ -38,8 +38,6 @@ export class Anagram {
     const indexFound: number[] = [];
 
     const anagramStr: string = allOperations(this.input);
-    console.log("anagramStr: ", anagramStr.toLocaleLowerCase());
-    //
     for (const [index, value] of lowerCasePotentials.entries()) {
       const result: string = allOperations(value);
       if (!isGreek) {
