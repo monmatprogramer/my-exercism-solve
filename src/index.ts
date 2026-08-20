@@ -12,3 +12,13 @@ try {
 //         a.localeCompare(b, "el"),
 //       );
 //
+/*
+  *
+const values: string[] = ["αβγ", "βγδ", "αβγ", "αβγ"];
+console.log(values.filter((value, index, array) => {
+    console.log(array)
+}))
+
+const duplicateValues = ['']
+console.log(duplicateValues)
+  * */

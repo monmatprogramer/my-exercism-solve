@@ -9,6 +9,7 @@ export class Anagram {
   }
   public matches(...potentials: string[]): string[] {
     let lowerCasePotentials: string[] = [];
+    let greek = new Map<string, string>();
     // check input string
     if (!isGreek(this.input)) {
       // Convert potentials to lower case
@@ -16,6 +17,16 @@ export class Anagram {
     } else {
       // lowerCasePotentials = potentials.map((v) => v.toLocaleLowerCase());
       lowerCasePotentials = potentials;
+      for (const [index, value] of lowerCasePotentials.entries()) {
+        greek.set(
+          value,
+          value
+            .toLowerCase()
+            .split("")
+            .sort((a, b) => a.localeCompare(b))
+            .join(""),
+        );
+      }
     }
     //split words
     let result: string[] = [];
@@ -52,29 +63,19 @@ export class Anagram {
     let finalResult: string[] = [];
 
     if (tempResult.length > 0) {
-      //capital
-      let capital = tempResult.filter((v) => v === anagramStr);
-      for (const [index, value] of tempResult.entries()) {
-        if (value === anagramStr) {
-          indexFound.push(index);
-        }
-      }
-      let small = tempResult.filter((v) => v === anagramStr.toLowerCase());
-      for (const [index, value] of tempResult.entries()) {
-        if (value === anagramStr.toLowerCase()) {
-          indexFound.push(index);
-        }
-      }
-      let listSmall = potentials.map((v) => v.toLowerCase());
-
-      finalResult = [...capital, ...small];
-      //small
+      console.log(tempResult);
     } else {
       for (const [index, value] of indexFound.entries()) {
         finalResult.push(potentials.at(value)!);
       }
     }
     console.log(indexFound);
+    for (const [index, value] of indexFound.entries()) {
+      console.log(value);
+      console.log(lowerCasePotentials.at(value));
+      finalResult.push(lowerCasePotentials.at(value)!);
+    }
+
     return [...new Set<string>(finalResult)];
   }
 }
