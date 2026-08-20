@@ -1,7 +1,11 @@
 export class Anagram {
   private input: string;
   constructor(input: string) {
-    this.input = input.toLowerCase();
+    if (!isGreek) {
+      this.input = input.toLowerCase();
+    } else {
+      this.input = input;
+    }
   }
   public matches(...potentials: string[]): string[] {
     let lowerCasePotentials: string[] = [];
@@ -13,11 +17,17 @@ export class Anagram {
       // lowerCasePotentials = potentials.map((v) => v.toLocaleLowerCase());
       lowerCasePotentials = potentials;
     }
-    console.log(lowerCasePotentials);
+    console.log("✅:", lowerCasePotentials);
     //split words
-    let result: string[] = lowerCasePotentials.filter(
-      (value) => this.input === value.toLocaleLowerCase(),
-    );
+    let result: string[] = [];
+    if (!isGreek) {
+      result = lowerCasePotentials.filter(
+        (value) => this.input === value.toLocaleLowerCase(),
+      );
+    } else {
+      console.log(this.input);
+      result = lowerCasePotentials.filter((value) => this.input === value);
+    }
     console.log(this.input);
     console.log(result);
     if (result.length > 0) {
