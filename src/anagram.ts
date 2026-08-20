@@ -1,7 +1,7 @@
 export class Anagram {
   private input: string;
   constructor(input: string) {
-    if (!isGreek) {
+    if (!isGreek(input)) {
       this.input = input.toLowerCase();
     } else {
       this.input = input;
@@ -19,7 +19,7 @@ export class Anagram {
     }
     //split words
     let result: string[] = [];
-    if (!isGreek) {
+    if (!isGreek(this.input)) {
       result = lowerCasePotentials.filter(
         (value) => this.input === value.toLocaleLowerCase(),
       );
@@ -27,7 +27,6 @@ export class Anagram {
       result = lowerCasePotentials.filter((value) => this.input === value);
     }
     if (result.length > 0) {
-      console.log(potentials.length);
       if (potentials.length > 1) {
         let res = lowerCasePotentials.filter((v) => v !== this.input)[0];
         res = res.charAt(0).toUpperCase() + res.slice(1);
@@ -36,30 +35,27 @@ export class Anagram {
       return [];
     } //save index where found
     const indexFound: number[] = [];
-
+    const tempResult: string[] = [];
     const anagramStr: string = allOperations(this.input);
+    // return [];
     for (const [index, value] of lowerCasePotentials.entries()) {
       const result: string = allOperations(value);
-      if (!isGreek) {
+      if (!isGreek(this.input)) {
         if (result === anagramStr) {
           //logic
           indexFound.push(index);
         }
       } else {
-        console.log(result);
-        if (anagramStr.toLocaleLowerCase() === result.toLocaleLowerCase()) {
-          console.log("lower case: ", anagramStr.toLocaleLowerCase());
-          indexFound.push(index);
-        } else if (
-          anagramStr.toLocaleUpperCase() === result.toLocaleUpperCase()
-        ) {
-          console.log("upper case: ", anagramStr.toUpperCase());
-          indexFound.push(index);
-        }
+        tempResult.push(result);
       }
     }
-    console.log(indexFound);
     let finalResult: string[] = [];
+
+    if (tempResult.length > 0) {
+      finalResult = tempResult.filter(
+        (v) => v.toLowerCase() === anagramStr.toLowerCase(),
+      );
+    }
 
     for (const [index, value] of indexFound.entries()) {
       finalResult.push(potentials.at(value)!);
