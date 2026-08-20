@@ -6,3 +6,9 @@ try {
 } catch (e: any) {
   console.log(e.message);
 }
+
+// const hasGreek = /\p{Script=Greek}/u.test(text
+// [...potentials].sort((a, b) =>
+//         a.localeCompare(b, "el"),
+//       );
+//

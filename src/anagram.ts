@@ -10,16 +10,13 @@ export class Anagram {
       // Convert potentials to lower case
       lowerCasePotentials = potentials.map((v) => v.toLocaleLowerCase());
     } else {
-      let test = [...potentials];
-      console.log(test);
-      return [];
+      lowerCasePotentials = potentials.map((v) => v.toLocaleLowerCase());
     }
-
-    console.log(lowerCasePotentials);
     //split words
     let result: string[] = potentials.filter(
       (value) => this.input === value.toLocaleLowerCase(),
     );
+    console.log(result);
     if (result.length > 0) {
       console.log(potentials.length);
       if (potentials.length > 1) {
@@ -32,6 +29,7 @@ export class Anagram {
     const indexFound: number[] = [];
 
     const anagramStr: string = allOperations(this.input);
+    console.log("anagramStr: ", anagramStr);
     //
     for (const [index, value] of lowerCasePotentials.entries()) {
       const result: string = allOperations(value);
@@ -56,6 +54,7 @@ const isGreek = (rwInput: string): boolean => {
   return hasGreek.test(rwInput);
 };
 const allOperations = (rwInput: string): string => {
+  console.log("rwInput: ", rwInput);
   const splitLetter = splitSingleLetter(rwInput);
   const sortedLetter = sortSingleLetter(splitLetter);
   const joinedLetter = joinLetterBack(sortedLetter);
