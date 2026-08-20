@@ -10,9 +10,11 @@ export class Anagram {
     );
 
     //split words
-    let result: string[] = potentials.filter((value) => this.input === value);
+    let result: string[] = potentials.filter(
+      (value) => this.input === value.toLocaleLowerCase(),
+    );
     if (result.length > 0) {
-      throw new Error("No Anagram");
+      return [];
     }
     //save index where found
     const indexFound: number[] = [];
@@ -20,13 +22,11 @@ export class Anagram {
     //
     for (const [index, value] of lowerCasePotentials.entries()) {
       const result: string = allOperations(value);
-      console.log(result);
       if (result === anagramStr) {
         //logic
         indexFound.push(index);
       }
     }
-    console.log(indexFound);
     let finalResult: string[] = [];
     for (const [index, value] of indexFound.entries()) {
       finalResult.push(potentials.at(value)!);
