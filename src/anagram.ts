@@ -47,6 +47,12 @@ export class Anagram {
           //logic
           indexFound.push(index);
         }
+      } else {
+        if (anagramStr === result.toLocaleLowerCase()) {
+          indexFound.push(index);
+        } else if (anagramStr === result.toLocaleUpperCase()) {
+          indexFound.push(index);
+        }
       }
     }
 
