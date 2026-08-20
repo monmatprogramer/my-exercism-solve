@@ -52,11 +52,29 @@ export class Anagram {
     let finalResult: string[] = [];
 
     if (tempResult.length > 0) {
+      //capital
+      let capital = tempResult.filter((v) => v === anagramStr);
+      for (const [index, value] of tempResult.entries()) {
+        if (value === anagramStr) {
+          indexFound.push(index);
+        }
+      }
+      let small = tempResult.filter((v) => v === anagramStr.toLowerCase());
+      for (const [index, value] of tempResult.entries()) {
+        if (value === anagramStr.toLowerCase()) {
+          indexFound.push(index);
+        }
+      }
+      let listSmall = potentials.map((v) => v.toLowerCase());
+
+      finalResult = [...capital, ...small];
+      //small
     } else {
       for (const [index, value] of indexFound.entries()) {
         finalResult.push(potentials.at(value)!);
       }
     }
+    console.log(indexFound);
     return [...new Set<string>(finalResult)];
   }
 }
