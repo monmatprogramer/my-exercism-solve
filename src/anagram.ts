@@ -4,12 +4,16 @@ export class Anagram {
     this.input = input.toLowerCase();
   }
   public matches(...potentials: string[]): string[] {
+    let lowerCasePotentials: string[] = [];
     // check input string
-    isGreek(this.input);
-    // Convert potentials to lower case
-    let lowerCasePotentials: string[] = potentials.map((v) =>
-      v.toLocaleLowerCase(),
-    );
+    if (!isGreek(this.input)) {
+      // Convert potentials to lower case
+      lowerCasePotentials = potentials.map((v) => v.toLocaleLowerCase());
+    } else {
+      let test = [...potentials];
+      console.log(test);
+      return [];
+    }
 
     console.log(lowerCasePotentials);
     //split words
