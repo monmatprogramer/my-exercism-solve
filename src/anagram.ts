@@ -48,7 +48,9 @@ export class Anagram {
       } else {
         if (anagramStr.toLocaleLowerCase() === result.toLocaleLowerCase()) {
           indexFound.push(index);
-        } else if (anagramStr === result.toLocaleUpperCase()) {
+        } else if (
+          anagramStr.toLocaleUpperCase() === result.toLocaleUpperCase()
+        ) {
           indexFound.push(index);
         }
       }
