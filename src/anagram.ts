@@ -10,12 +10,15 @@ export class Anagram {
       // Convert potentials to lower case
       lowerCasePotentials = potentials.map((v) => v.toLocaleLowerCase());
     } else {
-      lowerCasePotentials = potentials.map((v) => v.toLocaleLowerCase());
+      // lowerCasePotentials = potentials.map((v) => v.toLocaleLowerCase());
+      lowerCasePotentials = potentials;
     }
+    console.log(lowerCasePotentials);
     //split words
-    let result: string[] = potentials.filter(
+    let result: string[] = lowerCasePotentials.filter(
       (value) => this.input === value.toLocaleLowerCase(),
     );
+    console.log(this.input);
     console.log(result);
     if (result.length > 0) {
       console.log(potentials.length);
