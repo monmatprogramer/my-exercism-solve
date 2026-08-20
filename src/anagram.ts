@@ -52,13 +52,10 @@ export class Anagram {
     let finalResult: string[] = [];
 
     if (tempResult.length > 0) {
-      finalResult = tempResult.filter(
-        (v) => v.toLowerCase() === anagramStr.toLowerCase(),
-      );
-    }
-
-    for (const [index, value] of indexFound.entries()) {
-      finalResult.push(potentials.at(value)!);
+    } else {
+      for (const [index, value] of indexFound.entries()) {
+        finalResult.push(potentials.at(value)!);
+      }
     }
     return [...new Set<string>(finalResult)];
   }
