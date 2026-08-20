@@ -3,7 +3,8 @@ try {
   const subject = new Anagram("ΑΒΓ");
   const matches = subject.matches("ΒΓΑ", "ΒΓΔ", "γβα", "αβγ");
   console.log(matches);
-  console.log("αβγ".toLocaleUpperCase());
+  console.log("upper case");
+  console.log("γβα".toLocaleUpperCase());
 } catch (e: any) {
   console.log(e.message);
 }

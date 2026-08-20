@@ -38,8 +38,8 @@ export class Anagram {
     const indexFound: number[] = [];
 
     const anagramStr: string = allOperations(this.input);
+    console.log("anagramStr: ", anagramStr.toLocaleLowerCase());
     //
-    console.log("lowerCasePotentials: ", lowerCasePotentials);
     for (const [index, value] of lowerCasePotentials.entries()) {
       const result: string = allOperations(value);
       if (!isGreek) {
@@ -48,13 +48,9 @@ export class Anagram {
           indexFound.push(index);
         }
       } else {
-        console.log(anagramStr.toLocaleLowerCase());
-        console.log(anagramStr.toLocaleUpperCase());
         if (anagramStr.toLocaleLowerCase() === result.toLocaleLowerCase()) {
           indexFound.push(index);
-        } else if (
-          anagramStr.toLocaleUpperCase() === result.toLocaleUpperCase()
-        ) {
+        } else if (anagramStr === result.toLocaleUpperCase()) {
           indexFound.push(index);
         }
       }
