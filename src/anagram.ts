@@ -46,11 +46,14 @@ export class Anagram {
           indexFound.push(index);
         }
       } else {
+        console.log(isGreekCapitalLetter(result));
         if (anagramStr.toLocaleLowerCase() === result.toLocaleLowerCase()) {
+          console.log("lower case: ", anagramStr.toLocaleLowerCase());
           indexFound.push(index);
         } else if (
           anagramStr.toLocaleUpperCase() === result.toLocaleUpperCase()
         ) {
+          console.log("upper case: ", anagramStr.toUpperCase());
           indexFound.push(index);
         }
       }
@@ -69,6 +72,10 @@ export class Anagram {
 const isGreek = (rwInput: string): boolean => {
   const hasGreek = /\p{Script=Greek}/u;
   return hasGreek.test(rwInput);
+};
+const isGreekCapitalLetter = (value: string) => {
+  const express = /^\p{Script=Greek}$/u;
+  return express.test(value) && value === value.toUpperCase();
 };
 const allOperations = (rwInput: string): string => {
   const splitLetter = splitSingleLetter(rwInput);
