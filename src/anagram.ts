@@ -48,20 +48,24 @@ export class Anagram {
           indexFound.push(index);
         }
       } else {
-        if (anagramStr === result.toLocaleLowerCase()) {
+        console.log(anagramStr.toLocaleLowerCase());
+        console.log(anagramStr.toLocaleUpperCase());
+        if (anagramStr.toLocaleLowerCase() === result.toLocaleLowerCase()) {
           indexFound.push(index);
-        } else if (anagramStr === result.toLocaleUpperCase()) {
+        } else if (
+          anagramStr.toLocaleUpperCase() === result.toLocaleUpperCase()
+        ) {
           indexFound.push(index);
         }
       }
     }
-
+    console.log(indexFound);
     let finalResult: string[] = [];
 
     for (const [index, value] of indexFound.entries()) {
       finalResult.push(potentials.at(value)!);
     }
-    return finalResult;
+    return [...new Set<string>(finalResult)];
   }
 }
 
