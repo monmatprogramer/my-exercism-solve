@@ -60,16 +60,19 @@ export class Anagram {
         tempResult.push(result);
       }
     }
+    console.log("✍️result: ", result);
+
     let finalResult: string[] = [];
 
     if (tempResult.length > 0) {
-      console.log(tempResult);
+      console.log("😊 tempResult: ", tempResult);
     } else {
       for (const [index, value] of indexFound.entries()) {
         finalResult.push(potentials.at(value)!);
       }
     }
-    console.log(indexFound);
+    console.log("👉 indexFound: ", indexFound);
+    console.log("😲 greek: ", greek);
     for (const [index, value] of indexFound.entries()) {
       console.log(value);
       console.log(lowerCasePotentials.at(value));
