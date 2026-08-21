@@ -17,7 +17,7 @@ const cleanText = (rwInput: string): boolean => {
   return clean_express.test(rwInput);
 };
 const removeSpace = (input: string): string => {
-  const notSpace_exp = /^[\s]/g;
+  const notSpace_exp = /[\s]/g;
   console.log(notSpace_exp.test(input));
   let notSpace: string = input.replace(notSpace_exp, "");
   console.log("notspace: ", notSpace);
