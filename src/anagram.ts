@@ -71,20 +71,20 @@ export class Anagram {
       greek.delete(uniqueValue!);
       let notDuplicateValue = [...new Set<string>(convertToSingleArray(greek))];
       //convert to uppercase and sort
-      let value1: string = "";
+      let preVal: string = "";
       let upperAndSorted = notDuplicateValue.map((value) => {
         if (!(value === value.toUpperCase())) {
           let val = value;
           val.toUpperCase();
           let spl = splitSingleLetter(val);
           let sortedSpl = sortSingleLetter(spl);
-
+          preVal = value;
           return joinLetterBack(sortedSpl);
         } else {
           return value;
         }
       });
-      finalResult = upperAndSorted;
+      finalResult = [upperAndSorted[0], preVal];
     } else {
       for (const [index, value] of indexFound.entries()) {
         finalResult.push(potentials.at(value)!);
