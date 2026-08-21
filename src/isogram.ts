@@ -7,7 +7,7 @@ export function isIsogram(input: string): boolean {
     throw new Error("Not valid input");
   }
   //remove space
-
+  removeSpace(input);
   //remove hyphens
   return true;
 }
@@ -17,7 +17,9 @@ const cleanText = (rwInput: string): boolean => {
   return clean_express.test(rwInput);
 };
 const removeSpace = (input: string): string => {
-  const notSpace_exp = /[]/g;
-  let notSpace: string = "";
+  const notSpace_exp = /^[]+$/;
+  console.log(notSpace_exp.test(input));
+  let notSpace: string = input.replace(notSpace_exp, "");
+  console.log("notspace: ", notSpace);
   return notSpace;
 };
