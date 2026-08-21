@@ -16,6 +16,7 @@ export function isIsogram(input: string): boolean {
   if (checkHyphen(input)) {
     cleanedText = removeHyphen(input);
   }
+  console.log(cleanedText);
   return true;
 }
 
