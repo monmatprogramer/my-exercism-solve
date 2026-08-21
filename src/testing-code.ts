@@ -1,5 +1,27 @@
 // This is for testing code
 
+//Use for loop
+function findUniqueInArray() {
+  let arr: string[] = ["a", "b", "a", "a"];
+  console.log("before: ", arr);
+  let i: number = 0;
+  while (true) {
+    for (let j: number = i + 1; j < arr.length - 1; j++) {
+      if (arr[0] !== arr[j]) {
+        let temp = arr[i];
+        arr[0] = arr[j];
+        arr[j] = temp;
+      }
+    }
+    i++;
+    if (i === arr.length) {
+      break;
+    }
+  }
+
+  console.log("after: ", arr[0]);
+}
+function findUniqueInArray2() {}
 function learnSortGreek() {
   const tempResult: string[] = ["ΑΒΓ", "ΒΓΔ", "αβγ", "αβγ"];
   filterUniqueValue(tempResult);
@@ -20,4 +42,5 @@ function filterUniqueValue(results: string[]) {
     console.log(value);
   });
 }
-learnSortGreek();
+
+findUniqueInArray();

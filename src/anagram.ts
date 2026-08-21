@@ -65,8 +65,9 @@ export class Anagram {
 
     if (tempResult.length > 0) {
       let smallTempResult: string[] = tempResult.map((v) => v.toLowerCase());
-      //let uniqueValue: string = smallTempResult.filter();
-      //greek.get();
+      let uniqueKey: string = findUniqueInArray(smallTempResult);
+      console.log(uniqueKey);
+      greek.keys(uniqueKey);
     } else {
       for (const [index, value] of indexFound.entries()) {
         finalResult.push(potentials.at(value)!);
@@ -78,6 +79,24 @@ export class Anagram {
 }
 
 // Helper function
+// find unique arr value
+function findUniqueInArray(arr: string[]): string {
+  let i: number = 0;
+  while (true) {
+    for (let j: number = i + 1; j < arr.length - 1; j++) {
+      if (arr[0] !== arr[j]) {
+        let temp = arr[i];
+        arr[0] = arr[j];
+        arr[j] = temp;
+      }
+    }
+    i++;
+    if (i === arr.length) {
+      break;
+    }
+  }
+  return arr[0];
+}
 const isGreek = (rwInput: string): boolean => {
   const hasGreek = /\p{Script=Greek}/u;
   return hasGreek.test(rwInput);
