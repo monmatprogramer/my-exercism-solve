@@ -55,7 +55,7 @@ function checkGreekLetter() {
 function checkCaptitalOrNot() {
   //'ΒΓΑ', 'αβγ', 'γβα'
   const greekArr: string[] = ["ΒΓΑ", "αβγ", "γβα"];
-  for (const value of greekArr.entries()) {
+  for (const [_, value] of greekArr.entries()) {
     console.log(value);
   }
 }
