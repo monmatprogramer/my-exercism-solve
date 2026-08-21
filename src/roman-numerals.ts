@@ -32,8 +32,10 @@ export const toRoman = (num: number): string => {
   let result: string = "";
   for (const value of Object.entries(magicTable).reverse()) {
     let numberValue: number = Number([...value][0]);
-    // while (num >= numberValue) {
-    //  console.log(num);
+    console.log(numberValue <= num);
+    //while (num >= numberValue) {
+
+    // console.log(num);
     // }
   }
   return result;
