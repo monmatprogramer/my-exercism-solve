@@ -16,7 +16,9 @@ export function isIsogram(input: string): boolean {
   if (checkHyphen(input)) {
     cleanedText = removeHyphen(input);
   }
-  console.log(cleanedText);
+  // start to find unique string
+  const uniqueLetters = new Set<string>([cleanedText]);
+  console.log(uniqueLetters);
   return true;
 }
 
