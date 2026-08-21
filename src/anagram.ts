@@ -72,10 +72,12 @@ export class Anagram {
       let notDuplicateValue = [...new Set<string>(convertToSingleArray(greek))];
       console.log("👉 ", notDuplicateValue);
       //convert to uppercase and sort
-      //convert to uppercase
+
+      //convert to uppercase where small case
       let uppercaseList: string[] = notDuplicateValue.map((value) =>
         value.toUpperCase(),
       );
+
       //sort
       let sortedList: string[] = uppercaseList.map((value) =>
         allOperations(value),
