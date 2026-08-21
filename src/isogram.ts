@@ -12,10 +12,10 @@ export function isIsogram(input: string): boolean {
     //remove space
     cleanedText = removeSpace(input);
   }
+  //remove hyphens
   if (checkHyphen(input)) {
     cleanedText = removeHyphen(input);
   }
-  //remove hyphens
   return true;
 }
 
