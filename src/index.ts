@@ -1,3 +1,3 @@
-import { isIsogram } from "./isogram";
+import { toRoman } from "./roman-numerals";
 
-console.log(isIsogram("eleven"));
+console.log(toRoman(102));

@@ -30,5 +30,8 @@ const magicTable: Record<number, string> = {
 
 export const toRoman = (num: number): string => {
   let result: string = "";
+  for (const value of Object.entries(magicTable)) {
+    console.log(value);
+  }
   return result;
 };
