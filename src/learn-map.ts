@@ -192,3 +192,14 @@ function searchElementInMap() {
     ["h", ["j", "k", "l"]],
   ]);
 }
+// Get a key where value
+function getKeyOnValue() {
+  const userRoles = new Map<number, string>([
+    [101, "Admin"],
+    [102, "Editor"],
+  ]);
+  const arrayUsrRole = [...userRoles];
+  const findUserRole = arrayUsrRole.find((index, value) => console.log(value));
+  console.log(findUserRole);
+}
+getKeyOnValue();
