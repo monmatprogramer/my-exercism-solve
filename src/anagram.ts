@@ -70,19 +70,21 @@ export class Anagram {
       let uniqueValue = getKeyOnValue(greek, uniqueKey);
       greek.delete(uniqueValue!);
       let notDuplicateValue = [...new Set<string>(convertToSingleArray(greek))];
-      console.log("👉 ", notDuplicateValue);
       //convert to uppercase and sort
+      let value1: string = "";
       let upperAndSorted = notDuplicateValue.map((value) => {
         if (!(value === value.toUpperCase())) {
-          value = value.toUpperCase();
-          let spl = splitSingleLetter(value);
+          let val = value;
+          val.toUpperCase();
+          let spl = splitSingleLetter(val);
           let sortedSpl = sortSingleLetter(spl);
+
           return joinLetterBack(sortedSpl);
         } else {
           return value;
         }
       });
-      finalResult = uppercaseList;
+      finalResult = upperAndSorted;
     } else {
       for (const [index, value] of indexFound.entries()) {
         finalResult.push(potentials.at(value)!);
@@ -128,14 +130,7 @@ const isGreek = (rwInput: string): boolean => {
   const hasGreek = /\p{Script=Greek}/u;
   return hasGreek.test(rwInput);
 };
-const isGreekCapitalLetter = (value: string): boolean => {
-  const express = /^\p{Script=Greek}$/u;
-  return (
-    express.test(value) &&
-    value === value.toUpperCase() &&
-    value !== value.toLowerCase()
-  );
-};
+
 const allOperations = (rwInput: string): string => {
   const splitLetter = splitSingleLetter(rwInput);
   const sortedLetter = sortSingleLetter(splitLetter);
