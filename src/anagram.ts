@@ -74,27 +74,14 @@ export class Anagram {
       //convert to uppercase and sort
       let upperAndSorted = notDuplicateValue.map((value) => {
         if (!(value === value.toUpperCase())) {
-          value.toUpperCase();
-        }
-      });
-      //convert to uppercase where small case
-      let uppercaseList: string[] = notDuplicateValue.map((value) => {
-        if (!(value === value.toUpperCase())) {
-          return value.toUpperCase();
+          value = value.toUpperCase();
+          let spl = splitSingleLetter(value);
+          let sortedSpl = sortSingleLetter(spl);
+          return joinLetterBack(sortedSpl);
         } else {
           return value;
         }
       });
-
-      //sort
-      let sortedList: string[] = uppercaseList.map((value) => {
-        if (!(value === value.toUpperCase())) {
-          return allOperations(value);
-        } else {
-          return value;
-        }
-      });
-      console.log("=> ", uppercaseList);
       finalResult = uppercaseList;
     } else {
       for (const [index, value] of indexFound.entries()) {
