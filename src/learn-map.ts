@@ -198,8 +198,11 @@ function getKeyOnValue() {
     [101, "Admin"],
     [102, "Editor"],
   ]);
+  const targetValue: string = "Admin";
   const arrayUsrRole = [...userRoles];
-  const findUserRole = arrayUsrRole.find((index, value) => console.log(value));
+  const findUserRole = arrayUsrRole.find(
+    ([_, value]) => value === targetValue,
+  )?.[0];
   console.log(findUserRole);
 }
 getKeyOnValue();
