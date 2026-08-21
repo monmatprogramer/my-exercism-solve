@@ -52,4 +52,11 @@ function checkGreekLetter() {
   console.log(sortSt1);
   console.log(sortSt2);
 }
-checkGreekLetter();
+function checkCaptitalOrNot() {
+  //'ΒΓΑ', 'αβγ', 'γβα'
+  const greekArr: string[] = ["ΒΓΑ", "αβγ", "γβα"];
+  for (const value of greekArr.entries()) {
+    console.log(value);
+  }
+}
+checkCaptitalOrNot();
