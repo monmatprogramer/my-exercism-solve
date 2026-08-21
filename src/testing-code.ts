@@ -57,6 +57,14 @@ function checkCaptitalOrNot() {
   const greekArr: string[] = ["ΒΓΑ", "αβγ", "γβα"];
   for (const [_, value] of greekArr.entries()) {
     console.log(value);
+    if (checkCapitalLetter(value)) {
+      console.log("Capital letter: ", value);
+    } else {
+      console.log("small Letter: ", value);
+    }
   }
+}
+function checkCapitalLetter(value: string): boolean {
+  return value === value.toUpperCase();
 }
 checkCaptitalOrNot();
