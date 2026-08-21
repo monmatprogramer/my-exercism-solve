@@ -69,6 +69,9 @@ export class Anagram {
       //Get key on value
       let uniqueValue = getKeyOnValue(greek, uniqueKey);
       greek.delete(uniqueValue!);
+      let notDuplicateValue = [...new Set<string>(convertToSingleArray(greek))];
+      console.log("👉 ", notDuplicateValue);
+      finalResult = convertToSingleArray(greek);
     } else {
       for (const [index, value] of indexFound.entries()) {
         finalResult.push(potentials.at(value)!);
@@ -79,6 +82,13 @@ export class Anagram {
 }
 
 // Helper function
+function convertToSingleArray(greek: Map<string, string>) {
+  const singleArray: string[] = [];
+  for (const value of greek) {
+    singleArray.push(...value);
+  }
+  return singleArray;
+}
 // Get key on value
 function getKeyOnValue(greek: Map<string, string>, targetValue: string) {
   const arrayGreek = [...greek];

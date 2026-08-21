@@ -25,7 +25,6 @@ function findUniqueInArray2() {}
 function learnSortGreek() {
   const tempResult: string[] = ["ΑΒΓ", "ΒΓΔ", "αβγ", "αβγ"];
   filterUniqueValue(tempResult);
-  return;
   const anagramStr = "ΑΒΓ";
   console.log("γβα".toLowerCase());
   console.log("γβα".toUpperCase());
@@ -43,4 +42,14 @@ function filterUniqueValue(results: string[]) {
   });
 }
 
-findUniqueInArray();
+function checkGreekLetter() {
+  const st1: string = "αβγ".toUpperCase();
+  const st2: string = "γβα".toUpperCase();
+
+  const sortSt1 = st1.split("").sort((a, b) => a.localeCompare(b));
+  const sortSt2 = st2.split("").sort((a, b) => a.localeCompare(b));
+
+  console.log(sortSt1);
+  console.log(sortSt2);
+}
+checkGreekLetter();
