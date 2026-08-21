@@ -1,3 +1,3 @@
 import { isIsogram } from "./isogram";
 
-console.log(isIsogram("empty string"));
+console.log(isIsogram("empty"));
