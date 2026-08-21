@@ -23,7 +23,7 @@ const cleanText = (rwInput: string): boolean => {
   const clean_express = /^[a-zA-Z\s-]+$/g;
   return clean_express.test(rwInput);
 };
-const checkHyphen = (inpput: string): boolean => {
+const checkHyphen = (input: string): boolean => {
   return /[\-]/g.test(input);
 };
 const checkSpace = (input: string): boolean => {
