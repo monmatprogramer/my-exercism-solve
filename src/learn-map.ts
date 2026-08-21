@@ -205,4 +205,15 @@ function getKeyOnValue() {
   )?.[0];
   console.log(findUserRole);
 }
-getKeyOnValue();
+function deleteAvalueInMap() {
+  const userRoles = new Map<number, string>([
+    [101, "Admin"],
+    [102, "Editor"],
+  ]);
+
+  //delete 102
+  let result = userRoles.delete(102);
+  console.log(result);
+  console.log(userRoles);
+}
+deleteAvalueInMap();

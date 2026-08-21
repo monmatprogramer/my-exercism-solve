@@ -66,19 +66,25 @@ export class Anagram {
     if (tempResult.length > 0) {
       let smallTempResult: string[] = tempResult.map((v) => v.toLowerCase());
       let uniqueKey: string = findUniqueInArray(smallTempResult);
-      console.log(uniqueKey);
-      greek.keys(uniqueKey);
+      //Get key on value
+      let uniqueValue = getKeyOnValue(greek, uniqueKey);
+      greek.delete(uniqueValue!);
     } else {
       for (const [index, value] of indexFound.entries()) {
         finalResult.push(potentials.at(value)!);
       }
     }
-
     return [...new Set<string>(finalResult)];
   }
 }
 
 // Helper function
+// Get key on value
+function getKeyOnValue(greek: Map<string, string>, targetValue: string) {
+  const arrayGreek = [...greek];
+  const findGreek = arrayGreek.find(([_, value]) => value === targetValue)?.[0];
+  return findGreek;
+}
 // find unique arr value
 function findUniqueInArray(arr: string[]): string {
   let i: number = 0;
