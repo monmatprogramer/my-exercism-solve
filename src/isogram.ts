@@ -6,7 +6,9 @@ export function isIsogram(input: string): boolean {
   if (!cleanText(input)) {
     throw new Error("Not valid input");
   }
-  return false;
+  //remove space
+  //remove hyphens
+  return true;
 }
 
 const cleanText = (rwInput: string): boolean => {
