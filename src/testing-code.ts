@@ -16,6 +16,8 @@ function learnSortGreek() {
 }
 
 function filterUniqueValue(results: string[]) {
-  results.filter((value, index, array) => console.log("index: ", index));
+  results.filter((value, index, array) => {
+    console.log(value);
+  });
 }
 learnSortGreek();
