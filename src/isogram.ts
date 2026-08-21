@@ -20,9 +20,9 @@ export function isIsogram(input: string): boolean {
   // start to find unique string
   const uniqueLetters = new Set<string>(cleanedText);
   if (uniqueLetters.size === cleanedText.length) {
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 const cleanText = (rwInput: string): boolean => {
