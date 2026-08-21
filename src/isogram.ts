@@ -4,6 +4,7 @@ export function isIsogram(input: string): boolean {
   const lowerText = input.toLocaleLowerCase();
   //cleaned text
   let cleanedText: string = "";
+  if (input === "") return true;
   // clean text
   if (!cleanText(input)) {
     throw new Error("Not valid input");
