@@ -65,6 +65,7 @@ export class Anagram {
 
     if (tempResult.length > 0) {
       let smallTempResult: string[] = tempResult.map((v) => v.toLowerCase());
+      //let uniqueValue: string = smallTempResult.filter();
       //greek.get();
     } else {
       for (const [index, value] of indexFound.entries()) {
