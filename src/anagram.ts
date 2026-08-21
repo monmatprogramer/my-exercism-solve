@@ -81,7 +81,7 @@ export class Anagram {
         allOperations(value),
       );
       console.log(sortedList);
-      finalResult = convertToSingleArray(greek);
+      finalResult = uppercaseList;
     } else {
       for (const [index, value] of indexFound.entries()) {
         finalResult.push(potentials.at(value)!);
