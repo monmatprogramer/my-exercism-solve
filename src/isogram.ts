@@ -1,28 +1,31 @@
-// isogram
+// isograh
 export function isIsogram(input: string): boolean {
   //conver to lowercase
   const lowerText = input.toLocaleLowerCase();
   //cleaned text
-  let cleanedText: string = "";
+  let cleanedText: string = lowerText;
   if (input === "") return true;
   // clean text
-  if (!cleanText(input)) {
+  if (!cleanText(lowerText)) {
     throw new Error("Not valid input");
   }
   if (checkSpace(input)) {
     //remove space
-    cleanedText = removeSpace(input);
+    cleanedText = removeSpace(lowerText);
   }
   //remove hyphens
   if (checkHyphen(input)) {
-    cleanedText = removeHyphen(input);
+    cleanedText = removeHyphen(lowerText);
   }
+  console.log("---");
+
+  console.log(cleanedText);
   // start to find unique string
   const uniqueLetters = new Set<string>(cleanedText);
   if (uniqueLetters.size === cleanedText.length) {
-    return false;
+    return true;
   }
-  return true;
+  return false;
 }
 
 const cleanText = (rwInput: string): boolean => {
