@@ -1,42 +1,32 @@
 //find roman number
 // Magic table
-const magicTable: Record<number, string> = {
-  1000: "M",
-
-  900: "CM",
-
-  500: "D",
-
-  400: "CD",
-
-  100: "C",
-
-  90: "XC",
-
-  50: "L",
-
-  40: "XL",
-
-  10: "X",
-
-  9: "IX",
-
-  5: "V",
-
-  4: "IV",
-
-  1: "I",
-};
+const romanRules = [
+  { letter: "M", value: 1000 },
+  { letter: "CM", value: 900 },
+  { letter: "D", value: 500 },
+  { letter: "CD", value: 400 },
+  { letter: "C", value: 100 },
+  { letter: "XC", value: 90 },
+  { letter: "L", value: 50 },
+  { letter: "XL", value: 40 },
+  { letter: "X", value: 10 },
+  { letter: "IX", value: 9 },
+  { letter: "V", value: 5 },
+  { letter: "IV", value: 4 },
+  { letter: "I", value: 1 },
+];
 
 export const toRoman = (num: number): string => {
   let result: string = "";
-  for (const value of Object.entries(magicTable).reverse()) {
-    // Largeest -> smallest number
-    // CurrentValue
-    let currentValue: number = Number([...value][0]);
-    while (num >= currentValue) {
-      console.log(num);
-    }
+  for (const rule of romanRules) {
+    // console.dir(rule, { depth: null });
+    console.log(rule);
   }
   return result;
+};
+
+const checkValue = (currentValue: number, inputNum: number) => {
+  while (inputNum >= currentValue) {
+    console.log("inputNum: ", inputNum);
+  }
 };
