@@ -31,8 +31,9 @@ const magicTable: Record<number, string> = {
 export const toRoman = (num: number): string => {
   let result: string = "";
   for (const value of Object.entries(magicTable).reverse()) {
+    // Largeest -> smallest number
     let numberValue: number = Number([...value][0]);
-    console.log(numberValue <= num);
+    console.log(numberValue);
     //while (num >= numberValue) {
 
     // console.log(num);
