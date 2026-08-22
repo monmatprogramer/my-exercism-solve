@@ -66,4 +66,11 @@ function checkCaptitalOrNot() {
 function checkCapitalLetter(value: string): boolean {
   return value === value.toUpperCase();
 }
-checkCaptitalOrNot();
+function concatenateString() {
+  const st1: string = "XL";
+  const st2: string = "I";
+  //XLI
+  const result: string = st1 + st2;
+  console.log(result);
+}
+concatenateString();
