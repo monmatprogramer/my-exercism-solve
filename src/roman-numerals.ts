@@ -19,8 +19,7 @@ const romanRules = [
 export const toRoman = (num: number): string => {
   let result: string = "";
   for (const rule of romanRules) {
-    // console.dir(rule, { depth: null });
-    console.log(rule);
+    checkValue(rule.value, num);
   }
   return result;
 };
