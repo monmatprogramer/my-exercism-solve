@@ -15,17 +15,24 @@ const romanRules = [
   { letter: "IV", value: 4 },
   { letter: "I", value: 1 },
 ];
-
+type RuleOje = {
+  letter: string;
+  value: number;
+};
 export const toRoman = (num: number): string => {
   let result: string = "";
   for (const rule of romanRules) {
-    checkValue(rule.value, num);
+    checkValue(rule, num);
   }
   return result;
 };
 
-const checkValue = (currentValue: number, inputNum: number) => {
-  while (inputNum >= currentValue) {
-    console.log("inputNum: ", inputNum);
+const checkValue = (currentValue: RuleOje, inputNum: number) => {
+  let result: string = "";
+  while (inputNum >= currentValue.value) {
+    result += currentValue.letter;
+    console.log("currentValue : ", currentValue.value);
+    inputNum -= inputNum;
   }
+  console.log(result);
 };
