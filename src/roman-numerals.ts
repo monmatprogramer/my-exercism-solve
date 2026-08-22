@@ -22,19 +22,18 @@ type RuleOje = {
 export const toRoman = (num: number): string => {
   let result: string = "";
   for (const rule of romanRules) {
-    result = checkValue(rule, num);
+    result = checkValue(rule, num, result);
   }
   return result;
 };
 
-const checkValue = (currentValue: RuleOje, inputNum: number): string => {
-  let result: string = "";
-  console.log(inputNum >= currentValue.value);
-  console.log("-------");
-  return "";
+const checkValue = (
+  currentValue: RuleOje,
+  inputNum: number,
+  result: string,
+): string => {
   while (inputNum >= currentValue.value) {
-    result += currentValue.letter;
-    console.log("result : ", result);
+    result = result + currentValue.letter;
     inputNum = inputNum - currentValue.value;
   }
   return result;
