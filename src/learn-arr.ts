@@ -138,6 +138,9 @@ function removeSpecificArr() {
 const convertStringToNumArr = () => {
   const strArr: string[] = ["1", "2", "3", "4"];
   const numArr: number[] = strArr.map(Number);
-  console.log(numArr);
 };
-convertStringToNumArr();
+const convertStringToArr = () => {
+  const str = "1234";
+  //conver to array
+  //TODO: convert to array
+};
