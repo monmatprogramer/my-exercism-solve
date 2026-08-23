@@ -6,8 +6,8 @@ export class Series {
 
   slices(sliceLength: number): number[][] {
     const result: number[][] = [];
-    for (const char of this.seriesString) {
-      console.log(char);
+    for (const [index, char] of this.seriesString) {
+      result.push(this.seriesString.slice(index, sliceLength));
     }
     return [[]];
   }
