@@ -1,5 +1,4 @@
-import { toRoman } from "./roman-numerals";
+import { Series } from "./series";
 
-console.log(toRoman(42));
-//102 => CII
-//42 => XLII
+const series1 = new Series("1");
+series1;
