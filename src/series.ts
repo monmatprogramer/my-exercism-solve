@@ -1,5 +1,5 @@
 export class Series {
-  private seriesString: string;
+  private seriesString: number[];
   constructor(series: string) {
     this.seriesString = series;
   }
