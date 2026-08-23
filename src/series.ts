@@ -5,6 +5,7 @@ export class Series {
   }
 
   slices(sliceLength: number): number[][] {
+    const result: number[][] = [];
     return [[]];
   }
 }
