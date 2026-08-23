@@ -118,5 +118,12 @@ function swapArray() {
   [arr[0], arr[2]] = [arr[2], arr[0]];
   console.log(arr);
 }
-
-swapArray();
+function learnTwoDimentionalArr() {
+  //declare
+  const num: number[][] = [
+    [1, 2, 3],
+    [4, 5, 6],
+  ];
+  console.table(num);
+}
+learnTwoDimentionalArr();
