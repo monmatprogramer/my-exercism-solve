@@ -1,9 +1,7 @@
 export class Series {
-  constructor(series: unknown) {
-    throw new Error("Remove this line and implement the function");
-  }
+  constructor(series: string) {}
 
-  slices(sliceLength: unknown): unknown {
-    throw new Error("Remove this line and implement the function");
+  slices(sliceLength: number): number[][] {
+    return [[]];
   }
 }
