@@ -126,6 +126,7 @@ function learnTwoDimentionalArr() {
   ];
   let n = [7, 8, 9];
   num.push(n);
+  console.log(num);
 }
 learnTwoDimentionalArr();
 function removeSpecificArr() {
