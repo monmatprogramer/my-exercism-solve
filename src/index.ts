@@ -1,3 +1,3 @@
 import { gamestate } from "./state-of-tic-tac-toe";
-const board = ["XOO", "X  ", "X  "];
+const board = ["X00", "XXX", "XOO"];
 gamestate(board);

@@ -18,6 +18,7 @@ export const gamestate = (board: string[]): string => {
   if (totalOValue > totalXValue) {
     throw new Error("0 Started");
   }
+  console.log(totalOValue);
   if (totalXValue > totalOValue + 1) {
     throw new Error("X went twice");
   }
@@ -28,6 +29,7 @@ export const gamestate = (board: string[]): string => {
 const countAValue = (charName: string, wholeString: string): number => {
   let count = 0;
   let index = wholeString.indexOf(charName);
+  console.log("o index: ", index);
   while (index !== -1) {
     count++;
     index = wholeString.indexOf(charName, index + 1);
@@ -42,6 +44,5 @@ const countValueWiner = (valueCheck: string, board: string[]): number => {
     //per row
     count = countAValue(valueCheck, value);
   }
-  console.log(count);
   return count;
 };
