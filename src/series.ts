@@ -10,30 +10,30 @@ export class Series {
   slices(sliceLength: number): number[][] {
     //conver to num array string
     const convertToNum: number[] = this.seriesString.split("").map(Number);
-    //TODO: Fix here
-    const copyConverToNum: number[] = [...convertToNum];
-    let result: number[][] = [];
-
-    return (result = method2(convertToNum, copyConverToNum, sliceLength));
+    return method2(convertToNum.length, [...convertToNum], sliceLength);
   }
 }
-
-const method2 = (
-  orinalArr: number[],
-  copyArr: number[],
-  sliceLength: number,
-): number[][] => {
-  if (sliceLength > orinalArr.length) {
+const checkCondition = (sliceLength: number, orinalArrLen: number) => {
+  if (sliceLength > orinalArrLen) {
     throw new Error("slice length cannot be greater than series length");
   } else if (sliceLength === 0) {
     throw new Error("slice length cannot be zero");
   } else if (sliceLength < 0) {
     throw new Error("slice length cannot be negative");
   }
-  const tempResult: number[][] = [];
+};
+const method2 = (
+  orinalArrLen: number,
+  copyArr: number[],
+  sliceLength: number,
+): number[][] => {
+  checkCondition(sliceLength, orinalArrLen);
 
-  for (const [value] of orinalArr.entries()) {
-    let sliceValueArr: number[] = copyArr.slice(0, sliceLength);
+  const tempResult: number[][] = [];
+  let sliceValueArr: number[];
+
+  for (let i: number = 0; i < orinalArrLen; i++) {
+    sliceValueArr = copyArr.slice(0, sliceLength);
     if (sliceValueArr.length < sliceLength) {
       return tempResult;
     }
