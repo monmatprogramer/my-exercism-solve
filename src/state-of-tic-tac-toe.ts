@@ -75,7 +75,6 @@ const countValueWiner = (valueCheck: string, board: string[]): number => {
       .split("")
       .filter((v) => v === valueCheck).length;
     if (lenVale === 3) {
-      console.log(`value ${valueCheck} = `, lenVale);
       return lenVale;
     }
   }
