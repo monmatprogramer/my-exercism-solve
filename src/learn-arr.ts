@@ -126,6 +126,7 @@ function learnTwoDimentionalArr() {
   ];
   // empty two dimension
   const temp: number[][] = [[]];
+  //Add to empty dimension array
   let n = [7, 8, 9];
   num.push(n);
   console.log(num);
