@@ -15,8 +15,8 @@ const findString = () => {
   console.log("-----End method  2--- \n\n");
 
   console.log("method 3");
-
-  console.log(); // ['X']
+  let xValue1 = st1.split("").map((value) => value === "X");
+  console.log(xValue1); // [true, false, false]
   console.log("-----End method  3--- \n\n");
 };
 
