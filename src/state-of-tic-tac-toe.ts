@@ -4,3 +4,6 @@ export const gamestate = (board: string[]): string => {
   board.filter((xValue) => {});
   return "";
 };
+const countAValue = (charName: string, wholeString: string): number => {
+  return 0;
+};
