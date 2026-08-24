@@ -134,16 +134,13 @@ function learnTwoDimentionalArr() {
   num.push(n);
   console.log(num);
 }
-learnTwoDimentionalArr();
 function removeSpecificArr() {
   const strArr: string[] = ["3", "5"];
-
-  for (const [index, value] of strArr) {
-    console.log(strArr.splice(1, 2));
-    console.log("after");
-    console.log(strArr.length);
-  }
+  //remove
+  strArr.slice(1, 1);
+  console.log(strArr.length);
 }
+removeSpecificArr();
 const convertStringToNumArr = () => {
   const strArr: string[] = ["1", "2", "3", "4"];
   const numArr: number[] = strArr.map(Number);
