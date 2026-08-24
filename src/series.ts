@@ -6,13 +6,16 @@ export class Series {
 
   slices(sliceLength: number): number[][] {
     //conver to num array string
-    const convertToNum: string[] = this.seriesString.split("");
-    console.log("convertToNum: ", convertToNum);
+    const convertToNum: number[] = this.seriesString.split("").map(Number);
+    const copyConverToNum: number[] = [...convertToNum];
+    console.log(convertToNum);
+
     const result: number[][] = [];
 
-    for (const [index, char] of this.seriesString) {
-      // result.push(this.seriesString.slice(index, sliceLength));
+    for (const [index, value] of copyConverToNum.entries()) {
+      result.push(convertToNum.slice(index, sliceLength));
     }
+    console.log("Result: ", result);
     return [[]];
   }
 }
