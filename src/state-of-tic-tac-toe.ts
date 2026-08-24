@@ -40,9 +40,8 @@ const countValueWiner = (valueCheck: string, board: string[]): number => {
 
   for (const [index, value] of board.entries()) {
     //per row
-
-    countAValue(valueCheck, value);
-    console.log(`---Row[${index + 1}]---`);
+    count = countAValue(valueCheck, value);
   }
+  console.log(count);
   return count;
 };
