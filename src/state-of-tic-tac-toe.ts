@@ -38,6 +38,7 @@ const countAValue = (charName: string, wholeString: string): number => {
 const countValueWiner = (valueCheck: string, board: string[]): number => {
   // count on specific value from valueCheck
   let count: number = 0;
+  // check count where valueCheck as condition
   for (const [index, value] of board.entries()) {
     //per row
     //count = countAValue(valueCheck, value);
