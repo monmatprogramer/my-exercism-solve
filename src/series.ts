@@ -12,10 +12,13 @@ export class Series {
 
     const result: number[][] = [];
 
-    for (const [index, value] of copyConverToNum.entries()) {
-      result.push(convertToNum.slice(index, sliceLength));
+    for (let i: number = 0; i < convertToNum.length; i++) {
+      for (let j: number = i; j < sliceLength; j++) {
+        console.log(j);
+        console.log("--------------");
+      }
+      // result.push(convertToNum.slice(index, sliceLength));
     }
-    console.log(result);
     return result.filter((v) => v.length > 0);
   }
 }
