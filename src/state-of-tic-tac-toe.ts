@@ -9,7 +9,14 @@ export const gamestate = (board: string[]): string => {
     totalXValue += countAValue(xValue, value);
     totalOValue += countAValue(oValue, value);
   }
-  console.log(`X ${totalXValue} and O ${totalOValue}`);
+  //check order
+  if (totalOValue > totalXValue) {
+    throw new Error("0 Started");
+  }
+  if (totalXValue > totalOValue + 1) {
+    throw new Error("X went twice");
+  }
+  //Check winer
   return "";
 };
 const countAValue = (charName: string, wholeString: string): number => {
