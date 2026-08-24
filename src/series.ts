@@ -15,7 +15,8 @@ export class Series {
     for (const [index, value] of copyConverToNum.entries()) {
       result.push(convertToNum.slice(index, sliceLength));
     }
-    console.log("Result: ", result);
+    result.filter((v) => v.length !== 1);
+    // console.log("Result: ", result.filter((v) => v!== []));
     return [[]];
   }
 }
