@@ -1,11 +1,15 @@
 //state of tic tax toe
 export const gamestate = (board: string[]): string => {
   //count X the given board
+  const xValue: string = "X";
+  const oValue: string = "O";
+  let totalOValue: number = 0;
   let totalXValue: number = 0;
   for (const [_, value] of board.entries()) {
-    totalXValue += countAValue("X", value);
+    totalXValue += countAValue(xValue, value);
+    totalOValue += countAValue(oValue, value);
   }
-  console.log("X on the board", totalXValue);
+  console.log(`X ${totalXValue} and O ${totalOValue}`);
   return "";
 };
 const countAValue = (charName: string, wholeString: string): number => {
