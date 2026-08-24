@@ -27,6 +27,20 @@ export const gamestate = (board: string[]): string => {
   //Check winer
   countValueWiner(xValue, board);
   countValueWiner(oValue, board);
+  if (countValueWiner(xValue, board) === 3) {
+    isXWiner = true;
+  } else {
+    isXWiner = false;
+  }
+  if (countValueWiner(oValue, board) === 3) {
+    isOWiner = true;
+  } else {
+    isOWiner = false;
+  }
+
+  if (isXWiner && isOWiner) {
+    throw new Error("game should have ended");
+  }
   return "";
 };
 const countAValue = (charName: string, wholeString: string): number => {
