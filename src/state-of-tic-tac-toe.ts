@@ -16,9 +16,11 @@ export const gamestate = (board: string[]): string => {
   }
   //TODO: Fix it check in order
   //check order
+  // Check to confirm that X start first
   if (totalOValue > totalXValue) {
     throw new Error("0 Started");
   }
+  // Preving X twice
   if (totalXValue > totalOValue + 1) {
     throw new Error("X went twice");
   }
