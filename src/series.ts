@@ -9,20 +9,35 @@ export class Series {
     const convertToNum: number[] = this.seriesString.split("").map(Number);
     //TODO: Fix here
     const copyConverToNum: number[] = [...convertToNum];
-    const result: number[][] = [];
-    let tempArr: number[] = [];
-    for (let i: number = 0; i < convertToNum.length; i++) {
-      tempArr = copyConverToNum.slice(i, sliceLength);
-      result.push(tempArr);
-      sliceLength++;
+    let result: number[][] = [];
 
-      if (
-        sliceLength > convertToNum.length - 1 ||
-        copyConverToNum.length === 0
-      ) {
-        break;
-      }
-    }
-    return result.filter((v) => v.length > 0);
+    result = method2(convertToNum, copyConverToNum, sliceLength);
   }
 }
+const method1 = (
+  orinalArr: number[],
+  copyArr: number[],
+  sliceLength: number,
+): number[][] => {
+  const tempResult: number[][] = [];
+  let tempArr: number[] = [];
+
+  for (let i: number = 0; i < orinalArr.length; i++) {
+    tempArr = copyArr.slice(i, sliceLength);
+    tempResult.push(tempArr);
+    sliceLength++;
+
+    if (sliceLength > orinalArr.length - 1 || copyArr.length === 0) {
+      break;
+    }
+  }
+  return tempResult.filter((v) => v.length > 0);
+};
+const method2 = (
+  orinalArr: number[],
+  copyArr: number[],
+  sliceLength: number,
+): number[][] => {
+  const tempResult: number[][] = [];
+  return [];
+};
