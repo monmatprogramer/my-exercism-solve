@@ -11,7 +11,7 @@ export class Series {
     const copyConverToNum: number[] = [...convertToNum];
     let result: number[][] = [];
 
-    result = method2(convertToNum, copyConverToNum, sliceLength);
+    return (result = method2(convertToNum, copyConverToNum, sliceLength));
   }
 }
 const method1 = (
@@ -33,11 +33,16 @@ const method1 = (
   }
   return tempResult.filter((v) => v.length > 0);
 };
+
 const method2 = (
   orinalArr: number[],
   copyArr: number[],
   sliceLength: number,
 ): number[][] => {
   const tempResult: number[][] = [];
+  for (const [value] of orinalArr.entries()) {
+    let sliceValueArr: number[] = copyArr.slice(0, sliceLength);
+    tempResult.push(sliceValueArr);
+  }
   return [];
 };
