@@ -22,7 +22,7 @@ export const gamestate = (board: string[]): string => {
     throw new Error("X went twice");
   }
   //Check winer
-  checkWiner(xValue, board);
+  countValueWiner(xValue, board);
   return "";
 };
 const countAValue = (charName: string, wholeString: string): number => {
@@ -35,12 +35,15 @@ const countAValue = (charName: string, wholeString: string): number => {
   return count;
 };
 // Check winer
-const checkWiner = (valueCheck: string, board: string[]): boolean => {
+const countValueWiner = (valueCheck: string, board: string[]): number => {
+  let count: number = 0;
+
   for (const [index, value] of board.entries()) {
     //per row
     for (const char of value) {
       console.log(char);
     }
+    console.log(`---Row[${index + 1}]---`);
   }
-  return false;
+  return count;
 };
