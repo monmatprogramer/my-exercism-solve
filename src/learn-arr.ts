@@ -132,7 +132,7 @@ function removeSpecificArr() {
   const strArr: string[] = ["1", "2", "3", "4"];
 
   for (const [index, value] of strArr) {
-    console.log(strArr.splice(0, 3));
+    console.log(strArr.splice(0, 5));
   }
 }
 removeSpecificArr();
