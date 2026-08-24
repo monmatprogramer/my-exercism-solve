@@ -5,16 +5,19 @@ export class Series {
   }
 
   slices(sliceLength: number): number[][] {
+    console.log("sliceLength: ", sliceLength);
     //conver to num array string
     const convertToNum: number[] = this.seriesString.split("").map(Number);
     //TODO: Fix here
     const copyConverToNum: number[] = [...convertToNum];
-    console.log(convertToNum.length);
     const result: number[][] = [];
+    let tempArr: number[] = [];
     for (let i: number = 0; i < convertToNum.length; i++) {
-      for (let j: number = i; j < sliceLength; j++) {
-        console.log(`i ${i} j ${j}`);
-      }
+      console.log("i: ", i);
+      console.log(copyConverToNum.slice(i, sliceLength));
+      result.push();
+      sliceLength++;
+      console.log("\n");
     }
     return result.filter((v) => v.length > 0);
   }
