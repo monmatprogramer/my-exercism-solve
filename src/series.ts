@@ -15,6 +15,13 @@ export class Series {
       tempArr = copyConverToNum.slice(i, sliceLength);
       result.push(tempArr);
       sliceLength++;
+
+      if (
+        sliceLength > convertToNum.length - 1 &&
+        copyConverToNum.length === 0
+      ) {
+        break;
+      }
     }
     return result.filter((v) => v.length > 0);
   }

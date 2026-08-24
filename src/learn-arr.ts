@@ -129,10 +129,12 @@ function learnTwoDimentionalArr() {
   console.log(num);
 }
 function removeSpecificArr() {
-  const strArr: string[] = ["1", "2", "3", "4"];
+  const strArr: string[] = ["1", "2"];
 
   for (const [index, value] of strArr) {
-    console.log(strArr.splice(0, 5));
+    console.log(strArr.splice(1, 2));
+    console.log("after");
+    console.log(strArr.length);
   }
 }
 removeSpecificArr();
