@@ -124,12 +124,14 @@ function learnTwoDimentionalArr() {
     [1, 2, 3],
     [4, 5, 6],
   ];
+  // empty two dimension
+  const temp: number[][] = [[]];
   let n = [7, 8, 9];
   num.push(n);
   console.log(num);
 }
 function removeSpecificArr() {
-  const strArr: string[] = ["1", "2"];
+  const strArr: string[] = ["3", "5"];
 
   for (const [index, value] of strArr) {
     console.log(strArr.splice(1, 2));

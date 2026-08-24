@@ -17,7 +17,7 @@ export class Series {
       sliceLength++;
 
       if (
-        sliceLength > convertToNum.length - 1 &&
+        sliceLength > convertToNum.length - 1 ||
         copyConverToNum.length === 0
       ) {
         break;
