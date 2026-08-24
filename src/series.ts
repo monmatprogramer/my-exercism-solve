@@ -7,14 +7,15 @@ export class Series {
   slices(sliceLength: number): number[][] {
     //conver to num array string
     const convertToNum: number[] = this.seriesString.split("").map(Number);
+    //TODO: Fix here
     const copyConverToNum: number[] = [...convertToNum];
-    console.log(convertToNum);
 
     const result: number[][] = [];
 
     for (const [index, value] of copyConverToNum.entries()) {
       result.push(convertToNum.slice(index, sliceLength));
     }
+    console.log(result);
     return result.filter((v) => v.length > 0);
   }
 }
