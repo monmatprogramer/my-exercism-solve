@@ -5,5 +5,11 @@ export const gamestate = (board: string[]): string => {
   return "";
 };
 const countAValue = (charName: string, wholeString: string): number => {
-  return 0;
+  let count = 0;
+  let index = wholeString.indexOf(charName);
+  while (index !== -1) {
+    count++;
+    index = wholeString.indexOf(charName, index + 1);
+  }
+  return count;
 };
