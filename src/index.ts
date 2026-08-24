@@ -1,4 +1,3 @@
-import { Series } from "./series";
-
-const series1 = new Series("12345");
-console.log(series1.slices(6));
+import { gamestate } from "./state-of-tic-tac-toe";
+const board = ["XOO", "X  ", "X  "];
+gamestate(board);
