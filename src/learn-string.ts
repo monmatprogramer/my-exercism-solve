@@ -1,6 +1,6 @@
 //
 const findString = () => {
-  const st1: string = "XOO";
+  const st1: string = "OXXX";
   //find x value in a string
   // method 1
   console.log("method 1");
@@ -20,9 +20,21 @@ const findString = () => {
   console.log("-----End method  3--- \n\n");
 
   console.log("method 4");
-  let xValue2 = st1.split("").map((value) => value === "X");
-  console.log(); // [true, false, false]
+  const x_expree = /([X])/;
+  if (x_expree.test(st1)) {
+    console.log(st1.split("X").length - 1);
+  }
   console.log("-----End method  4--- \n\n");
+
+  console.log("method 5");
+  let count = 0;
+  let index = st1.indexOf("X");
+  while (index !== -1) {
+    count++;
+    index = st1.indexOf("X", index + 1);
+  }
+  console.log(count);
+  console.log("-----End method  5--- \n\n");
 };
 
 findString();
