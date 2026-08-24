@@ -137,7 +137,7 @@ function learnTwoDimentionalArr() {
 function removeSpecificArr() {
   const strArr: string[] = ["3", "5"];
   //remove
-  strArr.slice(1, 1);
+  strArr.shift();
   console.log(strArr.length);
 }
 removeSpecificArr();

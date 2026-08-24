@@ -42,10 +42,11 @@ const method2 = (
   const tempResult: number[][] = [];
   for (const [value] of orinalArr.entries()) {
     let sliceValueArr: number[] = copyArr.slice(0, sliceLength);
-
+    for (let i: number = 0; i < sliceLength; i++) {
+      copyArr.shift();
+    }
     for (let i: number = 0; i < sliceLength; i++) {
       copyArr.unshift();
-      console.log("---unshift");
     }
     console.log("-> ", sliceValueArr);
     console.log("len: ", copyArr.length);
