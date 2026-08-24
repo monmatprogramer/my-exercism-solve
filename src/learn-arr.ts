@@ -135,6 +135,7 @@ function removeSpecificArr() {
     console.log(strArr.splice(0, 3));
   }
 }
+removeSpecificArr();
 const convertStringToNumArr = () => {
   const strArr: string[] = ["1", "2", "3", "4"];
   const numArr: number[] = strArr.map(Number);
