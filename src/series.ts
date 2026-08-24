@@ -1,6 +1,9 @@
 export class Series {
   private seriesString: string;
   constructor(series: string) {
+    if (series === "") {
+      throw new Error("series cannot be empty");
+    }
     this.seriesString = series;
   }
 
@@ -24,6 +27,8 @@ const method2 = (
     throw new Error("slice length cannot be greater than series length");
   } else if (sliceLength === 0) {
     throw new Error("slice length cannot be zero");
+  } else if (sliceLength < 0) {
+    throw new Error("slice length cannot be negative");
   }
   const tempResult: number[][] = [];
 
