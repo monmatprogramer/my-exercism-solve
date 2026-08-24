@@ -5,6 +5,11 @@ export const gamestate = (board: string[]): string => {
   const oValue: string = "O";
   let totalOValue: number = 0;
   let totalXValue: number = 0;
+
+  //Winer
+  let isXWiner: boolean;
+  let isOWiner: boolean;
+
   for (const [_, value] of board.entries()) {
     totalXValue += countAValue(xValue, value);
     totalOValue += countAValue(oValue, value);
@@ -17,6 +22,7 @@ export const gamestate = (board: string[]): string => {
     throw new Error("X went twice");
   }
   //Check winer
+  checkWiner(xValue, board);
   return "";
 };
 const countAValue = (charName: string, wholeString: string): number => {
@@ -27,4 +33,11 @@ const countAValue = (charName: string, wholeString: string): number => {
     index = wholeString.indexOf(charName, index + 1);
   }
   return count;
+};
+// Check winer
+const checkWiner = (valueCheck: string, board: string[]): boolean => {
+  for (const [index, value] of board.entries()) {
+    console.log(value);
+  }
+  return false;
 };
