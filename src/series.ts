@@ -6,7 +6,8 @@ export class Series {
 
   slices(sliceLength: number): number[][] {
     //conver to num array string
-    const convertToNum: number[] = this.seriesString.split("");
+    const convertToNum: string[] = this.seriesString.split("");
+    console.log("convertToNum: ", convertToNum);
     const result: number[][] = [];
 
     for (const [index, char] of this.seriesString) {
