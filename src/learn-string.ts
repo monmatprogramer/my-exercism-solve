@@ -32,7 +32,6 @@ const findString = () => {
   while (index !== -1) {
     count++;
     index = st1.indexOf("X", index + 1);
-    console.log(index);
   }
   console.log(count);
   console.log("-----End method  5--- \n\n");
