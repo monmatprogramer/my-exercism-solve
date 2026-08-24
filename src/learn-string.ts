@@ -18,6 +18,11 @@ const findString = () => {
   let xValue1 = st1.split("").map((value) => value === "X");
   console.log(xValue1); // [true, false, false]
   console.log("-----End method  3--- \n\n");
+
+  console.log("method 4");
+  let xValue2 = st1.split("").map((value) => value === "X");
+  console.log(); // [true, false, false]
+  console.log("-----End method  4--- \n\n");
 };
 
 findString();
