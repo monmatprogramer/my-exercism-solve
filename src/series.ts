@@ -14,6 +14,9 @@ export class Series {
     return (result = method2(convertToNum, copyConverToNum, sliceLength));
   }
 }
+const checkSliceLength = (): never => {
+  throw new Error("slice length cannot be greater than series length");
+};
 const method2 = (
   orinalArr: number[],
   copyArr: number[],
@@ -22,24 +25,14 @@ const method2 = (
   const tempResult: number[][] = [];
   for (const [value] of orinalArr.entries()) {
     let sliceValueArr: number[] = copyArr.slice(0, sliceLength);
-    for (let i: number = 0; i < sliceLength; i++) {
-      copyArr.shift();
+    if (sliceValueArr.length < sliceLength) {
+      return tempResult;
     }
-    for (let i: number = 0; i < sliceLength; i++) {
-      copyArr.unshift();
-    }
-    console.log("-> ", sliceValueArr);
-    console.log("len: ", copyArr.length);
-
+    copyArr.shift();
     tempResult.push(sliceValueArr);
     if (copyArr.length === 0) {
       return tempResult;
-    } else {
-      if (!(copyArr.length === sliceLength)) {
-        return tempResult;
-      }
     }
   }
-  console.log("tempResult: ", tempResult);
   return tempResult;
 };
