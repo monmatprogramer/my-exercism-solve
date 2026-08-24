@@ -37,7 +37,10 @@ const countAValue = (charName: string, wholeString: string): number => {
 // Check winer
 const checkWiner = (valueCheck: string, board: string[]): boolean => {
   for (const [index, value] of board.entries()) {
-    console.log(value);
+    //per row
+    for (const char of value) {
+      console.log(char);
+    }
   }
   return false;
 };
