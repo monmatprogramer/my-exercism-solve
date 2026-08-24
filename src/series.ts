@@ -9,15 +9,12 @@ export class Series {
     const convertToNum: number[] = this.seriesString.split("").map(Number);
     //TODO: Fix here
     const copyConverToNum: number[] = [...convertToNum];
-
+    console.log(convertToNum.length);
     const result: number[][] = [];
-
     for (let i: number = 0; i < convertToNum.length; i++) {
       for (let j: number = i; j < sliceLength; j++) {
-        console.log(j);
-        console.log("--------------");
+        console.log(`i ${i} j ${j}`);
       }
-      // result.push(convertToNum.slice(index, sliceLength));
     }
     return result.filter((v) => v.length > 0);
   }
