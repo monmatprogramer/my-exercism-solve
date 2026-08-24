@@ -14,6 +14,7 @@ export const gamestate = (board: string[]): string => {
     totalXValue += countAValue(xValue, value);
     totalOValue += countAValue(oValue, value);
   }
+  //TODO: Fix it check in order
   //check order
   if (totalOValue > totalXValue) {
     throw new Error("0 Started");
@@ -41,7 +42,14 @@ const countValueWiner = (valueCheck: string, board: string[]): number => {
   // check count where valueCheck as condition
   for (const [index, value] of board.entries()) {
     //per row
-    //count = countAValue(valueCheck, value);
+    // count it in order to find valueCheck
+    let lenVale: number = value
+      .split("")
+      .filter((v) => v === valueCheck).length;
+    if (lenVale === 3) {
+      console.log(`value ${valueCheck} = `, lenVale);
+      return lenVale;
+    }
   }
   return count;
 };
