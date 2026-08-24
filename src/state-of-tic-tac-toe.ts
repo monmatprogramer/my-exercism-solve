@@ -47,7 +47,12 @@ export const gamestate = (board: string[]): string => {
   if (isOWiner && totalXValue > totalOValue) {
     throw new Error("game should have ended");
   }
-  return "";
+  if (isXWiner && isOWiner) {
+    return "win";
+  }
+  if (totalXValue + totalOValue === 9) {
+    return "draw";
+  } else return "ongoin";
 };
 const countAValue = (charName: string, wholeString: string): number => {
   let count = 0;
