@@ -1,4 +1,4 @@
 import { gamestate } from "./state-of-tic-tac-toe";
 //const board = ["XXO", "XXX", "OOO"];
-const board = ["OXO", " X ", " X "];
+const board = ["OXX", "OX ", "O  "];
 console.log(gamestate(board));
