@@ -97,17 +97,19 @@ const xWiner = (xPlayer: string, board: string[]) => {
     for (const [index, value] of board.entries()) {
       convertBoard.push(value.split(""));
     }
-    let colIndex: number = 0;
+    let colIndex: number | null = null;
     //check x in a col
     for (const [index, value] of convertBoard.entries()) {
+      console.log("vlaue in colum: ", value);
       for (let j: number = 0; j < convertBoard.length; j++) {
         if (convertBoard[index][j] === xPlayer) {
-          if (colIndex === 0) {
+          if (colIndex === null) {
             count++;
           } else if (convertBoard[index].indexOf(xPlayer) === colIndex) {
+            console.log("index of x ", convertBoard[index].indexOf(xPlayer));
             count++;
           }
-          colIndex = j;
+          colIndex = j; //0
         }
       }
       if (count > 2) {
