@@ -18,9 +18,9 @@ export const gamestate = (board: string[]): string => {
   //TODO: Fix it check in order
   //check order
   // Check to confirm that X start first
-  if (board[0].split("")[0] === oValue) {
-    throw new Error("0 Started");
-  }
+  // if (board[0].split("")[0] === oValue) {
+  //   throw new Error("0 Started");
+  // }
   if (totalOValue > totalXValue) {
     throw new Error("0 Started");
   }
@@ -28,17 +28,11 @@ export const gamestate = (board: string[]): string => {
   if (totalXValue > totalOValue + 1) {
     throw new Error("X went twice");
   }
-  //Check winer
-  countValueWiner(xValue, board);
-  console.log("--check x winer---");
+  // Check winer
   isXWiner = xWiner(xValue, board);
-  console.log(isXWiner);
+  // Check isOWiner
   countValueWiner(oValue, board);
-  if (countValueWiner(xValue, board) === 3) {
-    isXWiner = true;
-  } else {
-    isXWiner = false;
-  }
+
   if (countValueWiner(oValue, board) === 3) {
     isOWiner = true;
   } else {
@@ -54,7 +48,7 @@ export const gamestate = (board: string[]): string => {
   if (isOWiner && totalXValue > totalOValue) {
     throw new Error("game should have ended");
   }
-  if (isXWiner && isOWiner) {
+  if (isXWiner || isOWiner) {
     return "win";
   }
   if (totalXValue + totalOValue === 9) {
