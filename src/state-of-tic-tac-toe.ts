@@ -97,14 +97,17 @@ const xWiner = (xPlayer: string, board: string[]) => {
     for (const [index, value] of board.entries()) {
       convertBoard.push(value.split(""));
     }
+    let colIndex: number = 0;
     //check x in a col
     for (const [index, value] of convertBoard.entries()) {
-      console.log("value: ", value);
       for (let j: number = 0; j < convertBoard.length; j++) {
-        console.log("col: ", convertBoard[index][j]);
-        //TODO: Fix logic here
         if (convertBoard[index][j] === xPlayer) {
-          count++;
+          if (colIndex === 0) {
+            count++;
+          } else if (convertBoard[index].indexOf(xPlayer) === colIndex) {
+            count++;
+          }
+          colIndex = j;
         }
       }
       if (count > 2) {
@@ -136,5 +139,3 @@ const countValueWiner = (valueCheck: string, board: string[]): number => {
   }
   return count;
 };
-// Count player in order
-const countOrder = (board: string[]) => {};
