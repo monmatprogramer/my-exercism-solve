@@ -64,6 +64,11 @@ const countAValue = (charName: string, wholeString: string): number => {
   }
   return count;
 };
+const xWiner = (xPlayer: string, board: string[]) => {
+  for (const [index, value] of board.entries()) {
+  }
+  return true;
+};
 // Check winer
 const countValueWiner = (valueCheck: string, board: string[]): number => {
   // count on specific value from valueCheck
@@ -82,3 +87,4 @@ const countValueWiner = (valueCheck: string, board: string[]): number => {
   return count;
 };
 // Count player in order
+const countOrder = (board: string[]) => {};
