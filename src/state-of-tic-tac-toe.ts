@@ -94,19 +94,23 @@ const xWiner = (xPlayer: string, board: string[]) => {
     //check x in a col
     for (const [index, value] of convertBoard.entries()) {
       console.log("col board value: ", value);
+      // In the same column
       for (let j: number = 0; j < convertBoard.length; j++) {
         if (convertBoard[index][j] === xPlayer) {
           if (colIndex === null) {
             count++;
           } else if (j === colIndex) {
             count++;
+          } else if (convertBoard[index][j + 1] === xPlayer) {
+            console.log("increase");
+            count++;
           }
           colIndex = j; //0
         }
-      }
-      console.log("final count: ", count);
-      if (count > 2) {
-        return true;
+        console.log("final count: ", count);
+        if (count > 2) {
+          return true;
+        }
       }
     }
     isRow = true;
