@@ -18,6 +18,9 @@ export const gamestate = (board: string[]): string => {
   //TODO: Fix it check in order
   //check order
   // Check to confirm that X start first
+  if (board[0].split("")[0] === oValue) {
+    throw new Error("0 Started");
+  }
   if (totalOValue > totalXValue) {
     throw new Error("0 Started");
   }
@@ -99,8 +102,6 @@ const xWiner = (xPlayer: string, board: string[]) => {
       console.log("value: ", value);
       for (let j: number = 0; j < convertBoard.length; j++) {
         console.log("col: ", convertBoard[index][j]);
-        let prviousValue: string = convertBoard[index][j];
-
         //TODO: Fix logic here
         if (convertBoard[index][j] === xPlayer) {
           count++;
