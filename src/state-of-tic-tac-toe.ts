@@ -99,12 +99,11 @@ const xWiner = (xPlayer: string, board: string[]) => {
       console.log("value: ", value);
       for (let j: number = 0; j < convertBoard.length; j++) {
         console.log("col: ", convertBoard[index][j]);
-        let temXValue: string = convertBoard[index][j];
+        let prviousValue: string = convertBoard[index][j];
+
         //TODO: Fix logic here
         if (convertBoard[index][j] === xPlayer) {
           count++;
-        } else {
-          count = 0;
         }
       }
       if (count > 2) {
