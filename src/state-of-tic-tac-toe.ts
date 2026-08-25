@@ -3,6 +3,7 @@ export const gamestate = (board: string[]): string => {
   //count X the given board
   const xValue: string = "X";
   const oValue: string = "O";
+  //find total player in the board
   let totalOValue: number = 0;
   let totalXValue: number = 0;
 
