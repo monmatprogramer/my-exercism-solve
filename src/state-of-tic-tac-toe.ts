@@ -100,6 +100,7 @@ const xWiner = (xPlayer: string, board: string[]) => {
       // In the same column
       for (let j: number = 0; j < convertBoard.length; j++) {
         if (convertBoard[index][j] === xPlayer) {
+          console.log("=> ", convertBoard[index][j]);
           if (colIndex === null) {
             xObj = { xIndex: j, xValue: convertBoard[index][j] };
             count++;
