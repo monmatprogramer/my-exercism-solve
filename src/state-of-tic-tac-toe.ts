@@ -29,15 +29,9 @@ export const gamestate = (board: string[]): string => {
     throw new Error("X went twice");
   }
   // Check winer
+  isOWiner = xWiner(oValue, board);
+  //.isOWiner = false;
   isXWiner = xWiner(xValue, board);
-  // Check isOWiner
-  countValueWiner(oValue, board);
-
-  if (countValueWiner(oValue, board) === 3) {
-    isOWiner = true;
-  } else {
-    isOWiner = false;
-  }
 
   if (isXWiner && isOWiner) {
     throw new Error("game should have ended");
@@ -70,13 +64,17 @@ const xWiner = (xPlayer: string, board: string[]) => {
   let count: number = 0;
   let isRow: boolean = true;
   let isCol: boolean = false;
+  console.log(`===== xPlayer = ${xPlayer}=====`);
   if (isRow) {
     for (const [_, value] of board.entries()) {
+      console.log("row board value: ", value);
       for (const [_, v] of value.split("").entries()) {
+        console.log("v: ", v);
         if (v === xPlayer) {
           count++;
         }
       }
+      console.log("count: ", count);
       if (count > 2) {
         return true;
       }
@@ -84,6 +82,7 @@ const xWiner = (xPlayer: string, board: string[]) => {
       isCol = true;
       count = 0;
     }
+    console.log("---end row loop---\n\n");
   }
   if (isCol) {
     //conver to tow dimensional array
@@ -94,16 +93,18 @@ const xWiner = (xPlayer: string, board: string[]) => {
     let colIndex: number | null = null;
     //check x in a col
     for (const [index, value] of convertBoard.entries()) {
+      console.log("col board value: ", value);
       for (let j: number = 0; j < convertBoard.length; j++) {
         if (convertBoard[index][j] === xPlayer) {
           if (colIndex === null) {
             count++;
-          } else if (convertBoard[index].indexOf(xPlayer) === colIndex) {
+          } else if (j === colIndex) {
             count++;
           }
           colIndex = j; //0
         }
       }
+      console.log("final count: ", count);
       if (count > 2) {
         return true;
       }
@@ -113,6 +114,7 @@ const xWiner = (xPlayer: string, board: string[]) => {
     count = 0;
   }
 
+  console.log("-----end col loop---");
   return false;
 };
 
