@@ -67,8 +67,9 @@ const countAValue = (charName: string, wholeString: string): number => {
   }
   return count;
 };
+let xCount: number = 0;
+
 const xWiner = (xPlayer: string, board: string[]) => {
-  let xCount: number = 0;
   for (const [index, value] of board.entries()) {
     // row [0]
     for (const [_, x_value] of value) {
@@ -79,10 +80,8 @@ const xWiner = (xPlayer: string, board: string[]) => {
     if (xCount > 2) {
       return true;
     } else {
-      for (let j: number = index; j < value.length; j++) {
-        console.log("find x in collum");
-        // console.log(value[index][j]) undefined
-      }
+      let tempArrValue: string[] = value.split("");
+      console.log(tempArrValue[0][0]);
     }
   }
   return false;
