@@ -27,6 +27,9 @@ export const gamestate = (board: string[]): string => {
   }
   //Check winer
   countValueWiner(xValue, board);
+  console.log("--check x winer---");
+  isXWiner = xWiner(xValue, board);
+  console.log(isXWiner);
   countValueWiner(oValue, board);
   if (countValueWiner(xValue, board) === 3) {
     isXWiner = true;
@@ -65,9 +68,24 @@ const countAValue = (charName: string, wholeString: string): number => {
   return count;
 };
 const xWiner = (xPlayer: string, board: string[]) => {
+  let xCount: number = 0;
   for (const [index, value] of board.entries()) {
+    // row [0]
+    for (const [_, x_value] of value) {
+      if (x_value === xPlayer) {
+        xCount++;
+      }
+    }
+    if (xCount > 2) {
+      return true;
+    } else {
+      for (let j: number = index; j < value.length; j++) {
+        console.log("find x in collum");
+        // console.log(value[index][j]) undefined
+      }
+    }
   }
-  return true;
+  return false;
 };
 // Check winer
 const countValueWiner = (valueCheck: string, board: string[]): number => {
