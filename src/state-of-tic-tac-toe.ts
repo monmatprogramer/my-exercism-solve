@@ -30,9 +30,11 @@ export const gamestate = (board: string[]): string => {
   }
   // Check winer
   isOWiner = xWiner(oValue, board);
-  //.isOWiner = false;
+  // isOWiner = false;
   isXWiner = xWiner(xValue, board);
 
+  console.log(isXWiner);
+  console.log(isOWiner);
   if (isXWiner && isOWiner) {
     throw new Error("game should have ended");
   }
@@ -91,6 +93,7 @@ const xWiner = (xPlayer: string, board: string[]) => {
       convertBoard.push(value.split(""));
     }
     let colIndex: number | null = null;
+    let xObj: { xIndex: number; xValue: string };
     //check x in a col
     for (const [index, value] of convertBoard.entries()) {
       console.log("col board value: ", value);
@@ -98,21 +101,29 @@ const xWiner = (xPlayer: string, board: string[]) => {
       for (let j: number = 0; j < convertBoard.length; j++) {
         if (convertBoard[index][j] === xPlayer) {
           if (colIndex === null) {
+            xObj = { xIndex: j, xValue: convertBoard[index][j] };
             count++;
           } else if (j === colIndex) {
             count++;
-          } else if (convertBoard[index][j + 1] === xPlayer) {
-            console.log("increase");
-            count++;
           }
+
+          if (colIndex !== null) {
+            if (xObj!.xValue === convertBoard[index][j]) {
+              count++;
+            }
+          }
+          // if (convertBoard[index][colIndex] === xPlayer) {
+          //   count++;
+          // }
           colIndex = j; //0
         }
-        console.log("final count: ", count);
-        if (count > 2) {
-          return true;
-        }
       }
+      console.log("final count: ", count);
     }
+    if (count > 2) {
+      return true;
+    }
+
     isRow = true;
     isCol = false;
     count = 0;
