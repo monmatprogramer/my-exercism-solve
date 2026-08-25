@@ -70,20 +70,12 @@ const countAValue = (charName: string, wholeString: string): number => {
 let xCount: number = 0;
 
 const xWiner = (xPlayer: string, board: string[]) => {
+  let convertBoard: string[][] = [];
+  // Count on  row
   for (const [index, value] of board.entries()) {
-    // row [0]
-    for (const [_, x_value] of value) {
-      if (x_value === xPlayer) {
-        xCount++;
-      }
-    }
-    if (xCount > 2) {
-      return true;
-    } else {
-      let tempArrValue: string[] = value.split("");
-      console.log(tempArrValue[0][0]);
-    }
+    convertBoard.push(value.split(""));
   }
+  console.log(convertBoard);
   return false;
 };
 // Check winer
