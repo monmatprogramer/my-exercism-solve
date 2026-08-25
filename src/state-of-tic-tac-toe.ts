@@ -70,14 +70,55 @@ const countAValue = (charName: string, wholeString: string): number => {
 let xCount: number = 0;
 
 const xWiner = (xPlayer: string, board: string[]) => {
-  let convertBoard: string[][] = [];
-  // Count on  row
-  for (const [index, value] of board.entries()) {
-    convertBoard.push(value.split(""));
+  let count: number = 0;
+  let isRow: boolean = true;
+  let isCol: boolean = false;
+  if (isRow) {
+    for (const [_, value] of board.entries()) {
+      for (const [_, v] of value.split("").entries()) {
+        if (v === xPlayer) {
+          count++;
+        }
+      }
+      if (count > 2) {
+        return true;
+      }
+      isRow = false;
+      isCol = true;
+      count = 0;
+    }
   }
-  console.log(convertBoard);
+  if (isCol) {
+    //conver to tow dimensional array
+    let convertBoard: string[][] = [];
+    for (const [index, value] of board.entries()) {
+      convertBoard.push(value.split(""));
+    }
+    //check x in a col
+    for (const [index, value] of convertBoard.entries()) {
+      console.log("value: ", value);
+      for (let j: number = 0; j < convertBoard.length; j++) {
+        console.log("col: ", convertBoard[index][j]);
+        let temXValue: string = convertBoard[index][j];
+        //TODO: Fix logic here
+        if (convertBoard[index][j] === xPlayer) {
+          count++;
+        } else {
+          count = 0;
+        }
+      }
+      if (count > 2) {
+        return true;
+      }
+    }
+    isRow = true;
+    isCol = false;
+    count = 0;
+  }
+
   return false;
 };
+
 // Check winer
 const countValueWiner = (valueCheck: string, board: string[]): number => {
   // count on specific value from valueCheck
