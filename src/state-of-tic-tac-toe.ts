@@ -3,14 +3,14 @@ export const gamestate = (board: string[]): string => {
   //count X the given board
   const xValue: string = "X";
   const oValue: string = "O";
-  //find total player in the board
+  //(a)find total player in the board
   let totalOValue: number = 0;
   let totalXValue: number = 0;
 
   //Winer
   let isXWiner: boolean;
   let isOWiner: boolean;
-
+  //(a)
   for (const [_, value] of board.entries()) {
     totalXValue += countAValue(xValue, value);
     totalOValue += countAValue(oValue, value);
@@ -81,3 +81,4 @@ const countValueWiner = (valueCheck: string, board: string[]): number => {
   }
   return count;
 };
+// Count player in order
