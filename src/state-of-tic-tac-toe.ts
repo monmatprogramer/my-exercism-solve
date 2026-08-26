@@ -118,8 +118,12 @@ const xWiner = (xPlayer: string, board: string[]) => {
             }
           }
           colIndex = j;
+          console.log("count: ", count);
+          break;
+        } else if (value.indexOf(xPlayer) === -1) {
           break;
         }
+
         j++;
       }
     }
