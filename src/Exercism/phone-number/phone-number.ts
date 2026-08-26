@@ -25,6 +25,14 @@ const checkSymbols = (letters: string): boolean => {
 //Remove good punctuations from phone number
 const removeGoodPunc = (letter: string) => {
   let rightPhone: string = "";
+  //Create Regex
+  const phoneRegex = /[\s-.()]/;
+  //Check it
+  if (phoneRegex.test(letter)) {
+    //Start remove the good punctuations
+  } else {
+    throw new Error("Error Regular expression in removeGoodPunc()");
+  }
   if (rightPhone === "") {
     throw new Error("Empty rightPhone in removeGoodPunc() ");
   }
