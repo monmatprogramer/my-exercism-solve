@@ -7,6 +7,8 @@ export function clean(phoneNumber: string) {
   if (checkSymbols(phoneNumber)) {
     throw new Error("Punctuations not permitted");
   }
+  // start remove good punctuations
+  removeGoodPunc(phoneNumber);
   console.log("---end function--");
 }
 
@@ -30,6 +32,7 @@ const removeGoodPunc = (letter: string) => {
   //Check it
   if (phoneRegex.test(letter)) {
     //Start remove the good punctuations
+    rightPhone = letter.replace(/[\s-.()]/g, "");
   } else {
     throw new Error("Error Regular expression in removeGoodPunc()");
   }
