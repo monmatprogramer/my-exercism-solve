@@ -33,7 +33,7 @@ export const gamestate = (board: string[]): string => {
   // isOWiner = false;
   isXWiner = xWiner(xValue, board);
 
-  console.log(isXWiner);
+  // console.log(isXWiner);
   // console.log(isOWiner);
   if (isXWiner && isOWiner) {
     throw new Error("game should have ended");
@@ -66,17 +66,17 @@ const xWiner = (xPlayer: string, board: string[]) => {
   let count: number = 0;
   let isRow: boolean = true;
   let isCol: boolean = false;
-  console.log(`===== xPlayer = ${xPlayer}=====`);
+  // console.log(`===== xPlayer = ${xPlayer}=====`);
   if (isRow) {
     for (const [_, value] of board.entries()) {
-      console.log("row board value: ", value);
+      // console.log("row board value: ", value);
       for (const [_, v] of value.split("").entries()) {
-        console.log("v: ", v);
+        // console.log("v: ", v);
         if (v === xPlayer) {
           count++;
         }
       }
-      console.log("count: ", count);
+      // console.log("count: ", count);
       if (count > 2) {
         return true;
       }
@@ -84,7 +84,7 @@ const xWiner = (xPlayer: string, board: string[]) => {
       isCol = true;
       count = 0;
     }
-    console.log("---end row loop---\n\n");
+    // console.log("---end row loop---\n\n");
   }
   if (isCol) {
     //conver to tow dimensional array
@@ -97,14 +97,14 @@ const xWiner = (xPlayer: string, board: string[]) => {
     let j: number = 0;
     //check x in a col
     for (const [index, value] of convertBoard.entries()) {
-      console.log("col board value: ", value);
+      // console.log("col board value: ", value);
       // In the same column
       while (true) {
         if (convertBoard[index][j] === "") {
           break;
         }
         if (convertBoard[index][j] === xPlayer) {
-          console.log("=> ", convertBoard[index][j]);
+          // console.log("=> ", convertBoard[index][j]);
           if (colIndex === null) {
             xObj = { xIndex: j, xValue: convertBoard[index][j] };
             count++;
@@ -133,7 +133,7 @@ const xWiner = (xPlayer: string, board: string[]) => {
     count = 0;
   }
 
-  console.log("-----end col loop---");
+  // console.log("-----end col loop---");
   return false;
 };
 
