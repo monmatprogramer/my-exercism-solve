@@ -55,6 +55,7 @@ const checkLengthNumberString = (rightPhone: string): string => {
     throw new Error("Must not be fewer than 10 digits");
   } else if (totalLen === 11) {
     if (firstCharacter === "1") {
+      console.log("work here");
       return (rightPhone = rightPhone
         .split("")
         .splice(1, rightPhone.length - 1)
@@ -65,6 +66,7 @@ const checkLengthNumberString = (rightPhone: string): string => {
   } else if (totalLen > 11) {
     throw new Error("Must not be greater than 11 digits");
   } else if (firstCharacter === "0" || firstCharacter === "1") {
+    console.log("debug here");
     throw new Error(
       `Area code cannot start with ${firstCharacter === "0" ? "zero" : "one"}`,
     );
