@@ -1,3 +1,3 @@
 import { clean } from "./phone-number.ts";
 
-clean("(223) 456-7890");
+clean("523-@:!-7890");
