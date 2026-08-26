@@ -11,6 +11,7 @@ export function clean(phoneNumber: string) {
   // start remove good punctuations
   rightPhoneNumber = removeGoodPunc(phoneNumber);
   //Check length of number string
+
   console.log("---end function--");
   return rightPhoneNumber;
 }
@@ -44,3 +45,4 @@ const removeGoodPunc = (letter: string) => {
   }
   return rightPhone;
 };
+//Check length of number string function
