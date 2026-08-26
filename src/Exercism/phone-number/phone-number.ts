@@ -46,6 +46,14 @@ const removeGoodPunc = (letter: string) => {
   return rightPhone;
 };
 //Check length of number string function
-const checkLengthNumberString = (letter: string): number => {
+const checkLengthNumberString = (rightPhone: string): number => {
+  //find total length of right phone number string first
+  const totalLen: number = rightPhone.length;
+  //set up condition for phone number lenght
+  if (totalLen < 10) {
+    throw new Error("");
+  } else if (totalLen > 11) {
+    throw new Error("");
+  }
   return 0;
 };
