@@ -1,1 +1,3 @@
-export function clean(phoneNumber: string) {}
+export function clean(phoneNumber: string) {
+  console.log("phone string: ", phoneNumber);
+}
