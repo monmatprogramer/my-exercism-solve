@@ -1,4 +1,5 @@
 export function clean(phoneNumber: string) {
+  let rightPhoneNumber: string = "";
   console.log("phone string: ", phoneNumber);
   if (checkForLetters(phoneNumber)) {
     throw new Error("Letters not permitted");
@@ -8,11 +9,13 @@ export function clean(phoneNumber: string) {
     throw new Error("Punctuations not permitted");
   }
   // start remove good punctuations
-  removeGoodPunc(phoneNumber);
+  rightPhoneNumber = removeGoodPunc(phoneNumber);
+  //Check length of number string
   console.log("---end function--");
+  return rightPhoneNumber;
 }
 
-//Check for letters
+//Check for letter
 const checkForLetters = (letters: string): boolean => {
   // define Regex
   const letterRegex = /[A-Za-z]/;
