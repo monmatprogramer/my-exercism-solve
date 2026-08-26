@@ -49,10 +49,20 @@ const removeGoodPunc = (letter: string) => {
 const checkLengthNumberString = (rightPhone: string): number => {
   //find total length of right phone number string first
   const totalLen: number = rightPhone.length;
+  //Ge the first character in the phone string
+  const firstCharacter: string = rightPhone.split("")[0];
   //set up condition for phone number lenght
   if (totalLen < 10) {
     throw new Error("");
   } else if (totalLen > 11) {
+    throw new Error("");
+  } else if (totalLen === 11) {
+    if (firstCharacter === "1") {
+      rightPhone.split("").splice(0, 1);
+    } else {
+      throw new Error("");
+    }
+  } else if (firstCharacter === "0" || firstCharacter === "1") {
     throw new Error("");
   }
   return 0;
