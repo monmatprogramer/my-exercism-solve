@@ -22,11 +22,11 @@ export const gamestate = (board: string[]): string => {
   //   throw new Error("0 Started");
   // }
   if (totalOValue > totalXValue) {
-    throw new Error("0 Started");
+    throw new Error("Wrong turn order: O started");
   }
   // Preving X twice
   if (totalXValue > totalOValue + 1) {
-    throw new Error("X went twice");
+    throw new Error("Wrong turn order: X went twice");
   }
   // Check winer
   isOWiner = checkWinner(oValue, board);
@@ -36,20 +36,26 @@ export const gamestate = (board: string[]): string => {
   // console.log(isXWiner);
   // console.log(isOWiner);
   if (isXWiner && isOWiner) {
-    throw new Error("game should have ended");
+    throw new Error(
+      "Impossible board: game should have ended after the game was won",
+    );
   }
   if (isXWiner && totalXValue === 0) {
-    throw new Error("game should have ended");
+    throw new Error(
+      "Impossible board: game should have ended after the game was won",
+    );
   }
   if (isOWiner && totalXValue > totalOValue) {
-    throw new Error("game should have ended");
+    throw new Error(
+      "Impossible board: game should have ended after the game was won",
+    );
   }
   if (isXWiner || isOWiner) {
     return "win";
   }
   if (totalXValue + totalOValue === 9) {
     return "draw";
-  } else return "ongoin";
+  } else return "ongoing";
 };
 const countAValue = (charName: string, wholeString: string): number => {
   let count = 0;
