@@ -29,8 +29,8 @@ export const gamestate = (board: string[]): string => {
     throw new Error("X went twice");
   }
   // Check winer
-  // isOWiner = xWiner(oValue, board);
-  isOWiner = false;
+  isOWiner = xWiner(oValue, board);
+  // isOWiner = false;
   isXWiner = xWiner(xValue, board);
 
   console.log(isXWiner);
@@ -110,15 +110,12 @@ const xWiner = (xPlayer: string, board: string[]) => {
             count++;
           } else if (j === colIndex) {
             count++;
-          }
-
-          if (colIndex !== null) {
+          } else if (colIndex !== null) {
             if (xObj!.xValue === convertBoard[index][j]) {
               count++;
             }
           }
           colIndex = j;
-          console.log("count: ", count);
           break;
         } else if (value.indexOf(xPlayer) === -1) {
           break;
