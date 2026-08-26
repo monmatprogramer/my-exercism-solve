@@ -64,6 +64,11 @@ const checkLengthNumberString = (rightPhone: string): number => {
     }
   } else if (firstCharacter === "0" || firstCharacter === "1") {
     throw new Error("");
+  } else if (
+    rightPhone.split("")[3] === "0" ||
+    rightPhone.split("")[3] === "1"
+  ) {
+    throw new Error("");
   }
   return 0;
 };
