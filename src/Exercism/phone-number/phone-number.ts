@@ -55,25 +55,22 @@ const checkLengthNumberString = (rightPhone: string): string => {
     throw new Error("Must not be fewer than 10 digits");
   } else if (totalLen === 11) {
     if (firstCharacter === "1") {
-      console.log("work here");
-      return (rightPhone = rightPhone
+      rightPhone = rightPhone
         .split("")
         .splice(1, rightPhone.length - 1)
-        .join(""));
+        .join("");
     } else {
       throw new Error("11 digits must start with 1");
     }
   } else if (totalLen > 11) {
     throw new Error("Must not be greater than 11 digits");
-  } else if (firstCharacter === "0" || firstCharacter === "1") {
-    console.log("debug here");
+  }
+  if (rightPhone.split("")[0] === "0" || rightPhone.split("")[0] === "1") {
     throw new Error(
-      `Area code cannot start with ${firstCharacter === "0" ? "zero" : "one"}`,
+      `Area code cannot start with ${rightPhone.split("")[0] === "0" ? "zero" : "one"}`,
     );
-  } else if (
-    rightPhone.split("")[3] === "0" ||
-    rightPhone.split("")[3] === "1"
-  ) {
+  }
+  if (rightPhone.split("")[3] === "0" || rightPhone.split("")[3] === "1") {
     throw new Error(
       `Exchange code cannot start with ${rightPhone.split("")[3] === "0" ? "zero" : "one"}`,
     );
