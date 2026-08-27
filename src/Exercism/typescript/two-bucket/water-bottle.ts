@@ -3,7 +3,7 @@ class WaterBottle {
   currentWater: number;
   constructor(bottleSize: number) {
     this.capacity = bottleSize;
-    this.currentWater = 0;
+    this.currentWater = 1;
   }
 
   fill() {
@@ -39,12 +39,13 @@ class WaterBottle {
       if (this.currentWater !== 0) {
         remainWater = amount + this.currentWater - this.capacity;
       }
+
       console.log(
-        `${this.currentWater === 0 ? "The bottle is empty water" : `It remains ${remainWater}L to fill`}`,
+        `${this.currentWater === 0 ? "The bottle is empty water" : `The overflow ${remainWater}L from the bottle`}`,
       );
     }
 
-    if (amount + remainWater > this.capacity) {
+    if (amount > this.capacity) {
       console.log(`You added it only ${amount - this.currentWater}`);
       console.log(`Your bottle is full ${this.capacity}L`);
     }
