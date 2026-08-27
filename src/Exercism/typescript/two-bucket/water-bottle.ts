@@ -15,5 +15,6 @@ class WaterBottle {
   }
   addWater(amount: number) {
     if (amount > this.capacity) throw new Error("Cannot overflow");
+    if (amount === 0) throw new Error("It is empty amount of water to add");
   }
 }
