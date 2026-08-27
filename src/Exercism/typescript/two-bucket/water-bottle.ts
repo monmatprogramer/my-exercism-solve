@@ -5,7 +5,12 @@ class WaterBottle {
     this.capacity = bottleSize;
     this.currentWater = 0;
   }
+
   fill() {
     this.currentWater = this.capacity;
+  }
+
+  empty() {
+    this.currentWater = 0;
   }
 }
