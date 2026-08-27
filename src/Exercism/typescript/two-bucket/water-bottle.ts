@@ -3,7 +3,7 @@ class WaterBottle {
   currentWater: number;
   constructor(bottleSize: number) {
     this.capacity = bottleSize;
-    this.currentWater = 1;
+    this.currentWater = 3;
   }
 
   fill() {
@@ -14,7 +14,7 @@ class WaterBottle {
     this.currentWater = 0;
   }
   addWater(amount: number) {
-    let remainWater: number = 0;
+    let overflow: number = 0;
     console.log("Your amount : ", amount);
     console.log("Current water: ", this.currentWater);
     console.log("Capacity: ", this.capacity + "L");
@@ -37,22 +37,21 @@ class WaterBottle {
     // This give message about remaining water
     if (this.currentWater < this.capacity) {
       if (this.currentWater !== 0) {
-        remainWater = amount + this.currentWater - this.capacity;
+        overflow = amount - (this.capacity - this.currentWater);
       }
 
       console.log(
-        `${this.currentWater === 0 ? "The bottle is empty water" : `The overflow ${remainWater}L from the bottle`}`,
+        `${this.currentWater === 0 ? "The bottle is empty water" : `The ${overflow < 0}` ? `Reequire ${Math.abs(overflow)}L to fill in` : `overflow ${overflow}L from`} the bottle`,
       );
     }
 
     if (amount > this.capacity) {
-      let allowedAdded: number = 0;
-      allowedAdded = this.capacity - this.currentWater;
-      allowedAdded = amount - allowedAdded;
-      console.log(`You is allowed to add only ${allowedAdded} into the bottle`);
+      console.log(
+        `You is allowed to add only ${this.capacity - this.currentWater} into the bottle`,
+      );
       console.log(`Your bottle is full ${this.capacity}L`);
     }
-    if (amount + remainWater < this.capacity) {
+    if (amount + overflow < this.capacity) {
       this.currentWater += amount;
       console.log("Your amount: ", amount);
       console.log("Add....");
@@ -69,7 +68,7 @@ class WaterBottle {
 const waterBottle = new WaterBottle(5);
 
 try {
-  waterBottle.addWater(8);
+  waterBottle.addWater(1);
 } catch (e: any) {
   console.log("💥 ", e.message);
 }
