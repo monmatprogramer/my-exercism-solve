@@ -14,6 +14,14 @@ class WaterBottle {
     this.currentWater = 0;
   }
   addWater(amount: number) {
+    // Not replace the exsiting water
+    if (this.currentWater !== 0) {
+      console.log(`Bottle has existing water ${this.currentWater}L`);
+      if (this.currentWater < this.capacity) {
+        console.log(`It remains ${this.capacity - this.currentWater}L to fill`);
+      }
+    }
+    // Not stop program when meet condtion
     if (amount > this.capacity)
       throw new Error("Cannot overflow because your amoount is " + amount);
     if (amount === 0) throw new Error("It is empty amount of water to add");
