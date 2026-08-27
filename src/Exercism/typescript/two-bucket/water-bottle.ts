@@ -39,10 +39,13 @@ class WaterBottle {
       if (this.currentWater !== 0) {
         overflow = amount - (this.capacity - this.currentWater);
       }
-
-      console.log(
-        `${this.currentWater === 0 ? "The bottle is empty water" : `The ${overflow < 0}` ? `Reequire ${Math.abs(overflow)}L to fill in` : `overflow ${overflow}L from`} the bottle`,
-      );
+      if (this.currentWater === 0) {
+        console.log("The bottle is empty water");
+      } else if (overflow < 0) {
+        console.log(`Reequire ${Math.abs(overflow)}L to fill in the bottle`);
+      } else {
+        console.log(`overflow ${overflow}L from the bottle`);
+      }
     }
 
     if (amount > this.capacity) {
@@ -53,8 +56,7 @@ class WaterBottle {
     }
     if (amount + overflow < this.capacity) {
       this.currentWater += amount;
-      console.log("Your amount: ", amount);
-      console.log("Add....");
+      console.log("Start adding....");
       if (this.currentWater < this.capacity) {
         console.log(
           `You have ${this.capacity - this.currentWater} to fill it.`,
@@ -68,7 +70,7 @@ class WaterBottle {
 const waterBottle = new WaterBottle(5);
 
 try {
-  waterBottle.addWater(1);
+  waterBottle.addWater(5);
 } catch (e: any) {
   console.log("💥 ", e.message);
 }
