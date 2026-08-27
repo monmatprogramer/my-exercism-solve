@@ -14,7 +14,8 @@ class WaterBottle {
     this.currentWater = 0;
   }
   addWater(amount: number) {
-    if (amount > this.capacity) throw new Error("Cannot overflow");
+    if (amount > this.capacity)
+      throw new Error("Cannot overflow because your amoount is ", amount);
     if (amount === 0) throw new Error("It is empty amount of water to add");
     this.currentWater = amount;
     console.log("currentWater: ", this.currentWater);
