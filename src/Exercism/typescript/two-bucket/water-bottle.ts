@@ -35,8 +35,15 @@ class WaterBottle {
       remainWater = this.capacity - this.currentWater;
       console.log(`It remains ${remainWater}L to fill`);
     }
-    if (amount + remainWater! > this.capacity) {
+    if (amount + remainWater > this.capacity) {
+      console.log(`You added it only ${amount - this.currentWater}`);
       console.log(`Your bottle is full ${this.capacity}L`);
+    }
+    if (amount + remainWater < this.capacity) {
+      this.currentWater += amount;
+      console.log("Your amount: ", amount);
+      console.log("Add....");
+      console.log("current after adding the water: ", this.currentWater);
     }
   }
 }
