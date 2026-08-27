@@ -1,8 +1,11 @@
 export class TwoBucket {
-  private queue: string[];
-  constructor(...queue: string[]) {
-    console.log(queue);
-    throw new Error("Remove this line and implement the function");
+  constructor(
+    buckOne: number,
+    buckTwo: number,
+    goal: number,
+    starterBank: string,
+  ) {
+    console.log("buckOne: ", buckOne);
   }
 
   moves() {

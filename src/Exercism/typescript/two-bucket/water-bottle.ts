@@ -1,0 +1,8 @@
+class WaterBottle {
+  capacity: number;
+  currentWater: number;
+  constructor(bottleSize: number) {
+    this.capacity = bottleSize;
+    this.currentWater = 0;
+  }
+}
