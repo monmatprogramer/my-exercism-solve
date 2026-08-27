@@ -46,7 +46,10 @@ class WaterBottle {
     }
 
     if (amount > this.capacity) {
-      console.log(`You added it only ${amount - this.currentWater}`);
+      let allowedAdded: number = 0;
+      allowedAdded = this.capacity - this.currentWater;
+      allowedAdded = amount - allowedAdded;
+      console.log(`You is allowed to add only ${allowedAdded} into the bottle`);
       console.log(`Your bottle is full ${this.capacity}L`);
     }
     if (amount + remainWater < this.capacity) {
@@ -66,7 +69,7 @@ class WaterBottle {
 const waterBottle = new WaterBottle(5);
 
 try {
-  waterBottle.addWater(6);
+  waterBottle.addWater(8);
 } catch (e: any) {
   console.log("💥 ", e.message);
 }
