@@ -17,7 +17,8 @@ class WaterBottle {
     let remainWater: number = 0;
     console.log("Your amount : ", amount);
     console.log("Current water: ", this.currentWater);
-    console.log("Capacity: ", this.capacity);
+    console.log("Capacity: ", this.capacity + "L");
+    console.log("----------------------------------\n\n");
     if (amount === 0) {
       console.log(
         "The amount of water is empty. Please add not empty amount of water.",
@@ -33,11 +34,16 @@ class WaterBottle {
       console.log(`The water in the bottle is full (${this.currentWater}L)`);
       return;
     }
-
+    // This give message about remaining water
     if (this.currentWater < this.capacity) {
-      remainWater = this.capacity - this.currentWater;
-      console.log(`It remains ${remainWater}L to fill`);
+      if (this.currentWater !== 0) {
+        remainWater = amount + this.currentWater - this.capacity;
+      }
+      console.log(
+        `${this.currentWater === 0 ? "The bottle is empty water" : `It remains ${remainWater}L to fill`}`,
+      );
     }
+
     if (amount + remainWater > this.capacity) {
       console.log(`You added it only ${amount - this.currentWater}`);
       console.log(`Your bottle is full ${this.capacity}L`);
