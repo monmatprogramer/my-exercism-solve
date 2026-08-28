@@ -3,9 +3,13 @@
 const myHistory = new Set<string>();
 const checkHistory = (state: string) => {
   if (myHistory.has(state)) {
-    console.log("");
+    console.log("Already seen this state!");
   } else {
+    myHistory.add(state);
+    if (myHistory.has(state)) {
+      console.log("NNew state saved!");
+    }
   }
 };
 
-checkHistory();
+checkHistory("Add water");
