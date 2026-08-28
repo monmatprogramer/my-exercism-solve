@@ -1,8 +1,6 @@
 // Learn about queue
 //
 
-import { on } from "events";
-
 const runQueue = () => {
   // queue
   const myQueue: number[] = [10, 20, 30];
