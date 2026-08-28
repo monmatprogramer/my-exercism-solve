@@ -16,10 +16,11 @@ class WaterBottle {
   addWater(amount: number) {
     let overflow: number = 0;
     const allow: number = this.capacity - this.currentWater;
+    console.log("------Infor---------------------");
     console.log("Your amount : ", amount);
     console.log("Current water: ", this.currentWater);
     console.log("Capacity: ", this.capacity + "L");
-    console.log("--------------------------------\n\n");
+    console.log("--------------------------------\n");
     if (amount === 0) {
       console.log(
         "The amount of water is empty. Please add not empty amount of water.",
@@ -49,15 +50,14 @@ class WaterBottle {
       }
     }
 
-    if (amount > this.capacity) {
+    if (allow > 0) {
       console.log(
         `You is allowed to add only ${this.capacity - this.currentWater} into the bottle`,
       );
-      console.log(`Your bottle is full ${this.capacity}L`);
     }
-    if (amount + overflow < this.capacity) {
-      this.currentWater += amount;
-      console.log("Start adding....");
+    if (allow < this.capacity) {
+      this.currentWater += allow;
+      console.log(`Start adding ${allow}L....`);
       if (this.currentWater < this.capacity) {
         console.log(
           `You have ${this.capacity - this.currentWater} to fill it.`,
@@ -65,6 +65,7 @@ class WaterBottle {
       }
       console.log("current after adding the water: ", this.currentWater);
     }
+    console.log("----------End adding water---------");
   }
 }
 
