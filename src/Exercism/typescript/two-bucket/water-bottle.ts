@@ -15,6 +15,7 @@ class WaterBottle {
   }
   addWater(amount: number) {
     let overflow: number = 0;
+    let allow: number = 0;
     console.log("Your amount : ", amount);
     console.log("Current water: ", this.currentWater);
     console.log("Capacity: ", this.capacity + "L");
