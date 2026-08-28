@@ -3,7 +3,7 @@ class WaterBottle {
   currentWater: number;
   constructor(bottleSize: number) {
     this.capacity = bottleSize;
-    this.currentWater = 3;
+    this.currentWater = 0;
   }
 
   fill() {
@@ -14,13 +14,18 @@ class WaterBottle {
     this.currentWater = 0;
   }
   addWater(amount: number) {
-    let overflow: number = 0;
-    const allow: number = this.capacity - this.currentWater;
+    const totalWater: number = this.currentWater + amount;
     console.log("------Infor---------------------");
     console.log("Your amount : ", amount);
     console.log("Current water: ", this.currentWater);
     console.log("Capacity: ", this.capacity + "L");
     console.log("--------------------------------\n");
+    if (totalWater > this.capacity) {
+      console.log("Overflow");
+      this.currentWater = this.capacity;
+    } else {
+      this.currentWater = totalWater;
+    }
   }
 }
 
