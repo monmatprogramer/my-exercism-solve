@@ -7,9 +7,11 @@ const checkHistory = (state: string) => {
   } else {
     myHistory.add(state);
     if (myHistory.has(state)) {
-      console.log("NNew state saved!");
+      console.log("New state saved!");
     }
   }
 };
 
+checkHistory("Add water");
+checkHistory("Add water");
 checkHistory("Add water");
