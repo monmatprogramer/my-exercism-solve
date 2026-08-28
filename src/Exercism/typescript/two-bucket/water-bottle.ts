@@ -29,11 +29,3 @@ class WaterBottle {
     }
   }
 }
-
-const waterBottle = new WaterBottle(5);
-
-try {
-  waterBottle.addWater(5);
-} catch (e: any) {
-  console.log("💥 ", e.message);
-}
