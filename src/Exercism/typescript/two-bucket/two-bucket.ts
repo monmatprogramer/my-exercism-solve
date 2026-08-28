@@ -1,3 +1,9 @@
+// State type
+type State = {
+  bucketOne: number;
+  bucketTwo: number;
+  moves: number;
+};
 export class TwoBucket {
   constructor(
     buckOne: number,
