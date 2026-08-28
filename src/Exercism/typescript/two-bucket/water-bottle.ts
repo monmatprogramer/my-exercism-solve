@@ -33,3 +33,10 @@ class WaterBottle {
 //History
 const history = new Set<string>();
 history.add("Bucket1: 3, Bucket2: 0");
+history.add("Bucket1: 0, Bucket2: 5");
+
+const seenBefore = history.has("Bucket1: 3, Bucket2: 0");
+const seenNew = history.has("Bucket1: 3, Bucket2: 5");
+
+console.log("seenBefore ", seenBefore);
+console.log("seenNew: ", seenNew);
