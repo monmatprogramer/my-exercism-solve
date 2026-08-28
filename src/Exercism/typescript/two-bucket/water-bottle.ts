@@ -15,7 +15,7 @@ class WaterBottle {
   }
   addWater(amount: number) {
     let overflow: number = 0;
-    let allow: number = 0;
+    const allow: number = this.capacity - this.currentWater;
     console.log("Your amount : ", amount);
     console.log("Current water: ", this.currentWater);
     console.log("Capacity: ", this.capacity + "L");
@@ -38,7 +38,7 @@ class WaterBottle {
     // This give message about remaining water
     if (this.currentWater < this.capacity) {
       if (this.currentWater !== 0) {
-        overflow = amount - this.currentWater;
+        overflow = amount - allow;
       }
       if (this.currentWater === 0) {
         console.log("The bottle is empty water");
