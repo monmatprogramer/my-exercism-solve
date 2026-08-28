@@ -24,6 +24,7 @@ class WaterBottle {
       console.log("Overflow");
       this.currentWater = this.capacity;
     } else {
+      console.log("Add water: ", amount);
       this.currentWater = totalWater;
     }
   }
