@@ -29,3 +29,7 @@ class WaterBottle {
     }
   }
 }
+
+//History
+const history = new Set<string>();
+history.add("Bucket1: 3, Bucket2: 0");
