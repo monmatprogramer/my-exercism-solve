@@ -24,7 +24,7 @@ const product = [
 const order = [
   {
     id: "1",
-    totalAmount: 4.3,
+    totalAmount: 6.8,
   },
   {
     id: "2",
@@ -57,6 +57,13 @@ const orderItem = [
     id: "00004",
     orderId: "2",
     name: "002",
+    quantity: 1,
+    price: 2.5,
+  },
+  {
+    id: "00005",
+    orderId: "1",
+    name: "001",
     quantity: 1,
     price: 2.5,
   },
