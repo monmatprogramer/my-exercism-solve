@@ -26,6 +26,10 @@ const order = [
     id: "1",
     totalAmount: 4.3,
   },
+  {
+    id: "2",
+    totalAmount: 5.0,
+  },
 ];
 const orderItem = [
   {
@@ -41,6 +45,20 @@ const orderItem = [
     name: "004",
     quantity: 1,
     price: 2.8,
+  },
+  {
+    id: "00003",
+    orderId: "2",
+    name: "001",
+    quantity: 1,
+    price: 2.5,
+  },
+  {
+    id: "00004",
+    orderId: "2",
+    name: "002",
+    quantity: 1,
+    price: 2.5,
   },
 ];
 
