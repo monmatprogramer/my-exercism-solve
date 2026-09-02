@@ -1,19 +1,22 @@
-const arrayOb = [
+const product = [
   {
-    id: "0001",
-    name: "Mon Mat",
-    age: 12,
+    id: "001",
+    name: "Ice latee",
+    price: 2.5,
   },
-  // {
-  //   id: "0002",
-  //   name: "Channy",
-  //   age: 22,
-  // },
+  {
+    id: "002",
+    name: "Hot latte",
+    price: 2.5,
+  },
+  {
+    id: "003",
+    name: "Hot expresso",
+    price: 1.5,
+  },
+  {
+    id: "004",
+    name: "Ice expresso",
+    price: 2.8,
+  },
 ];
-let arrayDbNew = [];
-console.log(arrayOb);
-let see = arrayOb.map((v) => {
-  return { id: "0003", name: v.name, age: 34 };
-});
-
-console.log("see", see);
