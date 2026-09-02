@@ -10,3 +10,10 @@ const arrayOb = [
     age: 22,
   },
 ];
+let arrayDbNew = [];
+console.log(arrayOb);
+let see = arrayOb.map((v) => {
+  return { id: "0003", name: v.name, age: 34 };
+});
+
+console.log("see", see);
