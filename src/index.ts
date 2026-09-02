@@ -4,11 +4,11 @@ const arrayOb = [
     name: "Mon Mat",
     age: 12,
   },
-  {
-    id: "0002",
-    name: "Channy",
-    age: 22,
-  },
+  // {
+  //   id: "0002",
+  //   name: "Channy",
+  //   age: 22,
+  // },
 ];
 let arrayDbNew = [];
 console.log(arrayOb);
