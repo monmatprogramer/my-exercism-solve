@@ -20,3 +20,29 @@ const product = [
     price: 2.8,
   },
 ];
+
+const order = [
+  {
+    id: "1",
+    totalAmount: 4.3,
+  },
+];
+const orderItem = [
+  {
+    id: "00001",
+    orderId: "1",
+    name: "003",
+    quantity: 1,
+    price: 1.5,
+  },
+  {
+    id: "00002",
+    orderId: "1",
+    name: "004",
+    quantity: 1,
+    price: 2.8,
+  },
+];
+
+const filterOrder = orderItem.filter((item) => item.orderId === "1");
+console.log(filterOrder);
