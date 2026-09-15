@@ -17,4 +17,5 @@ const updateUserState: UserType = {
   ["email"]: "alex_new@test.com",
 };
 
-console.log(updateUserState);
+console.log("copy state");
+console.log({ ...currentUserState });
