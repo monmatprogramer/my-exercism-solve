@@ -1,21 +1,24 @@
-interface UserType {
+interface User {
   id: number;
   username: string;
   email: string;
   role: string;
 }
 
-const currentUserState: UserType = {
+const currentUserState: User = {
   id: 101,
   username: "alex99",
   email: "alex_old@test.com",
   role: "user",
 };
 
-const updateUserState: UserType = {
+const updateUserState: User = {
   ...currentUserState,
   ["email"]: "alex_new@test.com",
 };
+function updateUser(user: User, update: Partial<User>): User {
+  return { ...user, ...update };
+}
 
-console.log("copy state");
-console.log({ ...currentUserState });
+const result = updateUser(currentUserState, { username: "monmat" });
+console.log(result);
