@@ -12,8 +12,8 @@ interface LoggObj {
   category: string;
   state: string;
 }
-interface Logger {
-  info: (message: string, obj: LoggObj) => void;
+class LoggerClass {
+  info(message: string, obj: LoggObj) {}
 }
 const logger = {};
 
