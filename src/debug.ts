@@ -1,13 +1,15 @@
+type HttpStatus = 400 | 401 | 403 | 404 | 500;
+
 class HttpError extends Error {
   constructor(
-    public readonly status: number,
+    public readonly status: HttpStatus,
     message: string,
   ) {
     super(message);
     this.status = status;
   }
 }
-const httpError = new HttpError(404, "This is message of error");
+const httpError = new HttpError(401, "This is message of error");
 console.log(httpError);
 
 function runWithCorrelationId(correlationId: string, next: () => void): string {
