@@ -15,7 +15,7 @@ interface LoggObj {
 class LoggerClass {
   info(message: string, obj: LoggObj) {}
 }
-const logger = {};
+const logger = new LoggerClass();
 
 logger.info("message", {
   action: "create debug",
