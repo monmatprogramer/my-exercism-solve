@@ -10,7 +10,7 @@ runWithCorrelationId("correlationId", () => {
 interface LoggObj {
   action: string;
   category: string;
-  state: string;
+  status: string;
 }
 class LoggerClass {
   info(message: string, obj: LoggObj) {}
