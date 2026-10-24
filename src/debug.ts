@@ -1,3 +1,10 @@
+class HttpError extends Error{
+  readonly status: number;
+  constructor(status: number; message: string){
+    super(message);
+    this.status = status;
+  }
+}
 function runWithCorrelationId(correlationId: string, next: () => void): string {
   console.log("correlationId: ", correlationId);
   next();
@@ -11,6 +18,7 @@ interface LoggObj {
   action: string;
   category: string;
   status: string;
+
 }
 class LoggerClass {
   info(message: string, obj: LoggObj) {
@@ -20,10 +28,11 @@ class LoggerClass {
     console.log(obj.status);
   }
 }
+/*
 const logger = new LoggerClass();
-
 logger.info("This is my message", {
   action: "create debug",
   category: "debug category",
   status: "OPEN",
 });
+*/
