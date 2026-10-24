@@ -1,3 +1,4 @@
+//custom error
 type HttpStatus = 400 | 401 | 403 | 404 | 500;
 
 class HttpError extends Error {
@@ -10,8 +11,15 @@ class HttpError extends Error {
     this.status = status;
   }
 }
-const httpError = new HttpError(401, "This is message of error");
-console.log(httpError);
+try {
+  throw new Error("User not found");
+} catch (error) {
+  if (error instanceof HttpError) {
+    console.error("Send 404 response to client");
+  } else {
+    console.error("Send 500 server crash response");
+  }
+}
 
 function runWithCorrelationId(correlationId: string, next: () => void): string {
   console.log("correlationId: ", correlationId);
