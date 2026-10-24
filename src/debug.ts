@@ -1,8 +1,8 @@
-console.log("Hello world");
-
-function runWithCorrelationId(correlationId: string): string {
+function runWithCorrelationId(correlationId: string, next: () => void): string {
   console.log("correlationId: ", correlationId);
   return "string";
 }
 
-runWithCorrelationId("correlationId");
+runWithCorrelationId("correlationId", () => {
+  console.log("Hello from cb");
+});
