@@ -13,11 +13,16 @@ interface LoggObj {
   status: string;
 }
 class LoggerClass {
-  info(message: string, obj: LoggObj) {}
+  info(message: string, obj: LoggObj) {
+    console.log("message: ", message);
+    console.log(obj.action);
+    console.log(obj.category);
+    console.log(obj.status);
+  }
 }
 const logger = new LoggerClass();
 
-logger.info("message", {
+logger.info("This is my message", {
   action: "create debug",
   category: "debug category",
   status: "OPEN",
