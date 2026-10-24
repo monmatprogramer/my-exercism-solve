@@ -1,6 +1,6 @@
 function runWithCorrelationId(correlationId: string, next: () => void): string {
   console.log("correlationId: ", correlationId);
-  console.log(next);
+  next();
   return "string";
 }
 
