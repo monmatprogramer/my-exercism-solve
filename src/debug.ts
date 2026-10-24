@@ -1,15 +1,14 @@
-class HttpError extends Error{
+class HttpError extends Error {
   readonly status: number;
-  constructor(status: number; message: string){
+  constructor(status: number, message: string) {
     super(message);
     this.status = status;
   }
 }
-const httpError = new HttpError(404,"This is message of error")
-console.log(httpError)
+const httpError = new HttpError(404, "This is message of error");
+console.log(httpError);
 
 function runWithCorrelationId(correlationId: string, next: () => void): string {
-
   console.log("correlationId: ", correlationId);
   next();
   return "string";
@@ -22,7 +21,6 @@ interface LoggObj {
   action: string;
   category: string;
   status: string;
-
 }
 class LoggerClass {
   info(message: string, obj: LoggObj) {
