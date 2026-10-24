@@ -5,7 +5,11 @@ class HttpError extends Error{
     this.status = status;
   }
 }
+const httpError = new HttpError(404,"This is message of error")
+console.log(httpError)
+
 function runWithCorrelationId(correlationId: string, next: () => void): string {
+
   console.log("correlationId: ", correlationId);
   next();
   return "string";
