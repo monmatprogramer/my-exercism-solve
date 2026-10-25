@@ -21,8 +21,10 @@ try {
   }
 }
 // Test const function as asynce
-const hashPassword = () => {
+const hashPassword = async (): Promise<void> => {
+  // It return Promise
   console.log("Hash password.");
+  return new Promise((resolve) => setTimeout(resolve, 3000));
 };
 hashPassword();
 // Test correlation
