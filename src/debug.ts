@@ -24,7 +24,10 @@ try {
 const hashPassword = async (): Promise<void> => {
   // It return Promise
   console.log("Hash password.");
-  return new Promise((resolve) => setTimeout(resolve, 3000));
+  return new Promise((resolve) => {
+    console.log("resolve: ", resolve);
+    return setTimeout(resolve, 3000);
+  });
 };
 hashPassword();
 // Test correlation
