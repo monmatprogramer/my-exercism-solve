@@ -20,7 +20,12 @@ try {
     console.error("Send 500 server crash response");
   }
 }
-
+// Test const function as asynce
+const hashPassword = () => {
+  console.log("Hash password.");
+};
+hashPassword();
+// Test correlation
 function runWithCorrelationId(correlationId: string, next: () => void): string {
   console.log("correlationId: ", correlationId);
   next();
