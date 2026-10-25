@@ -25,7 +25,7 @@ const hashPassword = async (): Promise<void> => {
   // It return Promise
   console.log("Hash password.");
   return new Promise((resolve) => {
-    console.log("resolve: ", resolve);
+    resolve();
     return setTimeout(resolve, 3000);
   });
 };
