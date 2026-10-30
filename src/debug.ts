@@ -12,12 +12,12 @@ function createAccessToken(userId: string): TokenPayLoad {
   const currentTime = Math.floor(Date.now() / 1000);
   // Convert minute to second
   // for making comparation
-
+  // e.g. 15 (minute) -- convert -> 9000 (second)
   const lifeTime = 15 * 60;
   return {
     userId: userId,
     issuedAt: currentTime,
-    exp: 1,
+    exp: currentTime + lifeTime,
   };
 }
 function timeDate() {
