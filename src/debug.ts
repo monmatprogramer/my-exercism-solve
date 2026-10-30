@@ -5,7 +5,7 @@ function timeDate() {
   const gt = new Date(Date.now() + REFRESH_TTL_MS).getTime();
   console.log("dayNow", dayNow);
   console.log("Now", now);
-  console.log(gt);
+  console.log("Get Time: ", gt);
 }
 const main = () => {
   timeDate();
