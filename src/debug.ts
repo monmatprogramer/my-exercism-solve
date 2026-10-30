@@ -11,11 +11,8 @@ function timeDate() {
 function setExpiresTime() {
   const nowInMilliseconds = Date.now();
   const currentTimeInSeconds = Math.floor(nowInMilliseconds / 1000);
-
-  console.log("now in milliseconds: ", nowInMilliseconds);
-  console.log("currentTimeInSeconds: ", currentTimeInSeconds);
+  const oneHourInSeconds = 60 * 60; //3600 (1hr)
+  const expireTiem = currentTimeInSeconds + oneHourInSeconds;
 }
-const main = () => {
-  setExpiresTime();
-};
+const main = () => {};
 main();
