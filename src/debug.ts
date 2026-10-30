@@ -32,6 +32,10 @@ function createRefreshToken(userId: string): TokenPayLoad {
     exp: currentTime + lifeTime,
   };
 }
+function isTokenExpired(tokenExpireTimestamp: number): boolean {
+  const currentTime = Math.floor(Date.now() / 1000);
+  return currentTime > tokenExpireTimestamp;
+}
 function timeDate() {
   const dayNow = new Date();
   const now = Date.now();
