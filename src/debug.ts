@@ -6,6 +6,8 @@ interface TokenPayLoad {
 }
 
 function createAccessToken(userId: string): TokenPayLoad {
+  // Convert Unix millisecond to second
+  // because it compare seoncon only, not compare with millisecond,
   const currentTime = Math.floor(Date.now() / 1000);
   return {
     userId: userId,
