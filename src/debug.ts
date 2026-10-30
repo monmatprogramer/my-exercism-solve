@@ -17,6 +17,18 @@ function createAccessToken(userId: string): TokenPayLoad {
   return {
     userId: userId,
     issuedAt: currentTime,
+    //ex. currentTime + 900
+    exp: currentTime + lifeTime,
+  };
+}
+function createRefreshToken(userId: string): TokenPayLoad {
+  const currentTime = Math.floor(Date.now() / 100);
+
+  const lifeTime = 7 * 24 * 60 * 60;
+
+  return {
+    userId: userId,
+    issuedAt: currentTime,
     exp: currentTime + lifeTime,
   };
 }
