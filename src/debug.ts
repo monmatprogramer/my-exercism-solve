@@ -10,6 +10,10 @@ function timeDate() {
 
 function setExpiresTime() {
   const nowInMilliseconds = Date.now();
+  const currentTimeInSeconds = Math.floor(nowInMilliseconds / 1000);
+
+  console.log("now in milliseconds: ", nowInMilliseconds);
+  console.log("currentTimeInSeconds: ", currentTimeInSeconds);
 }
 const main = () => {
   setExpiresTime();
