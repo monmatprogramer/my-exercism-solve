@@ -1,4 +1,18 @@
 const REFRESH_TTL_MS = 7 + 24 * 60 * 60 * 1000;
+interface TokenPayLoad {
+  userId: string;
+  issuedAt: number;
+  exp: number;
+}
+
+function createAccessToken(userId: string): TokenPayLoad {
+  const currentTime = Math.floor(Date.now() / 1000);
+  return {
+    userId: userId,
+    issuedAt: currentTime,
+    exp: 1,
+  };
+}
 function timeDate() {
   const dayNow = new Date();
   const now = Date.now();
@@ -14,5 +28,7 @@ function setExpiresTime() {
   const oneHourInSeconds = 60 * 60; //3600 (1hr)
   const expireTiem = currentTimeInSeconds + oneHourInSeconds;
 }
-const main = () => {};
+const main = () => {
+  console.log(createAccessToken("user-1"));
+};
 main();
