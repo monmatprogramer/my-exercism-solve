@@ -7,7 +7,11 @@ function timeDate() {
   console.log("Now", now);
   console.log("Get Time: ", gt);
 }
+
+function setExpiresTime() {
+  const nowInMilliseconds = Date.now();
+}
 const main = () => {
-  timeDate();
+  setExpiresTime();
 };
 main();
