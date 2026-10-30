@@ -7,9 +7,6 @@ interface TokenPayLoad {
 
 function createAccessToken(userId: string): TokenPayLoad {
   const currentTime = Math.floor(Date.now() / 1000);
-  const ms = 5000;
-  const second = ms / 1000;
-  console.log(second);
   return {
     userId: userId,
     issuedAt: currentTime,
