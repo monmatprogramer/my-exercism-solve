@@ -10,7 +10,10 @@ function createAccessToken(userId: string): TokenPayLoad {
   // because it compare seoncon only, not compare with millisecond,
   // ex: 5000(millisecond) -covert-> 5 (second)
   const currentTime = Math.floor(Date.now() / 1000);
+  // Convert minute to second
+  // for making comparation
 
+  const lifeTime = 15 * 60;
   return {
     userId: userId,
     issuedAt: currentTime,
