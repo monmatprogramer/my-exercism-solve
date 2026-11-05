@@ -73,7 +73,7 @@ const main = () => {
     return "string";
   });
 
-  const { isValid, value } = normalizeToken("rawRefreshToken");
+  const { isValid, value } = normalizeToken("");
   console.log("isValid", isValid);
   console.log("value: ", value);
 };
