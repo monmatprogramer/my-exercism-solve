@@ -51,13 +51,15 @@ function setExpiresTime() {
   const oneHourInSeconds = 60 * 60; //3600 (1hr)
   const expireTiem = currentTimeInSeconds + oneHourInSeconds;
 }
-function learnType(fn: () => void) {
-  fn();
+function learnType(fn: () => string) {
+  const r = fn();
+  console.log(r);
 }
 const main = () => {
   console.log("The main start...");
   learnType(() => {
     console.log("learnType");
+    return "string";
   });
 };
 main();
