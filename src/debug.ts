@@ -51,6 +51,17 @@ function setExpiresTime() {
   const oneHourInSeconds = 60 * 60; //3600 (1hr)
   const expireTiem = currentTimeInSeconds + oneHourInSeconds;
 }
+
+//----- Logger--
+function normalizeToken(rawRefreshToken: string | null): {
+  isValid: boolean;
+  value: string;
+} {
+  return {
+    isValid: true,
+    value: "isvalid",
+  };
+}
 function learnType(fn: () => string) {
   const r = fn();
   console.log(r);
@@ -58,8 +69,11 @@ function learnType(fn: () => string) {
 const main = () => {
   console.log("The main start...");
   learnType(() => {
-    console.log("learnType");
     return "string";
   });
+
+  const [isValid, value] = normalizeToken("hashtoken");
+  console.log("isValid", isValid);
+  console.log("value: ", value);
 };
 main();
