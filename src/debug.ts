@@ -58,6 +58,7 @@ function normalizeToken(rawRefreshToken: string | null): {
   isValid: boolean;
   value: string;
 } {
+  console.log(rawRefreshToken ?? "true");
   return {
     isValid: true,
     value: `${rawRefreshToken ? rawRefreshToken : null}`,
@@ -73,7 +74,7 @@ const main = () => {
     return "string";
   });
 
-  const { isValid, value } = normalizeToken("");
+  const { isValid, value } = normalizeToken("refreshtoken");
   console.log("isValid", isValid);
   console.log("value: ", value);
 };
