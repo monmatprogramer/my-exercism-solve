@@ -61,13 +61,13 @@ function normalizeToken(rawRefreshToken: string | null): {
   if (!rawRefreshToken) {
     return {
       isValid: false,
-      value: "invalid",
+      value: "null",
     };
   }
   if (rawRefreshToken.trim().length === 0) {
     return {
       isValid: false,
-      value: "invalid",
+      value: "empty string",
     };
   }
   return {
