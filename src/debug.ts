@@ -53,13 +53,14 @@ function setExpiresTime() {
 }
 
 //----- Logger--
+
 function normalizeToken(rawRefreshToken: string | null): {
   isValid: boolean;
   value: string;
 } {
   return {
     isValid: true,
-    value: "isvalid",
+    value: `${rawRefreshToken ? rawRefreshToken : null}`,
   };
 }
 function learnType(fn: () => string) {
@@ -72,7 +73,7 @@ const main = () => {
     return "string";
   });
 
-  const { isValid, value } = normalizeToken("hashtoken");
+  const { isValid, value } = normalizeToken("rawRefreshToken");
   console.log("isValid", isValid);
   console.log("value: ", value);
 };
