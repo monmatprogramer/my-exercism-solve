@@ -72,7 +72,7 @@ const main = () => {
     return "string";
   });
 
-  const [isValid, value] = normalizeToken("hashtoken");
+  const { isValid, value } = normalizeToken("hashtoken");
   console.log("isValid", isValid);
   console.log("value: ", value);
 };
