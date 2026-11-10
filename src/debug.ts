@@ -116,9 +116,7 @@ function learnMap() {
   });
   // Define value
   const keysValueArr = [...userAgentCache.keys()];
-  console.log(userAgentCache.keys());
-  console.log("----");
-  console.log(keysValueArr);
+  console.log(userAgentCache.entries);
 }
 const main = () => {
   learnMap();
