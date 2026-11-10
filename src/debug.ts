@@ -190,6 +190,15 @@ function learnArrayIArray() {
   console.log(Array.isArray(arr)); //True
   console.log(Array.isArray(map)); //False
 }
+// Lazy & Eager
+class UAParser {
+  constructor() {
+    console.log("UAParser is created");
+  }
+}
+
+// Eager Call
+function learnEagerAndLazy() {}
 
 const main = () => {
   learnMap();
