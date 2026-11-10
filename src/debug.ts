@@ -206,7 +206,15 @@ function learnEagerAndLazy() {
   // Eager Call
   getParser().greet();
 }
-
+// Challenge about lazy
+class DatabaseConnection {
+  public id: string;
+  public createdAt: Date;
+  constructor() {
+    this.id = `db-conn-${Math.random().toString(36).substring(2, 9)}`;
+    this.createdAt = new Date();
+  }
+}
 const main = () => {
   getParserLazy().greet();
 };
