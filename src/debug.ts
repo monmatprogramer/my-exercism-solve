@@ -233,5 +233,6 @@ function getDatabase(): DatabaseConnection {
 const main = () => {
   const cnn = getDatabase();
   console.log(cnn.query("SELECT * FROM"));
+  console.log(cnn.query("SELECT * FROM"));
 };
 main();
