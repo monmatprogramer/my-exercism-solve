@@ -146,9 +146,9 @@ function parseUserAgent(
   if (!userAgent) {
     // It return object user agent that we want to use in the application
     return {
-      browser: "",
-      os: "",
-      device: "",
+      browser: config.defaultBrowser ?? DEFAULT_BROWSER,
+      os: config.defaultOS ?? DEFAULT_OS,
+      device: DEFAULT_DEVICE,
       isMobile: false,
       fullUserAgent: "",
     };
