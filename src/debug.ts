@@ -197,7 +197,6 @@ function getParser(): UAParser {
 // Lazy function call
 function getParserLazy(): UAParser {
   if (!sharedParserLazy) {
-    console.log("is work");
     sharedParserLazy = new UAParser();
   }
   return sharedParserLazy;
