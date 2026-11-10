@@ -211,6 +211,7 @@ class DatabaseConnection {
   public id: string;
   public createdAt: Date;
   constructor() {
+    console.log(Math.random().toString(36).substring(2, 9));
     this.id = `db-conn-${Math.random().toString(36).substring(2, 9)}`;
     this.createdAt = new Date();
   }
