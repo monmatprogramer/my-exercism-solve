@@ -198,7 +198,6 @@ function getParser(): UAParser {
 function getParserLazy(): UAParser {
   if (!sharedParserLazy) {
     sharedParserLazy = new UAParser();
-    console.log("Created");
   }
   return sharedParserLazy;
 }
@@ -209,6 +208,6 @@ function learnEagerAndLazy() {
 }
 
 const main = () => {
-  getParserLazy();
+  getParserLazy().greet();
 };
 main();
