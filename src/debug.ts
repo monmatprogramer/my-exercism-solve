@@ -90,6 +90,14 @@ interface UserAgentInfo {
 function learnMap() {
   //User Agent Map
   const userAgentCache = new Map<string, UserAgentInfo>();
+  userAgentCache.set("Chrome-Windows", {
+    browser: "Chrome",
+    os: "Windows 11",
+    device: "Desktop",
+    isMobile: false,
+    fullUserAgent:
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+  }); // Define value
 }
 const main = () => {};
 main();
