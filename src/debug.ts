@@ -115,7 +115,10 @@ function learnMap() {
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0",
   });
   // Define value
+  const keysValueArr = [...userAgentCache.keys()];
   console.log(userAgentCache.keys());
+  console.log("----");
+  console.log(keysValueArr);
 }
 const main = () => {
   learnMap();
