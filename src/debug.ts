@@ -135,7 +135,8 @@ function parseUserAgent(
   config: UserAgentConfig,
 ): UserAgentInfo {
   // If user agent is empty, this will be return default value in object of user agent
-  if (userAgent) {
+  if (!userAgent) {
+    console.log("user agent is empty");
   }
   // It return object user agent that we want to use in the application
   return {
