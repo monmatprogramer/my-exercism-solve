@@ -231,6 +231,7 @@ function getDatabase(): DatabaseConnection {
   return connection;
 }
 const main = () => {
-  getDatabase().query("SELECT * FROM empl_tbl");
+  const cnn = getDatabase();
+  console.log(cnn.query("SELECT * FROM"));
 };
 main();
