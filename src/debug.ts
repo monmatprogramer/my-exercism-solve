@@ -130,7 +130,12 @@ function learnMap() {
 function learnPassEmptyObj(config: UserAgentConfig = {}) {
   console.log(config);
 }
+
+function learnArrayIArray() {
+  const arr = ["Chrome-Windows", "Safari-iPhone"];
+}
+
 const main = () => {
-  learnPassEmptyObj();
+  learnArrayIArray();
 };
 main();
