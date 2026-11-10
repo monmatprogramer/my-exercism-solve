@@ -88,7 +88,8 @@ interface UserAgentInfo {
   fullUserAgent: string;
 }
 function learnMap() {
-  //
+  //User Agent Map
+  const userAgentCache = new Map<string, UserAgentInfo>();
 }
 const main = () => {};
 main();
