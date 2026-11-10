@@ -79,14 +79,16 @@ function learnType(fn: () => string) {
   const r = fn();
   console.log(r);
 }
-const main = () => {
-  console.log("The main start...");
-  learnType(() => {
-    return "string";
-  });
-
-  const { isValid, value } = normalizeToken("   ");
-  console.log("isValid", isValid);
-  console.log("value: ", value);
-};
+// Test map
+interface UserAgentInfo {
+  browser: string;
+  os: string;
+  device: string;
+  isMobile: boolean;
+  fullUserAgent: string;
+}
+function learnMap() {
+  //
+}
+const main = () => {};
 main();
