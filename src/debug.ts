@@ -154,13 +154,16 @@ function parseUserAgent(
     };
   }
   // If user agent is not empty
-  return {
+  const userAgentInfo: UserAgentInfo = {
     browser: "",
     os: "",
     device: "",
     isMobile: false,
     fullUserAgent: "",
   };
+  console.log(userAgentInfo);
+
+  return userAgentInfo;
 }
 function learnPassEmptyObj(config: UserAgentConfig = {}) {
   console.log(config);
