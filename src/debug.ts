@@ -118,10 +118,8 @@ function learnMap() {
   const keysValueArr = [...userAgentCache.keys()];
   console.log(userAgentCache.entries);
   for (const [key, value] of userAgentCache.entries()) {
-    console.log(key);
+    console.log(value);
   }
 }
-const main = () => {
-  learnMap();
-};
+const main = () => {};
 main();
