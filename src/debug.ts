@@ -79,7 +79,15 @@ function learnType(fn: () => string) {
   const r = fn();
   console.log(r);
 }
-// Test map
+// Test map or learn more about user agent
+
+// It is the constanst value
+const DEFAULT_BROWSER = "Unknown Browser";
+const DEFAULT_OS = "Unknown OS";
+const DEFAULT_DEVICE = "Unknown Device";
+const DEFAULT_SEPARATOR = " | ";
+
+// Interface of User agent info
 interface UserAgentInfo {
   browser: string;
   os: string;
@@ -136,16 +144,15 @@ function parseUserAgent(
 ): UserAgentInfo {
   // If user agent is empty, this will be return default value in object of user agent
   if (!userAgent) {
-    console.log("user agent is empty");
+    // It return object user agent that we want to use in the application
+    return {
+      browser: "",
+      os: "",
+      device: "",
+      isMobile: false,
+      fullUserAgent: "",
+    };
   }
-  // It return object user agent that we want to use in the application
-  return {
-    browser: "",
-    os: "",
-    device: "",
-    isMobile: false,
-    fullUserAgent: "",
-  };
 }
 function learnPassEmptyObj(config: UserAgentConfig = {}) {
   console.log(config);
