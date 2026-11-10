@@ -127,6 +127,10 @@ function learnMap() {
     console.log(value);
   }
 }
-function learnPassEmptyObj(config: UserAgentConfig = {}) {}
-const main = () => {};
+function learnPassEmptyObj(config: UserAgentConfig = {}) {
+  console.log(config);
+}
+const main = () => {
+  learnPassEmptyObj();
+};
 main();
