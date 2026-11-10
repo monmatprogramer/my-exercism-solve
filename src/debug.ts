@@ -138,8 +138,8 @@ function learnMap(config: UserAgentConfig = {}) {
 }
 function getParser() {
   return {
-    setUA: (test: string) => {
-      console.log("hello world : ", test);
+    setUA: (userAgent: string) => {
+      console.log("hello world : ", userAgent);
       return {
         getResult: () => {
           console.log("and I love it.");
@@ -165,7 +165,7 @@ function parseUserAgent(
     };
   }
   const parser = getParser();
-  parser.setUA("Mon Mat").getResult();
+  parser.setUA(userAgent).getResult();
   // If user agent is not empty
   const userAgentInfo: UserAgentInfo = {
     browser: "",
