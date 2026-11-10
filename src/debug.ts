@@ -96,6 +96,7 @@ interface UserAgentConfig {
 function learnMap(config: UserAgentConfig = {}) {
   //User Agent Map
   const userAgentCache = new Map<string, UserAgentInfo>();
+  // Set map the value
   userAgentCache.set("Chrome-Windows", {
     browser: "Chrome",
     os: "Windows 11",
@@ -120,15 +121,14 @@ function learnMap(config: UserAgentConfig = {}) {
     fullUserAgent:
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0",
   });
+  // Call parse user agent
   const userAgent =
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36";
-
-  console.log(userAgentCache);
-  const cacheKey = `${userAgent}${JSON.stringify(config)}`;
-  console.log("cacheKey: ", JSON.stringify(cacheKey));
-  for (const [k, v] of userAgentCache.entries()) {
-    console.log(v.fullUserAgent === cacheKey ? v : "not found");
-  }
+  parseUserAgent(userAgent, config);
+}
+// Pase User agent
+function parseUserAgent(userAgent: string, config: UserAgentConfig): string {
+  return "";
 }
 function learnPassEmptyObj(config: UserAgentConfig = {}) {
   console.log(config);
