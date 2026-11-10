@@ -211,14 +211,26 @@ class DatabaseConnection {
   public id: string;
   public createdAt: Date;
   constructor() {
-    console.log(Math.random().toString(36));
     this.id = `db-conn-${Math.random().toString(36).substring(2, 9)}`;
     this.createdAt = new Date();
+    console.log(
+      `[DB INIT] Expense database connection established: ${this.id}`,
+    );
+  }
+
+  public query(sql: string): string {
+    return `Execute "${sql}" on ${this.id}`;
   }
 }
 // Call the challenge
+let connection: DatabaseConnection | null = null;
+function getDatabase(): DatabaseConnection {
+  if (!connection) {
+    connection = new DatabaseConnection();
+  }
+  return connection;
+}
 const main = () => {
-  const d = new DatabaseConnection();
-  console.log(d.id);
+  getDatabase().query("SELECT * FROM empl_tbl");
 };
 main();
