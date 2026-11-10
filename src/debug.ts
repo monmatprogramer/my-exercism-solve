@@ -1,3 +1,5 @@
+import { warn } from "node:console";
+
 const REFRESH_TTL_MS = 7 + 24 * 60 * 60 * 1000;
 interface TokenPayLoad {
   userId: string;
@@ -93,7 +95,7 @@ interface UserAgentConfig {
   defaultBrowser?: string;
   defaultOS?: string;
 }
-function learnMap() {
+function learnMap(config: UserAgentConfig = {) {
   //User Agent Map
   const userAgentCache = new Map<string, UserAgentInfo>();
   userAgentCache.set("Chrome-Windows", {
@@ -120,13 +122,8 @@ function learnMap() {
     fullUserAgent:
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0",
   });
-  // Define value
-  const keysValueArr = [...userAgentCache.keys()];
-  console.log(Array.isArray(keysValueArr));
-  console.log(Array.isArray(userAgentCache));
-  for (const [key, value] of userAgentCache.entries()) {
-    console.log(value);
-  }
+  const cacheKey = `${userAgentCache}${JSON.stringify(config)}`;
+  console.log("cacheKey: ", cacheKey)
 }
 function learnPassEmptyObj(config: UserAgentConfig = {}) {
   console.log(config);
@@ -141,7 +138,6 @@ function learnArrayIArray() {
 }
 
 const main = () => {
-  const headerObj = ["World"];
-  console.log(headerObj[0] ?? "hello");
+  learnMap();
 };
 main();
