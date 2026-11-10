@@ -140,6 +140,11 @@ function getParser() {
   return {
     setUA: (test: string) => {
       console.log("hello world : ", test);
+      return {
+        getResult: () => {
+          console.log("and I love it.");
+        },
+      };
     },
   };
 }
@@ -160,7 +165,7 @@ function parseUserAgent(
     };
   }
   const parser = getParser();
-  parser.setUA("Mon Mat");
+  parser.setUA("Mon Mat").getResult();
   // If user agent is not empty
   const userAgentInfo: UserAgentInfo = {
     browser: "",
