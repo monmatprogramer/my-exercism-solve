@@ -124,7 +124,7 @@ function learnMap(config: UserAgentConfig = {}) {
   // Call parse user agent
   const userAgent =
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36";
-  const userAgentUndefined = undefined;
+  const userAgentUndefined = "";
   // Invoke parse  user agent
   parseUserAgent(userAgentUndefined, config);
 }
@@ -134,6 +134,7 @@ function parseUserAgent(
   userAgent: string,
   config: UserAgentConfig,
 ): UserAgentInfo {
+  // If user agent is empty, this will be return default value in object of user agent
   if (userAgent) {
   }
   // It return object user agent that we want to use in the application
