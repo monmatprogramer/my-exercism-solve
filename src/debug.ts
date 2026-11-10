@@ -87,6 +87,12 @@ interface UserAgentInfo {
   isMobile: boolean;
   fullUserAgent: string;
 }
+interface UserAgentConfig {
+  includeDevice?: boolean;
+  seperator?: string;
+  defaultBrowser?: string;
+  defaultOS?: string;
+}
 function learnMap() {
   //User Agent Map
   const userAgentCache = new Map<string, UserAgentInfo>();
@@ -121,5 +127,6 @@ function learnMap() {
     console.log(value);
   }
 }
+function learnPassEmptyObj(config: UserAgentConfig = {}) {}
 const main = () => {};
 main();
