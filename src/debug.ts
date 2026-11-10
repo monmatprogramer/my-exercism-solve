@@ -215,7 +215,9 @@ class DatabaseConnection {
     this.createdAt = new Date();
   }
 }
+// Call the challenge
 const main = () => {
-  getParserLazy().greet();
+  const d = new DatabaseConnection();
+  console.log(d.id);
 };
 main();
