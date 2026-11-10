@@ -136,18 +136,6 @@ function learnMap(config: UserAgentConfig = {}) {
   // Invoke parse  user agent
   parseUserAgent(userAgent, config);
 }
-function getParser() {
-  return {
-    setUA: (userAgent: string) => {
-      console.log("hello world : ", userAgent);
-      return {
-        getResult: () => {
-          console.log("and I love it.");
-        },
-      };
-    },
-  };
-}
 // Pase User agent
 function parseUserAgent(
   userAgent: string,
@@ -165,7 +153,6 @@ function parseUserAgent(
     };
   }
   const parser = getParser();
-  parser.setUA(userAgent).getResult();
   // If user agent is not empty
   const userAgentInfo: UserAgentInfo = {
     browser: "",
@@ -199,14 +186,18 @@ class UAParser {
     console.log("Nice to meet you");
   }
 }
+
+const sharedParser = new UAParser();
+
+function getParser(): UAParser {
+  return sharedParser;
+}
 // Invoke this lession
 function learnEagerAndLazy() {
   // Eager Call
-  const sharedParser = new UAParser();
-  sharedParser.greet();
 }
 
 const main = () => {
-  learnMap();
+  learnEagerAndLazy();
 };
 main();
