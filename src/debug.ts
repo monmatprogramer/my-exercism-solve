@@ -136,7 +136,7 @@ function learnMap(config: UserAgentConfig = {}) {
   // Invoke parse  user agent
   parseUserAgent(userAgent, config);
 }
-
+function getParser() {}
 // Pase User agent
 function parseUserAgent(
   userAgent: string,
@@ -153,6 +153,7 @@ function parseUserAgent(
       fullUserAgent: "",
     };
   }
+  const parser = getParser();
   // If user agent is not empty
   const userAgentInfo: UserAgentInfo = {
     browser: "",
@@ -161,6 +162,7 @@ function parseUserAgent(
     isMobile: false,
     fullUserAgent: "",
   };
+
   console.log(userAgentInfo);
 
   return userAgentInfo;
