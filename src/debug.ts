@@ -122,7 +122,8 @@ function learnMap() {
   });
   // Define value
   const keysValueArr = [...userAgentCache.keys()];
-  console.log(userAgentCache.entries);
+  console.log(Array.isArray(keysValueArr));
+  console.log(Array.isArray(userAgentCache));
   for (const [key, value] of userAgentCache.entries()) {
     console.log(value);
   }
@@ -140,6 +141,7 @@ function learnArrayIArray() {
 }
 
 const main = () => {
-  learnArrayIArray();
+  // learnArrayIArray();
+  learnMap();
 };
 main();
