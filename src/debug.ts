@@ -124,11 +124,22 @@ function learnMap(config: UserAgentConfig = {}) {
   // Call parse user agent
   const userAgent =
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36";
+  // Invoke parse  user agent
   parseUserAgent(userAgent, config);
 }
 // Pase User agent
-function parseUserAgent(userAgent: string, config: UserAgentConfig): string {
-  return "";
+function parseUserAgent(
+  userAgent: string,
+  config: UserAgentConfig,
+): UserAgentInfo {
+  // It return object user agent that we want to use in the application
+  return {
+    browser: "",
+    os: "",
+    device: "",
+    isMobile: false,
+    fullUserAgent: "",
+  };
 }
 function learnPassEmptyObj(config: UserAgentConfig = {}) {
   console.log(config);
