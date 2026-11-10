@@ -195,6 +195,7 @@ function getParser(): UAParser {
 // Invoke this lession
 function learnEagerAndLazy() {
   // Eager Call
+  getParser().greet();
 }
 
 const main = () => {
