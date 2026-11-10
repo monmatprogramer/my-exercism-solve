@@ -190,6 +190,7 @@ class UAParser {
 const sharedParser = new UAParser();
 // Lazy
 let sharedParserLazy: UAParser | null = null;
+
 function getParser(): UAParser {
   return sharedParser;
 }
@@ -201,5 +202,6 @@ function learnEagerAndLazy() {
 
 const main = () => {
   learnEagerAndLazy();
+  console.log(sharedParserLazy);
 };
 main();
