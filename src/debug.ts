@@ -196,9 +196,10 @@ class UAParser {
     console.log("UAParser is created");
   }
 }
-
-// Eager Call
-function learnEagerAndLazy() {}
+// Invoke this lession
+function learnEagerAndLazy() {
+  // Eager Call
+}
 
 const main = () => {
   learnMap();
