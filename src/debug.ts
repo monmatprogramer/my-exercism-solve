@@ -209,6 +209,6 @@ function learnEagerAndLazy() {
 }
 
 const main = () => {
-  learnEagerAndLazy();
+  getParserLazy();
 };
 main();
