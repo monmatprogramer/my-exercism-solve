@@ -123,8 +123,12 @@ function learnMap(config: UserAgentConfig = {}) {
   const userAgent =
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36";
 
+  console.log(userAgentCache);
   const cacheKey = `${userAgent}${JSON.stringify(config)}`;
   console.log("cacheKey: ", JSON.stringify(cacheKey));
+  for (const [k, v] of userAgentCache.entries()) {
+    console.log(v.fullUserAgent === cacheKey ? v : "not found");
+  }
 }
 function learnPassEmptyObj(config: UserAgentConfig = {}) {
   console.log(config);
