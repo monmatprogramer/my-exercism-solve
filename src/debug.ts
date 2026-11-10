@@ -141,7 +141,7 @@ function learnArrayIArray() {
 }
 
 const main = () => {
-  // learnArrayIArray();
-  learnMap();
+  const headerObj = ["World"];
+  console.log(headerObj[0] ?? "hello");
 };
 main();
