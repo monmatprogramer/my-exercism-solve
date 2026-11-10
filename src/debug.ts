@@ -186,9 +186,10 @@ class UAParser {
     console.log("Nice to meet you");
   }
 }
-
+// Enger
 const sharedParser = new UAParser();
-
+// Lazy
+let sharedParserLazy: UAParser | null = null;
 function getParser(): UAParser {
   return sharedParser;
 }
