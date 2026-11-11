@@ -283,6 +283,8 @@ function makeDire() {
   if (!existsSync(logDir)) {
     mkdirSync(logDir, { recursive: true });
     console.log("Folder created successfully.");
+  } else {
+    console.log("Folder already exist. Skipping creation");
   }
 }
 function learnMakeDire() {
