@@ -1,6 +1,6 @@
 import winston from "winston";
 import DailyRotateFile from "winston-daily-rotate-file";
-import { mkdirSync, existsSync } from "node:fs";
+import { mkdirSync } from "node:fs";
 import path from "node:path";
 
 // it return path of root/logs
@@ -280,13 +280,7 @@ const findDuration = (start: any): any => {
 
 // Learn how to make directory
 function makeDire() {
-  //false = not exist
-  if (!existsSync(logDir)) {
-    mkdirSync(logDir, { recursive: true });
-    console.log("Folder created successfully.");
-  } else {
-    console.log("Folder already exist. Skipping creation");
-  }
+  mkdirSync(logDir, { recursive: true });
 }
 function learnMakeDire() {
   console.log("logDir", logDir);
