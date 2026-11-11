@@ -230,9 +230,12 @@ function getDatabase(): DatabaseConnection {
   }
   return connection;
 }
-const main = () => {
+function verifyTest() {
   const cnn = getDatabase();
   console.log(cnn.query("SELECT * FROM"));
   console.log(cnn.query("SELECT * FROM"));
+}
+const main = () => {
+  verifyTest();
 };
 main();
