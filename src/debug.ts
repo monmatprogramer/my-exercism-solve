@@ -254,12 +254,15 @@ function checkOnlyTwoCondition(deviceType: string) {
   // Device type can be 'deskto', 'mobile', 'tablet', '...'
   // Set conddtion here
   const result = Boolean(deviceType === "mobile");
+  //Better
   const result2 = deviceType === "mobile";
   console.log(result);
   console.log(result2);
 }
-
+function capitalizeDevice(device: string) {
+  console.log(device.charAt(0)); //m
+}
 const main = () => {
-  checkOnlyTwoCondition("Windows ");
+  capitalizeDevice("mobile");
 };
 main();
