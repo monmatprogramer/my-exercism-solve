@@ -227,6 +227,9 @@ function getDatabase(): DatabaseConnection {
   }
   return connection;
 }
+function resetDatabase(): void {
+  connection = null;
+}
 function verifyTest() {
   console.log("=== Step 1: Server boots up ===");
   console.log(connection);
