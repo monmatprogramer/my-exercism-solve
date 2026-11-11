@@ -286,6 +286,7 @@ function learnMakeDire() {
   console.log("logDir", logDir);
   console.log("Start creating dir ...");
   makeDire();
+  console.log("Created folder is done.");
 }
 
 const main = () => {
