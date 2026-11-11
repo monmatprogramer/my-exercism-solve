@@ -282,9 +282,12 @@ const findDuration = (start: any): any => {
 function makeDire() {
   mkdirSync(logDir, { recursive: true });
 }
+function writeLog() {
+  const daily = new DailyRotateFile();
+  console.log(daily);
+}
 function learnMakeDire() {
-  console.log(process.cwd());
-  console.log(path.join(logDir, "test"));
+  writeLog();
 }
 
 const main = () => {
