@@ -270,6 +270,7 @@ const findDuration = (start: any): any => {
   const durationDate = new Date(Date.now() - start).toISOString().slice(11, 19);
   return durationDate;
 };
+
 const main = () => {
   console.log(findDuration(Date.now()));
 };
