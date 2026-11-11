@@ -264,5 +264,12 @@ function capitalizeDevice(device: string) {
   const result = device.charAt(0).toUpperCase() + device.slice(1);
   console.log(result);
 }
-const main = () => {};
+// Calculate duration
+function findDuration() {
+  const start = Date.now();
+  console.log("start: ", start);
+}
+const main = () => {
+  findDuration();
+};
 main();
