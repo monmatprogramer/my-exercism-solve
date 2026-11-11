@@ -1,3 +1,9 @@
+import winston from "winston";
+import DailyRotateFile from "winston-daily-rotate-file";
+import { mkdirSync } from "node:fs";
+import { path } from "node:path";
+
+const logDir = path.join(process.cwd(), "logs");
 const REFRESH_TTL_MS = 7 + 24 * 60 * 60 * 1000;
 interface TokenPayLoad {
   userId: string;
@@ -271,7 +277,12 @@ const findDuration = (start: any): any => {
   return durationDate;
 };
 
+// Learn how to make directory
+function learnMakeDire() {
+  console.log("logDir", logDir);
+}
+
 const main = () => {
-  console.log(findDuration(Date.now()));
+  learnMakeDire();
 };
 main();
