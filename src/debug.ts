@@ -253,9 +253,13 @@ function verifyTest() {
 function checkOnlyTwoCondition(deviceType: string) {
   // Device type can be 'deskto', 'mobile', 'tablet', '...'
   // Set conddtion here
-  console.log(Boolean(deviceType === "mobile"));
+  const result = Boolean(deviceType === "mobile");
+  const result2 = deviceType === "mobile";
+  console.log(result);
+  console.log(result2);
 }
+
 const main = () => {
-  checkOnlyTwoCondition("mobile");
+  checkOnlyTwoCondition("Windows ");
 };
 main();
