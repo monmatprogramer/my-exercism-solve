@@ -249,7 +249,7 @@ function verifyTest() {
     isSingleInstance ? "✅ PASS" : "❌ FAIL",
   );
 }
-const main = () => {
-  verifyTest();
-};
+// Check device type
+function checkOnlyTwoCondition() {}
+const main = () => {};
 main();
