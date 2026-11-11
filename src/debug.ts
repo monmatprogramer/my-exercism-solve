@@ -267,7 +267,7 @@ function capitalizeDevice(device: string) {
 // Calculate duration
 function findDuration() {
   const start = Date.now();
-  console.log("start: ", start);
+  console.log("start: ", Date.now() - start);
 }
 const main = () => {
   findDuration();
