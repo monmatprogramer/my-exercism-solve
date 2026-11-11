@@ -179,9 +179,6 @@ function learnArrayIArray() {
 }
 // Lazy & Eager
 class UAParser {
-  constructor() {
-    console.log("UAParser is created");
-  }
   greet() {
     console.log("Nice to meet you");
   }
