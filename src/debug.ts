@@ -283,10 +283,7 @@ function makeDire() {
   mkdirSync(logDir, { recursive: true });
 }
 function learnMakeDire() {
-  console.log("logDir", logDir);
-  console.log("Start creating dir ...");
-  makeDire();
-  console.log("Created folder is done.");
+  console.log(path.join(logDir, "test"));
 }
 
 const main = () => {
