@@ -239,6 +239,12 @@ function verifyTest() {
   console.log("\n=== Step 4: Third request arrives ===");
   const db3 = getDatabase();
   console.log("Query 3: ", db3.query("SELECT * FROM settings"));
+  console.log("\n=== Check Results ===");
+  const isSingleInstance = db1 === db2 && db2 === db3;
+  console.log(
+    "Are all instance identical?",
+    isSingleInstance ? "✅ PASS" : "❌ FAIL",
+  );
 }
 const main = () => {
   verifyTest();
