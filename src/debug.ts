@@ -283,6 +283,7 @@ function makeDire() {
   mkdirSync(logDir, { recursive: true });
 }
 function learnMakeDire() {
+  console.log(process.cwd());
   console.log(path.join(logDir, "test"));
 }
 
