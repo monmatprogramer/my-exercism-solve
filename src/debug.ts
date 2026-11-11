@@ -260,7 +260,8 @@ function checkOnlyTwoCondition(deviceType: string) {
   console.log(result2);
 }
 function capitalizeDevice(device: string) {
-  console.log(device.charAt(0)); //m
+  const result = device.charAt(0).toUpperCase() + device.slice(1);
+  console.log(result);
 }
 const main = () => {
   capitalizeDevice("mobile");
