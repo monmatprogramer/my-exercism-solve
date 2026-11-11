@@ -250,6 +250,6 @@ function verifyTest() {
   );
 }
 // Check device type
-function checkOnlyTwoCondition() {}
+function checkOnlyTwoCondition(deviceType: string) {}
 const main = () => {};
 main();
