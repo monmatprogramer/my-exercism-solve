@@ -267,15 +267,8 @@ function capitalizeDevice(device: string) {
 // Calculate duration
 
 const findDuration = (start: any): any => {
-  // the curret time
-  const now = Date.now();
-  // Calculate it
-  const duration = now - start;
-  // Conver it to Date
-  const durationDate = new Date(duration).toISOString();
-  // Find HH:mm:ss
-  const result = durationDate.slice(11, 19);
-  return result;
+  const durationDate = new Date(Date.now() - start).toISOString().slice(11, 19);
+  return durationDate;
 };
 const main = () => {
   console.log(findDuration(Date.now()));
