@@ -271,6 +271,7 @@ function findDuration() {
   const duration = future - start;
   //1970-01-01T00:15:00.000Z
   console.log("start: ", new Date(duration).toISOString());
+  console.log(new Date(duration).toISOString().slice(11, 19));
 }
 const main = () => {
   findDuration();
