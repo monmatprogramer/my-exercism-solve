@@ -268,9 +268,9 @@ function capitalizeDevice(device: string) {
 function findDuration() {
   const start = Date.now();
   const future = Date.now() + 15 * 60 * 1000;
-  console.log("now: ", new Date(start).toISOString());
-  console.log("future: ", new Date(future).toISOString());
-  // console.log("start: ", future - start);
+  const duration = future - start;
+  //1970-01-01T00:15:00.000Z
+  console.log("start: ", new Date(duration).toISOString());
 }
 const main = () => {
   findDuration();
