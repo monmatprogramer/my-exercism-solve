@@ -232,9 +232,7 @@ function getDatabase(): DatabaseConnection {
 }
 function verifyTest() {
   console.log("=== Step 1: Server boots up ===");
-  const cnn = getDatabase();
-  console.log(cnn.query("SELECT * FROM"));
-  console.log(cnn.query("SELECT * FROM"));
+  console.log(connection);
 }
 const main = () => {
   verifyTest();
