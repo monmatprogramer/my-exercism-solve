@@ -279,8 +279,14 @@ const findDuration = (start: any): any => {
 };
 
 // Learn how to make directory
+function makeDire() {
+  mkdirSync(logDir, { recursive: true });
+}
 function learnMakeDire() {
   console.log("logDir", logDir);
+  console.log("Start creating dir ...");
+  makeDire();
+  console.log("Success creating.");
 }
 
 const main = () => {
