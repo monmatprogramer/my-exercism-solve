@@ -233,6 +233,9 @@ function getDatabase(): DatabaseConnection {
 function verifyTest() {
   console.log("=== Step 1: Server boots up ===");
   console.log(connection);
+  console.log("\n=== Step 2: First request arrives (need DB) ===");
+  const db1 = getDatabase();
+  console.log("Query 1: ", db1.query("SELECT * FROM users"));
 }
 const main = () => {
   verifyTest();
