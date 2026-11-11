@@ -236,6 +236,9 @@ function verifyTest() {
   console.log("\nStep 3: Second request arrives ===");
   const db2 = getDatabase();
   console.log("Query 2: ", db2.query("SELECT * FROM profiles"));
+  console.log("\n=== Step 4: Third request arrives ===");
+  const db3 = getDatabase();
+  console.log("Query 3: ", db3.query("SELECT * FROM settings"));
 }
 const main = () => {
   verifyTest();
