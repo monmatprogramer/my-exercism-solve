@@ -244,7 +244,6 @@ function verifyTest() {
   console.log("Query 3: ", db3.query("SELECT * FROM settings"));
   console.log("\n=== Check Results ===");
   const isSingleInstance = db1 === db2 && db2 === db3;
-  resetDatabase();
   console.log(
     "Are all instance identical?",
     isSingleInstance ? "✅ PASS" : "❌ FAIL",
