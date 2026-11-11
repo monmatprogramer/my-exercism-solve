@@ -250,12 +250,12 @@ function verifyTest() {
   );
 }
 // Check device type
-type DeviceType = "mobile" | "tablet";
 function checkOnlyTwoCondition(deviceType: string) {
   // Device type can be 'deskto', 'mobile', 'tablet', '...'
   // Set conddtion here
-
-  deviceType === "mobile" ? "mobile" : "tablet";
+  console.log(Boolean(deviceType));
 }
-const main = () => {};
+const main = () => {
+  checkOnlyTwoCondition("Windows");
+};
 main();
