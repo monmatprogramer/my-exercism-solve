@@ -265,15 +265,19 @@ function capitalizeDevice(device: string) {
   console.log(result);
 }
 // Calculate duration
-function findDuration() {
-  const start = Date.now();
-  const future = Date.now() + 15 * 60 * 1000;
-  const duration = future - start;
-  //1970-01-01T00:15:00.000Z
-  console.log("start: ", new Date(duration).toISOString());
-  console.log(new Date(duration).toISOString().slice(11, 19));
-}
+
+const findDuration = (start: any): any => {
+  // the curret time
+  const now = Date.now();
+  // Calculate it
+  const duration = now - start;
+  // Conver it to Date
+  const durationDate = new Date(duration).toISOString();
+  // Find HH:mm:ss
+  const result = durationDate.slice(11, 19);
+  return result;
+};
 const main = () => {
-  findDuration();
+  console.log(findDuration(Date.now()));
 };
 main();
