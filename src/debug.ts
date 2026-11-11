@@ -283,8 +283,9 @@ function makeDire() {
   mkdirSync(logDir, { recursive: true });
 }
 function writeLog() {
-  const daily = new DailyRotateFile();
-  console.log(daily);
+  const daily = new DailyRotateFile({
+    filename: path.join(logDir, "test-%DATE%.log"),
+  });
 }
 function learnMakeDire() {
   writeLog();
