@@ -280,6 +280,7 @@ const findDuration = (start: any): any => {
 
 // Learn how to make directory
 function makeDire() {
+  //false = not exist
   if (!existsSync(logDir)) {
     mkdirSync(logDir, { recursive: true });
     console.log("Folder created successfully.");
