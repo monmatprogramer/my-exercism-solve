@@ -231,6 +231,7 @@ function getDatabase(): DatabaseConnection {
   return connection;
 }
 function verifyTest() {
+  console.log("=== Step 1: Server boots up ===");
   const cnn = getDatabase();
   console.log(cnn.query("SELECT * FROM"));
   console.log(cnn.query("SELECT * FROM"));
