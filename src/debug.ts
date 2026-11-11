@@ -1,8 +1,9 @@
 import winston from "winston";
 import DailyRotateFile from "winston-daily-rotate-file";
 import { mkdirSync } from "node:fs";
-import { path } from "node:path";
+import path from "node:path";
 
+// it return path of root/logs
 const logDir = path.join(process.cwd(), "logs");
 const REFRESH_TTL_MS = 7 + 24 * 60 * 60 * 1000;
 interface TokenPayLoad {
