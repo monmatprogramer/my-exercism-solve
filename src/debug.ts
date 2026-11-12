@@ -101,7 +101,7 @@ const metadataFormat = winston.format((info) => {
   return info;
 });
 const testFormatPrintF = (obj: any) => {
-  console.log(JSON.stringify(obj));
+  console.log("👉 testFormatPrintF ", JSON.stringify(obj));
   return "testFormatPrintF";
 };
 //Create logger
