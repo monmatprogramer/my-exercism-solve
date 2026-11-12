@@ -372,6 +372,8 @@ function learnMakeDire() {
   writeLog();
 }
 function callLoggerforTesting() {
+  // stimulate middleware call
+  testCorrelationInMiddlare();
   // Call here
   logger.info("testing");
 }
