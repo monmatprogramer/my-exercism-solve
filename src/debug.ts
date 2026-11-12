@@ -62,8 +62,15 @@ function testGetStore() {
   const store = requestContext.getStore();
   console.log(`[Req: ${store?.requestId}] Processing test...`);
 }
-
+// -----
 export const asyncLocalStorage = new AsyncLocalStorage<string>();
+// Create correlationID
+const addCorrelationId = winston.format((info) => {
+  const correlationId = asyncLocalStorage.getStore();
+  if (correlationId) {
+    info.correlationId = correlationId;
+  }
+});
 
 function createAccessToken(userId: string): TokenPayLoad {
   // Convert Unix millisecond to second
