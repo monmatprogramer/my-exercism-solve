@@ -369,6 +369,7 @@ function learnMakeDire() {
 }
 
 const main = () => {
-  testCorrelationInMiddlare();
+  const test = testCorrelationInMiddlare();
+  console.log(test);
 };
 main();
