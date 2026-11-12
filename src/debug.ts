@@ -67,6 +67,9 @@ export const asyncLocalStorage = new AsyncLocalStorage<string>();
 // Stimulate middlare for testing correlation
 async function testCorrelationInMiddlare() {
   const context = "this is context which will be saved in correlation";
+  asyncLocalStorage.run(context, async () => {
+    addCorrelationId();
+  });
 }
 // Create correlationID
 const addCorrelationId = winston.format((info) => {
