@@ -70,6 +70,7 @@ const addCorrelationId = winston.format((info) => {
   if (correlationId) {
     info.correlationId = correlationId;
   }
+  return info;
 });
 
 function createAccessToken(userId: string): TokenPayLoad {
@@ -358,6 +359,6 @@ function learnMakeDire() {
 }
 
 const main = () => {
-  stimulateMiddleware();
+  console.log(addCorrelationId);
 };
 main();
