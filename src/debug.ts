@@ -3,7 +3,7 @@ import DailyRotateFile from "winston-daily-rotate-file";
 import { mkdirSync } from "node:fs";
 import path from "node:path";
 import { AsyncLocalStorage } from "node:async_hooks";
-
+import { v4 as uuidv4 } from "uuid";
 // it return path of root/logs
 const logDir = path.join(process.cwd(), "logs");
 const REFRESH_TTL_MS = 7 + 24 * 60 * 60 * 1000;
@@ -28,7 +28,17 @@ const requestContext = new AsyncLocalStorage<RequestContext>();
 // Create stimulate middleware to perform async function to save request context the same as HTTP request async function
 const sitmulateMiddleware = () => {
   // Express.js => app.use();
+  // Create sample request
+  const context = {
+    // Generate unique id of request
+    requestId: uuidv4(),
+  };
+
+  requestContext.run(context, () => {});
 };
+
+// async function
+async function processOrder() {}
 export const asyncLocalStorage = new AsyncLocalStorage<string>();
 
 function createAccessToken(userId: string): TokenPayLoad {
