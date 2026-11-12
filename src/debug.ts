@@ -76,7 +76,12 @@ async function testCorrelationInMiddlare() {
 function paymentTest() {
   console.log(asyncLocalStorage.getStore());
   console.log("Payment is finished");
+
   return true;
+}
+function checkout() {
+  console.log("\nCheck process...");
+  console.log("User id: ");
 }
 // Create correlationID
 const addCorrelationId = winston.format((info) => {
