@@ -67,6 +67,7 @@ export const asyncLocalStorage = new AsyncLocalStorage<string>();
 // Create correlationID
 const addCorrelationId = winston.format((info) => {
   const correlationId = asyncLocalStorage.getStore();
+  console.log("correlationId: ", correlationId);
   if (correlationId) {
     info.correlationId = correlationId;
   }
@@ -359,6 +360,6 @@ function learnMakeDire() {
 }
 
 const main = () => {
-  console.log(addCorrelationId);
+  console.log(addCorrelationId());
 };
 main();
