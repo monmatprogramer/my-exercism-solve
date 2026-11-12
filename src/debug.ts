@@ -37,8 +37,8 @@ const stimulateMiddleware = () => {
   requestContext.run(context, async () => {
     await processOrder();
     await processCheckout();
-    testGetStore();
   });
+  testGetStore();
 };
 
 // async function
