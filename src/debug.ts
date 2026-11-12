@@ -34,7 +34,9 @@ const sitmulateMiddleware = () => {
     requestId: uuidv4(),
   };
 
-  requestContext.run(context, () => {});
+  requestContext.run(context, async () => {
+    await processOrder();
+  });
 };
 
 // async function
@@ -43,6 +45,7 @@ async function processOrder() {
   const store = requestContext.getStore();
   console.log(`[Req: ${store?.requestId}] Processing order...`);
 }
+
 export const asyncLocalStorage = new AsyncLocalStorage<string>();
 
 function createAccessToken(userId: string): TokenPayLoad {
