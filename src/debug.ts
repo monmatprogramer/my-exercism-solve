@@ -282,14 +282,17 @@ const findDuration = (start: any): any => {
 function makeDire() {
   mkdirSync(logDir, { recursive: true });
 }
+
 function writeLog() {
   const daily = new DailyRotateFile({
     filename: path.join(logDir, "test-%DATE%.log"),
     datePattern: "DD-MM-YYYY",
     maxSize: "1m", // 1 mb
     maxFiles: "7d", // Keep 7 day
+    zippedArchive: true, // when it over 7 day, the file is zipped
   });
 }
+
 function learnMakeDire() {
   writeLog();
 }
