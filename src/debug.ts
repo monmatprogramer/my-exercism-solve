@@ -32,6 +32,7 @@ const stimulateMiddleware = () => {
   const context = {
     // Generate unique id of request
     requestId: uuidv4(),
+    userId: uuidv4(),
   };
 
   requestContext.run(context, async () => {
@@ -46,12 +47,16 @@ const stimulateMiddleware = () => {
 async function processOrder() {
   await new Promise((resolve) => setTimeout(resolve, 100));
   const store = requestContext.getStore();
-  console.log(`[Req: ${store?.requestId}] Processing order...`);
+  console.log(
+    `[Req: ${store?.requestId}] [User: ${store?.userId}] Processing order...`,
+  );
 }
 async function processCheckout() {
   await new Promise((resolve) => setTimeout(resolve, 100));
   const store = requestContext.getStore();
-  console.log(`[Req: ${store?.requestId}] Processing checkout...`);
+  console.log(
+    `[Req: ${store?.requestId}]  [User: ${store?.userId}] Processing checkout...`,
+  );
 }
 function testGetStore() {
   const store = requestContext.getStore();
