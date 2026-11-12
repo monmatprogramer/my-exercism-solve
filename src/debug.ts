@@ -97,8 +97,15 @@ const metadataFormat = winston.format((info) => {
   info.environment = "development";
   return info;
 });
-const testFormatPrintF = (obj: any) => {
-  console.log({ ...obj });
+const testFormatPrintF = ({
+  message,
+  level,
+  service,
+  environment,
+  timestamp,
+  ...meta
+}: any) => {
+  console.log(meta);
   return `[]`;
 };
 //Create logger
