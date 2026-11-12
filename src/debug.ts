@@ -20,6 +20,8 @@ interface RequestContext {
   // Some router can be access from annoymuse user
   userId?: string;
 }
+// After that the RequestContext will be saved in Local storage
+const requestContext = new AsyncLocalStorage<RequestContext>();
 export const asyncLocalStorage = new AsyncLocalStorage<string>();
 
 function createAccessToken(userId: string): TokenPayLoad {
