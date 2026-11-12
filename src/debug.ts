@@ -115,9 +115,10 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     metadataFormat(),
     addCorrelationId(),
-    winston.format.colorize(),
     winston.format.timestamp(),
     winston.format.simple(),
+    winston.format.colorize(),
+
     // winston.format.json(),
     winston.format.printf((obj) => testFormatPrintF(obj)),
   ),
