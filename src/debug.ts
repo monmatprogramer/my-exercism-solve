@@ -74,11 +74,15 @@ async function testCorrelationInMiddlare() {
 // Create correlationID
 const addCorrelationId = winston.format((info) => {
   const correlationId = asyncLocalStorage.getStore();
-  console.log("correlationId: ", correlationId);
   if (correlationId) {
     info.correlationId = correlationId;
   }
   return info;
+});
+//Create logger
+const logger = winston.createLogger({
+  format: winston.format.combine(addCorrelationId()),
+  transports: [new winston.transports.Console()],
 });
 
 function createAccessToken(userId: string): TokenPayLoad {
@@ -366,8 +370,5 @@ function learnMakeDire() {
   writeLog();
 }
 
-const main = () => {
-  const test = testCorrelationInMiddlare();
-  console.log(test);
-};
+const main = () => {};
 main();
