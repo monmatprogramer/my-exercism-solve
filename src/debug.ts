@@ -86,10 +86,8 @@ function checkout() {
 }
 
 // Create correlationID
-interface Info {
-  [key: string]: string;
-}
-const addCorrelationId = winston.format((info) => {
+
+const addCorrelationId = winston.format((info: any) => {
   console.log("👉 info object: ", JSON.stringify(info));
   const correlationId = asyncLocalStorage.getStore();
   if (correlationId) {
