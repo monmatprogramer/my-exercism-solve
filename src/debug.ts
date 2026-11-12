@@ -38,7 +38,11 @@ const sitmulateMiddleware = () => {
 };
 
 // async function
-async function processOrder() {}
+async function processOrder() {
+  await new Promise((resolve) => setTimeout(resolve, 100));
+  const store = requestContext.getStore();
+  console.log(`[Req: ${store?.requestId}] Processing order...`);
+}
 export const asyncLocalStorage = new AsyncLocalStorage<string>();
 
 function createAccessToken(userId: string): TokenPayLoad {
