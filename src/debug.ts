@@ -87,7 +87,7 @@ function checkout() {
 
 // Create correlationID
 const addCorrelationId = winston.format((info) => {
-  console.log(info);
+  console.log(typeof info);
   const correlationId = asyncLocalStorage.getStore();
   if (correlationId) {
     info.correlationId = correlationId;
@@ -404,8 +404,5 @@ function callLoggerforTesting() {
 }
 const main = () => {
   callLoggerforTesting();
-  console.log("---main---");
-  console.log("User id in main: ", asyncLocalStorage.getStore());
-  console.log("=== END MAIN ===");
 };
 main();
