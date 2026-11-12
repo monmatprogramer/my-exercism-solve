@@ -81,7 +81,8 @@ function paymentTest() {
 }
 function checkout() {
   console.log("\nCheck process...");
-  console.log("User id: ");
+  console.log("User id: ", asyncLocalStorage.getStore());
+  console.log("=== End checkout ===");
 }
 // Create correlationID
 const addCorrelationId = winston.format((info) => {
