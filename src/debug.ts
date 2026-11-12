@@ -104,8 +104,9 @@ const metadataFormat = winston.format((info) => {
 const logger = winston.createLogger({
   level: "info",
   format: winston.format.combine(
-    addCorrelationId(),
     metadataFormat(),
+
+    addCorrelationId(),
     winston.format.timestamp(),
     winston.format.json(),
   ),

@@ -15,3 +15,4 @@
 {"correlationId":"80a2e728-fb43-468b-a6a8-3314300c88e2","level":"info","message":"Starting request for User: user","timestamp":"2026-11-12T07:46:01.614Z"}
 {"correlationId":"a5d241b7-49b3-46e3-8493-a0149c0af0a8","level":"info","message":"Starting request for User: user","timestamp":"2026-11-12T07:46:19.442Z"}
 {"correlationId":"8d19f250-fa94-43aa-9505-bacfe3fcaf57","level":"info","message":"Starting request for User: user","timestamp":"2026-11-12T07:46:54.235Z"}
+{"correlationId":"65271aec-7c6c-4fa5-86bb-863c37d558ba","environment":"development","level":"info","message":"Starting request for User: user","service":"test-app","timestamp":"2026-11-12T08:12:53.189Z"}
