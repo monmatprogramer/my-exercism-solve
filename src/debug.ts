@@ -12,6 +12,13 @@ interface TokenPayLoad {
   issuedAt: number;
   exp: number;
 }
+// Interface for tracking user for learning asyncLocalStorage
+// We need to define interface of user want to track
+//
+interface RequestContext {
+  requestId: string;
+  userId?: string;
+}
 export const asyncLocalStorage = new AsyncLocalStorage<string>();
 
 function createAccessToken(userId: string): TokenPayLoad {
