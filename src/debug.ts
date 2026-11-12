@@ -286,8 +286,8 @@ function writeLog() {
   const daily = new DailyRotateFile({
     filename: path.join(logDir, "test-%DATE%.log"),
     datePattern: "DD-MM-YYYY",
-    maxSize: "1m",
-    maxFiles: "",
+    maxSize: "1m", // 1 mb
+    maxFiles: "7d", // Keep 7 day
   });
 }
 function learnMakeDire() {
