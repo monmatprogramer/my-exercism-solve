@@ -369,6 +369,6 @@ function writeLog() {
 function learnMakeDire() {
   writeLog();
 }
-
+function callLoggerforTesting() {}
 const main = () => {};
 main();
