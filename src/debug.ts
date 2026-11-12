@@ -2,6 +2,7 @@ import winston from "winston";
 import DailyRotateFile from "winston-daily-rotate-file";
 import { mkdirSync } from "node:fs";
 import path from "node:path";
+import { AsyncLocalStorage } from "node:async_hooks";
 
 // it return path of root/logs
 const logDir = path.join(process.cwd(), "logs");
@@ -11,6 +12,7 @@ interface TokenPayLoad {
   issuedAt: number;
   exp: number;
 }
+export const asyncLocalStorage = new AsyncLocalStorage<string>();
 
 function createAccessToken(userId: string): TokenPayLoad {
   // Convert Unix millisecond to second
