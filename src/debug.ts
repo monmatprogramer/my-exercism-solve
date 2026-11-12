@@ -405,7 +405,7 @@ function callLoggerforTesting() {
 const main = () => {
   callLoggerforTesting();
   console.log("---main---");
-  asyncLocalStorage.getStore();
+  console.log("User id in main: ", asyncLocalStorage.getStore());
   console.log("=== END MAIN ===");
 };
 main();
