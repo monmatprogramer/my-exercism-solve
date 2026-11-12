@@ -392,7 +392,6 @@ function learnMakeDire() {
 function callLoggerforTesting() {
   testCorrelationInMiddlare();
   // Call here
-  logger.info("testing");
 }
 const main = () => {
   callLoggerforTesting();
