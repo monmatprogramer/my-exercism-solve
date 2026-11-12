@@ -36,6 +36,7 @@ const stimulateMiddleware = () => {
 
   requestContext.run(context, async () => {
     await processOrder();
+    await processCheckout();
   });
 };
 
@@ -44,6 +45,11 @@ async function processOrder() {
   await new Promise((resolve) => setTimeout(resolve, 100));
   const store = requestContext.getStore();
   console.log(`[Req: ${store?.requestId}] Processing order...`);
+}
+async function processCheckout() {
+  await new Promise((resolve) => setTimeout(resolve, 100));
+  const store = requestContext.getStore();
+  console.log(`[Req: ${store?.requestId}] Processing checkout...`);
 }
 
 export const asyncLocalStorage = new AsyncLocalStorage<string>();
