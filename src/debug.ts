@@ -106,7 +106,7 @@ const testFormatPrintF = ({
   timestamp,
   ...meta
 }: any) => {
-  console.log(Object.keys(meta));
+  console.log(Object.keys(meta).length > 0);
   console.log(meta.length > 0);
   //...meta
   return `[]`;
