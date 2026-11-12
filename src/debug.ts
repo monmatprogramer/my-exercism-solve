@@ -360,6 +360,6 @@ function learnMakeDire() {
 }
 
 const main = () => {
-  console.log(addCorrelationId());
+  console.log(addCorrelationId().options);
 };
 main();
