@@ -106,10 +106,8 @@ const testFormatPrintF = ({
   timestamp,
   ...meta
 }: any) => {
-  console.log(Object.keys(meta).length > 0 ? JSON.stringify(meta) : "");
-  console.log(meta.length > 0);
   //...meta
-  return `[]`;
+  return `${timestamp}`;
 };
 //Create logger
 const logger = winston.createLogger({
@@ -117,7 +115,7 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     metadataFormat(),
     addCorrelationId(),
-    winston.format.colorize({ all: true }),
+    winston.format.colorize(),
     winston.format.timestamp(),
     winston.format.simple(),
     // winston.format.json(),
