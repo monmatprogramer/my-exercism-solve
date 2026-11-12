@@ -68,9 +68,7 @@ export const asyncLocalStorage = new AsyncLocalStorage<string>();
 async function testCorrelationInMiddlare() {
   const context = "this is context which will be saved in correlation";
   asyncLocalStorage.run(context, async () => {
-    return new Promise((rs) => {
-      setTimeout(() => rs(addCorrelationId()), 100);
-    });
+    addCorrelationId();
   });
 }
 // Create correlationID
