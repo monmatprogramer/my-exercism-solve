@@ -17,6 +17,7 @@ interface TokenPayLoad {
 //
 interface RequestContext {
   requestId: string;
+  // Some router can be access from annoymuse user
   userId?: string;
 }
 export const asyncLocalStorage = new AsyncLocalStorage<string>();
