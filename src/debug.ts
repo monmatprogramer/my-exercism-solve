@@ -78,9 +78,7 @@ function paymentTest() {
 }
 // Create correlationID
 const addCorrelationId = winston.format((info) => {
-  console.log("info: ", info);
   const correlationId = asyncLocalStorage.getStore();
-  console.log("correlationId: ", correlationId);
   if (correlationId) {
     info.correlationId = correlationId;
   }

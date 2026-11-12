@@ -1,3 +1,5 @@
 {"level":"info","message":"testing","timestamp":"2026-11-12T06:47:43.213Z"}
 {"level":"info","message":"testing","timestamp":"2026-11-12T06:51:44.980Z"}
 {"level":"info","message":"testing","timestamp":"2026-11-12T06:52:11.050Z"}
+{"correlationId":"3dd9fbde-e544-4153-83aa-76f239ecd855","level":"info","message":"Starting request for User: user","timestamp":"2026-11-12T06:52:33.121Z"}
+{"level":"info","message":"testing","timestamp":"2026-11-12T06:52:33.123Z"}
