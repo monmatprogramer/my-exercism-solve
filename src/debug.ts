@@ -69,7 +69,7 @@ async function testCorrelationInMiddlare() {
   const context = "this is context which will be saved in correlation";
   asyncLocalStorage.run(context, async () => {
     return new Promise((rs) => {
-      rs(addCorrelationId());
+      setTimeout(() => rs(addCorrelationId()), 100);
     });
   });
 }
