@@ -73,6 +73,7 @@ async function testCorrelationInMiddlare() {
 }
 // Create correlationID
 const addCorrelationId = winston.format((info) => {
+  console.log("info: ", info);
   const correlationId = asyncLocalStorage.getStore();
   if (correlationId) {
     info.correlationId = correlationId;
