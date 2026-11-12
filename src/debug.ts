@@ -64,6 +64,10 @@ function testGetStore() {
 }
 // -----
 export const asyncLocalStorage = new AsyncLocalStorage<string>();
+// Stimulate middlare for testing correlation
+async function testCorrelationInMiddlare() {
+  const context = "this is context which will be saved in correlation";
+}
 // Create correlationID
 const addCorrelationId = winston.format((info) => {
   const correlationId = asyncLocalStorage.getStore();
@@ -359,7 +363,5 @@ function learnMakeDire() {
   writeLog();
 }
 
-const main = () => {
-  console.log(addCorrelationId().options);
-};
+const main = () => {};
 main();
