@@ -107,7 +107,7 @@ const testFormatPrintF = ({
   ...meta
 }: any) => {
   //...meta
-  return `${timestamp} [${level}] ${meta.correlationId}`;
+  return `${timestamp} [${level}]:${meta.correlationId} : ${message}${meta.string}`;
 };
 //Create logger
 const logger = winston.createLogger({
