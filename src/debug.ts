@@ -98,7 +98,8 @@ const metadataFormat = winston.format((info) => {
   return info;
 });
 const testFormatPrintF = (obj: any) => {
-  console.log(...obj);
+  const arr = [...obj];
+  console.log(arr);
   return `[]`;
 };
 //Create logger
