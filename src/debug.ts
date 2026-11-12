@@ -76,7 +76,7 @@ async function testCorrelationInMiddlare() {
 function paymentTest() {
   console.log(asyncLocalStorage.getStore());
   console.log("Payment is finished");
-
+  checkout();
   return true;
 }
 function checkout() {
