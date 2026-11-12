@@ -69,11 +69,13 @@ async function testCorrelationInMiddlare() {
   const correlationId = uuidv4();
   asyncLocalStorage.run(correlationId, async () => {
     logger.info(`Starting request for User: user`);
-    paymentTest();
+    setTimeout(() => paymentTest(), 2000);
+    console.log("Start payment ...");
   });
 }
 function paymentTest() {
   console.log(asyncLocalStorage.getStore());
+  console.log("Payment is finished");
   return true;
 }
 // Create correlationID
