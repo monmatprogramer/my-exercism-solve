@@ -86,7 +86,16 @@ const logger = winston.createLogger({
     winston.format.timestamp(),
     winston.format.json(),
   ),
-  transports: [new winston.transports.Console()],
+  transports: [
+    new winston.transports.Console(),
+    new DailyRotateFile({
+      filename: "logs/app-$DATE%.log",
+      datePattern: "YYYY-MM-DD",
+      maxSize: "1m",
+      maxFiles: "1d",
+      zippedArchive: true,
+    }),
+  ],
 });
 
 function createAccessToken(userId: string): TokenPayLoad {
