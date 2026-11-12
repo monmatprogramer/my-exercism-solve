@@ -86,7 +86,6 @@ function checkout() {
 // Create correlationID
 
 const addCorrelationId = winston.format((info: any) => {
-  console.log("👉 info object: ", JSON.stringify(info));
   const correlationId = asyncLocalStorage.getStore();
   if (correlationId) {
     info.correlationId = correlationId;
@@ -99,8 +98,8 @@ const metadataFormat = winston.format((info) => {
   return info;
 });
 const testFormatPrintF = (obj: any) => {
-  console.log("👉 testFormatPrintF ", JSON.stringify(obj));
-  return "testFormatPrintF";
+  console.log(JSON.stringify(obj));
+  return `[]`;
 };
 //Create logger
 const logger = winston.createLogger({
