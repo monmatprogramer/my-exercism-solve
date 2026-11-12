@@ -100,15 +100,19 @@ const metadataFormat = winston.format((info) => {
   info.environment = "development";
   return info;
 });
+const testFormatPrintF = (obj: any) => {
+  console.log(JSON.stringify(obj));
+  return "testFormatPrintF";
+};
 //Create logger
 const logger = winston.createLogger({
   level: "info",
   format: winston.format.combine(
     metadataFormat(),
-
     addCorrelationId(),
     winston.format.timestamp(),
     winston.format.json(),
+    winston.format.printf((obj) => testFormatPrintF(obj)),
   ),
   transports: [
     new winston.transports.Console(),
