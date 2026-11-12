@@ -373,7 +373,7 @@ function learnMakeDire() {
 }
 function callLoggerforTesting() {
   // Call here
-  logger.info("testing", "level");
+  logger.info("testing", "level testing");
 }
 const main = () => {
   callLoggerforTesting();
