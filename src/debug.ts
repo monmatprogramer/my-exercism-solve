@@ -82,7 +82,7 @@ const addCorrelationId = winston.format((info) => {
 });
 //Create logger
 const logger = winston.createLogger({
-  // level: "info",
+  level: "info",
   format: winston.format.combine(addCorrelationId()),
   transports: [new winston.transports.Console()],
 });
