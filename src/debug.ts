@@ -26,7 +26,7 @@ interface RequestContext {
 const requestContext = new AsyncLocalStorage<RequestContext>();
 
 // Create stimulate middleware to perform async function to save request context the same as HTTP request async function
-const sitmulateMiddleware = () => {
+const stimulateMiddleware = () => {
   // Express.js => app.use();
   // Create sample request
   const context = {
@@ -334,6 +334,6 @@ function learnMakeDire() {
 }
 
 const main = () => {
-  learnMakeDire();
+  stimulateMiddleware();
 };
 main();
