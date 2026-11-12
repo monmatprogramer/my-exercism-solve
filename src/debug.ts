@@ -366,5 +366,7 @@ function learnMakeDire() {
   writeLog();
 }
 
-const main = () => {};
+const main = () => {
+  testCorrelationInMiddlare();
+};
 main();
