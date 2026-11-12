@@ -69,6 +69,7 @@ async function testCorrelationInMiddlare() {
   const correlationId = uuidv4();
   asyncLocalStorage.run(correlationId, async () => {
     logger.info(`Starting request for User: user`);
+    paymentTest();
   });
 }
 function paymentTest() {
@@ -79,6 +80,7 @@ function paymentTest() {
 const addCorrelationId = winston.format((info) => {
   console.log("info: ", info);
   const correlationId = asyncLocalStorage.getStore();
+  console.log("correlationId: ", correlationId);
   if (correlationId) {
     info.correlationId = correlationId;
   }
@@ -389,6 +391,7 @@ function learnMakeDire() {
   writeLog();
 }
 function callLoggerforTesting() {
+  testCorrelationInMiddlare();
   // Call here
   logger.info("testing");
 }
