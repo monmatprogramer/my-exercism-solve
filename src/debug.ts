@@ -67,9 +67,7 @@ export const asyncLocalStorage = new AsyncLocalStorage<string>();
 // Stimulate middlare for testing correlation
 async function testCorrelationInMiddlare() {
   const context = "this is context which will be saved in correlation";
-  asyncLocalStorage.run(context, async () => {
-    addCorrelationId();
-  });
+  asyncLocalStorage.run(context, async () => {});
 }
 // Create correlationID
 const addCorrelationId = winston.format((info) => {
@@ -372,8 +370,6 @@ function learnMakeDire() {
   writeLog();
 }
 function callLoggerforTesting() {
-  // stimulate middleware call
-  testCorrelationInMiddlare();
   // Call here
   logger.info("testing");
 }
