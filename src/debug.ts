@@ -71,6 +71,10 @@ async function testCorrelationInMiddlare() {
     logger.info(`Starting request for User: user`);
   });
 }
+function paymentTest() {
+  console.log(asyncLocalStorage.getStore());
+  return true;
+}
 // Create correlationID
 const addCorrelationId = winston.format((info) => {
   console.log("info: ", info);
