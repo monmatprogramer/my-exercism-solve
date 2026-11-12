@@ -18,3 +18,4 @@
 {"correlationId":"65271aec-7c6c-4fa5-86bb-863c37d558ba","environment":"development","level":"info","message":"Starting request for User: user","service":"test-app","timestamp":"2026-11-12T08:12:53.189Z"}
 {"correlationId":"c5c83ea0-fe4b-4f34-8a09-6eb5c0fcefdb","environment":"development","level":"info","message":"Starting request for User: user","service":"test-app","timestamp":"2026-11-12T08:14:47.621Z"}
 testFormatPrintF
+testFormatPrintF
