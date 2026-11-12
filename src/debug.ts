@@ -39,6 +39,7 @@ const stimulateMiddleware = () => {
     await processCheckout();
   });
   testGetStore();
+  console.log("=== End of middleware ===");
 };
 
 // async function
