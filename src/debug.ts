@@ -108,6 +108,7 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     metadataFormat(),
     addCorrelationId(),
+    winston.format.colorize({ all: true }),
     winston.format.timestamp(),
     winston.format.simple(),
     // winston.format.json(),
