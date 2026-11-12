@@ -84,6 +84,7 @@ function checkout() {
   console.log("User id: ", asyncLocalStorage.getStore());
   console.log("=== End checkout ===");
 }
+
 // Create correlationID
 const addCorrelationId = winston.format((info) => {
   console.log(info);
@@ -403,5 +404,8 @@ function callLoggerforTesting() {
 }
 const main = () => {
   callLoggerforTesting();
+  console.log("---main---");
+  asyncLocalStorage.getStore();
+  console.log("=== END MAIN ===");
 };
 main();
