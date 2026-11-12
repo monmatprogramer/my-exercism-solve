@@ -95,11 +95,17 @@ const addCorrelationId = winston.format((info: any) => {
   }
   return info;
 });
+const metadataFormat = winston.format((info) => {
+  info.service = "test-app";
+  info.environment = "development";
+  return info;
+});
 //Create logger
 const logger = winston.createLogger({
   level: "info",
   format: winston.format.combine(
     addCorrelationId(),
+    metadataFormat(),
     winston.format.timestamp(),
     winston.format.json(),
   ),
