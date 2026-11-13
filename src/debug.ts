@@ -142,13 +142,13 @@ const logger = winston.createLogger({
   transports: [
     new winston.transports.Console(),
     transport,
-    new DailyRotateFile({
-      filename: "logs/app-%DATE%.log",
-      datePattern: "YYYY-MM-DD",
-      maxSize: "1m",
-      maxFiles: "1d",
-      zippedArchive: true,
-    }),
+    // new DailyRotateFile({
+    //   filename: "logs/app-%DATE%.log",
+    //   datePattern: "YYYY-MM-DD",
+    //   maxSize: "1m",
+    //   maxFiles: "1d",
+    //   zippedArchive: true,
+    // }),
   ],
 });
 
