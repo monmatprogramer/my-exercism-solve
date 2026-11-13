@@ -117,9 +117,9 @@ const testFormatPrintF = ({
   return `${timestamp} [${level}]:${correlId} : ${message}${metrStr}`;
 };
 // Creat transports
-const transpont = new winston.transports.DailyRotateFile({
+const transport = new winston.transports.DailyRotateFile({
   level: "info",
-  filename: "log-%DATE%.log",
+  filename: `${logDir}/logs/log-%DATE%.log`,
   datePattern: "YYYY-MM-DD",
   zippedArchive: true,
   maxSize: "20m",
@@ -141,6 +141,7 @@ const logger = winston.createLogger({
   ),
   transports: [
     new winston.transports.Console(),
+    transport,
     new DailyRotateFile({
       filename: "logs/app-%DATE%.log",
       datePattern: "YYYY-MM-DD",
