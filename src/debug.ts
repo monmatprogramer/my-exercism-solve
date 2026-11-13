@@ -107,6 +107,7 @@ const testFormatPrintF = ({
   ...meta
 }: any) => {
   //...meta
+  meta.correlationId = "strng";
   const metrStr = Object.keys(meta).length > 0 ? `${JSON.stringify(meta)}` : "";
   // check  the ccorrect id is type string or not
 
