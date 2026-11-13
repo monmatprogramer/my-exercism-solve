@@ -109,9 +109,11 @@ const testFormatPrintF = ({
   //...meta
   const metrStr = Object.keys(meta).length > 0 ? `${JSON.stringify(meta)}` : "";
   // check  the ccorrect id is type string or not
-  const correlId = meta.correlationId
-    ? `[correlationId: ${meta.correlationId}]`
-    : "";
+
+  const correlId =
+    typeof meta.correlationId === "string"
+      ? `[correlationId: ${meta.correlationId}]`
+      : undefined;
   return `${timestamp} [${level}]:${correlId} : ${message}${metrStr}`;
 };
 //Create logger
