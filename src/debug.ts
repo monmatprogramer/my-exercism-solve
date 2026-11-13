@@ -1,4 +1,4 @@
-import winston from "winston";
+import winston, { level } from "winston";
 import DailyRotateFile from "winston-daily-rotate-file";
 import { mkdirSync } from "node:fs";
 import path from "node:path";
@@ -117,7 +117,15 @@ const testFormatPrintF = ({
   return `${timestamp} [${level}]:${correlId} : ${message}${metrStr}`;
 };
 // Creat transports
-const transpont = new winston.transports.DailyRotateFile();
+const transpont = new winston.transports.DailyRotateFile({
+  level: "info",
+  filename: "log-%DATE%.log",
+  datePattern: "YYYY-MM-DD",
+  zippedArchive: true,
+  maxSize: "20m",
+  maxFiles: "14d",
+});
+
 //Create logger
 const logger = winston.createLogger({
   level: "info",
