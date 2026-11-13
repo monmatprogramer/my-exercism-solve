@@ -63,10 +63,11 @@ function testGetStore() {
   console.log(`[Req: ${store?.requestId}] Processing test...`);
 }
 // -----
-export const asyncLocalStorage = new AsyncLocalStorage<string>();
+export const asyncLocalStorage = new AsyncLocalStorage<string | number>();
 // Stimulate middlare for testing correlation
 async function testCorrelationInMiddlare() {
-  const correlationId = uuidv4();
+  // const correlationId = uuidv4();
+  const correlationId = 23456;
   asyncLocalStorage.run(correlationId, async () => {
     logger.info(`⌚ Starting request for User: user`);
   });
