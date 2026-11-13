@@ -68,7 +68,7 @@ export const asyncLocalStorage = new AsyncLocalStorage<string>();
 async function testCorrelationInMiddlare() {
   const correlationId = uuidv4();
   asyncLocalStorage.run(correlationId, async () => {
-    logger.info(`⌚ Starting request for User: user`);
+    logger.error(`Error request for User: user`);
   });
 }
 function paymentTest() {
