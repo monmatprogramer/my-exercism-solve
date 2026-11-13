@@ -116,6 +116,8 @@ const testFormatPrintF = ({
       : undefined;
   return `${timestamp} [${level}]:${correlId} : ${message}${metrStr}`;
 };
+// Creat transports
+const transpont = new winston.transports.DailyRotateFile();
 //Create logger
 const logger = winston.createLogger({
   level: "info",
