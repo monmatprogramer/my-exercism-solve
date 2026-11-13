@@ -439,6 +439,7 @@ function callLoggerforTesting() {
   // Call here
 }
 const main = () => {
-  callLoggerforTesting();
+  // callLoggerforTesting();
+  console.log(logDir);
 };
 main();
