@@ -134,7 +134,7 @@ const testFormatPrintF = ({
 const logger = winston.createLogger({
   level: "info",
   format: winston.format.combine(
-    metadataFormat(),
+    // metadataFormat(),
     addCorrelationId(),
     winston.format.timestamp(),
     winston.format.simple(),
