@@ -108,7 +108,7 @@ const testFormatPrintF = ({
 }: any) => {
   //...meta
   const metrStr = Object.keys(meta).length > 0 ? `${JSON.stringify(meta)}` : "";
-  const trackId = meta.trackId ? `[trackId: ${meta.trackId}]` : "";
+  const trackId = meta.correlationId ? `[trackId: ${meta.correlationId}]` : "";
   return `${timestamp} [${level}]:${trackId} : ${message}${metrStr}`;
 };
 //Create logger
