@@ -145,8 +145,14 @@ const logger = winston.createLogger({
   ),
   transports: [
     new winston.transports.Console(),
-    new winston.transports.File({ filename: "error.log", level: "error" }),
-    new winston.transports.File({ filename: "combined.log", level: "error" }),
+    new winston.transports.File({
+      filename: `${logDir}/error.log`,
+      level: "error",
+    }),
+    new winston.transports.File({
+      filename: `${logDir}/combined.log`,
+      level: "error",
+    }),
   ],
 });
 
@@ -439,7 +445,6 @@ function callLoggerforTesting() {
   // Call here
 }
 const main = () => {
-  // callLoggerforTesting();
-  console.log(logDir);
+  callLoggerforTesting();
 };
 main();
