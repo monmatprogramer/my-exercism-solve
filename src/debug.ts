@@ -108,8 +108,10 @@ const testFormatPrintF = ({
 }: any) => {
   //...meta
   const metrStr = Object.keys(meta).length > 0 ? `${JSON.stringify(meta)}` : "";
-  const trackId = meta.correlationId ? `[trackId: ${meta.correlationId}]` : "";
-  return `${timestamp} [${level}]:${trackId} : ${message}${metrStr}`;
+  const correlId = meta.correlationId
+    ? `[correlationId: ${meta.correlationId}]`
+    : "";
+  return `${timestamp} [${level}]:${correlId} : ${message}${metrStr}`;
 };
 //Create logger
 const logger = winston.createLogger({
