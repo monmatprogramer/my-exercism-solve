@@ -2,3 +2,6 @@
 2026-11-13T09:44:45.200Z [[32minfo[39m]:[correlationId: c377be18-1ac3-4cfc-87f8-a20c5c6d4e4c] : User created{"userId":123,"role":"admin","correlationId":"c377be18-1ac3-4cfc-87f8-a20c5c6d4e4c"}
 2026-11-13T09:51:33.532Z [[32minfo[39m]:[correlationId: 85fe8cd1-7b79-4b34-a446-f029b765487e] : User created{"userId":123,"role":"admin","correlationId":"85fe8cd1-7b79-4b34-a446-f029b765487e"}
 2026-11-13T09:53:03.872Z [[32minfo[39m]:[correlationId: 59c8a364-6bac-460e-b3bb-3ec7c579e58e] : User created
+2026-11-13T09:54:35.045Z [[32minfo[39m]:undefined : User created{"userId":123,"role":"admin"}
+2026-11-13T09:55:06.980Z [[32minfo[39m]:undefined : User created{"userId":123,"role":"admin"}
+2026-11-13T09:55:13.811Z [[32minfo[39m]:undefined : User created{"userId":123,"role":"admin"}

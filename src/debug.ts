@@ -87,6 +87,7 @@ function checkout() {
 
 const addCorrelationId = winston.format((info: any) => {
   const correlationId = asyncLocalStorage.getStore();
+  console.log("👉 info: ", info);
   if (correlationId) {
     //...meta
     info.correlationId = correlationId;
@@ -134,8 +135,8 @@ const testFormatPrintF = ({
 const logger = winston.createLogger({
   level: "info",
   format: winston.format.combine(
-    // metadataFormat(),
-    // addCorrelationId(),
+    metadataFormat(),
+    addCorrelationId(),
     winston.format.timestamp(),
     winston.format.simple(),
     winston.format.colorize(),
