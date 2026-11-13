@@ -1,4 +1,4 @@
-import winston, { level } from "winston";
+import * as winston from "winston";
 import DailyRotateFile from "winston-daily-rotate-file";
 import { mkdirSync } from "node:fs";
 import path from "node:path";
