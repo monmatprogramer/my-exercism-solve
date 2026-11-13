@@ -143,7 +143,11 @@ const logger = winston.createLogger({
     // winston.format.json(),
     winston.format.printf((obj) => testFormatPrintF(obj)),
   ),
-  transports: [new winston.transports.Console(), transport],
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: "error.log", level: "error" }),
+    new winston.transports.File({ filename: "combined.log" }),
+  ],
 });
 
 function createAccessToken(userId: string): TokenPayLoad {
