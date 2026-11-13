@@ -7,3 +7,5 @@
 2026-11-13T09:55:13.811Z [[32minfo[39m]:undefined : User created{"userId":123,"role":"admin"}
 2026-11-13T09:56:02.471Z [[32minfo[39m]:[correlationId: 699c54de-2499-4335-ac48-4646867a9f43] : User created{"userId":123,"role":"admin","correlationId":"699c54de-2499-4335-ac48-4646867a9f43"}
 2026-11-13T10:00:36.086Z [[32minfo[39m]:[correlationId: 86f777ba-351e-4139-9c70-9942a39f7933] : User created{"userId":123,"role":"admin","correlationId":"86f777ba-351e-4139-9c70-9942a39f7933"}
+2026-11-13T10:05:02.729Z [[32minfo[39m]:[correlationId: a859c100-2a05-4270-8e18-1c3ca634aa6c] : User created{"userId":123,"role":"admin","correlationId":"a859c100-2a05-4270-8e18-1c3ca634aa6c"}
+2026-11-13T10:09:44.092Z [[31merror[39m]:[correlationId: 5a7ac493-2445-4b4e-afdc-e97591a88e21] : User created{"userId":123,"role":"admin","correlationId":"5a7ac493-2445-4b4e-afdc-e97591a88e21"}
