@@ -118,14 +118,18 @@ const testFormatPrintF = ({
 };
 // Creat transports
 const transport = new winston.transports.DailyRotateFile({
-  level: "info",
+  level: "error",
   filename: `log-%DATE%.log`,
   datePattern: "YYYY-MM-DD",
   zippedArchive: true,
   maxSize: "20m",
   maxFiles: "14d",
 });
-
+transport.on("error", (error) => {
+  {
+    console.log("Error: ", error);
+  }
+});
 //Create logger
 const logger = winston.createLogger({
   format: winston.format.combine(
