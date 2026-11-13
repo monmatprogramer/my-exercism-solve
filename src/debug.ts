@@ -132,6 +132,7 @@ transport.on("error", (error) => {
 });
 //Create logger
 const logger = winston.createLogger({
+  level: "info",
   format: winston.format.combine(
     metadataFormat(),
     addCorrelationId(),
