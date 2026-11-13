@@ -116,19 +116,19 @@ const testFormatPrintF = ({
   return `${timestamp} [${level}]:${correlId} : ${message}${metrStr}`;
 };
 // Creat transports
-// const transport = new winston.transports.DailyRotateFile({
-//   level: "error",
-//   filename: `log-%DATE%.log`,
-//   datePattern: "YYYY-MM-DD",
-//   zippedArchive: true,
-//   maxSize: "20m",
-//   maxFiles: "14d",
-// });
-// transport.on("error", (error) => {
-//   {
-//     console.log("Error: ", error);
-//   }
-// });
+const transport = new winston.transports.DailyRotateFile({
+  level: "error",
+  filename: `log-%DATE%.log`,
+  datePattern: "YYYY-MM-DD",
+  zippedArchive: true,
+  maxSize: "20m",
+  maxFiles: "14d",
+});
+transport.on("error", (error) => {
+  {
+    console.log("Error: ", error);
+  }
+});
 //Create logger
 const logger = winston.createLogger({
   level: "info",
