@@ -68,7 +68,7 @@ export const asyncLocalStorage = new AsyncLocalStorage<string>();
 async function testCorrelationInMiddlare() {
   const correlationId = uuidv4();
   asyncLocalStorage.run(correlationId, async () => {
-    logger.info(`Error request for User: user`);
+    logger.info("User created", { userId: 123, role: "admin" });
   });
 }
 function paymentTest() {
@@ -146,7 +146,7 @@ const logger = winston.createLogger({
   transports: [
     new winston.transports.Console(),
     new winston.transports.File({ filename: "error.log", level: "error" }),
-    new winston.transports.File({ filename: "combined.log" }),
+    new winston.transports.File({ filename: "combined.log", level: "error" }),
   ],
 });
 
