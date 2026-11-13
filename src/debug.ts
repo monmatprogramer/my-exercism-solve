@@ -87,7 +87,6 @@ function checkout() {
 
 const addCorrelationId = winston.format((info: any) => {
   const correlationId = asyncLocalStorage.getStore();
-  console.log("👉 info: ", info);
   if (correlationId) {
     //...meta
     info.correlationId = correlationId;
@@ -110,7 +109,6 @@ const testFormatPrintF = ({
   //...meta
   const metrStr = Object.keys(meta).length > 0 ? `${JSON.stringify(meta)}` : "";
   // check  the ccorrect id is type string or not
-
   const correlId =
     typeof meta.correlationId === "string"
       ? `[correlationId: ${meta.correlationId}]`
