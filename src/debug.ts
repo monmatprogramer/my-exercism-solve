@@ -114,7 +114,7 @@ const testFormatPrintF = ({
     typeof meta.correlationId === "string"
       ? `[correlationId: ${meta.correlationId}]`
       : undefined;
-  return `${timestamp} [${level}]:${correlId} : ${message}`;
+  return `${timestamp} [${level}]:${correlId} : ${message}${metrStr}`;
 };
 // Creat transports
 // const transport = new winston.transports.DailyRotateFile({
@@ -134,8 +134,8 @@ const testFormatPrintF = ({
 const logger = winston.createLogger({
   level: "info",
   format: winston.format.combine(
-    metadataFormat(),
-    addCorrelationId(),
+    // metadataFormat(),
+    // addCorrelationId(),
     winston.format.timestamp(),
     winston.format.simple(),
     winston.format.colorize(),
