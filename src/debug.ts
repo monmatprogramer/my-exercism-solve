@@ -116,7 +116,7 @@ const testFormatPrintF = ({
   return `${timestamp} [${level}]:${correlId} : ${message}${metrStr}`;
 };
 // Creat transports
-const transport = new winston.transports.DailyRotateFile({
+const fileTransport = new winston.transports.DailyRotateFile({
   level: "error",
   filename: `log-%DATE%.log`,
   datePattern: "YYYY-MM-DD",
@@ -124,7 +124,7 @@ const transport = new winston.transports.DailyRotateFile({
   maxSize: "20m",
   maxFiles: "14d",
 });
-transport.on("error", (error) => {
+fileTransport.on("error", (error) => {
   {
     console.log("Error: ", error);
   }
