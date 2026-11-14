@@ -133,6 +133,7 @@ const fileFormat = winston.format.combine(
   winston.format.timestamp(),
   winston.format.json(),
 )
+
 //Create logger
 const logger = winston.createLogger({
   level: "info",
@@ -452,15 +453,21 @@ function callLoggerforTesting() {
   testCorrelationInMiddlare();
   // Call here
 }
+function maskObject(){
+  console.log('\n=== maskObject ===')
+}
 const redactSensitiveDate = winston.format((info) => {
+  console.log("\n=== redactSensitiveDate ===")
+  console.log(info)
   return info;
 });
 function callRecactSen() {
   // Convert Set to array
   // using spread operator
   const SENSITIVE_KEYS_ARR = [...SENSITIVE_KEYS];
-  console.log(Array.isArray(SENSITIVE_KEYS_ARR));
+  redactSensitiveDate();
 }
+
 const main = () => {
   callRecactSen();
 };
