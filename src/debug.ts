@@ -461,7 +461,10 @@ function callLoggerforTesting() {
   testCorrelationInMiddlare();
   // Call here
 }
+function callRecactSen() {
+  console.log(SENSITIVE_KEYS);
+}
 const main = () => {
-  callLoggerforTesting();
+  callRecactSen();
 };
 main();
