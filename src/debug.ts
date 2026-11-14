@@ -126,10 +126,21 @@ const testFormatPrintF = ({
       : undefined;
   return `${timestamp} [${level}]:${correlId} : ${message}${metrStr}`;
 };
+function maskObject() {
+  console.log("\n=== maskObject ===");
+}
+const redactSensitiveDate = winston.format((info) => {
+  console.log("\n=== redactSensitiveDate ===");
+  console.log(info);
+  maskObject();
+  return info;
+});
+
 // Create file format
 const fileFormat = winston.format.combine(
   addCorrelationId(),
   metadataFormat(),
+  redactSensitiveDate(),
   winston.format.timestamp(),
   winston.format.json(),
 );
@@ -448,15 +459,6 @@ function callLoggerforTesting() {
   testCorrelationInMiddlare();
   // Call here
 }
-function maskObject() {
-  console.log("\n=== maskObject ===");
-}
-const redactSensitiveDate = winston.format((info) => {
-  console.log("\n=== redactSensitiveDate ===");
-  console.log(info);
-  maskObject();
-  return info;
-});
 function callRecactSen() {
   // Convert Set to array
   // using spread operator
