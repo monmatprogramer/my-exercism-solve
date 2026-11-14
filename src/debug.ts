@@ -144,6 +144,7 @@ const logger = winston.createLogger({
   ),
   transports: [
     new winston.transports.Console(),
+    // File = save log into hardisk
     new winston.transports.File({
       filename: `${logDir}/error.log`,
       level: "error",
