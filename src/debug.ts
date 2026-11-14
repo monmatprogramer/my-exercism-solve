@@ -140,6 +140,7 @@ fileTransport.on("error", (error) => {
     console.log("Error: ", error);
   }
 });
+
 //Create logger
 const logger = winston.createLogger({
   level: "info",
@@ -159,18 +160,16 @@ const logger = winston.createLogger({
         winston.format.simple(),
       ),
     }),
-    fileTransport,
-    // File = save log into hardisk
-    /**
-    new winston.transports.File({
-      filename: `${logDir}/error.log`,
-      level: "error",
+    new DailyRotateFile({
+      dirname:logDir,
+      filename: 'combined-%DATE%.log',
+      datePattern: 'YYYY-MM-DD',
+      maxSize: '20m',
+      maxFiles: '14d',
+      zippedArchive: true,
+      format: fileFormat;
     }),
-    new winston.transports.File({
-      filename: `${logDir}/combined.log`,
-    }),
-    **/
-  ],
+      ],
 });
 
 function createAccessToken(userId: string): TokenPayLoad {
@@ -461,6 +460,9 @@ function callLoggerforTesting() {
   testCorrelationInMiddlare();
   // Call here
 }
+const redactSensitiveDate = winston.format((info) => {
+  return info;
+});
 function callRecactSen() {
   // Convert Set to array
   // using spread operator
