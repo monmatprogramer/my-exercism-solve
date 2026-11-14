@@ -127,12 +127,12 @@ const testFormatPrintF = ({
   return `${timestamp} [${level}]:${correlId} : ${message}${metrStr}`;
 };
 // Create file format
-const fileFormat = winston.format.combine({
+const fileFormat = winston.format.combine(
   addCorrelationId(),
   metadataFormat(),
   winston.format.timestamp(),
   winston.format.json(),
-})
+)
 //Create logger
 const logger = winston.createLogger({
   level: "info",
