@@ -462,7 +462,10 @@ function callLoggerforTesting() {
   // Call here
 }
 function callRecactSen() {
-  console.log(Array.isArray(SENSITIVE_KEYS));
+  // Convert Set to array
+  // using spread operator
+  const SENSITIVE_KEYS_ARR = [...SENSITIVE_KEYS];
+  console.log(Array.isArray(SENSITIVE_KEYS_ARR));
 }
 const main = () => {
   callRecactSen();

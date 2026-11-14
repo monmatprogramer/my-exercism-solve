@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\2_Software\\7_TypeScript\\my-exercism-solve-clone\\my-exercism-solve\\logs\\.d24b0f727172fb2c94d4cb220e42810ab1494438-audit.json",
+    "files": [
+        {
+            "date": 1794628546887,
+            "name": "D:\\2_Software\\7_TypeScript\\my-exercism-solve-clone\\my-exercism-solve\\logs\\log-2026-11-14.log",
+            "hash": "b303eb6e0709a66019513867c146e55d87a62485a88103776e2b5bb2318360d8"
+        }
+    ],
+    "hashType": "sha256"
+}
