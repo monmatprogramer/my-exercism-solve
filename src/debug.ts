@@ -150,7 +150,9 @@ const logger = winston.createLogger({
         winston.format.simple(),
       ),
     }),
+    fileTransport,
     // File = save log into hardisk
+    /**
     new winston.transports.File({
       filename: `${logDir}/error.log`,
       level: "error",
@@ -158,6 +160,7 @@ const logger = winston.createLogger({
     new winston.transports.File({
       filename: `${logDir}/combined.log`,
     }),
+    **/
   ],
 });
 
