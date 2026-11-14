@@ -130,17 +130,19 @@ const testFormatPrintF = ({
       : undefined;
   return `${timestamp} [${level}]:${correlId} : ${message}${metrStr}`;
 };
-function maskObject(info: unknown): unknown {
+function maskObject(infoObj: unknown): unknown {
   console.log("\n=== maskObject ===");
-  console.log(info);
-  return info;
+  if (!infoObj) {
+    console.log(infoObj);
+  }
+  return infoObj;
 }
 
 const redactSensitiveDate = winston.format((info) => {
   console.log("\n=== redactSensitiveDate ===");
   console.log(info);
-  const result = maskObject(info) as winston.Logform.TransformableInfo;
-  console.log("\n\nResult: ", typeof result);
+  // const result = maskObject(info) as winston.Logform.TransformableInfo;
+  maskObject(["test", "test2"]);
   return info;
 });
 
