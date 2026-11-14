@@ -141,7 +141,9 @@ const redactSensitiveDate = winston.format((info) => {
   console.log("\n=== redactSensitiveDate ===");
   console.log(info);
   // const result = maskObject(info) as winston.Logform.TransformableInfo;
-  maskObject(["array", "test"]);
+  const result = maskObject(["array", "test"]);
+  console.log("\n=== Result ===");
+  console.log(result);
   return info;
 });
 
