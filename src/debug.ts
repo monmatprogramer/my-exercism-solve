@@ -135,6 +135,7 @@ function maskObject(infoObj: unknown): unknown {
   if (!infoObj || typeof infoObj !== "object") return infoObj;
 
   if (Array.isArray(infoObj)) {
+    console.log("\t\t=== Call maskObject ===");
     return infoObj.map(maskObject);
   }
   return infoObj;
