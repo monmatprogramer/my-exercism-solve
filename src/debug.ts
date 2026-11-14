@@ -133,7 +133,7 @@ const testFormatPrintF = ({
 function maskObject(infoObj: unknown): unknown {
   console.log("\n=== maskObject ===");
   if (!infoObj || typeof infoObj !== "object") return infoObj;
-
+  console.log("hello");
   if (Array.isArray(infoObj)) {
     console.log("\t\t=== Call maskObject ===");
     return infoObj.map(maskObject);
