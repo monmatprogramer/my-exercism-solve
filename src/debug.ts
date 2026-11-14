@@ -133,6 +133,7 @@ const testFormatPrintF = ({
 function maskObject(infoObj: unknown): unknown {
   console.log("\n=== maskObject ===");
   if (!infoObj || typeof infoObj !== "object") return infoObj;
+
   return infoObj;
 }
 
@@ -140,7 +141,7 @@ const redactSensitiveDate = winston.format((info) => {
   console.log("\n=== redactSensitiveDate ===");
   console.log(info);
   // const result = maskObject(info) as winston.Logform.TransformableInfo;
-  maskObject(null);
+  maskObject(["array", "test"]);
   return info;
 });
 
