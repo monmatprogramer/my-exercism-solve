@@ -132,7 +132,7 @@ const fileFormat = winston.format.combine(
   metadataFormat(),
   winston.format.timestamp(),
   winston.format.json(),
-)
+);
 
 //Create logger
 const logger = winston.createLogger({
@@ -154,15 +154,15 @@ const logger = winston.createLogger({
       ),
     }),
     new DailyRotateFile({
-      dirname:logDir,
-      filename: 'combined-%DATE%.log',
-      datePattern: 'YYYY-MM-DD',
-      maxSize: '20m',
-      maxFiles: '14d',
+      dirname: logDir,
+      filename: "combined-%DATE%.log",
+      datePattern: "YYYY-MM-DD",
+      maxSize: "20m",
+      maxFiles: "14d",
       zippedArchive: true,
-      format: fileFormat;
+      format: fileFormat,
     }),
-      ],
+  ],
 });
 
 function createAccessToken(userId: string): TokenPayLoad {
@@ -453,12 +453,12 @@ function callLoggerforTesting() {
   testCorrelationInMiddlare();
   // Call here
 }
-function maskObject(){
-  console.log('\n=== maskObject ===')
+function maskObject() {
+  console.log("\n=== maskObject ===");
 }
 const redactSensitiveDate = winston.format((info) => {
-  console.log("\n=== redactSensitiveDate ===")
-  console.log(info)
+  console.log("\n=== redactSensitiveDate ===");
+  console.log(info);
   return info;
 });
 function callRecactSen() {
