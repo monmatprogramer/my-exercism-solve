@@ -117,7 +117,7 @@ const testFormatPrintF = ({
 };
 // Creat transports
 const fileTransport = new winston.transports.DailyRotateFile({
-  level: "error",
+  level: "info",
   filename: `${logDir}/log-%DATE%.log`,
   datePattern: "YYYY-MM-DD",
   zippedArchive: true,
