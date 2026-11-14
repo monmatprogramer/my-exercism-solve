@@ -465,6 +465,7 @@ function callRecactSen() {
   // Convert Set to array
   // using spread operator
   const SENSITIVE_KEYS_ARR = [...SENSITIVE_KEYS];
+  callLoggerforTesting();
   redactSensitiveDate();
 }
 
