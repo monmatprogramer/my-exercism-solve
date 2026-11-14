@@ -63,7 +63,7 @@ function testGetStore() {
   console.log(`[Req: ${store?.requestId}] Processing test...`);
 }
 // Set up sensitive keys redact
-const SENSITIVE_KEYS = new set([
+const SENSITIVE_KEYS = new Set([
   "password",
   "token",
   "accessToken",
