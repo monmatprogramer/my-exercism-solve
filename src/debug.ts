@@ -126,21 +126,13 @@ const testFormatPrintF = ({
       : undefined;
   return `${timestamp} [${level}]:${correlId} : ${message}${metrStr}`;
 };
-// Creat transports
-const fileTransport = new winston.transports.DailyRotateFile({
-  level: "info",
-  filename: `${logDir}/log-%DATE%.log`,
-  datePattern: "YYYY-MM-DD",
-  zippedArchive: true,
-  maxSize: "20m",
-  maxFiles: "14d",
-});
-fileTransport.on("error", (error) => {
-  {
-    console.log("Error: ", error);
-  }
-});
-
+// Create file format
+const fileFormat = winston.format.combine({
+  addCorrelationId(),
+  metadataFormat(),
+  winston.format.timestamp(),
+  winston.format.json(),
+})
 //Create logger
 const logger = winston.createLogger({
   level: "info",
