@@ -79,7 +79,11 @@ export const asyncLocalStorage = new AsyncLocalStorage<string>();
 async function testCorrelationInMiddlare() {
   const correlationId = uuidv4();
   asyncLocalStorage.run(correlationId, async () => {
-    logger.info("User created", { userId: 123, role: "admin" });
+    logger.info("User created", {
+      userId: 123,
+      role: "admin",
+      password: "1234567",
+    });
   });
 }
 function paymentTest() {
@@ -126,20 +130,31 @@ const testFormatPrintF = ({
       : undefined;
   return `${timestamp} [${level}]:${correlId} : ${message}${metrStr}`;
 };
-// Creat transports
-const fileTransport = new winston.transports.DailyRotateFile({
-  level: "info",
-  filename: `${logDir}/log-%DATE%.log`,
-  datePattern: "YYYY-MM-DD",
-  zippedArchive: true,
-  maxSize: "20m",
-  maxFiles: "14d",
-});
-fileTransport.on("error", (error) => {
-  {
-    console.log("Error: ", error);
+function maskObject(infoObj: unknown): unknown {
+  console.log("\n=== maskObject ===");
+  if (!infoObj) {
+    console.log(infoObj);
   }
+  return infoObj;
+}
+
+const redactSensitiveDate = winston.format((info) => {
+  console.log("\n=== redactSensitiveDate ===");
+  console.log(info);
+  // const result = maskObject(info) as winston.Logform.TransformableInfo;
+  maskObject(["test", "test2"]);
+  return info;
 });
+
+// Create file format
+const fileFormat = winston.format.combine(
+  addCorrelationId(),
+  metadataFormat(),
+  redactSensitiveDate(),
+  winston.format.timestamp(),
+  winston.format.json(),
+);
+
 //Create logger
 const logger = winston.createLogger({
   level: "info",
@@ -153,23 +168,16 @@ const logger = winston.createLogger({
     winston.format.printf((obj) => testFormatPrintF(obj)),
   ),
   transports: [
-    new winston.transports.Console({
-      format: winston.format.combine(
-        winston.format.colorize(),
-        winston.format.simple(),
-      ),
+    new winston.transports.Console(),
+    new DailyRotateFile({
+      dirname: logDir,
+      filename: "combined-%DATE%.log",
+      datePattern: "YYYY-MM-DD",
+      maxSize: "20m",
+      maxFiles: "14d",
+      zippedArchive: true,
+      format: fileFormat,
     }),
-    fileTransport,
-    // File = save log into hardisk
-    /**
-    new winston.transports.File({
-      filename: `${logDir}/error.log`,
-      level: "error",
-    }),
-    new winston.transports.File({
-      filename: `${logDir}/combined.log`,
-    }),
-    **/
   ],
 });
 
@@ -462,8 +470,13 @@ function callLoggerforTesting() {
   // Call here
 }
 function callRecactSen() {
-  console.log(SENSITIVE_KEYS);
+  // Convert Set to array
+  // using spread operator
+  const SENSITIVE_KEYS_ARR = [...SENSITIVE_KEYS];
+  callLoggerforTesting();
+  redactSensitiveDate();
 }
+
 const main = () => {
   callRecactSen();
 };
