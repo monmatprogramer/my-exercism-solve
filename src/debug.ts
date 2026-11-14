@@ -62,6 +62,17 @@ function testGetStore() {
   const store = requestContext.getStore();
   console.log(`[Req: ${store?.requestId}] Processing test...`);
 }
+// Set up sensitive keys redact
+const SENSITIVE_KEYS = new set([
+  "password",
+  "token",
+  "accessToken",
+  "refreshToken",
+  "authorization",
+  "secret",
+  "apiKey",
+  "creditCard",
+]);
 // -----
 export const asyncLocalStorage = new AsyncLocalStorage<string>();
 // Stimulate middlare for testing correlation
