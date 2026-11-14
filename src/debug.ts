@@ -147,12 +147,7 @@ const logger = winston.createLogger({
     winston.format.printf((obj) => testFormatPrintF(obj)),
   ),
   transports: [
-    new winston.transports.Console({
-      format: winston.format.combine(
-        winston.format.colorize(),
-        winston.format.simple(),
-      ),
-    }),
+    new winston.transports.Console(),
     new DailyRotateFile({
       dirname: logDir,
       filename: "combined-%DATE%.log",
@@ -459,6 +454,7 @@ function maskObject() {
 const redactSensitiveDate = winston.format((info) => {
   console.log("\n=== redactSensitiveDate ===");
   console.log(info);
+  maskObject();
   return info;
 });
 function callRecactSen() {
