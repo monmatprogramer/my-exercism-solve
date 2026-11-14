@@ -462,7 +462,7 @@ function callLoggerforTesting() {
   // Call here
 }
 function callRecactSen() {
-  console.log(SENSITIVE_KEYS);
+  console.log(Array.isArray(SENSITIVE_KEYS));
 }
 const main = () => {
   callRecactSen();
