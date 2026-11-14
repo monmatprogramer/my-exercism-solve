@@ -130,9 +130,10 @@ const testFormatPrintF = ({
       : undefined;
   return `${timestamp} [${level}]:${correlId} : ${message}${metrStr}`;
 };
-function maskObject(info: unknown) {
+function maskObject(info: unknown): unknown {
   console.log("\n=== maskObject ===");
   console.log(info);
+  return info;
 }
 
 const redactSensitiveDate = winston.format((info) => {
