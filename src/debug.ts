@@ -144,7 +144,12 @@ const logger = winston.createLogger({
     winston.format.printf((obj) => testFormatPrintF(obj)),
   ),
   transports: [
-    new winston.transports.Console(),
+    new winston.transports.Console({
+      format: winston.format.combine(
+        winston.format.colorize(),
+        winston.format.simple(),
+      ),
+    }),
     // File = save log into hardisk
     new winston.transports.File({
       filename: `${logDir}/error.log`,
