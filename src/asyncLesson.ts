@@ -8,3 +8,5 @@ async function logProcess(taskName: string): Promise<void> {
   await delay(1000);
   console.log(`Completed: ${taskName}`);
 }
+
+await logProcess("Database Backup");
