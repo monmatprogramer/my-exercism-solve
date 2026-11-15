@@ -5,4 +5,5 @@ const delay = (ms: number): Promise<void> => {
 
 async function logProcess(taskName: string): Promise<void> {
   console.log(`Starting: ${taskName}`);
+  await delay(1000);
 }
