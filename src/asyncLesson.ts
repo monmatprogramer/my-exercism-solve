@@ -9,4 +9,6 @@ async function logProcess(taskName: string): Promise<void> {
   console.log(`Completed: ${taskName}`);
 }
 
-await logProcess("Database Backup");
+async function run() {
+  await logProcess("Database Backup");
+}
