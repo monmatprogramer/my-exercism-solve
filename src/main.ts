@@ -12,3 +12,6 @@ async function handleIncomingRequest(userId: string) {
 async function processOrder() {
   return "test";
 }
+const doDatabaseWork = () => {
+  return "test";
+};
