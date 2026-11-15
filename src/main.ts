@@ -6,11 +6,7 @@ async function handleIncomingRequest(userId: string) {
     requestId: uuidv4(),
     userId: userId,
   };
-  const result = runWithContext<RequestContext>(store, processOrder);
-}
-
-async function processOrder() {
-  return "test";
+  const result = runWithContext<RequestContext>(store, doDatabaseWork);
 }
 const doDatabaseWork = () => {
   return "test";
