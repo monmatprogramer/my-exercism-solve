@@ -6,7 +6,9 @@ async function handleIncomingRequest(userId: string) {
     requestId: uuidv4(),
     userId: userId,
   };
-  await runWithContext<RequestContext>(store, async () => {});
+  await runWithContext<RequestContext>(store, async () => {
+    await processOrder();
+  });
 }
 
 async function processOrder() {}
