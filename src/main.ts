@@ -10,11 +10,11 @@ async function handleIncomingRequest(userId: string) {
   await requestContext.run(store, async () => {});
 }
 
+function isPlainObject(value: unknown) {}
 function main() {
-  console.log(process.env.NODE_ENV);
-  const NODE_ENV = process.env.NODE_ENV || "production";
-  const IS_DEV = NODE_ENV === "development";
-  console.log(IS_DEV); //true
+  const userArr = ["user1", "user2"];
+  console.log(typeof userArr);
+  // isPlainObject()
 }
 
 main();
