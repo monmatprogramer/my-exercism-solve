@@ -18,7 +18,7 @@ function main() {
   const userPref = {
     name: "dark\r\nSet-Cookie: session_id=hijacked",
   };
-  console.log("This\rtest");
+  console.log("This is my\r\ntesting");
 }
 
 main();
