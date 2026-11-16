@@ -41,5 +41,10 @@ type SSD = {
   wearLevel: number;
   type: "ssd";
 };
+type StorageDrive = HDD | SSD;
+
+function isSSD(drive: StorageDrive): drive is SSD {
+  return drive.type === "ssd";
+}
 
 export function qnapServer() {}
