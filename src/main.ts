@@ -11,7 +11,8 @@ async function handleIncomingRequest(userId: string) {
 }
 
 function main() {
-  const NODE_ENV: string = "production";
+  console.log(process.env.NODE_ENV);
+  const NODE_ENV = process.env.NODE_ENV || "production";
   const IS_DEV = NODE_ENV === "development";
   console.log(IS_DEV); //true
 }
