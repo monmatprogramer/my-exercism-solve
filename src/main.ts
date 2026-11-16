@@ -29,6 +29,14 @@ function isAdmin(user: AnyUser): user is Admin {
   //return
   return user.role === "admin";
 }
+// Mange server
+function manageServer(user: AnyUser) {
+  if (isAdmin(user)) {
+    console.log("Admin: ", user.canDeleteFiles);
+  } else {
+    console.log("Standard user: ", user.name);
+  }
+}
 function learnType() {}
 function isPlainObject(value: unknown): value is Record<string, unknown> {
   return true;
