@@ -11,14 +11,14 @@ async function handleIncomingRequest(userId: string) {
 }
 
 function main() {
-  const info = {
-    username: "alice\r\n[INFO] User 'admin' logged in successfull",
+  const info = { username: "alice", status: "failed" };
+  console.log("info: ", info);
+  //fake log
+  const infoInject = {
+    username:
+      'alice", "status":"failed"}\r\n{"username":"admin", "status":"sucess',
   };
-  const serialized = JSON.stringify(info);
-  const userPref = {
-    name: "dark\r\nSet-Cookie: session_id=hijacked",
-  };
-  console.log("This is my\r\ntesting");
+  console.log("infoInject: ", infoInject);
 }
 
 main();
