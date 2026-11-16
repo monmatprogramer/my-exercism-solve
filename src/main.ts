@@ -9,7 +9,21 @@ function main() {
       password: "super-secret-password",
     },
   };
-  console.log("Cleaned Result: ", hideSecret(testUser));
+  const myServerConfig = {
+    host: "127.0.0.1",
+    database: {
+      user: "postgres",
+      password: "super-secret-db-password",
+      apiToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+    },
+    services: {
+      payment: {
+        stripe_token: "sk_test_123456789",
+        status: "active",
+      },
+    },
+  };
+  console.log("Cleaned Result: ", hideSecret(myServerConfig));
 }
 
 main();
