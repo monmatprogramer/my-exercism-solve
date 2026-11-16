@@ -9,7 +9,7 @@ function main() {
       password: "super-secret-password",
     },
   };
-  console.log("Cleaned Result: hideSecret(testUser)");
+  console.log("Cleaned Result: ", hideSecret(testUser));
 }
 
 main();
