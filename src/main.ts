@@ -15,7 +15,10 @@ function main() {
     username: "alice\r\n[INFO] User 'admin' logged in successfull",
   };
   const serialized = JSON.stringify(info);
-  console.log(serialized);
+  const userPref = {
+    name: "dark\r\nSet-Cookie: session_id=hijacked",
+  };
+  console.log("This\rtest");
 }
 
 main();
