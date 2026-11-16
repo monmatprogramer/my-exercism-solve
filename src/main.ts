@@ -1,7 +1,7 @@
 function main() {
-  const text = "abc";
+  const text = "dog";
 
-  console.log(text.includes("a")); // true
+  console.log(text.includes("b")); // true
 }
 
 main();
