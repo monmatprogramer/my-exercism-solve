@@ -32,14 +32,14 @@ function manageServer(user: AnyUser) {
 
 type HDD = {
   id: string;
-  rpm: string;
+  rpm: number;
   type: "hdd";
 };
 
-export function qnapServer() {
-  const user: StandardUser = {
-    name: "monmat",
-    role: "user",
-  };
-  manageServer(user);
-}
+type SSD = {
+  id: string;
+  wearLevel: number;
+  type: "ssd";
+};
+
+export function qnapServer() {}
