@@ -9,3 +9,13 @@ async function handleIncomingRequest(userId: string) {
 
   await requestContext.run(store, async () => {});
 }
+
+function main() {
+  const info = {
+    username: "alice\r\n[INFO] User 'admin' logged in successfull",
+  };
+  const serialized = JSON.stringify(info);
+  console.log(serialized);
+}
+
+main();
