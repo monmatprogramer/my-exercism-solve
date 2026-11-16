@@ -37,7 +37,13 @@ function manageServer(user: AnyUser) {
     console.log("Standard user: ", user.name);
   }
 }
-function learnType() {}
+function learnType() {
+  const user: StandardUser = {
+    name: "monmat",
+    role: "user",
+  };
+  manageServer(user);
+}
 function isPlainObject(value: unknown): value is Record<string, unknown> {
   return true;
 }
@@ -49,8 +55,7 @@ function main() {
     sex: "M",
   };
   const r = isPlainObject(userArr);
-  const r2 = checkAge(17);
-  console.log(r2);
+  learnType();
 }
 
 main();
