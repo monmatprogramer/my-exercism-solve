@@ -9,8 +9,8 @@ async function handleIncomingRequest(userId: string) {
 
   await requestContext.run(store, async () => {});
 }
-
-function checkAge(age: number): age is number {
+type Age = 18;
+function checkAge(age: number): age is Age {
   return age > 17;
 }
 
