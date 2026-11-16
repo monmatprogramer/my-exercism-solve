@@ -9,10 +9,26 @@ async function handleIncomingRequest(userId: string) {
 
   await requestContext.run(store, async () => {});
 }
-function checkAge(age: number): age is 18 {
-  return age === 17;
-}
+//--------
+// Check return type
+//-------
+type Admin = {
+  name: string;
+  role: "admin";
+  canDeleteFiles: boolean;
+};
+type StandardUser = {
+  name: string;
+  role: "user";
+};
 
+type AnyUser = Admin | StandardUser;
+
+// Checck is admin
+function isAdmin(user: AnyUser): user is Admin {
+  //return
+}
+function learnType() {}
 function isPlainObject(value: unknown): value is Record<string, unknown> {
   return true;
 }
@@ -24,7 +40,7 @@ function main() {
     sex: "M",
   };
   const r = isPlainObject(userArr);
-  const r2 = checkAge(18);
+  const r2 = checkAge(17);
   console.log(r2);
 }
 
