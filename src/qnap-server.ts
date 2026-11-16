@@ -63,5 +63,5 @@ export function qnapServer() {
     { id: "Drive-2", type: "ssd", wearLevel: 12 },
     { id: "Drive-3", type: "hdd", rpm: 5400 },
   ];
-  myServerDrives.forEach((e) => checkDriveHealthDrive(e));
+  myServerDrives.forEach(checkDriveHealthDrive);
 }
