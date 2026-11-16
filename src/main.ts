@@ -11,7 +11,7 @@ async function handleIncomingRequest(userId: string) {
 }
 
 function isPlainObject(value: unknown) {
-  console.log(value);
+  return value;
 }
 function main() {
   const userArr: string[] = ["user1", "user2"];
@@ -19,7 +19,8 @@ function main() {
     name: "Mon Mat",
     sex: "M",
   };
-  isPlainObject(userArr);
+  const r = isPlainObject(userArr);
+  console.log(r);
 }
 
 main();
