@@ -11,14 +11,9 @@ async function handleIncomingRequest(userId: string) {
 }
 
 function main() {
-  const info = { username: "alice", status: "failed" };
-  console.log("info: ", info);
-  //fake log
-  const infoInject = {
-    username:
-      'alice", "status":"failed"}\r\n{"username":"admin", "status":"sucess',
-  };
-  console.log("infoInject: ", infoInject);
+  const NODE_ENV = "development";
+  const IS_DEV = NODE_ENV === "development";
+  console.log(IS_DEV); //true
 }
 
 main();
