@@ -10,9 +10,14 @@ async function handleIncomingRequest(userId: string) {
   await requestContext.run(store, async () => {});
 }
 
+function checkAge(age: number): boolean {
+  return age > 17;
+}
+
 function isPlainObject(value: unknown): value is Record<string, unknown> {
   return true;
 }
+
 function main() {
   const userArr: string[] = ["user1", "user2"];
   const useObj = {
@@ -20,8 +25,8 @@ function main() {
     sex: "M",
   };
   const r = isPlainObject(userArr);
-
-  console.log(r);
+  const r2 = checkAge(18);
+  console.log(r2);
 }
 
 main();
