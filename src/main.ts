@@ -10,8 +10,8 @@ async function handleIncomingRequest(userId: string) {
   await requestContext.run(store, async () => {});
 }
 
-function isPlainObject(value: unknown) {
-  return value;
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+  return true;
 }
 function main() {
   const userArr: string[] = ["user1", "user2"];
@@ -20,6 +20,7 @@ function main() {
     sex: "M",
   };
   const r = isPlainObject(userArr);
+
   console.log(r);
 }
 
