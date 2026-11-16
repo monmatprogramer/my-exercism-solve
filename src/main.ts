@@ -44,6 +44,10 @@ function learnType() {
   };
   manageServer(user);
 }
+
+//-------------
+//  Check Object
+//-------------
 function isPlainObject(value: unknown): value is Record<string, unknown> {
   return true;
 }
