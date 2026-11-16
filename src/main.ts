@@ -14,7 +14,7 @@ function isPlainObject(value: unknown) {
   console.log(value);
 }
 function main() {
-  const userArr = ["user1", "user2"];
+  const userArr: string[] = ["user1", "user2"];
   const useObj = {
     name: "Mon Mat",
     sex: "M",
