@@ -10,7 +10,7 @@ async function handleIncomingRequest(userId: string) {
   await requestContext.run(store, async () => {});
 }
 
-function checkAge(age: number): age is 18 {
+function checkAge(age: number): age is number {
   return age > 17;
 }
 
