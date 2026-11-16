@@ -7,6 +7,11 @@ export function hideSecret(data: any): any {
     const value = data[key];
     if (key === "password") {
       cleanData[key] = "*** HIDDEN ***";
+    } else if (typeof value === "object" && value !== null) {
+      cleanData[key] = hideSecret(value);
+    } else {
+      cleanData[key] = value;
     }
   }
+  return cleanData;
 }
