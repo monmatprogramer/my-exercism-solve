@@ -47,4 +47,14 @@ function isSSD(drive: StorageDrive): drive is SSD {
   return drive.type === "ssd";
 }
 
+function checkDriveHealthDrive(drive: StorageDrive) {
+  if (isSSD(drive)) {
+    console.log(
+      `Checking SSD [${drive.id}]. Wear level is [${drive.wearLevel}]%`,
+    );
+  } else {
+    console.log(`Checking HDD [${drive.id}]. Speed is [${drive.rpm}] PRM.`);
+  }
+}
+
 export function qnapServer() {}
