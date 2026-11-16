@@ -1,4 +1,5 @@
 export function hideSecret(data: any): any {
+  console.log("\n\ndata: ", data);
   if (typeof data !== "object" || data === null) return data;
 
   const cleanData: any = {};
