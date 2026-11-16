@@ -27,6 +27,7 @@ type AnyUser = Admin | StandardUser;
 // Checck is admin
 function isAdmin(user: AnyUser): user is Admin {
   //return
+  return user.role === "admin";
 }
 function learnType() {}
 function isPlainObject(value: unknown): value is Record<string, unknown> {
