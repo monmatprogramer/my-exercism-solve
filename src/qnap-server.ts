@@ -57,4 +57,11 @@ function checkDriveHealthDrive(drive: StorageDrive) {
   }
 }
 
-export function qnapServer() {}
+export function qnapServer() {
+  const myServerDrives: StorageDrive[] = [
+    { id: "Drive-1", type: "hdd", rpm: 7200 },
+    { id: "Drive-2", type: "ssd", wearLevel: 12 },
+    { id: "Drive-3", type: "hdd", rpm: 5400 },
+  ];
+  myServerDrives.forEach((e) => checkDriveHealthDrive(e));
+}
