@@ -10,21 +10,7 @@ async function handleIncomingRequest(userId: string) {
 
   await requestContext.run(store, async () => {});
 }
-//-------------
-//  Check Object
-//-------------
-function isPlainObject(value: unknown): value is Record<string, unknown> {
-  return true;
-}
 
-function main() {
-  const userArr: string[] = ["user1", "user2"];
-  const useObj = {
-    name: "Mon Mat",
-    sex: "M",
-  };
-  const r = isPlainObject(userArr);
-  qnapServer();
-}
+function main() {}
 
 main();
