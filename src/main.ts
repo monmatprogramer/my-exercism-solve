@@ -23,7 +23,7 @@ function main() {
     a: "a",
     b: {},
   };
-  cleanEmptyValue(dataTesting);
+  console.log(cleanEmptyValue(dataTesting));
 }
 
 main();
