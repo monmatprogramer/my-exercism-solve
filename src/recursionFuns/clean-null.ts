@@ -12,13 +12,12 @@ export function CleanData(dirtyData: unknown) {
     // Find dirty value here
     for (const [key, value] of Object.entries(dirtyData)) {
       // Start finding
-      if (
-        typeof value !== "object" &&
-        typeof value !== null &&
+      if (typeof value !== "object" && typeof value !== null) {
+        cleanData[key] = value;
+      } else if (
+        typeof value === "object" &&
         Object.keys(value as Record<string, unknown>).length !== 0
       ) {
-        cleanData[key] = value;
-      } else if (typeof value === "object") {
         cleanData[key] = CleanData(value);
       }
     }
