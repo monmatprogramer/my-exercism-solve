@@ -26,7 +26,7 @@ export function CleanData(dirtyData: unknown) {
   return cleanData;
 }
 function cleanFun(meta: unknown): unknown {
-  return meta;
+  throw new Error("Error");
 }
 export function safeStringifyMeta(meta: unknown): string {
   if (!meta) return "";
@@ -34,6 +34,7 @@ export function safeStringifyMeta(meta: unknown): string {
     const clean = cleanFun(meta);
     const str = JSON.stringify(clean);
     return str.length > 0 ? ` ${str}` : "";
-  } catch {}
-  return "string safe";
+  } catch {
+    return "Error";
+  }
 }
