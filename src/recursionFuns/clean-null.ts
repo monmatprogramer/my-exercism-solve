@@ -4,11 +4,9 @@ export function isPlainObject(
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 export function CleanData(dirtyData: unknown) {
-  const isRealObject = isPlainObject(dirtyData);
   //Clear null value
   const cleanData: Record<string, unknown> = {};
-
-  if (isRealObject) {
+  if (isPlainObject(dirtyData)) {
     // Find dirty value here
     for (const [key, value] of Object.entries(dirtyData)) {
       if (value !== null) {
