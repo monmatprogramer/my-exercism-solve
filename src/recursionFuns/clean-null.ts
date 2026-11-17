@@ -11,16 +11,17 @@ export function CleanData(dirtyData: unknown) {
   if (isRealObject) {
     // Find dirty value here
     for (const [key, value] of Object.entries(dirtyData)) {
-      // Start finding
-      if (typeof value !== "object" && typeof value !== null) {
-        cleanData[key] = value;
-      } else if (
-        typeof value === "object" &&
-        value !== null &&
-        Object.keys(value as Record<string, unknown>).length !== 0
-      ) {
-        //Logii
-        cleanData[key] = CleanData(value);
+      if (value !== null) {
+        // Start finding
+        if (typeof value !== "object") {
+          cleanData[key] = value;
+        } else if (
+          typeof value === "object" &&
+          Object.keys(value as Record<string, unknown>).length !== 0
+        ) {
+          //Logii
+          cleanData[key] = CleanData(value);
+        }
       }
     }
   }
