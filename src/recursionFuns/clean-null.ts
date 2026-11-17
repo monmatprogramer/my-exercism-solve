@@ -26,7 +26,7 @@ export function CleanData(dirtyData: unknown) {
   return cleanData;
 }
 function cleanFun(meta: unknown): unknown {
-  return "";
+  return "username";
 }
 export function safeStringifyMeta(meta: unknown): string {
   if (!meta) return "";
