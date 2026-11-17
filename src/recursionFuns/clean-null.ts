@@ -11,5 +11,7 @@ export function CleanData(dirtyData: unknown) {
     for (const [key, value] of Object.entries(dirtyData)) {
       // Start finding
     }
+  } else {
+    console.log("Your data is not object", dirtyData);
   }
 }
