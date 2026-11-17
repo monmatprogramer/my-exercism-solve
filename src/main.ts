@@ -23,7 +23,10 @@ function main() {
     a: "a",
     b: {},
   };
-  console.log(cleanEmptyValue(dataTesting));
+  // console.log(cleanEmptyValue(dataTesting));
+
+  const a = true;
+  console.log(typeof a);
 }
 
 main();
