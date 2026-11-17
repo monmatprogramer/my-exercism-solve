@@ -10,7 +10,7 @@ export function cleanEmptyValue(dataTesting: unknown) {
         console.log(value);
       }
     }
-    const { b, ...newData } = dataTesting;
-    console.log(newData);
+    // const { b, ...newData } = dataTesting;
+    // console.log(newData);
   }
 }
