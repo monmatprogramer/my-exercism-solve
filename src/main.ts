@@ -26,7 +26,7 @@ function main() {
   // console.log(cleanEmptyValue(dataTesting));
 
   const a = true;
-  console.log(typeof a);
+  console.log(typeof a === "boolean");
 }
 
 main();
