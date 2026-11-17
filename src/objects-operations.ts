@@ -5,7 +5,10 @@ function cleanEmptyValue(dataTesting: unknown) {
 
   // It must be type Record<string, unknow> that return from isPlainObject
   if (isPlainObject(dataTesting)) {
-    console.log(Object.keys(dataTesting.b).length === 0);
+    // We use loop to find key and value
+    for (const [key, value] of Object.entries(dataTesting)) {
+      console.log(Object.keys(key).length === 0);
+    }
     const { b, ...newData } = dataTesting;
     console.log(newData);
   }
