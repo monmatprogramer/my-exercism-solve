@@ -20,7 +20,7 @@ function main() {
 
   const dataTesting = {
     a: "a",
-    b: { b1: "b1", b2: "b2" },
+    b: { b1: "b1", b2: "b2", b3: {} },
   };
   console.log(cleanEmptyValue(dataTesting));
 }
