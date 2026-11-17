@@ -27,7 +27,8 @@ function main() {
 
   const a = true;
   const b = 0;
-  console.log(typeof b);
+  const c = b ?? 1;
+  console.log(c); //0
 }
 
 main();
