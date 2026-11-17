@@ -7,7 +7,7 @@ function main() {
     secretKey: "0000000",
   };
   const meta2 = undefined;
-  const result = safeStringifyMeta(meta);
+  const result = safeStringifyMeta(meta2);
   console.log("result: ", result);
 }
 
