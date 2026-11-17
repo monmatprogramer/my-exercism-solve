@@ -18,7 +18,13 @@ function main() {
   console.time("CleanData Speed.");
   const result = CleanData(data);
   console.log("result: ", result);
-  console.timeEnd("CleanData");
+  console.timeEnd("CleanData Speed.");
+  console.log("\n\n----method 2----\n\n");
+  const startTime = performance.now();
+  CleanData(data);
+  const endTime = performance.now();
+  const timeTaken = endTime - startTime;
+  console.log(timeTaken);
 }
 
 main();
