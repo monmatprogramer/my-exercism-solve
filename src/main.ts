@@ -6,7 +6,9 @@ function main() {
     token: "xilld0333",
     secretKey: "0000000",
   };
-  safeStringifyMeta(meta);
+  const meta2 = undefined;
+  const result = safeStringifyMeta(meta);
+  console.log("result: ", result);
 }
 
 main();
