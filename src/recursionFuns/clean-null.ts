@@ -25,8 +25,15 @@ export function CleanData(dirtyData: unknown) {
   }
   return cleanData;
 }
-
+function cleanFun(meta: unknown): meta is Record<string, unknown> {
+  return meta;
+}
 export function safeStringifyMeta(meta: unknown): string {
   if (!meta) return "";
+  try {
+    const clean = meta;
+    const str = JSON.stringify(clean);
+    return str.length > 0 ? ` ${str}` : "";
+  } catch {}
   return "string safe";
 }
