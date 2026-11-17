@@ -26,7 +26,7 @@ export function CleanData(dirtyData: unknown) {
   return cleanData;
 }
 function cleanFun(meta: unknown): unknown {
-  throw new Error("Error");
+  return "";
 }
 export function safeStringifyMeta(meta: unknown): string {
   if (!meta) return "";
