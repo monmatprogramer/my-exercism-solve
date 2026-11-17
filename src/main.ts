@@ -15,9 +15,7 @@ function main() {
     },
   };
   //----
-  // console.log(CleanData(data));
-  const a = null;
-  Object.keys(a);
+  console.log(CleanData(data));
 }
 
 main();

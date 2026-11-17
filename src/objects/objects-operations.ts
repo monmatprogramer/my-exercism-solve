@@ -7,7 +7,7 @@ export function cleanEmptyValue(dataTesting: unknown) {
     // We use loop to find key and value
     for (const [key, value] of Object.entries(dataTesting)) {
       if (typeof value === "object") {
-        // Check empty value
+        // Check empty valup
         if (Object.keys(value as Record<string, unknown>).length !== 0) {
           cleanData[key] = cleanEmptyValue(value);
         }
