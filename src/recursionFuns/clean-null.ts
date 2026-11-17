@@ -14,7 +14,7 @@ export function CleanData(dirtyData: unknown) {
       // Start finding
       if (typeof value !== "object" && typeof value !== null) {
         cleanData[key] = value;
-      } else if (typeof value === "object") {
+      } else if (typeof value === "object" || value !== null) {
         if (value !== null || value !== undefined) {
           //Logii
           console.log(`[{${key}]: ${value}`);
