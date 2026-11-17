@@ -1,4 +1,4 @@
-import { CleanData } from "./recursionFuns/clean-null";
+import { CleanData, isPlainObject } from "./recursionFuns/clean-null";
 
 function main() {
   const data: Record<string, unknown> = {
@@ -15,6 +15,7 @@ function main() {
     },
   };
   //----
+  console.log(isPlainObject(data.storage));
   CleanData(data);
 }
 
