@@ -1,4 +1,4 @@
-import { cleanEmptyValue } from "./objects-operations";
+import { cleanEmptyValue } from "../objects-operations";
 import { CleanData, isPlainObject } from "./recursionFuns/clean-null";
 
 function main() {
