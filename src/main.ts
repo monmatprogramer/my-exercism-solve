@@ -27,7 +27,7 @@ function main() {
 
   const a = true;
   const b = 0;
-  const c = b ?? 1;
+  const c = b === 0 ? "Zero" : "Not zero";
   console.log(c); //0
 }
 
