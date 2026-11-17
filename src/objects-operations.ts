@@ -8,12 +8,13 @@ export function cleanEmptyValue(dataTesting: unknown) {
     for (const [key, value] of Object.entries(dataTesting)) {
       if (typeof value === "object") {
         // Check empty value
-        if (Object.keys(value as Record<string, unknown>).length === 0) {
-          console.log("This key is empty value", key);
+        if (Object.keys(value as Record<string, unknown>).length !== 0) {
+          cleanData[key] = value;
         }
       }
     }
     // const { b, ...newData } = dataTesting;
     // console.log(newData);
   }
+  return cleanData;
 }
