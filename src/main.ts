@@ -1,3 +1,5 @@
+import { CleanData } from "./recursionFuns/clean-null";
+
 function main() {
   const data: Record<string, unknown> = {
     serverName: "QNAP-NAS-433",
@@ -12,6 +14,8 @@ function main() {
       },
     },
   };
+  //----
+  CleanData();
 }
 
 main();
