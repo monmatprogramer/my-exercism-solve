@@ -15,7 +15,7 @@ function main() {
     },
   };
   //----
-  CleanData();
+  CleanData(data);
 }
 
 main();
