@@ -17,6 +17,14 @@ function main() {
   //----
   console.log(isPlainObject(data.storage));
   console.log(CleanData(data));
+
+  console.log("clean data");
+  const dataTesting = {
+    a: "a",
+    b: {},
+  };
+  const { b, ...newData } = dataTesting;
+  console.log(newData);
 }
 
 main();
