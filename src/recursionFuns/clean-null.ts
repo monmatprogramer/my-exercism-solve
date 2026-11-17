@@ -12,10 +12,12 @@ export function CleanData(dirtyData: unknown) {
       // Start finding
       if (typeof value !== "object" && typeof value !== null) {
         cleanData[key] = value;
-      }else if(){}
+      } else if (typeof value === "object") {
+        cleanData[key] = CleanData(value);
+      }
     }
   } else {
     console.log("Your data is not object", dirtyData);
   }
-return cleanData;
+  return cleanData;
 }
