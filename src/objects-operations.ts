@@ -6,7 +6,7 @@ export function cleanEmptyValue(dataTesting: unknown) {
   if (isPlainObject(dataTesting)) {
     // We use loop to find key and value
     for (const [key, value] of Object.entries(dataTesting)) {
-      if (Object.keys(key).length === 0) {
+      if (typeof value === "object") {
         console.log(value);
       }
     }
