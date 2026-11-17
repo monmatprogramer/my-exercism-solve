@@ -1,1 +1,3 @@
-export function CleanData() {}
+export function CleanData() {
+  //Clear null value
+}
