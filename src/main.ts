@@ -1,30 +1,7 @@
-import { CleanData } from "./recursionFuns/clean-null";
+import { method3 } from "./check-performance/check-perfomance";
 
 function main() {
-  const data: Record<string, unknown> = {
-    serverName: "QNAP-NAS-433",
-    uptime: 99.9,
-    lastError: null,
-    storage: {
-      disk1: "Healthy",
-      disk2: null,
-      diagnostics: {
-        temperature: 45,
-        badSectors: null,
-      },
-    },
-  };
-  //----
-  console.time("CleanData Speed.");
-  const result = CleanData(data);
-  console.log("result: ", result);
-  console.timeEnd("CleanData Speed.");
-  console.log("\n\n----method 2----\n\n");
-  const startTime = performance.now();
-  CleanData(data);
-  const endTime = performance.now();
-  const timeTaken = endTime - startTime;
-  console.log(timeTaken);
+  method3();
 }
 
 main();
