@@ -5,6 +5,7 @@ export function CleanData(dirtyData: unknown) {
   const isRealObject = isPlainObject(dirtyData);
   //Clear null value
   const cleanData: Record<string, unknown> = {};
+  return;
   for (const [key, value] of Object.entries(dirtyData)) {
     if (typeof value !== "object") {
       cleanData[key] = value;
