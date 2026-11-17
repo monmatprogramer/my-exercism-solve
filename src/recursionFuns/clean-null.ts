@@ -17,6 +17,7 @@ export function CleanData(dirtyData: unknown) {
       } else if (typeof value === "object") {
         if (value !== null || value !== undefined) {
           //Logii
+          console.log(`[{${key}]: ${value}`);
           if (Object.keys(value as Record<string, unknown>).length !== 0) {
             cleanData[key] = CleanData(value);
           }
