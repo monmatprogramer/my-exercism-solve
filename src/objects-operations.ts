@@ -9,7 +9,7 @@ export function cleanEmptyValue(dataTesting: unknown) {
       if (typeof value === "object") {
         // Check empty value
         if (Object.keys(value as Record<string, unknown>).length !== 0) {
-          cleanData[key] = value;
+          cleanData[key] = cleanEmptyValue(value);
         } else if (typeof value === "string" && value !== null) {
           cleanData[key] = value;
         }
