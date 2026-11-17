@@ -23,6 +23,7 @@ function main() {
     a: "a",
     b: {},
   };
+  console.log(dataTesting.b);
   const { b, ...newData } = dataTesting;
   console.log(newData);
 }
