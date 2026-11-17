@@ -1,7 +1,7 @@
 import { isPlainObject } from "./recursionFuns/clean-null";
 
 export function cleanEmptyValue(dataTesting: unknown) {
-  console.log("clean data");
+  const cleanData: Record<string, unknown> = {};
   // It must be type Record<string, unknow> that return from isPlainObject
   if (isPlainObject(dataTesting)) {
     // We use loop to find key and value
