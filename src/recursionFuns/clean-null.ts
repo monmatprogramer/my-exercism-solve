@@ -10,6 +10,7 @@ export function CleanData(dirtyData: unknown) {
     // Find dirty value here
     for (const [key, value] of Object.entries(dirtyData)) {
       // Start finding
+      console.log(value);
     }
   } else {
     console.log("Your data is not object", dirtyData);
