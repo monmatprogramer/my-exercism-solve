@@ -15,7 +15,10 @@ function main() {
     },
   };
   //----
-  console.log(CleanData(data));
+  console.time("CleanData Speed.");
+  const result = CleanData(data);
+  console.log("result: ", result);
+  console.timeEnd("CleanData");
 }
 
 main();
