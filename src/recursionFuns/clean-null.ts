@@ -3,6 +3,7 @@ function isPlainObject(value: unknown): value is Record<string, unknown> {
 }
 export function CleanData(dirtyData: unknown) {
   const isRealObject = isPlainObject(dirtyData);
+  console.log("isRealObject: ", isRealObject);
   //Clear null value
   const cleanData: Record<string, unknown> = {};
   return;
