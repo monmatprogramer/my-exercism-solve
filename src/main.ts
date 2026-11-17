@@ -16,8 +16,8 @@ function main() {
     },
   };
   //----
-  console.log(isPlainObject(data.storage));
-  console.log(CleanData(data));
+  // console.log(isPlainObject(data.storage));
+  // console.log(CleanData(data));
 
   const dataTesting = {
     a: "a",
