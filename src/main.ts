@@ -23,7 +23,7 @@ function main() {
     a: "a",
     b: {},
   };
-  console.log(dataTesting.b);
+  console.log(Object.keys(dataTesting.b).length === 0);
   const { b, ...newData } = dataTesting;
   console.log(newData);
 }
