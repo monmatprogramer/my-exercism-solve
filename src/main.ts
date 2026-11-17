@@ -16,7 +16,7 @@ function main() {
   };
   //----
   console.log(isPlainObject(data.storage));
-  CleanData(data);
+  console.log(CleanData(data));
 }
 
 main();

@@ -18,8 +18,6 @@ export function CleanData(dirtyData: unknown) {
         cleanData[key] = CleanData(value);
       }
     }
-  } else {
-    console.log("Your data is not object", dirtyData);
   }
   return cleanData;
 }
