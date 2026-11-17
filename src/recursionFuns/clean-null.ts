@@ -14,11 +14,13 @@ export function CleanData(dirtyData: unknown) {
       // Start finding
       if (typeof value !== "object" && typeof value !== null) {
         cleanData[key] = value;
-      } else if (typeof value === "object" && value !== null) {
+      } else if (
+        typeof value === "object" &&
+        value !== null &&
+        Object.keys(value as Record<string, unknown>).length !== 0
+      ) {
         //Logii
-        if (Object.keys(value as Record<string, unknown>).length !== 0) {
-          cleanData[key] = CleanData(value);
-        }
+        cleanData[key] = CleanData(value);
       }
     }
   }
