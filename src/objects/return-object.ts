@@ -1,3 +1,7 @@
+//-------------------
+// Return object using normal function
+//-------------------
+
 export function returnObject1() {
   return {
     or: () => {
