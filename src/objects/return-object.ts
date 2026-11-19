@@ -9,3 +9,8 @@ export function returnObject1() {
 //-------------------
 // Return object using arrow function
 //-------------------
+export const returnObject2 = () => ({
+  or: () => {
+    console.log("or function 2");
+  },
+});
