@@ -1,0 +1,7 @@
+export function returnObject1() {
+  return {
+    or: () => {
+      console.log("or function");
+    },
+  };
+}
