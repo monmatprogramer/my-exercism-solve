@@ -5,3 +5,7 @@ export function returnObject1() {
     },
   };
 }
+
+//-------------------
+// Return object using arrow function
+//-------------------
