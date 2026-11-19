@@ -1,4 +1,7 @@
-import { safeStringifyMeta } from "./recursionFuns/clean-null";
-function main() {}
+import { returnObject1 } from "./objects/return-object";
+
+function main() {
+  returnObject1();
+}
 
 main();
